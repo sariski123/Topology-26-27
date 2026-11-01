@@ -408,9 +408,9 @@ Sea $\mc T_{\{\pi_j\}_{j \in I}}$ la topolog\'ia inicial en $\prod_{i \in I} X_i
 
 El espacio topol\'ogico producto directo de espacio topol\'ogicos $\{(X_i, \mc T_i)\}_{i\in I}$ es por definici\'on $\left(\prod_{i \in I} X_i, \mc T_{\pi} \right)$
 
-\section{Base de la topología producto directo ($\tau_\pi$)}
+\section{Base de la topología producto directo ($\mc T_{\pi}$)}
 
-Dada una familia de espacios topológicos $\{(X_i, \tau_{X_i})\}_{i \in I}$, un elemento de la base de la topología inicial por las proyecciones canónicas $\pi_i \colon \prod_{i \in I} X_i \longrightarrow X_i$ viene dado por la intersección finita de antiimágenes de abiertos:
+Dada una familia de espacios topológicos $\{(X_i, \mc T_{X_i})\}_{i \in I}$, un elemento de la base de la topología inicial por las proyecciones canónicas $\pi_i \colon \prod_{i \in I} X_i \longrightarrow X_i$ viene dado por la intersección finita de antiimágenes de abiertos:
 \[
     \pi_{i_1}^{-1}(U_{i_1}) \cap \cdots \cap \pi_{i_r}^{-1}(U_{i_r}) = V \quad (\text{elemento de la base de la topología producto directo}).
 \]
@@ -462,10 +462,10 @@ de forma que
     \pi_1^{-1}(U_1) = U_1 \times X_2 \subseteq X_1 \times X_2, \qquad \pi_2^{-1}(U_2) = X_1 \times U_2 \subseteq X_1 \times X_2.
 \]
 
-Caso finito ($I = \{1, \ldots, n\}$):
-Si $U_1 \subseteq X_1, \ldots, U_n \subseteq X_n$, la topología coincide con la topología de las cajas:
+\noindent \textbf{Caso finito} ($I = \{1, \ldots, n\}$):
+Si $U_1 \subseteq X_1, \ldots, U_n \subseteq X_n$, la topología coincide con la topología de las cajas
 \[
-    \tau_\pi = \tau_{\text{cajas}} = \left\langle \{U_1 \times \cdots \times U_n \mid U_i \subseteq X_i \text{ abiertos}\} \right\rangle.
+    \mc T_\pi = \mc T_{\text{cajas}} = \left\langle \{U_1 \times \cdots \times U_n \mid U_i \subseteq X_i \text{ abiertos}\} \right\rangle.
 \]
 
 Caso arbitrario: Para un índice $i_1 \in I$ cualquiera
@@ -478,10 +478,10 @@ Para un número finito de índices $\{i_1, \ldots, i_r\} \subseteq I$
 \]
 En cambio, la \textbf{topología de las cajas} sobre un producto arbitrario se define como:
 \[
-    \tau_{\text{cajas}} = \left\langle \left\{ \prod_{i \in I} U_i \;\middle|\; U_i \subseteq X_i \text{ abiertos} \right\} \right\rangle.
+    \mc T_{\text{cajas}} = \left\langle \left\{ \prod_{i \in I} U_i \;\middle|\; U_i \subseteq X_i \text{ abiertos} \right\} \right\rangle.
 \]
 
-En general, para productos infinitos se verifica que $\tau_\pi \subsetneq \tau_{\text{cajas}}$.
+En general, para productos infinitos se verifica que $\mc T_\pi \subsetneq \mc T_{\text{cajas}}$.
 \begin{custom}
     [Contraejemplo] $\prod_{n \in \bb N} \bb R = \bb R^{\bb N}$. Sus elementos son $(x_n)_{n \in \bb N}: x_n \in \bb R$, es decir, una sucesi\'on, por lo que $\bb R^{\bb N}$ es el espacio de sucesiones de n\'umeros reales. De esta forma, se tiene que $(\bb R^{\bb N}, \mc T_{\pi})$ y $(\bb R^{\bb N}, \mc T_{cajas})$, se tiene la aplicaci\'on de conjuntos,
     $$\bt \bb R \rar{c} & \bb R^{\bb N} \\[-5mm] \lambda \rarmaps & (\lambda)_{n\in\bb N}\et$$
