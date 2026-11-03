@@ -725,8 +725,98 @@ verificando las propiedades
     d(x, y) = +\sqrt{\sum_{k=1}^n (x_k - y_k)^2} \quad \text{(se prueba que es una distancia)}
 \]
 donde $x = (x_1, \ldots, x_n) \in \mathbb{R}^n, y = (y_1, \ldots, y_n) \in \mathbb{R}^n$. Entonces $(\mathbb{R}^n, d)$ es un espacio métrico.
-
-Definimos 
+\end{ejem}
+\begin{ejer}
+    Definimos 
 $$ \bt \overline{d} : \mathbb{R}^n \times \mathbb{R}^n \rar &  \mathbb{R} \\[-5mm] (x, y) \rarmaps & \overline{d}(x, y) &[-11mm] = \min\{1, d(x, y)\} \et $$
 $\overline{d}$ es una métrica en $\mathbb{R}^n$ (se prueba). Es la \textbf{métrica acotada}.
+\end{ejer}
+
+\begin{defi}
+    Un espacio m\'etrico es $(X, d)$ donde $X$ es un conjunto y $d$ es una m\'etrica o distancia en $X$.
+\end{defi}
+\begin{ejem}
+    Se tiene que $(X, \overline{d})$ es otro espacio m\'etrico. Es ditsitno porque si $d$ tiee la propiedad de que existen $x,y\in X$ con $d(x,y) > 1$ entonces $\overline{d} \neq d$ como aplicaciones. 
+\end{ejem}
+\begin{ejem}
+Se tiene la distancia suma en $\mathbb{R}^n$ definida por
+\[  
+    d_{suma}(x, y) \coloneqq \sum_{i=1}^n |x_i - y_i|, \qquad x = (x_1, \ldots, x_n), y = (y_1, \ldots, y_n) \in \mathbb{R}^n
+\]
+y en general $d_{suma}\neq d(x,y)$.
+
+Se tiene tambi\'en la m\'etrica del m\'aximo en $\mathbb{R}^n$ definida por
+\[
+    d_{max}(x, y) \coloneqq \max_{1 \le i \le n} |x_i - y_i|, \qquad x = (x_1, \ldots, x_n), y = (y_1, \ldots, y_n) \in \mathbb{R}^n
+\] y tambi\'en $d_{max} \neq d(x,y) \neq d_{suma}$. Tambi\'en se tienen $\overline{d}_{suma}$ y $\overline{d}_{max}$, teni\'endose as\'i 6 m\'etricas distintas en $\mathbb{R}^n$, y como espacios m\'etricos distintos $(\mathbb{R}^n, d), (\mathbb{R}^n, \overline{d}), (\mathbb{R}^n, d_{suma}), (\mathbb{R}^n, \overline{d}_{suma}), (\mathbb{R}^n, d_{max}), (\mathbb{R}^n, \overline{d}_{max})$.
+\end{ejem}
+\section{Isometr\'ias entre espacios m\'etricos}
+ Sean $(X, d)$ y $(Y, d')$ espacios métricos (o pseudométricos)
+\begin{defi}
+   Una \textbf{isometría} es una aplicación de conjuntos $f: X \longrightarrow Y$ tal que 
+    \[
+         d(x, x') = d'(f(x), f(x')) \qquad \forall \,  x, x' \in X.
+    \]
+
+    Si $(X,d)$ es espacio m\'etrico, entonces toda isometr\'ia $f$ es inyectiva, pues si $f(x) = f(x')$ entonces $d(x, x') = d'(f(x), f(x')) = d'(f(x), f(x)) = 0 \implies x = x'$ por ser $d$ una m\'etrica. En cambio, si $(X,d)$ es pseudométrico, $f$ puede no ser inyectiva.
+\end{defi}
+\begin{obs}
+    En alguna literatura se define isometría como aplicación biyectiva que preserva la distancia, pero nosotros no suponemos que sea biyectiva.
+\end{obs}
+\begin{prop}
+    Todo subconjunto $Z \subseteq X$ de un espacio (psuedo)métrico $(X, d)$ es un espacio (psuedo)métrico $(Z, d|_{Z \times Z})$ con la métrica inducida por $d$
+    $$\begin{tikzcd}
+        X \times X \rar{d} & \bb R \\[-5mm] \arrow[phantom]{u}{\cup} Z \times Z \rar{d|_{Z \times Z}} & \bb R 
+    \end{tikzcd}$$
+\end{prop}
+\begin{defi}
+    Si $A \subset (X,d)$ se dice que $A$ es acotado si $d|_{A \times A}: A\times A \longrightarrow \mathbb{R}$ es una aplicaici\'on acotada, es decir, si existe alg\'un $M > 0$ tal que $d(a, a') \le M$ para todo $a, a' \in A$.
+\end{defi}
+\begin{ejem}
+    $(\bb R, d)\supset \bb N$ no es acotado. $(\bb R, \overline{d}) \supset \bb N$ s\'i es acotado.
+\end{ejem}
+\begin{ejem}
+    Si $A \subset (X,d)$ espacio m\'etrico se puede definir la distancia de un punto $x \in X$ a un conjunto $A$ como
+    $$\bt d_A : X \rar & \bb R \\[-5mm] x \rarmaps & d_A(x) &[-11mm] \coloneqq  \inf \{d(x, a) :  a \in A \} \et$$
+\end{ejem}
+\section{Topolog\'ia asociada a una m\'etrica}
+Sea $(X, d)$ un espacio psuedom\'etrico
+\begin{defi}
+    Se define la topolog\'ia $\mc T_d$ asociada a la pseudom\'etrica $d$ en $X$ por entornos.
+    
+    Dado $x\in X$, una base de entornos de $x$ es $\{B_d(x, \varepsilon)\}_{\varepsilon > 0}$ donde 
+    $$B_d(x, \varepsilon) \coloneqq \{y \in X : d(x, y) < \varepsilon\}$$
+    que genera la topolog\'ia $\mc T_d$ en $X$.
+\end{defi}
+As\'i, dado $(X,d)$ espacio pseudom\'etrico, hemos construido $(X, \mc T_d)$.
+\begin{ejer}
+    Se comprueba que en $(X,\mc T_d)$ las bolas abiertas $B_d(x, \varepsilon)$ son abiertos en $\mc T_d$ y que $\{B_d(x, \varepsilon)\}_{\varepsilon > 0}$ es una base de entornos de $x$. Para probar que son abiertos, se ve que $\forall \, y \in B_d(x, \varepsilon) \, \exists \, \delta_y$ tal que $B_d(y, \delta_y) \subset B_d(x, \varepsilon)$, y es $\delta_y = \varepsilon - d(x, y) > 0$.
+\end{ejer}
+\begin{defi}
+    Se define $\overline{B}_d(x, \varepsilon) = \{y \in X : d(x, y) \le \varepsilon\}$ como la bola cerrada de radio $\varepsilon$ centrada en $x$.
+\end{defi}
+\begin{ejer}
+    Son cerrados. Comprobar que el complementario es abierto.
+\end{ejer}
+\begin{obs}
+    En general, $\overline{B}_d(x, \varepsilon)$ no es el cierre de $B_d(x, \varepsilon)$, aunque $B_d(x, \varepsilon) \subset \overline{B}_d(x, \varepsilon)$.
+\end{obs}
+\begin{defi}
+    Se define la esfera de radio $\varepsilon$ centrada en $x$ como
+    $$S_d(x, \varepsilon) = \{y \in X : d(x, y) = \varepsilon\}$$
+\end{defi}
+
+De forma que $B_d(x, \varepsilon) \subset \overline{B}_d(x, \varepsilon)$ y $S_d(x, \varepsilon) \subset \overline{B}_d(x, \varepsilon)$, y en m\'etricas usuales (continuas) suele ser la frontera.
+
+¿Podemos construir una topoloogía a partir de una pseudométrica? En general, no.
+
+Esto da lugar a la siguiente definici\'on
+\begin{defi}
+    Un espacio topol\'ogico se dice que es \textbf{(psuedo)metrizable} si existe una (psuedo)m\'etrica $d$ en $X$ tal que $\mc T_d = \mc T_X$.
+\end{defi}
+
+Esta asignaci\'on no es inyectiva, pues distintas pseudom\'etricas pueden generar la misma topolog\'ia.
+
+\begin{ejem}
+    Por ejemplo, consideremos $(X,d)$ espaccio m\'etrico cualquiera y $\overline{d}$ la m\'etrica acotada, generan la misma topolog\'ia. Como espacios m\'etricos son distintos, $(X, d)$ y $(X, \overline{d})$ pero como espacios topol\'ogicos $(X, \mc T_d) = (X, \mc T_{\overline{d}})$.
 \end{ejem}
