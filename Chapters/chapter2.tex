@@ -808,7 +808,7 @@ As\'i, dado $(X,d)$ espacio pseudom\'etrico, hemos construido $(X, \mc T_d)$.
 
 De forma que $B_d(x, \varepsilon) \subset \overline{B}_d(x, \varepsilon)$ y $S_d(x, \varepsilon) \subset \overline{B}_d(x, \varepsilon)$, y en m\'etricas usuales (continuas) suele ser la frontera.
 
-¿Podemos construir una topoloogía a partir de una pseudométrica? En general, no.
+¿Podemos construir una topología a partir de una pseudométrica? En general, no.
 
 Esto da lugar a la siguiente definici\'on
 \begin{defi}
@@ -828,3 +828,305 @@ Esta asignaci\'on no es inyectiva, pues distintas pseudom\'etricas pueden genera
 \begin{ejem}
     Cerrado y acotado es compacto en $(\bb R,d)$ pero no en otras m\'etricas.
 \end{ejem}
+
+\newpage
+En $\mathbb{R}^n$ tenemos las siguientes métricas:
+\begin{itemize}
+    \item \textbf{Métrica euclídea usual:} 
+    \[
+    d(x,y) = +\sqrt{\sum_{i=1}^n (x_i - y_i)^2} \rightsquigarrow \overline{d} = \min\{1, d\}
+    \]
+    \item \textbf{Métrica de la suma ($d_1$):} 
+    \[
+    d_{\text{sum}}(x,y) = \sum_{i=1}^n |x_i - y_i|
+    \]
+    \item \textbf{Métrica del máximo ($d_\infty$):} 
+    \[
+    d_{\text{máx}}(x,y) = \max_{i=1,\dots,n} \{|x_i - y_i|\}
+    \]
+\end{itemize}
+
+\begin{teo}
+$\mathcal{T}_{\overline{d}} = \mathcal{T}_d = \mathcal{T}_{d_{\text{sum}}} = \mathcal{T}_{d_{\text{máx}}}$.
+\end{teo}
+
+\begin{dem}
+$\mathcal{T}_{\overline{d}} = \mathcal{T}_d$ ya ha sido demostrada previamente.
+
+Observamos las relaciones cuadráticas entre métricas:
+\[
+\left(d_{\text{sum}}(x,y)\right)^2 = \left(\sum_{i=1}^n |x_i - y_i|\right)^2 = \sum_{i=1}^n |x_i - y_i|^2 + 2\sum_{i < j} |x_i - y_i||x_j - y_j| \ge \sum_{i=1}^n |x_i - y_i|^2 = (d(x,y))^2
+\]
+\[
+\left(d_{\text{máx}}(x,y)\right)^2 = \left(\max_{i=1,\dots,n} \{|x_i - y_i|\}\right)^2 = \max_{i=1,\dots,n} \{|x_i - y_i|^2\} \le \sum_{i=1}^n |x_i - y_i|^2 = (d(x,y))^2
+\]
+
+De las desigualdades anteriores se obtiene:
+\[
+d_{\text{máx}}^2 \le d^2 \le d_{\text{sum}}^2 \implies d_{\text{máx}} \le d \le d_{\text{sum}}
+\]
+
+Por otra parte, se satisface $d_{\text{sum}}(x,y) \le n \cdot d_{\text{máx}}(x,y)$, luego:
+\[
+d_{\text{máx}} \le d \le d_{\text{sum}} \le n \cdot d_{\text{máx}}
+\]
+
+Esto implica la inclusión de bolas abiertas entre sí:
+\[
+B_{d_{\text{sum}}}(x, \varepsilon) \subseteq B_d(x, \varepsilon) \subseteq B_{d_{\text{máx}}}(x, \varepsilon), \quad \forall x \in \mathbb{R}^n, \, \forall \varepsilon > 0.
+\]
+Por lo tanto:
+\[
+\mathcal{T}_{d_{\text{máx}}} \subseteq \mathcal{T}_d \subseteq \mathcal{T}_{d_{\text{sum}}}
+\]
+
+Si demostramos que $\mathcal{T}_{d_{\text{sum}}} \subseteq \mathcal{T}_{d_{\text{máx}}}$, habremos terminado.
+
+Sea $x \in \mathbb{R}^n$, $\varepsilon > 0$ y la bola $B_{d_{\text{sum}}}(x, \varepsilon)$. Queremos probar que $B_{d_{\text{sum}}}(x, \varepsilon)$ es entorno del punto $x$ en la topología $\mathcal{T}_{d_{\text{máx}}}$, es decir, existe $\delta > 0$ tal que $B_{d_{\text{máx}}}(x, \delta) \subseteq B_{d_{\text{sum}}}(x, \varepsilon)$.
+
+Notemos que:
+\[
+d_{\text{máx}}(x,y) = \max_{i=1,\dots,n} \{|x_i - y_i|\} \ge |x_i - y_i|, \quad \forall i=1,\dots,n
+\]
+\[
+n \cdot d_{\text{máx}}(x,y) \ge \sum_{i=1}^n |x_i - y_i| = d_{\text{sum}}(x,y)
+\]
+
+Tomando $\delta = \dfrac{\varepsilon}{n}$, se verifica:
+\[
+B_{d_{\text{máx}}}\left(x, \frac{\varepsilon}{n}\right) \subseteq B_{d_{\text{sum}}}(x, \varepsilon). \quad \text{(Q.E.D.)}
+\]
+\end{dem}
+
+% ==============================================================================
+\section{Metrizabilidad de la Topología Producto en $\mathbb{R}^n$}
+% ==============================================================================
+
+Consideremos el espacio topológico producto directo $(\mathbb{R}^n, \mathcal{T}_\pi)$.
+
+\begin{teo}
+$(\mathbb{R}^n, \mathcal{T}_\pi)$ es metrizable. Además, se verifica que $\mathcal{T}_\pi = \mathcal{T}_d = \mathcal{T}_{\overline{d}} = \mathcal{T}_{d_{\text{sum}}} = \mathcal{T}_{d_{\text{máx}}}$.
+\end{teo}
+
+\begin{dem}
+Vamos a probar que $\mathcal{T}_\pi = \mathcal{T}_{d_{\text{máx}}}$ (lo que concluye la demostración por el teoema anterior).
+
+\begin{itemize}  \item[$\boxed{\subseteq}$] Sea $U \in \mathcal{T}_\pi$ un abierto básico (basta probarlo para abiertos básicos).
+\[
+U = U_1 \times U_2 \times \dots \times U_n, \quad U_i \subseteq \mathbb{R} \text{ abierto } \forall i.
+\]
+Queremos ver que $U$ es $\mathcal{T}_{d_{\text{máx}}}$-abierto, es decir, es entorno de todos sus puntos por la topología $\mathcal{T}_{d_{\text{máx}}}$.
+
+Sea $x = (x_1, \dots, x_n) \in U = U_1 \times \dots \times U_n$. Dado que cada $x_i \in U_i \in \mathcal{T}_d$, existe $\varepsilon_i > 0$ tal que $B_{d_1}(x_i, \varepsilon_i) \subseteq U_i$.
+
+Tomamos $\varepsilon = \min\{\varepsilon_i\}_{i=1}^n > 0$. Se verifica que $x \in B_{d_{\text{máx}}}(x, \varepsilon) \subseteq U$. En efecto, si $y \in B_{d_{\text{máx}}}(x, \varepsilon)$, entonces:
+\[
+d_{\text{máx}}(x,y) < \varepsilon \le \varepsilon_i \implies |x_i - y_i| < \varepsilon_i \implies y_i \in B_{d_1}(x_i, \varepsilon_i) \subseteq U_i, \quad \forall i=1,\dots,n.
+\]
+Por lo tanto, $y = (y_1, \dots, y_n) \in U_1 \times \dots \times U_n = U \implies B_{d_{\text{máx}}}(x, \varepsilon) \subseteq U$.
+
+\item[$\boxed{\supseteq}$] Sea $x \in \mathbb{R}^n$, $\varepsilon > 0$ y la bola $B_{d_{\text{máx}}}(x, \varepsilon)$. Tenemos que probar que $B_{d_{\text{máx}}}(x, \varepsilon)$ es entorno del punto $x$ por la topología $\mathcal{T}_\pi$, es decir, que existe un abierto básico $U \in \mathcal{T}_\pi$ tal que $x \in U \subseteq B_{d_{\text{máx}}}(x, \varepsilon)$.
+
+Tomamos $U = (x_1 - \varepsilon, x_1 + \varepsilon) \times \dots \times (x_n - \varepsilon, x_n + \varepsilon) \in \mathcal{T}_\pi$.
+
+Sea $y \in U \implies y_i \in (x_i - \varepsilon, x_i + \varepsilon), \, \forall i \implies |x_i - y_i| < \varepsilon, \, \forall i \implies \max_{i=1,\dots,n}\{|x_i - y_i|\} < \varepsilon$.
+
+Por ende, $d_{\text{máx}}(x,y) < \varepsilon \implies y \in B_{d_{\text{máx}}}(x, \varepsilon) \implies U \subseteq B_{d_{\text{máx}}}(x, \varepsilon)$.\
+\end{itemize}
+\end{dem}
+
+% ==============================================================================
+\section{Metrizabilidad del Espacio de Sucesiones $(\mathbb{R}^\mathbb{N}, \mathcal{T}_\pi)$}
+% ==============================================================================
+
+\begin{ejer}
+$\mathbb{R}^\mathbb{N} = \prod_{n \in \mathbb{N}} \mathbb{R}$ es el espacio de las sucesiones de números reales. Demostrar que $(\mathbb{R}^\mathbb{N}, \mathcal{T}_\pi)$ es metrizable.
+\end{ejer}
+
+\begin{dem}
+Consideremos la función $D: \mathbb{R}^\mathbb{N} \times \mathbb{R}^\mathbb{N} \longrightarrow \mathbb{R}^+$ definida por:
+\[
+D(x,y) = \sup_{n \in \mathbb{N}} \left\{ \frac{\overline{d}(x_n, y_n)}{n} \right\} = \sup_{n \in \mathbb{N}} \left\{ \frac{\min\{1, |x_n - y_n|\}}{n} \right\}
+\]
+donde el supremo existe pues está acotado superiormente por $1$ (dado que $\frac{\overline{d}}{n} \le \frac{1}{n} \le 1$).
+
+Comprobamos que $D$ define una métrica en $\mathbb{R}^\mathbb{N}$. Probamos la desigualdad triangular:
+\[
+\frac{\overline{d}(x_n, y_n)}{n} \le \frac{\overline{d}(x_n, z_n)}{n} + \frac{\overline{d}(z_n, y_n)}{n}, \quad \forall z \in \mathbb{R}^\mathbb{N}
+\]
+Tomando supremos a ambos lados sobre $n \ge 1$:
+\[
+\sup \left\{ \frac{\overline{d}(x_n, y_n)}{n} \right\} \le \sup \left\{ \frac{\overline{d}(x_n, z_n)}{n} + \frac{\overline{d}(z_n, y_n)}{n} \right\} \le \sup \left\{ \frac{\overline{d}(x_n, z_n)}{n} \right\} + \sup \left\{ \frac{\overline{d}(z_n, y_n)}{n} \right\}
+\]
+luego $D(x,y) \le D(x,z) + D(z,y)$.
+
+\medskip
+
+Falta ver que $\mathcal{T}_\pi = \mathcal{T}_D$. Para ello, probamos la inclusión en ambos sentidos.
+\begin{itemize}
+\item[$\boxed{\supseteq}$] Queremos probar que para todo $x \in \mathbb{R}^\mathbb{N}$ y $\varepsilon > 0$, existe $U \in \mathcal{T}_\pi$ tal que $x \in U \subseteq B_D(x, \varepsilon)$.
+
+Dado $\varepsilon > 0$, sea $N \in \mathbb{N}$ tal que $\dfrac{1}{N} < \varepsilon$. Tomamos el abierto básico de $\mathcal{T}_\pi$:
+\[
+U = B_{\overline{d}}\left(x_1, \frac{\varepsilon}{N}\right) \times \dots \times B_{\overline{d}}\left(x_N, \frac{\varepsilon}{N}\right) \times \mathbb{R} \times \mathbb{R} \times \dots \in \mathcal{T}_\pi
+\]
+Si $y \in U$, entonces para $n \le N$ se tiene $\overline{d}(x_n, y_n) < \dfrac{\varepsilon}{N} \implies \dfrac{\overline{d}(x_n, y_n)}{n} \le \overline{d}(x_n, y_n) < \dfrac{\varepsilon}{N} < \varepsilon$. 
+
+Para $n > N$, se tiene $\dfrac{\overline{d}(x_n, y_n)}{n} \le \dfrac{1}{n} < \dfrac{1}{N} < \varepsilon$. 
+
+Por consiguiente, $D(x,y) = \sup_{n \ge 1} \left\{ \frac{\overline{d}(x_n, y_n)}{n} \right\} < \varepsilon \implies y \in B_D(x, \varepsilon)$, lo que demuestra que $U \subseteq B_D(x, \varepsilon)$.
+
+\item[$\boxed{\subseteq}$] Basta probarlo para la subbase de $\mathcal{T}_\pi$, dada por los subconjuntos del tipo:
+\[
+(x_n - \varepsilon, x_n + \varepsilon) \times \prod_{k \neq n} \mathbb{R} \subseteq \mathbb{R}^\mathbb{N}
+\]
+al probar la inclusión para elementos subbásicos, queda probada para toda la topología $\mathcal{T}_\pi \subseteq \mathcal{T}_D$. 
+\end{itemize}
+\end{dem}
+
+
+\section{Definciones en espacios topol\'ogicos}
+Sea $X$ un espacio topol\'ogico
+\begin{defi}
+   Se dice que $X$ es primero numerable o $AN1$ si cada punto $x \in X$ tiene una base numerable de entornos $\{U_n\}_{n \in \mathbb{N}}$. Adem\'as se pueden considerar entornos abiertos.
+\end{defi}
+\begin{defi}
+    Se dice que $X$ es segundo numerable o $AN2$ si tiene una base numerable $\{U_n\}_{n \in \mathbb{N}}$ de abiertos de la topología $\mathcal{T}_X$.
+\end{defi}
+\begin{defi}
+    Se dice que $X$ es separable si existe un subconjunto $A \subseteq X$ numerable y denso en $X$, es decir, $\overline{A} = X$.
+\end{defi}
+\begin{prop}
+    Se verifica que 
+    \begin{enumerate}
+        \item $AN2 \Rightarrow AN1$.
+        \item $AN1$ y separable $\Rightarrow \, AN2$.
+        \item Si $(X,d)$ es un espacio pseudom\'etrico, entonces es $AN1$.
+    \end{enumerate} 
+\end{prop}
+\begin{dem}
+    \begin{enumerate}
+        \item \,
+        \item Sea $D = \{x_n :n \in \bb N\}$ un subconjunto numerable y denso en $X$. Sea $\{V_{x_n}^m\}_{m \in \bb N}$ una base numerable de entornos abiertos de cada $x_n$. Entonces $\{V_{x_n}^m: x_n \in D, \, m \in \bb N\}$ es una base de abiertos de $X$.
+        \item $\{ B_d(x_n, \nicefrac{1}{m}) \}_{m \in \bb N}$ es una base numerable de abiertos de $X$.
+    \end{enumerate}
+\end{dem}
+\begin{ejem} $(\bb R,d)$ es m\'etrico, luego $\bb R$ es $AN1$. Adem\'as, $\bb R$ es separable, pues $\bb Q$ es denso en $\bb R$ y numerable. Por lo tanto, $(\bb R, d)$ es $AN2$.
+\end{ejem}
+\begin{teo}
+    [de Metrizaci\'on de Urysohn] Sea $X$ un espacio topol\'ogico regular, $T_0$ y $AN2$, entonces $X$ es metrizable.
+\end{teo}
+\begin{lem}
+Regular + $AN2$ $\Rightarrow$ Normal.
+\end{lem}
+\begin{dem}
+    Sean $C,C'$ cerrados en $X$ disjuntos por regularidad. Sea $x\in C, \, x\nin C' \Rightarrow \exists \, U_x$ b\'asicos de la familia numerable tal que $\overline{U}_x \cap C = \emptyset$. Sean $C \subset U = \bigcup_{n \in \bb N} U_n$ abierto y $C' \subset U' = \bigcup_{m \in \bb N} U_m'$ abierto, pero no aseguramos que sea disjuntos. Entonces ``achicamos'' de forma que 
+    $$\hat U_n \coloneqq U_n - \bigcup_{m=1}^{n} \overline{U}'_m \text{ es abierto}$$
+    $$\hat U_n' \coloneqq U_n' - \bigcup_{m=1}^{n} \overline{U}_m \text{ es abierto}$$
+    y as\'i $C\subset \bigcup_{n \in \bb N} \hat U_n = \hat U$ y $C' \subset \bigcup_{m \in \bb N} \hat U_m' = \hat U'$ y adem\'as ahora s\'i $\hat U\cap \hat U' =\emptyset$. \textcolor{red}{Ejercicio}. 
+\end{dem}
+\begin{obs}
+    Gracias a esto se puede incluir cualquier $X$ m\'etrico en el cubo de Hilbert $[0,1]^{\bb N} = \prod_{n=1}^{\infty} [0,1]$, que es un espacio m\'etrico.
+\end{obs}
+
+\section{Propiedades topol\'ogicas de los espacios topol\'ogicos metrizables} \footnote{Ejercicios 4}
+Sea $(X,\mc T_d)$ con $d$ pseudom\'etrica.
+
+\begin{propi}
+    $d(x,y)=0 \iff \overline{\{x\}} = \overline{\{y\}} \iff \begin{cases}
+        x\in \overline{\{y\}} \\ \text{ y } \\ y \in \overline{\{y\}}
+    \end{cases} \iff B_d(x,\varepsilon) \ni \forall \varepsilon >0, d(x,y) < \varepsilon$ \textcolor{red}{Terminar}. 
+\end{propi}
+\begin{ejer}[123]
+    La siguientes condiciones son equivalentes:
+    \begin{enumerate}
+        \item $X$ es $T_0$
+        \item $X$ es $T_2$
+        \item $d$ es una m\'etrica. 
+    \end{enumerate}
+\end{ejer}
+\begin{dem}
+    1) $\iff$ 3) $(d(x,y) \iff \overline{\{x\}} = \overline{\{y\}} \overset{T_0}{\iff} x=y) \iff d $ es m\'etrica.
+
+    3) $\iff$ 2) Si $x\neq y$, $d(x,y) = \varepsilon >0$, entonces $B_d(x, \nicefrac{\varepsilon}{2}) \cap B_d(y, \nicefrac{\varepsilon}{2}) = \emptyset$.
+\end{dem}
+
+Varios de los conceptos topol\'ogicos en un espacio metrizable se pueden decir con sucesiones.
+\begin{propis}
+\begin{enumerate}[1)]
+    \item Dado $A\subset X$, $\overline{A} = \{x\in X: \text{ existe una sucesi\'on } \{x_n\} \subset A \text{ tal que } \{x_n\} \to x \}$. 
+    \item Por ejemplo, $f: X \longrightarrow (Y, \mc T)$ es continua $\iff$ para toda sucesi\'on $\{x_n\}$ de $X$ con $\{x_n\} \to x \in X$ se verifica que $\{f(x_n)\} \to f(x)$. 
+\end{enumerate}
+\end{propis}
+\begin{dem}\, 
+    \begin{enumerate}[1)]
+       \item \begin{itemize}
+        \item[$\boxed{\supseteq}$] Se verifica en general. Si $\{x_n\} \to x \Rightarrow x\in \overline{\{x_n\}}_{n \in \bb N} \subset \overline{A}$.
+        \item[$\boxed{\subseteq}$] $x\in \overline{A}$. Para cada $n\in \bb N$, $B_d(x,\nicefrac{1}{n}) \cap A \neq \emptyset$. Sea $x\in B_d(x,\nicefrac{1}{n}) \cap A $, $\{x_n\} \subset A$ y se comprueba que $\{x_n\} \to x$ por como se comportan las bolas $B_d(x\nicefrac{1}{n})$. 
+        \end{itemize}
+        \item \begin{itemize}
+        \item[$\Rightarrow)$] Se verifica en general, para todo espacio topol\'ogico.
+        \item[$\Leftarrow)$] Sea $C \subset Y$ cerrado, veamos que $f^{-1}(C) \subset X$ es cerrado. $f^{-1}(C)$ es cerrado $\iff f^{-1}(C) = \overline{f^{-1}(C)} \iff \forall \, x\in \overline{f^{-1}(C)} \Rightarrow x\in f^{-1}(C)$. Si $x\in \overline{f^{-1}(C)} $ entonces $\exists \{x_n \} \subset f^{-1}(C)$ tal que $\{x_n\} \to x$ por 1). Por las hip\'otesis, $\{f(x_n)\} \to f(x)$. Pero $\{f(x_n)\} \subset C$ por lo que $f(x) \in \overline{C} = C \Rightarrow x \in f^{-1}(C)$. 
+        \end{itemize}
+    \end{enumerate}
+\end{dem}
+\begin{obs}
+    Si $(X,\mc T_d)$ e $(Y, \mc T_{d'})$, entonces $f:X \longrightarrow Y$ es continua $\iff$ para cada $x\in X$ y $\varepsilon >0$ existe un $\delta(x, \varepsilon) \in \bb R^+$ tal que para todo $x' \in X$ con $d(x,x') < \delta$ entonces $d'(f(x),f(x'))< \varepsilon$. 
+    (Se fija $x$ para hacerlo por entornos)
+
+    Esta definici\'on viene porque 
+    $$B_d(x, \delta) \subset f^{-1} (B_{d'}(f(x), \varepsilon))$$
+\end{obs}
+\begin{defi}
+$f: X \longrightarrow Y$ es \textbf{uniformemente continua} si es continua y $\delta(x, \varepsilon) = \delta(\varepsilon) \forall \, x\in X$, si y solo si, $\forall \varepsilon >0$ existe $\delta(\varepsilon)>0$ tal que $\forall \, x, x'\in X$ con $d(x,x')< \delta$ entonces $d'(f(x),f(x'))< \varepsilon$.  
+\end{defi}
+\begin{prop}    
+Sea $A \subset (X, \mc T_d)$, $d_A(x) = d(A,x) = \inf\{d(x,a): a\in A\}$. Se tie que 
+$$\overline{A} = \{x\in X : d(x,A) = d_A(x) = 0\}$$
+\end{prop}
+\begin{dem}
+    \begin{itemize}
+        \item[$\boxed{\supseteq}$] Sea $x\in \{\dots\}$, $d(x,A)=0$, por ser el \'infimo de las distancias, esto es que $\forall \, \varepsilon >0$ existe $a_{\varepsilon} \in A$ tal que $d(x,a_{\varepsilon})< \varepsilon \Rightarrow a_{\varepsilon} \in B_d(x, \varepsilon) \cap A \neq \emptyset \Rightarrow x\in \overline{A}$. 
+        \item[$\boxed{\subseteq}$] \textcolor{red}{Ejercicio}
+        \end{itemize}
+\end{dem}
+
+Sea $(X,\mc T_d)$ metrizable
+\begin{prop}
+    $d: X \times X \longrightarrow \bb R$ es continua. 
+\end{prop}
+\begin{dem}
+    Al ser metrizables trabajamos con entornos. Tenemos
+    $$\bt d: (X\times X, \mc T_{\pi}) \rar & (\bb R, \mc T_{d_1}) \\[-5mm] (x,y) \rarmaps & d(x,y) \et$$
+    escogemos $B_{d_1}(d(x,y), \varepsilon) = (d(x,y)- \varepsilon , d(x,y)+ \varepsilon)$, y 
+    $$f^{-1}(B_{d_1}(d(x,y), \varepsilon)) \supset B_{d}(y, \nicefrac{\varepsilon}{2}) \times B_{d}(x, \nicefrac{\varepsilon}{2}) \ni (x,y), (x',y')$$
+    por ser los abiertos b\'asicos productos de bolas, y as\'i $|d(x,y) - d(x',y')|< \varepsilon$.
+\end{dem}
+
+Sea $A\subset (X, \mc T_d )$
+\begin{prop}
+$d_A: X \longrightarrow \bb R$ es uniformemente continua. 
+\end{prop}
+\begin{dem}
+    Sea $\varepsilon >0$, buscamos $\delta > 0$ tal que si $d(x,y)< \delta \Rightarrow |d(x,H) - d(y, H)| < \varepsilon$. Podemos tomar $\varepsilon = \delta$ por ser $|d(x,A) - d(y,A)| \leq d(x,y)$, o equivalentemente,
+    $$ \begin{cases}
+        d(x,A) - d(y,A) \leq d(x,y)  \\ d(y,A) -  d(x,A)  \leq d(x,y) 
+    \end{cases}$$
+    y por la simetr\'ia de $d$ basta con desmostrar una. 
+
+    Sea $\varepsilon> 0$, como $d(x,A) = \inf\{ d(x,a) : a\in A\}$ existe $a_{\varepsilon}$ tal que $d(x, a_{\varepsilon}) \leq d(x, A) + \varepsilon$,
+    $$d(y,a_{\varepsilon}) \leq d(x,y) + d(x, a_{\varepsilon}) \leq d(x,y) + d(x,a_{\varepsilon}) + \varepsilon $$
+    $$ \Rightarrow d(y,A) - d(x,A) \leq d(x,y) +\varepsilon$$
+\end{dem}
+\begin{ejer}
+    Si $(X, \mc T_d)$ es metrizable entonces $X$ es normal (completamente normal). 
+\end{ejer}
+\begin{defi}
+    $X$ es completamente normal si $A, B \subset X$ con $\overline{A}\cap B = \emptyset$ y $A \cap \overline{B} = \emptyset$ entonces $A$ y $B$ est\'an separados. 
+\end{defi}
+\begin{dem}
+    $d_A$ y $d_B$ son continuas, y definimos 
+    $$\bt X \rar{d_{A,B}} & \bb R \\[-5mm] x \rarmaps & d(x,A) - d(x,B) \et$$
+    y consideramos $d_{AB}^{-1}(0, \infty)$ y $d_{AB}^{-1}(-\infty,0)$ abiertos de $X$. Por ser $d(x, A)=0$ si $x\in A$ y la caracterizaci\'on de los cierres, $d(x,B) > 0 \iff -d(x,B)<0 $ de forma que va a parar a $(-\infty, 0)$ y as\'i $A \subset d_{AB}^{-1}(-\infty,0)$, y de la misma forma $B \subset d_{AB}^{-1}(0,\infty)$,y as\'i
+    $$d_{AB}^{-1}(0,\infty) \cap d_{AB}^{-1}(-\infty,0) = \emptyset$$
+\end{dem}
