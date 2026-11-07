@@ -91,17 +91,17 @@ En este conjunto ordenado:
 \subsection*{Producto directo}
 Sean $X$ e $Y$ conjuntos. El \textbf{producto directo} (o \textbf{cartesiano}) de $X$ e $Y$ es:
 $$
-    X \times Y := \{(x, y) \mid x \in X, \; y \in Y\} \text{}.
+    X \times Y \coloneqq \{(x, y) \mid x \in X, \; y \in Y\} \text{}.
 $$
 Para una familia arbitraria $\{X_i\}_{i \in I}$:
 $$
-    \prod_{i \in I} X_i := \{(x_i)_{i \in I} \mid x_i \in X_i \text{ para todo } i \in I\} \text{}.
+    \prod_{i \in I} X_i \coloneqq \{(x_i)_{i \in I} \mid x_i \in X_i \text{ para todo } i \in I\} \text{}.
 $$
 
 \subsection*{Unión disjunta}
 Para una familia $\{X_i\}_{i \in I}$, la \textbf{unión disjunta} (o \textbf{coproducto}) se define indexando cada elemento con su conjunto de procedencia:
 $$
-    \coprod_{i \in I} X_i := \{(i, x) \mid i \in I, \; x \in X_i\} \text{}.
+    \coprod_{i \in I} X_i \coloneqq \{(i, x) \mid i \in I, \; x \in X_i\} \text{}.
 $$
 
 \begin{ejem}
@@ -146,7 +146,7 @@ Dada una aplicación $f$, escribimos:
 $$
     \begin{aligned}
         f \colon X &\longrightarrow Y \text{} \\
-        x &\longmapsto y_x := f(x) \text{}
+        x &\longmapsto y_x \coloneqq f(x) \text{}
     \end{aligned}
 $$
 \end{nota}
@@ -312,7 +312,7 @@ Sea \(X\) un conjunto:
     \item \textbf{Espacio de Sierpiński:} Si \(X = \{a, b\}\), la familia \(\mc T = \{\emptyset, X, \{a\}\}\) define una topología en \(X\).
     \item \textbf{Topología cofinita:} En un conjunto \(X\), se define:
     \[
-        \mc T_{\text{cof}} := \{U \subseteq X \mid X \setminus U \text{ es finito}\} \cup \{\emptyset\} \text{}.
+        \mc T_{\text{cof}} \coloneqq \{U \subseteq X \mid X \setminus U \text{ es finito}\} \cup \{\emptyset\} \text{}.
     \]
     Comprobemos que \(\mc T_{\text{cof}}\) es una topología:
     \begin{enumerate}
@@ -323,7 +323,7 @@ Sea \(X\) un conjunto:
     La familia de cerrados es \(\mathcal{C}_{\mc T_{\text{cof}}} = \{C \subseteq X \mid C \text{ es finito}\} \cup \{X\}\). Si \(X\) es finito, \(\mc T_{\text{cof}} = \mathcal{P}(X) = \mc T_{\text{discreta}}\).
     \item \textbf{Topología cocontable:} En un conjunto \(X\), se define:
     \[
-        \mc T_{\text{cocont}} := \{U \subseteq X \mid X \setminus U \text{ es contable (finito o numerable)}\} \cup \{\emptyset\} \text{}.
+        \mc T_{\text{cocont}} \coloneqq \{U \subseteq X \mid X \setminus U \text{ es contable (finito o numerable)}\} \cup \{\emptyset\} \text{}.
     \]
     Análogamente se verifica que es topología usando que la unión finita de numerables es numerable y la intersección arbitraria de numerables está contenida en cualquiera de ellos. Si \(X\) es numerable, \(\mc T_{\text{cocont}} = \mc T_{\text{discreta}}\). En general, \(\mc T_{\text{cof}} \subseteq \mc T_{\text{cocont}} \subseteq \mathcal{P}(X)\).
     \item \textbf{Topología métrica usual en \(\mathbb{R}\):}
@@ -333,13 +333,13 @@ Sea \(X\) un conjunto:
     Comprobemos los axiomas:
     \begin{enumerate}
         \item[\textbf{1)}] \(\emptyset \in \mc T_d\) por vacuidad; \(\mathbb{R} \in \mc T_d\) tomando cualquier \(\varepsilon > 0\).
-        \item[\textbf{2)}] Si \(U_1, U_2 \in \mc T_d\) y \(x \in U_1 \cap U_2\), existen \(\varepsilon_1, \varepsilon_2 > 0\) con \(B_d(x, \varepsilon_1) \subseteq U_1\) y \(B_d(x, \varepsilon_2) \subseteq U_2\). Tomando \(\varepsilon := \min\{\varepsilon_1, \varepsilon_2\} > 0\), se cumple \(B_d(x, \varepsilon) \subseteq U_1 \cap U_2\), luego \(U_1 \cap U_2 \in \mc T_d\).
+        \item[\textbf{2)}] Si \(U_1, U_2 \in \mc T_d\) y \(x \in U_1 \cap U_2\), existen \(\varepsilon_1, \varepsilon_2 > 0\) con \(B_d(x, \varepsilon_1) \subseteq U_1\) y \(B_d(x, \varepsilon_2) \subseteq U_2\). Tomando \(\varepsilon \coloneqq \min\{\varepsilon_1, \varepsilon_2\} > 0\), se cumple \(B_d(x, \varepsilon) \subseteq U_1 \cap U_2\), luego \(U_1 \cap U_2 \in \mc T_d\).
         \item[\textbf{3)}] Si \(\{U_i\}_{i \in I} \subseteq \mc T_d\) y \(x \in \bigcup_{i \in I} U_i\), existe \(i_0 \in I\) con \(x \in U_{i_0}\). Existe \(\varepsilon_x > 0\) tal que \(B_d(x, \varepsilon_x) \subseteq U_{i_0} \subseteq \bigcup_{i \in I} U_i\), luego \(\bigcup U_i \in \mc T_d\).
     \end{enumerate}
     Los intervalos abiertos \((a, b) \in \mc T_d\): dado \(x \in (a, b)\), basta tomar \(\varepsilon = \min\{x - a, b - x\} > 0\). Los cerrados \([a, b] \notin \mc T_d\), pero \([a, b]^c = (-\infty, a) \cup (b, \infty) \in \mc T_d\), luego \([a, b] \in \mathcal{C}_{\mc T_d}\).
     \item \textbf{Topología de Kolmogorov en \(\mathbb{R}\):}
     \[
-        \mc T_{\text{kol}} := \{(a, \infty) \mid a \in \mathbb{R}\} \cup \{\emptyset, \mathbb{R}\} \text{}.
+        \mc T_{\text{kol}} \coloneqq \{(a, \infty) \mid a \in \mathbb{R}\} \cup \{\emptyset, \mathbb{R}\} \text{}.
     \]
     Es topología porque \(\bigcap_{i=1}^n (a_i, \infty) = (\max\{a_1, \ldots, a_n\}, \infty)\) y para uniones arbitrarias \(\bigcup_{i \in I} (a_i, \infty) = (\inf_{i \in I} a_i, \infty)\) si el ínfimo existe finito, o \(\mathbb{R}\) si \(\inf a_i = -\infty\). Se cumple \(\mc T_{\text{kol}} \subsetneq \mc T_d\).
 \end{itemize}
@@ -359,7 +359,7 @@ Si \(\mc T_1 \subsetneq \mc T_2\), se dice que \(\mc T_2\) es \textbf{más fina}
     \begin{dem}
         Sea $A \in \mc T_{cof}, \, \bb R-A$ es finito $\Rightarrow A=\{p_1, \ldots, p_r\}$. Para que $A\in \mc T_d$ se tiene que verificar que $\forall x\in A \, \exists \, \varepsilon_x > 0 / B(x,\varepsilon_x) = (x-\varepsilon_x, x+\varepsilon_x) \subseteq A$. 
 
-        Sea $x \in A\Rightarrow x\nin \bb R-A = \{p_1, \ldots, p_r\} \Rightarrow |x-p_i|=|\varepsilon_i| > 0 $ y llamamos $\varepsilon:= \min \{\varepsilon_i\}$. As\'i, $\varepsilon_x = \frac{\varepsilon}{2}$, y entonces $p_i\nin B_d(x,\varepsilon) \subset A = \bb R - \{p_1, \ldots, p_r\} \, \forall i$
+        Sea $x \in A\Rightarrow x\nin \bb R-A = \{p_1, \ldots, p_r\} \Rightarrow |x-p_i|=|\varepsilon_i| > 0 $ y llamamos $\varepsilon\coloneqq \min \{\varepsilon_i\}$. As\'i, $\varepsilon_x = \frac{\varepsilon}{2}$, y entonces $p_i\nin B_d(x,\varepsilon) \subset A = \bb R - \{p_1, \ldots, p_r\} \, \forall i$
     \end{dem}
     \end{itemize}
 \end{ejems}
@@ -426,7 +426,7 @@ Dicha topología \(\mc T\) es única y es $\mc T = <\mc B>$.
     \end{itemize}
     \item[(\(\Leftarrow\))] Sea $\mc B \subset \mc P(X)$ verificando 1) y 2), se define la familia:
     \[
-        \mc T := \{U \subseteq X \mid \forall x \in U, \; \exists B_x \in \mathcal{B} \text{ con } x \in B_x \subseteq U\} \text{}.
+        \mc T \coloneqq \{U \subseteq X \mid \forall x \in U, \; \exists B_x \in \mathcal{B} \text{ con } x \in B_x \subseteq U\} \text{}.
     \]
     Veamos que \(\mc T\) es una topología en \(X\):
     \begin{enumerate}
@@ -516,7 +516,7 @@ En 1 l\'inea. OJO: $\mc P(X) - \mc T \neq \mc C_{\mc T}$
 \end{sol}
 \section{Topología por cerrados}
 
-Sea \((X, \mc T)\) un espacio topológico. La familia de cerrados se define como \(\mathcal{C}_\mc T := \{X \setminus U \mid U \in \mc T\} \subseteq \mathcal{P}(X)\), es decir, el conjunto de los complementarios de los abiertos de la topología $\mc T$.
+Sea \((X, \mc T)\) un espacio topológico. La familia de cerrados se define como \(\mathcal{C}_\mc T \coloneqq \{X \setminus U \mid U \in \mc T\} \subseteq \mathcal{P}(X)\), es decir, el conjunto de los complementarios de los abiertos de la topología $\mc T$.
 
 \begin{prop}
 La familia \(\mathcal{C}_\mc T\) verifica las siguientes propiedades:
@@ -570,7 +570,7 @@ Sea \(X\) un conjunto y sea \(\mathcal{C} \subseteq \mathcal{P}(X)\) una familia
 \end{teo}
 
 \begin{dem}
-Si \(\mathcal{C}\) verifica las tres condiciones, definiendo \(\mc T := \{X \setminus C \mid C \in \mathcal{C}\}\), al tomar complementarios las tres condiciones de \(\mathcal{C}\) se traducen directamente (por De Morgan) en los tres axiomas de topología por abiertos de la Definición 1.1.
+Si \(\mathcal{C}\) verifica las tres condiciones, definiendo \(\mc T \coloneqq \{X \setminus C \mid C \in \mathcal{C}\}\), al tomar complementarios las tres condiciones de \(\mathcal{C}\) se traducen directamente (por De Morgan) en los tres axiomas de topología por abiertos de la Definición 1.1.
 \end{dem}
 
 \begin{defi}
@@ -623,8 +623,8 @@ base de una topolog\'ia y la topología generada por \(S\mathcal{B}\) es:
 \begin{ejem}
 En \(\mathbb{R}\):
 \begin{itemize}
-    \item \(S\mathcal{B} := \{(-\infty, b), (a, \infty) \mid a, b \in \mathbb{R}\}\) es subbase de la topología usual \(\mc T_d\): para cada \(x \in \mathbb{R}\), \(x \in (x - 1, \infty) \in \mathcal{S}\). Además, \((a, b) = (-\infty, b) \cap (a, \infty) \in \mathcal{B}_{S\mathcal{B}}\), lo que genera la base de intervalos usual y demuestra que \(\mc T_{S\mathcal{B}} = \mc T_d\).
-    \item \(S\mathcal{B}' := \{(-\infty, b], [a, \infty) \mid a, b \in \mathbb{R}\}\) es subbase de la topología discreta \(\mc T_{\text{discreta}}\), ya que considerando $x \in \bb R$ buscamos un abierto de la subbase que lo contenga \(\{x\} = (-\infty, x] \cap [x, \infty) \in \mathcal{B}_{S\mathcal{B}'}\), haciendo que todos los conjuntos unitarios sean abiertos, lo que demuestra que $<S\mc B'>= \mc T_{disc}$. Pues $Y = \displaystyle \bigcup_{y\in Y} \{y\}$ cada subconjunto es uni\'on de sus puntos.
+    \item \(S\mathcal{B} \coloneqq \{(-\infty, b), (a, \infty) \mid a, b \in \mathbb{R}\}\) es subbase de la topología usual \(\mc T_d\): para cada \(x \in \mathbb{R}\), \(x \in (x - 1, \infty) \in \mathcal{S}\). Además, \((a, b) = (-\infty, b) \cap (a, \infty) \in \mathcal{B}_{S\mathcal{B}}\), lo que genera la base de intervalos usual y demuestra que \(\mc T_{S\mathcal{B}} = \mc T_d\).
+    \item \(S\mathcal{B}' \coloneqq \{(-\infty, b], [a, \infty) \mid a, b \in \mathbb{R}\}\) es subbase de la topología discreta \(\mc T_{\text{discreta}}\), ya que considerando $x \in \bb R$ buscamos un abierto de la subbase que lo contenga \(\{x\} = (-\infty, x] \cap [x, \infty) \in \mathcal{B}_{S\mathcal{B}'}\), haciendo que todos los conjuntos unitarios sean abiertos, lo que demuestra que $<S\mc B'>= \mc T_{disc}$. Pues $Y = \displaystyle \bigcup_{y\in Y} \{y\}$ cada subconjunto es uni\'on de sus puntos.
 \end{itemize}
 \end{ejem}
 
@@ -650,7 +650,7 @@ Si $X$ es conjunto, $\mc B \subset \mc P(X)$, $\mc B$ es una base por cerrados s
     Una \textbf{subbase por cerrados} $S\mc B$ es un subconjunto $S\mc B\subset \mc P(X)$ que verifica 
     \begin{enumerate}
         \item $\forall \, x\in X$, existe $S\in S\mc B$ tal que $x\nin S$. $\mc B_{S\mc B}$
-        \item $<\mc B_{S\mc B}> = \mc T_{S\mc B}$ con $\mc B_{S\mc B} := \{S_1\cup \cdots \cup S_n \, / \,S_i\in S\mc B \}$, es decir, son uniones finitas de intersecciones arbitrarias. 
+        \item $<\mc B_{S\mc B}> = \mc T_{S\mc B}$ con $\mc B_{S\mc B} \coloneqq \{S_1\cup \cdots \cup S_n \, / \,S_i\in S\mc B \}$, es decir, son uniones finitas de intersecciones arbitrarias. 
     \end{enumerate}
 \end{defi}
 \section{Elementos de un espacio topol\'ogico}
@@ -662,7 +662,7 @@ Sea $X$ un espacio topol\'ogico y sea $Y\subseteq X$ un subconjunto
 \begin{defi}
 El \textbf{cierre} (o \textbf{clausura} o \textbf{adherencia}) de un subconjunto $Y \subseteq X$ es el menor cerrado de $X$ que contiene a $Y$:
 \[
-    \overline{Y} := \bigcap_{\substack{Y \subseteq C \\ C \in \mathcal{C}_\mc T}} C.
+    \overline{Y} \coloneqq \bigcap_{\substack{Y \subseteq C \\ C \in \mathcal{C}_\mc T}} C.
 \]
 Se cumple que $Y \subseteq \overline{Y}$. 
 \end{defi}
@@ -980,7 +980,7 @@ Sea \(X\) un conjunto y sea \(\{\mathcal{E}'(x)\}_{x \in X}\) una familia de sub
         
         \item[\(\underline{\supseteq)}\)] Sea \(V' \in \mathcal{E}'(x)\). Queremos demostrar que \(V'\) es entorno del punto \(x\) por la topología \(\mc T_{\mathcal{E}'}\), es decir, que existe un abierto \(U \in \mc T_{\mathcal{E}'}\) tal que \(x \in U \subseteq V'\).
         
-        Sea \(U := \{ y \in X : V' \in \mathcal{E}'(y) \} \ni x\).
+        Sea \(U \coloneqq \{ y \in X : V' \in \mathcal{E}'(y) \} \ni x\).
         
         Si \(y \in U \Rightarrow V' \in \mathcal{E}'(y) \underset{(1)}{\Rightarrow} y \in V' \Rightarrow x \in U \subseteq V'\) (todo punto \(y\) de \(U\) está en \(V'\)).
         
@@ -1019,15 +1019,15 @@ Si \(\{\mathcal{B}(x)\}_{x \in X}\) es base de entornos de \((X, \mc T)\), se ve
 \end{teo}
 
 \begin{dem}
-    Ejercicio. (Pág 7)
+    Ejercicio. (Secci\'on anterior)
 \end{dem}
 
 \begin{ejem}
     \((X, \mc T)\) espacio topológico.   
-    Para cada \(x \in X\), consideramos $$\mathcal{B}(x) := \{ U \text{ abiertos tales que } x \in U \} = \{ \text{entornos abiertos de } x \}$$
+    Para cada \(x \in X\), consideramos $$\mathcal{B}(x) \coloneqq \{ U \text{ abiertos tales que } x \in U \} = \{ \text{entornos abiertos de } x \}$$
     \(\{\mathcal{B}(x)\}\) es una base de entornos.
     
-    Si consideramos ahora \(\mathcal{B}'(x) := \{ \text{entornos cerrados de } x \}\), ¿son base de entornos?
+    Si consideramos ahora \(\mathcal{B}'(x) \coloneqq \{ \text{entornos cerrados de } x \}\), ¿son base de entornos?
     
     Todo entorno debe tener un entorno cerrado:
     \[
@@ -1047,7 +1047,6 @@ Si \(\{\mathcal{B}(x)\}_{x \in X}\) es base de entornos de \((X, \mc T)\), se ve
 \end{obs}
 
 \section{Límites en un espacio topológico}
-
 Sea \(X\) espacio topológico y sea \(\{x_n\}_{n \in \mathbb{N}}\) una sucesión de puntos de \(X\). Podemos ver \(\{x_n\}\) como una aplicación:
 \[
     \begin{aligned}
@@ -1066,8 +1065,7 @@ Diremos que una sucesión es \textbf{constante} si existe \(n_0 \in \mathbb{N}\)
     Puede que el límite no sea único.
 \end{defi}
 
-\begin{ejem}[\((\mathbb{R}, \mc T_d)\)]
-    Noción de límite conocida:
+\begin{ejem} En \((\mathbb{R}, \mc T_d)\) se tiene la noción de límite conocida:
     \[
         \{x_n\} \xrightarrow[n \to \infty]{} y = \lim \{x_n\} = y \quad \text{si} \quad \forall \varepsilon > 0, \, \exists n_0 \in \mathbb{N} \text{ tal que } \forall n \ge n_0,
     \]
@@ -1079,7 +1077,7 @@ Diremos que una sucesión es \textbf{constante} si existe \(n_0 \in \mathbb{N}\)
 % ==========================================
 % PÁGINA 10 (Foto 4)
 % ==========================================
-\begin{ejem}
+\begin{ejems}
     \hfill
     \begin{enumerate}
         \item \((\mathbb{R}, \mc T_d)\):\quad \(\{\frac{1}{n}\}_{n \in \mathbb{N}} \xrightarrow[n \to \infty]{} 0\).
@@ -1130,14 +1128,14 @@ Diremos que una sucesión es \textbf{constante} si existe \(n_0 \in \mathbb{N}\)
             (-n, n) \cap  \left\{\frac{1}{n}\right\}_{n \in \mathbb{N}} =  \left\{\frac{1}{n}\right\}_{n \ge 2}.
         \]
     \end{enumerate}
-\end{ejem}
+\end{ejems}
 
 \begin{prop}
     Si la sucesión \(\{x_n\}_{n \in \mathbb{N}}\) \textbf{no constante} tiene por límite el punto \(y \in X\), entonces para cualquier subconjunto \(A \subseteq X\) tal que \(\{x_n\}_{n \in \mathbb{N}} \subseteq A\), se verifica que \(y\) es punto de acumulación de \(A\).
 \end{prop}
 
 \begin{dem}
-    Para todo abierto \(U_y\), \((U_y \cap A) \setminus \{y\} \ne \emptyset\).
+    Para todo abierto \(U_y\), veamos que \((U_y \cap A) \setminus \{y\} \ne \emptyset\).
     
     Como \(y\) es límite, \(\exists n_0 \in \mathbb{N}\) tal que \(\forall n \ge n_0\),
     \[
@@ -1158,7 +1156,7 @@ Sea $X$ un espacio topol\'ogico.
         \item Un espacio topol\'ogico $X$ es \textbf{$T_2$} (o \textbf{separado} o \textbf{de Hausdorff}) si para cualesquiera puntos distintos $x\neq x' \in X$ existe un abierto $U_x$ con $x\in U_x$ y existe un abierto $U_{x'}$ con $x'\in U_{x'}$ tal que $U_x\cap U_{x'} = \emptyset$. 
         \item Un espacio topol\'ogico $X$ es \textbf{regular} si para cualequier punto $x \in X$ y cualquier cerrado $C\subset X$ con $x\nin C$ existen abiertos $U_x$ y $U_C$ con $x\in U_x$ y $C\subset U_C$ tal que $U_x\cap U_{C} = \emptyset$.
         \item Un espacio topol\'ogico $X$ es \textbf{$T_3$} si es regular y $T_1$ (los puntos son cerrados). 
-        \item Un espacio topol\'ogico $X$ es \textbf{normal} si para cualesquiera cerrados $C$ y $C'$ con \\ $C\cap C'=\emptyset$ existen abiertos con $C \subset U_C, \, C'\subset U_{C'}$ tal que $U_C \cap U_{C'}=\emptyset$. 
+        \item Un espacio topol\'ogico $X$ es \textbf{normal} si para cualesquiera cerrados $C$ y $C'$ con $C\cap C'=\emptyset$ existen abiertos con $C \subset U_C, \, C'\subset U_{C'}$ tal que $U_C \cap U_{C'}=\emptyset$. 
         \item Un espacio topol\'ogico $X$ es \textbf{$T_4$} si es normal y $T_1$.  
     \end{itemize}
 \end{defi}
@@ -1299,11 +1297,11 @@ $\Rightarrow)$ Sea $x\in X$ veamos que $\{x\}$ es cerrado. Supongamos que no, en
 
 \begin{dem} $\Rightarrow) $ Sea $x \in X$ y $U_x$ abierto.
         
-        $x \notin X \setminus U_x := C$ cerrado. Por ser $X$ regular, existen abiertos $V_x \ni x, \, V_C \supset C$ tales que $V_x \cap V_C = \emptyset$.
+        $x \notin X \setminus U_x \coloneqq C$ cerrado. Por ser $X$ regular, existen abiertos $V_x \ni x, \, V_C \supset C$ tales que $V_x \cap V_C = \emptyset$.
         
         Esto implica que $V_x \subseteq X \setminus V_C \subseteq X \setminus C = U_x \implies x \in V_x \subseteq \overline{V}_x \subseteq X \setminus V_C \subseteq U_x$.
 
-        $\Leftarrow)$ Sea $x \in X, \, C \subseteq X$ cerrado con $x \notin C \implies x \in X \setminus C := U_x$ abierto.
+        $\Leftarrow)$ Sea $x \in X, \, C \subseteq X$ cerrado con $x \notin C \implies x \in X \setminus C \coloneqq U_x$ abierto.
         
         Por hipótesis, existe $V_x$ abierto con $x \in V_x \subseteq \overline{V}_x \subseteq U_x$.
         
@@ -1428,7 +1426,7 @@ $\Rightarrow)$ Sea $x\in X$ veamos que $\{x\}$ es cerrado. Supongamos que no, en
 \begin{defi}
 Sea \((X, \mc T_X)\) un espacio topológico y sea \(Y \subseteq X\) un subconjunto. La \textbf{topología inducida} (o relativa) en \(Y\) por \(X\), denotada por \(\mc T_{|Y}\), es:
 \[
-    \mc T_{|Y} := \{U \cap Y \mid U \in \mc T\} \subseteq \mathcal{P}(Y) \text{}.
+    \mc T_{|Y} \coloneqq \{U \cap Y \mid U \in \mc T\} \subseteq \mathcal{P}(Y) \text{}.
 \]
 El par \((Y, \mc T_{|Y})\) se denomina \textbf{subespacio topológico} de \((X, \mc T)\).
 \end{defi}
@@ -1478,7 +1476,7 @@ Sea \(X\) un conjunto y sea \(\{\mathcal{E}'(x)\}_{x \in X}\) una familia de sub
 \begin{dem}
 Definimos la familia:
 \[
-    \mc T' := \{U \subseteq X \mid \forall x \in U, \; U \in \mathcal{E}'(x)\} \text{}.
+    \mc T' \coloneqq \{U \subseteq X \mid \forall x \in U, \; U \in \mathcal{E}'(x)\} \text{}.
 \]
 \begin{itemize}
     \item[\textbf{a)}] \(\mc T'\) es topología:
@@ -1490,7 +1488,7 @@ Definimos la familia:
     \item[\textbf{b)}] Coincidencia de entornos:
     \begin{itemize}
         \item Si \(V \in \mathcal{E}_{\mc T'}(x)\), existe \(U \in \mc T'\) con \(x \in U \subseteq V\). Por definición de \(\mc T'\), \(U \in \mathcal{E}'(x)\), y por el axioma 3, \(V \in \mathcal{E}'(x)\).
-        \item Si \(V' \in \mathcal{E}'(x)\), definimos \(U := \{y \in X \mid V' \in \mathcal{E}'(y)\}\). Por el axioma 1, \(y \in U \Rightarrow y \in V'\), luego \(U \subseteq V'\). Veamos que \(U \in \mc T'\): si \(y \in U\), entonces \(V' \in \mathcal{E}'(y)\); por el axioma 4, existe \(W \in \mathcal{E}'(y)\) tal que para todo \(z \in W\) se cumple \(V' \in \mathcal{E}'(z)\) (lo que significa \(W \subseteq U\)), luego por el axioma 3, \(U \in \mathcal{E}'(y)\). Por tanto, \(U \in \mc T'\). Como \(x \in U \subseteq V'\), deducimos que \(V' \in \mathcal{E}_{\mc T'}(x)\).
+        \item Si \(V' \in \mathcal{E}'(x)\), definimos \(U \coloneqq \{y \in X \mid V' \in \mathcal{E}'(y)\}\). Por el axioma 1, \(y \in U \Rightarrow y \in V'\), luego \(U \subseteq V'\). Veamos que \(U \in \mc T'\): si \(y \in U\), entonces \(V' \in \mathcal{E}'(y)\); por el axioma 4, existe \(W \in \mathcal{E}'(y)\) tal que para todo \(z \in W\) se cumple \(V' \in \mathcal{E}'(z)\) (lo que significa \(W \subseteq U\)), luego por el axioma 3, \(U \in \mathcal{E}'(y)\). Por tanto, \(U \in \mc T'\). Como \(x \in U \subseteq V'\), deducimos que \(V' \in \mathcal{E}_{\mc T'}(x)\).
     \end{itemize}
     \item[\textbf{c)}] Unicidad: si \(\mc T''\) tuviera los mismos entornos, un subconjunto sería abierto si y solo si es entorno de todos sus puntos, lo que forzaría \(\mc T'' = \mc T'\).
 \end{itemize}
@@ -1529,14 +1527,14 @@ Dada una familia \(\{\mathcal{B}(x)\}_{x \in X}\) de subconjuntos de \(X\) que s
 \begin{dem}
 Definimos para cada \(x \in X\):
 \[
-    \mathcal{E}(x) := \{V \subseteq X \mid \exists B_x \in \mathcal{B}(x) \text{ tal que } x \in B_x \subseteq V\} \text{}.
+    \mathcal{E}(x) \coloneqq \{V \subseteq X \mid \exists B_x \in \mathcal{B}(x) \text{ tal que } x \in B_x \subseteq V\} \text{}.
 \]
 Comprobamos que \(\mathcal{E}(x)\) verifica los 4 axiomas del Teorema 5.2:
 \begin{enumerate}
     \item[\textbf{1)}] Si \(V \in \mathcal{E}(x)\), existe \(B_x \in \mathcal{B}(x)\) con \(x \in B_x \subseteq V\). Por la propiedad 1, \(x \in B_x\), luego \(x \in V\).
     \item[\textbf{2)}] Si \(V_1, V_2 \in \mathcal{E}(x)\), existen \(B_1, B_2 \in \mathcal{B}(x)\) con \(B_1 \subseteq V_1\) y \(B_2 \subseteq V_2\). Por la propiedad 2, existe \(B_0 \in \mathcal{B}(x)\) con \(B_0 \subseteq B_1 \cap B_2 \subseteq V_1 \cap V_2\), luego \(V_1 \cap V_2 \in \mathcal{E}(x)\).
     \item[\textbf{3)}] Si \(V \in \mathcal{E}(x)\) y \(V \subseteq W\), existe \(B_x \in \mathcal{B}(x)\) con \(B_x \subseteq V \subseteq W\), luego \(W \in \mathcal{E}(x)\).
-    \item[\textbf{4)}] Si \(V \in \mathcal{E}(x)\), existe \(B \in \mathcal{B}(x)\) con \(B \subseteq V\). Por la propiedad 3, existe \(B_x \in \mathcal{B}(x)\) tal que para todo \(y \in B_x\) existe \(B_y \in \mathcal{B}(y)\) con \(B_y \subseteq B \subseteq V\). Tomamos \(W := B_x \in \mathcal{B}(x) \subseteq \mathcal{E}(x)\). Para todo \(y \in W\), como \(B_y \subseteq V\), se sigue que \(V \in \mathcal{E}(y)\).
+    \item[\textbf{4)}] Si \(V \in \mathcal{E}(x)\), existe \(B \in \mathcal{B}(x)\) con \(B \subseteq V\). Por la propiedad 3, existe \(B_x \in \mathcal{B}(x)\) tal que para todo \(y \in B_x\) existe \(B_y \in \mathcal{B}(y)\) con \(B_y \subseteq B \subseteq V\). Tomamos \(W \coloneqq B_x \in \mathcal{B}(x) \subseteq \mathcal{E}(x)\). Para todo \(y \in W\), como \(B_y \subseteq V\), se sigue que \(V \in \mathcal{E}(y)\).
 \end{enumerate}
 Por el Teorema 5.2, existe una única topología inducida que tiene a \(\mathcal{E}(x)\) como entornos y a \(\mathcal{B}(x)\) como bases de entornos.
 \end{dem}
@@ -1569,7 +1567,7 @@ Sea $X$ un espacio topológico e $Y \subseteq X$ un subconjunto.
 \begin{defi}
 El conjunto de los \textbf{puntos de acumulación} de $Y$ (o conjunto derivado), denotado por $Y'$, es:
 \[
-    Y' := \{x \in X \mid \forall U_x \text{ abierto con } x \in U_x, \; (U_x \setminus \{x\}) \cap Y \ne \emptyset\}.
+    Y' \coloneqq \{x \in X \mid \forall U_x \text{ abierto con } x \in U_x, \; (U_x \setminus \{x\}) \cap Y \ne \emptyset\}.
 \]
 Se verifica que:
 \[
@@ -1589,7 +1587,7 @@ Recíprocamente, como $Y \subseteq \overline{Y}$ e $Y' \subseteq \overline{Y}$, 
 \begin{defi}
 Los \textbf{puntos aislados} de $Y$ son aquellos puntos de $Y$ que no son de acumulación:
 \[
-    Y^a := \{y \in Y \mid \exists U_y \subseteq X \text{ abierto con } y \in U_y \text{ tal que } U_y \cap Y = \{y\}\}.
+    Y^a \coloneqq \{y \in Y \mid \exists U_y \subseteq X \text{ abierto con } y \in U_y \text{ tal que } U_y \cap Y = \{y\}\}.
 \]
 Equivalentemente, $Y^a = \{y \in Y \mid \{y\} \text{ es abierto en } (Y, \mc T_{|Y})\}$. Se verifica que $\overline{Y} = Y^a \sqcup Y'$.
 \end{defi}
@@ -1607,21 +1605,21 @@ En $\mathbb{R}^2$ con la topología usual, sea $Y = [1, 3) \times [1, 2) \cup \{
 \begin{defi}
 La \textbf{frontera} de $Y$ se define como:
 \[
-    \operatorname{Fr}(Y) = \partial(Y) := \overline{Y} \cap \overline{X \setminus Y} = \operatorname{Fr}(X \setminus Y).
+    \operatorname{Fr}(Y) = \partial(Y) \coloneqq \overline{Y} \cap \overline{X \setminus Y} = \operatorname{Fr}(X \setminus Y).
 \]
 \end{defi}
 
 \begin{defi}
 El \textbf{borde} de $Y$ es:
 \[
-    b(Y) := Y \cap \operatorname{Fr}(Y) = Y \cap (\overline{Y} \cap \overline{X \setminus Y}) = Y \cap \overline{X \setminus Y}.
+    b(Y) \coloneqq Y \cap \operatorname{Fr}(Y) = Y \cap (\overline{Y} \cap \overline{X \setminus Y}) = Y \cap \overline{X \setminus Y}.
 \]
 \end{defi}
 
 \begin{defi}
 El \textbf{exterior} de $Y$ es el interior de su complementario:
 \[
-    \operatorname{Ext}(Y) := (X \setminus Y)^\circ.
+    \operatorname{Ext}(Y) \coloneqq (X \setminus Y)^\circ.
 \]
 \end{defi}
 
@@ -2255,7 +2253,7 @@ Sea $R$ una relación de equivalencia en $X$. Un subconjunto $A \subseteq X$ se 
 \]
 Dado cualquier subconjunto $A \subseteq X$, la \textbf{saturación} de $A$ es el menor saturado que contiene a $A$:
 \[
-    [A]_R := \bigcup_{a \in A} [a]_R = \pi^{-1}(\pi(A)).
+    [A]_R \coloneqq \bigcup_{a \in A} [a]_R = \pi^{-1}(\pi(A)).
 \]
 \end{defi}
 
@@ -2346,7 +2344,7 @@ es una métrica.
 \begin{propi}[Métrica acotada asociada]
 Sea $(X, d)$ un espacio métrico (o seudométrico). La aplicación:
 \[
-    \overline{d} \colon X \times X \longrightarrow \mathbb{R}, \quad (x, y) \longmapsto \overline{d}(x, y) := \min\{d(x, y), 1\}
+    \overline{d} \colon X \times X \longrightarrow \mathbb{R}, \quad (x, y) \longmapsto \overline{d}(x, y) \coloneqq \min\{d(x, y), 1\}
 \]
 es una métrica (o seudométrica) acotada por $1$.
 \end{propi}
@@ -2378,7 +2376,7 @@ Sea $(X, d)$ un espacio métrico. Un subconjunto $A \subseteq X$ es \textbf{acot
 \begin{defi}
 Dado $A \subseteq (X, d)$ no vacío y $x \in X$, la distancia de $x$ a $A$ es:
 \[
-    d(x, A) := \inf\{d(x, a) \mid a \in A\}.
+    d(x, A) \coloneqq \inf\{d(x, a) \mid a \in A\}.
 \]
 Esto induce una función $d_A \colon X \to \mathbb{R}$ dada por $x \mapsto d(x, A)$.
 \end{defi}
@@ -2405,7 +2403,7 @@ $\mathbb{N} \subset (\mathbb{R}, d)$ no está acotado. En cambio, en $(\mathbb{R
 \begin{defi}
 Sea $(X, d)$ un espacio métrico. Dados $x \in X$ y $r \in \mathbb{R}^+$, la \textbf{bola abierta} de centro $x$ y radio $r$ es:
 \[
-    B_d(x, r) := \{y \in X \mid d(x, y) < r\}.
+    B_d(x, r) \coloneqq \{y \in X \mid d(x, y) < r\}.
 \]
 La familia $\{B_d(x, r)\}_{r > 0}$ constituye una base de entornos en $x$, y la colección de todas las bolas abiertas forma una base de una topología en $X$, denominada la \textbf{topología métrica} $\mc T_d$. Un subconjunto $U \subseteq X$ es abierto en $\mc T_d$ si:
 \[
@@ -2418,7 +2416,7 @@ Toda bola abierta $B_d(x, r)$ es un conjunto abierto en $(X, \mc T_d)$.
 \end{propi}
 
 \begin{dem}
-Sea $y \in B_d(x, r)$, luego $d(x, y) < r$. Tomando $r_y := r - d(x, y) > 0$, para cualquier $z \in B_d(y, r_y)$ se tiene por desigualdad triangular $d(x, z) \le d(x, y) + d(y, z) < d(x, y) + r_y = r$, de donde $B_d(y, r_y) \subseteq B_d(x, r)$.
+Sea $y \in B_d(x, r)$, luego $d(x, y) < r$. Tomando $r_y \coloneqq r - d(x, y) > 0$, para cualquier $z \in B_d(y, r_y)$ se tiene por desigualdad triangular $d(x, z) \le d(x, y) + d(y, z) < d(x, y) + r_y = r$, de donde $B_d(y, r_y) \subseteq B_d(x, r)$.
 \end{dem}
 
 \begin{center}
@@ -2438,8 +2436,8 @@ Sea $y \in B_d(x, r)$, luego $d(x, y) < r$. Tomando $r_y := r - d(x, y) > 0$, pa
 \begin{defi}
 Se define la \textbf{bola cerrada} y la \textbf{esfera} (o circunferencia métrica) de centro $x$ y radio $r$ como:
 \begin{align*}
-    \overline{B}_d(x, r) &:= \{y \in X \mid d(x, y) \le r\}, \\
-    C_d(x, r) &:= \{y \in X \mid d(x, y) = r\}.
+    \overline{B}_d(x, r) &\coloneqq \{y \in X \mid d(x, y) \le r\}, \\
+    C_d(x, r) &\coloneqq \{y \in X \mid d(x, y) = r\}.
 \end{align*}
 Nótese que $\overline{B}_d(x, r) = B_d(x, r) \cup C_d(x, r)$.
 \end{defi}
@@ -2449,7 +2447,7 @@ La bola cerrada $\overline{B}_d(x, r)$ es un conjunto cerrado en $(X, \mc T_d)$.
 \end{prop}
 
 \begin{dem}
-Basta ver que su complementario $X \setminus \overline{B}_d(x, r) = \{y \in X \mid d(x, y) > r\}$ es abierto. Si $y \in X \setminus \overline{B}_d(x, r)$, tomamos $r_y := d(x, y) - r > 0$. Para todo $z \in B_d(y, r_y)$, $d(x, y) \le d(x, z) + d(z, y) < d(x, z) + r_y$, luego $d(x, z) > d(x, y) - r_y = r$, de modo que $B_d(y, r_y) \subseteq X \setminus \overline{B}_d(x, r)$.
+Basta ver que su complementario $X \setminus \overline{B}_d(x, r) = \{y \in X \mid d(x, y) > r\}$ es abierto. Si $y \in X \setminus \overline{B}_d(x, r)$, tomamos $r_y \coloneqq d(x, y) - r > 0$. Para todo $z \in B_d(y, r_y)$, $d(x, y) \le d(x, z) + d(z, y) < d(x, z) + r_y$, luego $d(x, z) > d(x, y) - r_y = r$, de modo que $B_d(y, r_y) \subseteq X \setminus \overline{B}_d(x, r)$.
 \end{dem}
 
 \begin{obs}
@@ -2491,7 +2489,7 @@ Si $(X, \mc T)$ es metrizable ($\mc T = \mc T_d$ para una seudométrica $d$), so
 \end{prop}
 
 \begin{dem}
-$1 \Rightarrow 2$ es general. Para $2 \Rightarrow 3$: si $x \ne y$, por ser $T_0$ existe un entorno abierto de uno que no contiene al otro, luego existe $\varepsilon > 0$ con $y \notin B_d(x, \varepsilon)$, lo que implica $d(x, y) \ge \varepsilon > 0$. Para $3 \Rightarrow 1$: si $x \ne y$, como $d$ es métrica $\varepsilon := d(x, y) > 0$. Las bolas $B_d(x, \varepsilon/2)$ y $B_d(y, \varepsilon/2)$ son disjuntas por desigualdad triangular, luego $X$ es $T_2$.
+$1 \Rightarrow 2$ es general. Para $2 \Rightarrow 3$: si $x \ne y$, por ser $T_0$ existe un entorno abierto de uno que no contiene al otro, luego existe $\varepsilon > 0$ con $y \notin B_d(x, \varepsilon)$, lo que implica $d(x, y) \ge \varepsilon > 0$. Para $3 \Rightarrow 1$: si $x \ne y$, como $d$ es métrica $\varepsilon \coloneqq d(x, y) > 0$. Las bolas $B_d(x, \varepsilon/2)$ y $B_d(y, \varepsilon/2)$ son disjuntas por desigualdad triangular, luego $X$ es $T_2$.
 \end{dem}
 
 \begin{center}
@@ -2598,7 +2596,7 @@ $(\mathbb{R}^n, \mc T_\pi)$ es metrizable.
 \begin{dem}
 Definimos la distancia del máximo en $\mathbb{R}^n$:
 \[
-    d_{\max}(x, y) := \max_{1 \le i \le n} |x_i - y_i|.
+    d_{\max}(x, y) \coloneqq \max_{1 \le i \le n} |x_i - y_i|.
 \]
 Probemos que $\mc T_\pi = \mc T_{d_{\max}}$:
 \begin{itemize}
@@ -2663,7 +2661,7 @@ El espacio producto numerable $(\mathbb{R}^\mathbb{N}, \mc T_\pi)$ (espacio de s
 \begin{dem}
 En $\mathbb{R}$ consideramos la métrica acotada $\overline{d}(a, b) = \min\{1, |a - b|\} \le 1$. Para $x = (x_n)_{n \in \mathbb{N}}$ e $y = (y_n)_{n \in \mathbb{N}}$ en $\mathbb{R}^\mathbb{N}$, definimos:
 \[
-    D(x, y) := \sup_{n \in \mathbb{N}} \left\{ \frac{\overline{d}(x_n, y_n)}{n} \right\} \le 1.
+    D(x, y) \coloneqq \sup_{n \in \mathbb{N}} \left\{ \frac{\overline{d}(x_n, y_n)}{n} \right\} \le 1.
 \]
 \begin{enumerate}
     \item[\textbf{1)}] $D(x, y) \ge 0$. Si $D(x, y) = 0 \iff \frac{\overline{d}(x_n, y_n)}{n} = 0$ para todo $n \iff x_n = y_n$ para todo $n \iff x = y$.
@@ -2860,7 +2858,7 @@ Sea $\{X_i\}_{i \in I}$ una familia de espacios topológicos. El producto $\prod
 
 ($\Leftarrow$) Consideremos primero el caso finito $n = 2$: $X_1 \times X_2$. Fijemos un punto base $b = (b_1, b_2) \in X_1 \times X_2$. Para cada $x_1 \in X_1$, el subespacio en forma de ``cruz'':
 \[
-    C_{x_1} := (\{x_1\} \times X_2) \cup (X_1 \times \{b_2\})
+    C_{x_1} \coloneqq (\{x_1\} \times X_2) \cup (X_1 \times \{b_2\})
 \]
 es conexo, pues $\{x_1\} \times X_2 \cong X_2$ y $X_1 \times \{b_2\} \cong X_1$ son conexos y se cortan en el punto $(x_1, b_2)$. Además, para todo $x_1 \in X_1$, $b \in C_{x_1}$, por lo que:
 \[
@@ -2883,7 +2881,7 @@ es una unión de conexos con intersección no vacía, luego es conexo.
 
 Por inducción, todo producto finito $\prod_{i=1}^n X_i$ es conexo. Para $I$ arbitrario, fijemos $b = (b_i)_{i \in I}$. Para cada subconjunto finito $M \subset I$, definimos:
 \[
-    F^M := \left\{(x_i)_{i \in I} \in \prod_{i \in I} X_i \;\middle|\; x_i = b_i, \; \forall i \notin M\right\} \cong \prod_{i \in M} X_i.
+    F^M \coloneqq \left\{(x_i)_{i \in I} \in \prod_{i \in I} X_i \;\middle|\; x_i = b_i, \; \forall i \notin M\right\} \cong \prod_{i \in M} X_i.
 \]
 Cada $F^M$ es conexo y contiene a $b$. Entonces $Y = \bigcup_{M \subset I \text{ finito}} F^M$ es conexo. Dado cualquier abierto básico no vacío $U$ de la topología producto, $U$ restringe solo un número finito de coordenadas, por lo que corta a algún $F^M \subseteq Y$. Así, $Y$ es denso en $\prod X_i$. Por tanto, $\prod_{i \in I} X_i = \overline{Y}$ es conexo.
 \end{dem}
@@ -3246,7 +3244,7 @@ Sea \(X\) un espacio topológico compacto y sea \(Y \subseteq X\) un subconjunto
 \end{prop}
 
 \begin{dem}
-Sea \(\{U_i\}_{i \in I}\) una familia de abiertos de \(X\) que recubren a \(Y\), es decir, \(Y \subseteq \bigcup_{i \in I} U_i\). Como \(Y\) es cerrado en \(X\), su complementario \(V := X \setminus Y\) es abierto en \(X\). Entonces la colección \(\{U_i\}_{i \in I} \cup \{V\}\) constituye un recubrimiento abierto de todo el espacio \(X\). Por ser \(X\) compacto, existen índices \(i_1, \ldots, i_r \in I\) tales que:
+Sea \(\{U_i\}_{i \in I}\) una familia de abiertos de \(X\) que recubren a \(Y\), es decir, \(Y \subseteq \bigcup_{i \in I} U_i\). Como \(Y\) es cerrado en \(X\), su complementario \(V \coloneqq X \setminus Y\) es abierto en \(X\). Entonces la colección \(\{U_i\}_{i \in I} \cup \{V\}\) constituye un recubrimiento abierto de todo el espacio \(X\). Por ser \(X\) compacto, existen índices \(i_1, \ldots, i_r \in I\) tales que:
 \[
     X = U_{i_1} \cup \ldots \cup U_{i_r} \cup V.
 \]
@@ -3264,11 +3262,11 @@ Sea \(X\) un espacio topológico de Hausdorff (\(T_2\)) e \(Y \subseteq X\) un s
 \begin{dem}
 Sea \(x \notin Y\). Para cada \(y \in Y\), como \(x \ne y\) y el espacio \(X\) es separado (\(T_2\)), existen abiertos disjuntos \(U_x^y \ni x\) y \(U_y \ni y\) tales que \(U_x^y \cap U_y = \emptyset\). La familia \(\{U_y\}_{y \in Y}\) es un recubrimiento abierto del subespacio compacto \(Y\). Por compacidad, existen \(y_1, \ldots, y_r \in Y\) tales que:
 \[
-    Y \subseteq U_Y := U_{y_1} \cup \ldots \cup U_{y_r}.
+    Y \subseteq U_Y \coloneqq U_{y_1} \cup \ldots \cup U_{y_r}.
 \]
 Definimos ahora el conjunto:
 \[
-    U_x := \bigcap_{j=1}^r U_x^{y_j},
+    U_x \coloneqq \bigcap_{j=1}^r U_x^{y_j},
 \]
 el cual es abierto por ser intersección finita de abiertos y contiene a \(x\). Comprobamos que son disjuntos:
 \[
@@ -3322,9 +3320,9 @@ Para cualesquiera \(a < b \in \mathbb{R}\), el intervalo cerrado \([a, b]\) es c
 \begin{dem}
 Sea \(\{U_i\}_{i \in I}\) una familia de abiertos de \(\mathbb{R}\) tal que \([a, b] \subseteq \bigcup_{i \in I} U_i\). Como \(a \in [a, b]\), existe algún \(i_0 \in I\) con \(a \in U_{i_0}\). Por apertura de \(U_{i_0}\), existe \(\varepsilon > 0\) tal que \([a, a + \varepsilon) \subseteq U_{i_0}\). Consideramos el conjunto:
 \[
-    C := \{x \in [a, b] \mid [a, x] \text{ está recubierto por un número finito de abiertos } U_i\}.
+    C \coloneqq \{x \in [a, b] \mid [a, x] \text{ está recubierto por un número finito de abiertos } U_i\}.
 \]
-El conjunto \(C\) es no vacío (pues \(a \in C\) y \([a, a + \varepsilon) \subseteq C\)) y está acotado superiormente por \(b\). Por el axioma del supremo de los números reales, existe \(c := \sup(C) \le b\).
+El conjunto \(C\) es no vacío (pues \(a \in C\) y \([a, a + \varepsilon) \subseteq C\)) y está acotado superiormente por \(b\). Por el axioma del supremo de los números reales, existe \(c \coloneqq \sup(C) \le b\).
 
 Veamos primero que \(c \in C\). Como \(c \in [a, b]\), existe \(j_0 \in I\) con \(c \in U_{j_0}\). Al ser \(U_{j_0}\) abierto, existe \(\delta > 0\) tal que \((c - \delta, c + \delta) \subseteq U_{j_0}\). Al ser \(c = \sup(C)\), existe algún elemento \(x \in C\) con \(c - \delta < x \le c\). Por pertenecer a \(C\), \([a, x]\) está recubierto por un número finito de abiertos \(U_{i_1}, \ldots, U_{i_m}\). Como \([x, c] \subseteq (c - \delta, c + \delta) \subseteq U_{j_0}\), se deduce que:
 \[
@@ -3332,7 +3330,7 @@ Veamos primero que \(c \in C\). Como \(c \in [a, b]\), existe \(j_0 \in I\) con 
 \]
 lo cual demuestra que \([a, c]\) admite un subrecubrimiento finito, es decir, \(c \in C\).
 
-Veamos ahora que \(c = b\). Si fuera \(c < b\), tomando \(\delta' := \min\{\delta/2, b - c\} > 0\), el intervalo \([c, c + \delta'] \subseteq U_{j_0}\), con lo cual \([a, c + \delta'] = [a, c] \cup [c, c + \delta']\) admitiría un recubrimiento finito, implicando que \(c + \delta' \in C\). Pero \(c + \delta' > c = \sup(C)\), contradicción. Así pues, \(c = b \in C\), concluyendo que \([a, b]\) es compacto.
+Veamos ahora que \(c = b\). Si fuera \(c < b\), tomando \(\delta' \coloneqq \min\{\delta/2, b - c\} > 0\), el intervalo \([c, c + \delta'] \subseteq U_{j_0}\), con lo cual \([a, c + \delta'] = [a, c] \cup [c, c + \delta']\) admitiría un recubrimiento finito, implicando que \(c + \delta' \in C\). Pero \(c + \delta' > c = \sup(C)\), contradicción. Así pues, \(c = b \in C\), concluyendo que \([a, b]\) es compacto.
 \end{dem}
 
 \begin{cor}
@@ -3345,7 +3343,7 @@ En \((\mathbb{R}, \mc T_d)\), un subespacio \(Y \subseteq \mathbb{R}\) es compac
     \[
         Y \subseteq \bigcup_{j=1}^r B_d(0, n_j) = B_d(0, M) = (-M, M),
     \]
-    donde \(M := \max\{n_1, \ldots, n_r\}\). En consecuencia, \(Y\) es acotado.
+    donde \(M \coloneqq \max\{n_1, \ldots, n_r\}\). En consecuencia, \(Y\) es acotado.
     \item[(\(\Leftarrow\))] Supongamos que \(Y\) es cerrado y acotado. Por ser acotado, existen \(a, b \in \mathbb{R}\) tales que \(Y \subseteq [a, b]\). Como \([a, b]\) es compacto en \(\mathbb{R}\) e \(Y\) es un subconjunto cerrado de \([a, b]\), por la Propiedad 1.1 deducimos que \(Y\) es compacto.
 \end{itemize}
 \end{dem}
@@ -3366,7 +3364,7 @@ Sea \(y \in Y\). El punto \((x_0, y) \in \{x_0\} \times Y \subseteq U\). Como lo
 \]
 La colección \(\{V_y\}_{y \in Y}\) es un recubrimiento por abiertos de \(Y\). Siendo \(Y\) compacto, existen puntos \(y_1, \ldots, y_r \in Y\) tales que \(Y = \bigcup_{j=1}^r V_{y_j}\). Definimos:
 \[
-    W_{x_0} := \bigcap_{j=1}^r U_{x_0}^{y_j}.
+    W_{x_0} \coloneqq \bigcap_{j=1}^r U_{x_0}^{y_j}.
 \]
 \(W_{x_0}\) es abierto por ser intersección finita de abiertos, y contiene a \(x_0\) porque cada \(U_{x_0}^{y_j}\) lo contiene. Comprobemos que \(W_{x_0} \times Y \subseteq U\): sea \((x, y) \in W_{x_0} \times Y\). Como \(y \in Y = \bigcup_{j=1}^r V_{y_j}\), existe algún \(j \in \{1, \ldots, r\}\) tal que \(y \in V_{y_j}\). Puesto que \(x \in W_{x_0} \subseteq U_{x_0}^{y_j}\), se sigue que:
 \[
@@ -3479,7 +3477,7 @@ Un espacio topológico \(X\) es compacto si y solo si toda familia de cerrados \
 
 \begin{dem}
 \begin{itemize}
-    \item[(\(\Rightarrow\))] Sea \(\{C_i\}_{i \in I}\) una familia de cerrados con la PIF. Supongamos por reducción al absurdo que \(\bigcap_{i \in I} C_i = \emptyset\). Tomando complementarios, los conjuntos \(U_i := X \setminus C_i\) son abiertos y:
+    \item[(\(\Rightarrow\))] Sea \(\{C_i\}_{i \in I}\) una familia de cerrados con la PIF. Supongamos por reducción al absurdo que \(\bigcap_{i \in I} C_i = \emptyset\). Tomando complementarios, los conjuntos \(U_i \coloneqq X \setminus C_i\) son abiertos y:
     \[
         \bigcup_{i \in I} U_i = \bigcup_{i \in I} (X \setminus C_i) = X \setminus \left(\bigcap_{i \in I} C_i\right) = X \setminus \emptyset = X.
     \]
@@ -3488,7 +3486,7 @@ Un espacio topológico \(X\) es compacto si y solo si toda familia de cerrados \
         \emptyset = X \setminus X = X \setminus (U_{i_1} \cup \ldots \cup U_{i_r}) = C_{i_1} \cap \ldots \cap C_{i_r},
     \]
     lo cual contradice que la familia \(\{C_i\}\) cumple la PIF. Por tanto, \(\bigcap_{i \in I} C_i \ne \emptyset\).
-    \item[(\(\Leftarrow\))] Sea \(\{U_i\}_{i \in I}\) un recubrimiento abierto de \(X\): \(\bigcup_{i \in I} U_i = X\). Consideremos la familia de cerrados \(C_i := X \setminus U_i\). Entonces \(\bigcap_{i \in I} C_i = X \setminus \bigcup_{i \in I} U_i = \emptyset\). Por hipótesis, la familia \(\{C_i\}\) no puede verificar la PIF, lo que significa que existe una subfamilia finita con \(C_{i_1} \cap \ldots \cap C_{i_r} = \emptyset\). Tomando complementarios, \(U_{i_1} \cup \ldots \cup U_{i_r} = X\), probando que \(X\) es compacto.
+    \item[(\(\Leftarrow\))] Sea \(\{U_i\}_{i \in I}\) un recubrimiento abierto de \(X\): \(\bigcup_{i \in I} U_i = X\). Consideremos la familia de cerrados \(C_i \coloneqq X \setminus U_i\). Entonces \(\bigcap_{i \in I} C_i = X \setminus \bigcup_{i \in I} U_i = \emptyset\). Por hipótesis, la familia \(\{C_i\}\) no puede verificar la PIF, lo que significa que existe una subfamilia finita con \(C_{i_1} \cap \ldots \cap C_{i_r} = \emptyset\). Tomando complementarios, \(U_{i_1} \cup \ldots \cup U_{i_r} = X\), probando que \(X\) es compacto.
 \end{itemize}
 \end{dem}
 
@@ -3500,7 +3498,7 @@ Sea \(X\) un espacio compacto y sea \(\{C_n\}_{n \in \mathbb{N}}\) una cadena de
 \end{cor}
 
 \begin{dem}
-Para cualquier subcolección finita \(\{C_{n_1}, \ldots, C_{n_r}\}\), si \(m := \max\{n_1, \ldots, n_r\}\), entonces \(\bigcap_{j=1}^r C_{n_j} = C_m \ne \emptyset\). Así, la cadena cumple la PIF, y por compacidad de \(X\), la intersección total es no vacía.
+Para cualquier subcolección finita \(\{C_{n_1}, \ldots, C_{n_r}\}\), si \(m \coloneqq \max\{n_1, \ldots, n_r\}\), entonces \(\bigcap_{j=1}^r C_{n_j} = C_m \ne \emptyset\). Así, la cadena cumple la PIF, y por compacidad de \(X\), la intersección total es no vacía.
 \end{dem}
 
 \begin{lema}
@@ -3509,8 +3507,8 @@ Sea \(X\) un espacio de Hausdorff (\(T_2\)) sin puntos aislados. Si \(U \subsete
 
 \begin{dem}
 \begin{itemize}
-    \item Si \(x \notin U\), como \(U\) es no vacío existe \(y \in U\). Al ser \(X\) separado, existen abiertos disjuntos \(U_x \ni x\) y \(U_y \ni y\). Tomando \(V := U \cap U_y\), se tiene \(V \subseteq U\) y como \(V \cap U_x = \emptyset\), \(x \notin \overline{V}\).
-    \item Si \(x \in U\), como \(X\) no tiene puntos aislados \(\{x\}\) no es abierto, luego existe \(y \in U\) con \(y \ne x\). Por ser \(X\) de Hausdorff, existen abiertos disjuntos \(U_x \ni x\) y \(U_y \ni y\). Definiendo \(V := U \cap U_y\), \(V\) es un abierto no vacío contenido en \(U\), y como \(V \cap U_x = \emptyset\), \(x \notin \overline{V}\).
+    \item Si \(x \notin U\), como \(U\) es no vacío existe \(y \in U\). Al ser \(X\) separado, existen abiertos disjuntos \(U_x \ni x\) y \(U_y \ni y\). Tomando \(V \coloneqq U \cap U_y\), se tiene \(V \subseteq U\) y como \(V \cap U_x = \emptyset\), \(x \notin \overline{V}\).
+    \item Si \(x \in U\), como \(X\) no tiene puntos aislados \(\{x\}\) no es abierto, luego existe \(y \in U\) con \(y \ne x\). Por ser \(X\) de Hausdorff, existen abiertos disjuntos \(U_x \ni x\) y \(U_y \ni y\). Definiendo \(V \coloneqq U \cap U_y\), \(V\) es un abierto no vacío contenido en \(U\), y como \(V \cap U_x = \emptyset\), \(x \notin \overline{V}\).
 \end{itemize}
 \end{dem}
 
@@ -3521,7 +3519,7 @@ Todo espacio métrico compacto, de Hausdorff y sin puntos aislados es no contabl
 \begin{dem}
 Supongamos por contradicción que \(X\) es numerable, es decir, existe una biyección \(f \colon \mathbb{N} \to X\) con \(X = \{x_1, x_2, \ldots, x_n, \ldots\}\). 
 
-Tomamos \(U_1 := X\). Por el Lema 2.2, existe un abierto no vacío \(V_1\) tal que \(V_1 \subseteq U_1\) y \(x_1 \notin \overline{V}_1\). Tomamos ahora \(U_2 := V_1\); aplicando nuevamente el lema, existe un abierto no vacío \(V_2\) con \(V_2 \subseteq U_2 = V_1\) tal que \(x_2 \notin \overline{V}_2\).
+Tomamos \(U_1 \coloneqq X\). Por el Lema 2.2, existe un abierto no vacío \(V_1\) tal que \(V_1 \subseteq U_1\) y \(x_1 \notin \overline{V}_1\). Tomamos ahora \(U_2 \coloneqq V_1\); aplicando nuevamente el lema, existe un abierto no vacío \(V_2\) con \(V_2 \subseteq U_2 = V_1\) tal que \(x_2 \notin \overline{V}_2\).
 
 Reiterando el proceso, obtenemos una sucesión de abiertos encajados \(\ldots \subseteq V_n \subseteq V_{n-1} \subseteq \ldots \subseteq V_1\) tales que para cada \(n \in \mathbb{N}\), \(x_n \notin \overline{V}_n\). Sus clausuras forman una cadena descendente de cerrados no vacíos encajados:
 \[
@@ -3547,9 +3545,9 @@ Si \(X\) es de Hausdorff (\(T_2\)), son equivalentes:
 \begin{dem}
 \begin{itemize}
     \item[\textbf{2 \(\Rightarrow\) 1:}] Basta tomar \(U = X\).
-    \item[\textbf{1 \(\Rightarrow\) 2:}] Sea \(x \in U\) abierto. Como \(X\) es localmente compacto, existe un entorno compacto \(K\) con \(x \in K^\circ \subseteq K\). Por ser \(X\) de Hausdorff, \(K\) es cerrado. El conjunto \(A := K \setminus U = K \cap (X \setminus U)\) es cerrado dentro del compacto \(K\), luego \(A\) es compacto. Además, \(x \notin A\) porque \(x \in U\). Por la Propiedad 1.2, existen abiertos disjuntos \(V_x, V_A \subseteq X\) tales que \(x \in V_x\) y \(A \subseteq V_A\).
+    \item[\textbf{1 \(\Rightarrow\) 2:}] Sea \(x \in U\) abierto. Como \(X\) es localmente compacto, existe un entorno compacto \(K\) con \(x \in K^\circ \subseteq K\). Por ser \(X\) de Hausdorff, \(K\) es cerrado. El conjunto \(A \coloneqq K \setminus U = K \cap (X \setminus U)\) es cerrado dentro del compacto \(K\), luego \(A\) es compacto. Además, \(x \notin A\) porque \(x \in U\). Por la Propiedad 1.2, existen abiertos disjuntos \(V_x, V_A \subseteq X\) tales que \(x \in V_x\) y \(A \subseteq V_A\).
     
-    Definimos \(V := V_x \cap K^\circ\), que es abierto y contiene a \(x\). Como \(V \subseteq K^\circ \subseteq K\), se tiene \(\overline{V} \subseteq K\), de modo que \(\overline{V}\) es compacto por ser cerrado dentro de \(K\). Finalmente, comprobemos que \(\overline{V} \subseteq U\): si existiera \(y \in \overline{V} \setminus U\), entonces \(y \in K \setminus U = A \subseteq V_A\); pero como \(y \in \overline{V}\) y \(V_A\) es un entorno abierto de \(y\), debería ser \(V_A \cap V \ne \emptyset\), lo cual es imposible puesto que \(V_A \cap V \subseteq V_A \cap V_x = \emptyset\). Así, \(\overline{V} \subseteq U\).
+    Definimos \(V \coloneqq V_x \cap K^\circ\), que es abierto y contiene a \(x\). Como \(V \subseteq K^\circ \subseteq K\), se tiene \(\overline{V} \subseteq K\), de modo que \(\overline{V}\) es compacto por ser cerrado dentro de \(K\). Finalmente, comprobemos que \(\overline{V} \subseteq U\): si existiera \(y \in \overline{V} \setminus U\), entonces \(y \in K \setminus U = A \subseteq V_A\); pero como \(y \in \overline{V}\) y \(V_A\) es un entorno abierto de \(y\), debería ser \(V_A \cap V \ne \emptyset\), lo cual es imposible puesto que \(V_A \cap V \subseteq V_A \cap V_x = \emptyset\). Así, \(\overline{V} \subseteq U\).
 \end{itemize}
 \end{dem}
 
@@ -3572,7 +3570,7 @@ Para cualquier \(x \in U\), por el Teorema 4.1 existe un abierto \(V\) tal que \
 \subsection{Compactificación de Alexandroff}
 
 \begin{defi}
-Sea \(X\) un espacio de Hausdorff localmente compacto que no es compacto. Se define \(X^* := X \cup \{\infty\}\) con la topología formada por:
+Sea \(X\) un espacio de Hausdorff localmente compacto que no es compacto. Se define \(X^* \coloneqq X \cup \{\infty\}\) con la topología formada por:
 \begin{itemize}
     \item Los abiertos de \(X\): \(U \subseteq X\) con \(U \in \mc T_X\).
     \item Los conjuntos de la forma \(X^* \setminus K\), donde \(K \subseteq X\) es compacto.
@@ -3633,7 +3631,7 @@ Sea \((X, d)\) un espacio métrico. Si \(X\) es compacto por límites, entonces 
 \end{prop}
 
 \begin{dem}
-Sea \(\{x_n\}_{n \in \mathbb{N}}\) una sucesión en \(X\) y consideremos el conjunto de sus términos \(Y := \{x_n \mid n \in \mathbb{N}\}\).
+Sea \(\{x_n\}_{n \in \mathbb{N}}\) una sucesión en \(X\) y consideremos el conjunto de sus términos \(Y \coloneqq \{x_n \mid n \in \mathbb{N}\}\).
 \begin{itemize}
     \item Si \(Y\) es finito, existe un valor \(x \in Y\) que se repite infinitas veces, lo que produce de inmediato una subsucesión constante \(x_{n_k} = x \to x\).
     \item Si \(Y\) es infinito, por ser \(X\) compacto por límites existe un punto de acumulación \(x \in Y'\). Para cada \(p \in \mathbb{N}\), la bola \(B_d(x, 1/p)\) contiene infinitos puntos de \(Y\). Escogiendo inductivamente índices crecientes \(n_1 < n_2 < \ldots < n_p < \ldots\) tales que \(x_{n_p} \in B_d(x, 1/p)\), se obtiene una subsucesión \(\{x_{n_p}\}\) que converge a \(x\).
@@ -3698,7 +3696,7 @@ Sean \((X, d)\) e \((X', d')\) espacios métricos con \(X\) compacto. Toda aplic
 \begin{dem}
 Dado \(\varepsilon > 0\), consideramos el recubrimiento abierto de \(X'\) dado por \(\{B_{d'}(x', \varepsilon/2)\}_{x' \in X'}\). Sus anti-imágenes forman el recubrimiento abierto \(\{f^{-1}(B_{d'}(x', \varepsilon/2))\}_{x' \in X'}\) de \(X\). Como \(X\) es compacto y métrico, dicho recubrimiento posee un número de Lebesgue $\delta > 0$.
 
-Sean \(x_1, x_2 \in X\) tales que \(d(x_1, x_2) < \delta\). El subconjunto \(A := \{x_1, x_2\}\) tiene diámetro \(d(x_1, x_2) < \delta\), por lo que está contenido en algún elemento del recubrimiento: existe \(x' \in X'\) tal que \(\{x_1, x_2\} \subseteq f^{-1}(B_{d'}(x', \varepsilon/2))\). Esto significa que \(f(x_1), f(x_2) \in B_{d'}(x', \varepsilon/2)\). Por la desigualdad triangular:
+Sean \(x_1, x_2 \in X\) tales que \(d(x_1, x_2) < \delta\). El subconjunto \(A \coloneqq \{x_1, x_2\}\) tiene diámetro \(d(x_1, x_2) < \delta\), por lo que está contenido en algún elemento del recubrimiento: existe \(x' \in X'\) tal que \(\{x_1, x_2\} \subseteq f^{-1}(B_{d'}(x', \varepsilon/2))\). Esto significa que \(f(x_1), f(x_2) \in B_{d'}(x', \varepsilon/2)\). Por la desigualdad triangular:
 \[
     d'(f(x_1), f(x_2)) \le d'(f(x_1), x') + d'(x', f(x_2)) < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
 \]
@@ -3739,7 +3737,7 @@ es una inmersión cerrada, es decir, la diagonal \(\Delta_X = \{(x, x) \mid x \i
 
 \begin{dem}
 \begin{itemize}
-    \item[(\(\Rightarrow\))] Supongamos que \(X\) es \(T_2\). Probemos que \(W := (X \times X) \setminus \Delta_X\) es abierto. Sea \((x, y) \in W\), luego \(x \ne y\). Como \(X\) es \(T_2\), existen abiertos disjuntos \(U_x, U_y \subseteq X\) tales que \(U_x \cap U_y = \emptyset\). Entonces \(U_x \times U_y\) es un abierto en la topología producto que contiene a \((x, y)\). Además:
+    \item[(\(\Rightarrow\))] Supongamos que \(X\) es \(T_2\). Probemos que \(W \coloneqq (X \times X) \setminus \Delta_X\) es abierto. Sea \((x, y) \in W\), luego \(x \ne y\). Como \(X\) es \(T_2\), existen abiertos disjuntos \(U_x, U_y \subseteq X\) tales que \(U_x \cap U_y = \emptyset\). Entonces \(U_x \times U_y\) es un abierto en la topología producto que contiene a \((x, y)\). Además:
     \[
         (U_x \times U_y) \cap \Delta_X = \{(z, z) \mid z \in U_x \cap U_y\} = \emptyset.
     \]
@@ -3764,7 +3762,7 @@ Sea \(K\) un espacio topológico compacto no vacío y \(f \colon K \to \mathbb{R
 \end{teo}
 
 \begin{dem}
-Por la Propiedad 1.3, la imagen \(f(K) \subseteq \mathbb{R}\) es compacta. Por el Teorema de Heine-Borel en \(\mathbb{R}\), \(f(K)\) es un subconjunto cerrado y acotado de \(\mathbb{R}\). Al ser acotado y no vacío, existen \(M := \sup f(K)\) y \(m := \inf f(K)\) en \(\mathbb{R}\). Por ser \(f(K)\) cerrado, se verifica que \(M \in f(K)\) y \(m \in f(K)\). Por tanto, existen puntos \(x_{\max}, x_{\min} \in K\) tales que:
+Por la Propiedad 1.3, la imagen \(f(K) \subseteq \mathbb{R}\) es compacta. Por el Teorema de Heine-Borel en \(\mathbb{R}\), \(f(K)\) es un subconjunto cerrado y acotado de \(\mathbb{R}\). Al ser acotado y no vacío, existen \(M \coloneqq \sup f(K)\) y \(m \coloneqq \inf f(K)\) en \(\mathbb{R}\). Por ser \(f(K)\) cerrado, se verifica que \(M \in f(K)\) y \(m \in f(K)\). Por tanto, existen puntos \(x_{\max}, x_{\min} \in K\) tales que:
 \[
     f(x_{\max}) = M = \max_{x \in K} f(x), \qquad f(x_{\min}) = m = \min_{x \in K} f(x).
 \]
