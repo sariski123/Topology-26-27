@@ -462,13 +462,13 @@ de forma que
     \pi_1^{-1}(U_1) = U_1 \times X_2 \subseteq X_1 \times X_2, \qquad \pi_2^{-1}(U_2) = X_1 \times U_2 \subseteq X_1 \times X_2.
 \]
 
-\noindent \textbf{Caso finito} ($I = \{1, \ldots, n\}$):
+\noindent \underline{Caso finito}. ($I = \{1, \ldots, n\}$):
 Si $U_1 \subseteq X_1, \ldots, U_n \subseteq X_n$, la topología coincide con la topología de las cajas
 \[
     \mc T_\pi = \mc T_{\text{cajas}} = \left\langle \{U_1 \times \cdots \times U_n \mid U_i \subseteq X_i \text{ abiertos}\} \right\rangle.
 \]
 
-Caso arbitrario: Para un índice $i_1 \in I$ cualquiera
+\noindent \underline{Caso arbitrario}. Para un índice $i_1 \in I$ cualquiera
 \[
     \pi_{i_1}^{-1}(U_{i_1}) = U_{i_1} \times \prod_{j \neq i_1} X_j = \left\{ (x_i)_{i \in I} \in \prod_{i \in I} X_i \;\middle|\; x_{i_1} \in U_{i_1} \right\}.
 \]
@@ -733,15 +733,15 @@ $\overline{d}$ es una métrica en $\mathbb{R}^n$ (se prueba). Es la \textbf{mét
 \end{ejer}
 
 \begin{defi}
-    Un espacio m\'etrico es $(X, d)$ donde $X$ es un conjunto y $d$ es una m\'etrica o distancia en $X$.
+    Un \textbf{espacio m\'etrico} es una pareja $(X, d)$ donde $X$ es un conjunto y $d$ es una m\'etrica o distancia en $X$.
 \end{defi}
 \begin{ejem}
-    Se tiene que $(X, \overline{d})$ es otro espacio m\'etrico. Es ditsitno porque si $d$ tiee la propiedad de que existen $x,y\in X$ con $d(x,y) > 1$ entonces $\overline{d} \neq d$ como aplicaciones. 
+    Se tiene que $(X, \overline{d})$ es otro espacio m\'etrico. Es ditsitno porque si $d$ tiene la propiedad de que existen $x,y\in X$ con $d(x,y) > 1$ entonces $\overline{d} \neq d$ como aplicaciones. 
 \end{ejem}
 \begin{ejem}
 Se tiene la distancia suma en $\mathbb{R}^n$ definida por
 \[  
-    d_{suma}(x, y) \coloneqq \sum_{i=1}^n |x_i - y_i|, \qquad x = (x_1, \ldots, x_n), y = (y_1, \ldots, y_n) \in \mathbb{R}^n
+    d_{suma}(x, y) := \sum_{i=1}^n |x_i - y_i|, \qquad x = (x_1, \ldots, x_n), y = (y_1, \ldots, y_n) \in \mathbb{R}^n
 \]
 y en general $d_{suma}\neq d(x,y)$.
 
@@ -757,9 +757,10 @@ Se tiene tambi\'en la m\'etrica del m\'aximo en $\mathbb{R}^n$ definida por
     \[
          d(x, x') = d'(f(x), f(x')) \qquad \forall \,  x, x' \in X.
     \]
-
-    Si $(X,d)$ es espacio m\'etrico, entonces toda isometr\'ia $f$ es inyectiva, pues si $f(x) = f(x')$ entonces $d(x, x') = d'(f(x), f(x')) = d'(f(x), f(x)) = 0 \implies x = x'$ por ser $d$ una m\'etrica. En cambio, si $(X,d)$ es pseudométrico, $f$ puede no ser inyectiva.
 \end{defi}
+\begin{obs}
+Si $(X,d)$ es espacio m\'etrico, entonces toda isometr\'ia $f$ es inyectiva, pues si $f(x) = f(x')$ entonces $d(x, x') = d'(f(x), f(x')) = d'(f(x), f(x)) = 0 \implies x = x'$ por ser $d$ una m\'etrica. En cambio, si $(X,d)$ es pseudométrico, $f$ puede no ser inyectiva.
+\end{obs}
 \begin{obs}
     En alguna literatura se define isometría como aplicación biyectiva que preserva la distancia, pero nosotros no suponemos que sea biyectiva.
 \end{obs}
@@ -770,7 +771,7 @@ Se tiene tambi\'en la m\'etrica del m\'aximo en $\mathbb{R}^n$ definida por
     \end{tikzcd}$$
 \end{prop}
 \begin{defi}
-    Si $A \subset (X,d)$ se dice que $A$ es acotado si $d|_{A \times A}: A\times A \longrightarrow \mathbb{R}$ es una aplicaici\'on acotada, es decir, si existe alg\'un $M > 0$ tal que $d(a, a') \le M$ para todo $a, a' \in A$.
+    Si $A \subset (X,d)$ se dice que $A$ es un \textbf{subconjunto acotado} si $d|_{A \times A}: A\times A \longrightarrow \mathbb{R}$ es una aplicaci\'on acotada, es decir, si existe alg\'un $M > 0$ tal que $d(a, a') \le M$ para todo $a, a' \in A$.
 \end{defi}
 \begin{ejem}
     $(\bb R, d)\supset \bb N$ no es acotado. $(\bb R, \overline{d}) \supset \bb N$ s\'i es acotado.
@@ -782,9 +783,7 @@ Se tiene tambi\'en la m\'etrica del m\'aximo en $\mathbb{R}^n$ definida por
 \section{Topolog\'ia asociada a una m\'etrica}
 Sea $(X, d)$ un espacio psuedom\'etrico
 \begin{defi}
-    Se define la topolog\'ia $\mc T_d$ asociada a la pseudom\'etrica $d$ en $X$ por entornos.
-    
-    Dado $x\in X$, una base de entornos de $x$ es $\{B_d(x, \varepsilon)\}_{\varepsilon > 0}$ donde 
+    Se define la \textbf{topolog\'ia $\mc T_d$ asociada a la pseudom\'etrica} $d$ en $X$ por entornos. Dado $x\in X$, una base de entornos de $x$ es $\{B_d(x, \varepsilon)\}_{\varepsilon > 0}$ donde 
     $$B_d(x, \varepsilon) \coloneqq \{y \in X : d(x, y) < \varepsilon\}$$
     que genera la topolog\'ia $\mc T_d$ en $X$.
 \end{defi}
@@ -793,7 +792,7 @@ As\'i, dado $(X,d)$ espacio pseudom\'etrico, hemos construido $(X, \mc T_d)$.
     Se comprueba que en $(X,\mc T_d)$ las bolas abiertas $B_d(x, \varepsilon)$ son abiertos en $\mc T_d$ y que $\{B_d(x, \varepsilon)\}_{\varepsilon > 0}$ es una base de entornos de $x$. Para probar que son abiertos, se ve que $\forall \, y \in B_d(x, \varepsilon) \, \exists \, \delta_y$ tal que $B_d(y, \delta_y) \subset B_d(x, \varepsilon)$, y es $\delta_y = \varepsilon - d(x, y) > 0$.
 \end{ejer}
 \begin{defi}
-    Se define $\overline{B}_d(x, \varepsilon) = \{y \in X : d(x, y) \le \varepsilon\}$ como la bola cerrada de radio $\varepsilon$ centrada en $x$.
+    Se define la \textbf{bola cerrada} de radio $\varepsilon$ centrada en $x$ como $\overline{B}_d(x, \varepsilon) = \{y \in X : d(x, y) \le \varepsilon\}$.
 \end{defi}
 \begin{ejer}
     Son cerrados. Comprobar que el complementario es abierto.
@@ -802,7 +801,7 @@ As\'i, dado $(X,d)$ espacio pseudom\'etrico, hemos construido $(X, \mc T_d)$.
     En general, $\overline{B}_d(x, \varepsilon)$ no es el cierre de $B_d(x, \varepsilon)$, aunque $B_d(x, \varepsilon) \subset \overline{B}_d(x, \varepsilon)$.
 \end{obs}
 \begin{defi}
-    Se define la esfera de radio $\varepsilon$ centrada en $x$ como
+    Se define la \textbf{esfera} de radio $\varepsilon$ centrada en $x$ como
     $$S_d(x, \varepsilon) = \{y \in X : d(x, y) = \varepsilon\}$$
 \end{defi}
 
@@ -812,7 +811,7 @@ De forma que $B_d(x, \varepsilon) \subset \overline{B}_d(x, \varepsilon)$ y $S_d
 
 Esto da lugar a la siguiente definici\'on
 \begin{defi}
-    Un espacio topol\'ogico se dice que es \textbf{(psuedo)metrizable} si existe una (psuedo)m\'etrica $d$ en $X$ tal que $\mc T_d = \mc T_X$.
+    Un espacio topol\'ogico se dice que es \textbf{(pseudo)metrizable} si existe una (pseudo)m\'etrica $d$ en $X$ tal que $\mc T_d = \mc T_X$.
 \end{defi}
 
 Esta asignaci\'on no es inyectiva, pues distintas pseudom\'etricas pueden generar la misma topolog\'ia.
@@ -829,7 +828,6 @@ Esta asignaci\'on no es inyectiva, pues distintas pseudom\'etricas pueden genera
     Cerrado y acotado es compacto en $(\bb R,d)$ pero no en otras m\'etricas.
 \end{ejem}
 
-\newpage
 En $\mathbb{R}^n$ tenemos las siguientes métricas:
 \begin{itemize}
     \item \textbf{Métrica euclídea usual:} 
@@ -884,7 +882,7 @@ Si demostramos que $\mathcal{T}_{d_{\text{sum}}} \subseteq \mathcal{T}_{d_{\text
 
 Sea $x \in \mathbb{R}^n$, $\varepsilon > 0$ y la bola $B_{d_{\text{sum}}}(x, \varepsilon)$. Queremos probar que $B_{d_{\text{sum}}}(x, \varepsilon)$ es entorno del punto $x$ en la topología $\mathcal{T}_{d_{\text{máx}}}$, es decir, existe $\delta > 0$ tal que $B_{d_{\text{máx}}}(x, \delta) \subseteq B_{d_{\text{sum}}}(x, \varepsilon)$.
 
-Notemos que:
+Notemos que
 \[
 d_{\text{máx}}(x,y) = \max_{i=1,\dots,n} \{|x_i - y_i|\} \ge |x_i - y_i|, \quad \forall i=1,\dots,n
 \]
@@ -894,7 +892,7 @@ n \cdot d_{\text{máx}}(x,y) \ge \sum_{i=1}^n |x_i - y_i| = d_{\text{sum}}(x,y)
 
 Tomando $\delta = \dfrac{\varepsilon}{n}$, se verifica:
 \[
-B_{d_{\text{máx}}}\left(x, \frac{\varepsilon}{n}\right) \subseteq B_{d_{\text{sum}}}(x, \varepsilon). \quad \text{(Q.E.D.)}
+B_{d_{\text{máx}}}\left(x, \frac{\varepsilon}{n}\right) \subseteq B_{d_{\text{sum}}}(x, \varepsilon). 
 \]
 \end{dem}
 
@@ -985,23 +983,37 @@ al probar la inclusión para elementos subbásicos, queda probada para toda la t
 \end{dem}
 
 
-\section{Definciones en espacios topol\'ogicos}
+\section{Definiciones en espacios topol\'ogicos}
 Sea $X$ un espacio topol\'ogico
 \begin{defi}
-   Se dice que $X$ es primero numerable o $AN1$ si cada punto $x \in X$ tiene una base numerable de entornos $\{U_n\}_{n \in \mathbb{N}}$. Adem\'as se pueden considerar entornos abiertos.
+   Se dice que $X$ es \textbf{primero numerable} o $1AN$ si cada punto $x \in X$ tiene una base numerable de entornos $\{U_n\}_{n \in \mathbb{N}}$. Adem\'as se pueden considerar entornos abiertos.
 \end{defi}
+\begin{ejem}
+Todo espacio métrico cumple el primer axioma de numerabilidad, pues las bolas abiertas 
+{$\displaystyle B_{n}=B(x,\nicefrac{1}{n})$} forman una base de entornos para el punto $ x\in X$. 
+
+La recta cofinita, $\displaystyle (\mathbb {R} ,\mathcal{T} _{cof})$, no es primero numerable.
+\end{ejem}
 \begin{defi}
-    Se dice que $X$ es segundo numerable o $AN2$ si tiene una base numerable $\{U_n\}_{n \in \mathbb{N}}$ de abiertos de la topología $\mathcal{T}_X$.
+    Se dice que $X$ es \textbf{segundo numerable} o $2AN$ si tiene una base numerable $\{U_n\}_{n \in \mathbb{N}}$ de abiertos de la topología $\mathcal{T}_X$.
 \end{defi}
+\begin{ejem}
+    El espacio de Sorgenfrey no es $2AN$, aunque sí es $1AN$.
+\end{ejem}
 \begin{defi}
-    Se dice que $X$ es separable si existe un subconjunto $A \subseteq X$ numerable y denso en $X$, es decir, $\overline{A} = X$.
+    Se dice que $X$ es \textbf{separable} si existe un subconjunto $A \subseteq X$ numerable y denso en $X$, es decir, $\overline{A} = X$.
 \end{defi}
+\begin{ejem}
+    El espacio euclídeo $\mathbb {R} ^{n}$ con su topología usual es $2AN$. Aunque la base formada por las bolas abiertas no es numerable, podemos encontrar una base que sí lo es: la formada por las bolas de radio racional y cuyo centro tenga coordenadas racionales.
+
+La táctica anterior puede repetirse en un espacio métrico separable (i.e. que contenga un subconjunto denso numerable $A$). Como base basta escoger de nuevo las bolas de radio racional centradas en $A$.
+\end{ejem}
 \begin{prop}
     Se verifica que 
     \begin{enumerate}
-        \item $AN2 \Rightarrow AN1$.
-        \item $AN1$ y separable $\Rightarrow \, AN2$.
-        \item Si $(X,d)$ es un espacio pseudom\'etrico, entonces es $AN1$.
+        \item $2AN \Rightarrow 1AN$.
+        \item $1AN$ y separable $\Rightarrow \, 2AN$.
+        \item Si $(X,d)$ es un espacio pseudom\'etrico, entonces es $1AN$.
     \end{enumerate} 
 \end{prop}
 \begin{dem}
@@ -1011,13 +1023,13 @@ Sea $X$ un espacio topol\'ogico
         \item $\{ B_d(x_n, \nicefrac{1}{m}) \}_{m \in \bb N}$ es una base numerable de abiertos de $X$.
     \end{enumerate}
 \end{dem}
-\begin{ejem} $(\bb R,d)$ es m\'etrico, luego $\bb R$ es $AN1$. Adem\'as, $\bb R$ es separable, pues $\bb Q$ es denso en $\bb R$ y numerable. Por lo tanto, $(\bb R, d)$ es $AN2$.
+\begin{ejem} $(\bb R,d)$ es m\'etrico, luego $\bb R$ es $1AN$. Adem\'as, $\bb R$ es separable, pues $\bb Q$ es denso en $\bb R$ y numerable. Por lo tanto, $(\bb R, d)$ es $2AN$.
 \end{ejem}
 \begin{teo}
-    [de Metrizaci\'on de Urysohn] Sea $X$ un espacio topol\'ogico regular, $T_0$ y $AN2$, entonces $X$ es metrizable.
+    [de Metrizaci\'on de Urysohn] Sea $X$ un espacio topol\'ogico regular, $T_0$ y $2AN$, entonces $X$ es metrizable.
 \end{teo}
 \begin{lem}
-Regular + $AN2$ $\Rightarrow$ Normal.
+Regular + $2AN$ $\Rightarrow$ Normal.
 \end{lem}
 \begin{dem}
     Sean $C,C'$ cerrados en $X$ disjuntos por regularidad. Sea $x\in C, \, x\nin C' \Rightarrow \exists \, U_x$ b\'asicos de la familia numerable tal que $\overline{U}_x \cap C = \emptyset$. Sean $C \subset U = \bigcup_{n \in \bb N} U_n$ abierto y $C' \subset U' = \bigcup_{m \in \bb N} U_m'$ abierto, pero no aseguramos que sea disjuntos. Entonces ``achicamos'' de forma que 
@@ -1051,13 +1063,13 @@ Sea $(X,\mc T_d)$ con $d$ pseudom\'etrica.
     3) $\iff$ 2) Si $x\neq y$, $d(x,y) = \varepsilon >0$, entonces $B_d(x, \nicefrac{\varepsilon}{2}) \cap B_d(y, \nicefrac{\varepsilon}{2}) = \emptyset$.
 \end{dem}
 
+\begin{ejer}[126,122] \,
 Varios de los conceptos topol\'ogicos en un espacio metrizable se pueden decir con sucesiones.
-\begin{propis}
 \begin{enumerate}[1)]
     \item Dado $A\subset X$, $\overline{A} = \{x\in X: \text{ existe una sucesi\'on } \{x_n\} \subset A \text{ tal que } \{x_n\} \to x \}$. 
     \item Por ejemplo, $f: X \longrightarrow (Y, \mc T)$ es continua $\iff$ para toda sucesi\'on $\{x_n\}$ de $X$ con $\{x_n\} \to x \in X$ se verifica que $\{f(x_n)\} \to f(x)$. 
 \end{enumerate}
-\end{propis}
+\end{ejer}
 \begin{dem}\, 
     \begin{enumerate}[1)]
        \item \begin{itemize}
@@ -1078,10 +1090,10 @@ Varios de los conceptos topol\'ogicos en un espacio metrizable se pueden decir c
     $$B_d(x, \delta) \subset f^{-1} (B_{d'}(f(x), \varepsilon))$$
 \end{obs}
 \begin{defi}
-$f: X \longrightarrow Y$ es \textbf{uniformemente continua} si es continua y $\delta(x, \varepsilon) = \delta(\varepsilon) \forall \, x\in X$, si y solo si, $\forall \varepsilon >0$ existe $\delta(\varepsilon)>0$ tal que $\forall \, x, x'\in X$ con $d(x,x')< \delta$ entonces $d'(f(x),f(x'))< \varepsilon$.  
+$f: X \longrightarrow Y$ es \textbf{uniformemente continua} si es continua y $\delta(x, \varepsilon) = \delta(\varepsilon) \, \forall \, x\in X$, si y solo si, $\forall \varepsilon >0$ existe $\delta(\varepsilon)>0$ tal que $\forall \, x, x'\in X$ con $d(x,x')< \delta$ entonces $d'(f(x),f(x'))< \varepsilon$.  
 \end{defi}
 \begin{prop}    
-Sea $A \subset (X, \mc T_d)$, $d_A(x) = d(A,x) = \inf\{d(x,a): a\in A\}$. Se tie que 
+Sea $A \subset (X, \mc T_d)$, $d_A(x) = d(A,x) = \inf\{d(x,a): a\in A\}$. Se tiene que 
 $$\overline{A} = \{x\in X : d(x,A) = d_A(x) = 0\}$$
 \end{prop}
 \begin{dem}
@@ -1104,15 +1116,15 @@ Sea $(X,\mc T_d)$ metrizable
 \end{dem}
 
 Sea $A\subset (X, \mc T_d )$
-\begin{prop}
+\begin{ejer}[126.c)]
 $d_A: X \longrightarrow \bb R$ es uniformemente continua. 
-\end{prop}
+\end{ejer}
 \begin{dem}
     Sea $\varepsilon >0$, buscamos $\delta > 0$ tal que si $d(x,y)< \delta \Rightarrow |d(x,H) - d(y, H)| < \varepsilon$. Podemos tomar $\varepsilon = \delta$ por ser $|d(x,A) - d(y,A)| \leq d(x,y)$, o equivalentemente,
     $$ \begin{cases}
         d(x,A) - d(y,A) \leq d(x,y)  \\ d(y,A) -  d(x,A)  \leq d(x,y) 
     \end{cases}$$
-    y por la simetr\'ia de $d$ basta con desmostrar una. 
+    y por la simetr\'ia de $d$ basta con demostrar una. 
 
     Sea $\varepsilon> 0$, como $d(x,A) = \inf\{ d(x,a) : a\in A\}$ existe $a_{\varepsilon}$ tal que $d(x, a_{\varepsilon}) \leq d(x, A) + \varepsilon$,
     $$d(y,a_{\varepsilon}) \leq d(x,y) + d(x, a_{\varepsilon}) \leq d(x,y) + d(x,a_{\varepsilon}) + \varepsilon $$
@@ -1121,9 +1133,9 @@ $d_A: X \longrightarrow \bb R$ es uniformemente continua.
 \begin{ejer}
     Si $(X, \mc T_d)$ es metrizable entonces $X$ es normal (completamente normal). 
 \end{ejer}
-\begin{defi}
-    $X$ es completamente normal si $A, B \subset X$ con $\overline{A}\cap B = \emptyset$ y $A \cap \overline{B} = \emptyset$ entonces $A$ y $B$ est\'an separados. 
-\end{defi}
+\begin{ejer}[120]
+Demuéstrese que todo espacio métrico es normal. Más concretamente, todo espacio métrico es completamente normal, es decir, si $A$ y $B$ son dos subconjuntos tales que $\overline{A}\cap B = \emptyset$ y $A \cap \overline{B} = \emptyset$, entonces $A$ y $B$ est\'an separados, i.e. existen abiertos disjuntos $U$ y $V$ tales que $A \subset U$ y $B \subset V$.
+\end{ejer}
 \begin{dem}
     $d_A$ y $d_B$ son continuas, y definimos 
     $$\bt X \rar{d_{A,B}} & \bb R \\[-5mm] x \rarmaps & d(x,A) - d(x,B) \et$$
