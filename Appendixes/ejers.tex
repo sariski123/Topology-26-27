@@ -4,47 +4,47 @@
     [1]
 \end{ejer}
 \begin{ejer}
-    [2] $X$ un conjunto, $A,B \subseteq X$ tal que $A,B \neq \emptyset$. Determinar si $\tau_1 = \{\emptyset, X, A\}$ y $\tau_2 = \{\emptyset, X, A, B\}$ son topolog\'ias. 
+    [2] $X$ un conjunto, $A,B \subseteq X$ tal que $A,B \neq \emptyset$. Determinar si $\mc T_1 = \{\emptyset, X, A\}$ y $\mc T_2 = \{\emptyset, X, A, B\}$ son topolog\'ias. 
 \end{ejer}
 \begin{sol}\, 
    \begin{enumerate}[a)]
-    \item $\tau_1$ s\'i es:
+    \item $\mc T_1$ s\'i es:
     \begin{itemize}
-        \item $X, \emptyset \in \tau_1$
-        \item $\emptyset\cap X = \emptyset \in \tau_1 \quad A\cap X = A \in \tau_1 \quad A \cap \emptyset \in \tau_1$
-        \item  $\emptyset\cup X =X \in \tau_1\quad A \cup \emptyset = A \in \tau_1 \quad A\cup X = X \in \tau_1 $
+        \item $X, \emptyset \in \mc T_1$
+        \item $\emptyset\cap X = \emptyset \in \mc T_1 \quad A\cap X = A \in \mc T_1 \quad A \cap \emptyset \in \mc T_1$
+        \item  $\emptyset\cup X =X \in \mc T_1\quad A \cup \emptyset = A \in \mc T_1 \quad A\cup X = X \in \mc T_1 $
     \end{itemize}
-    \item $\tau_2$ no es: $A\cap B \nin \tau_2$
+    \item $\mc T_2$ no es: $A\cap B \nin \mc T_2$
    \end{enumerate} 
-   $\tau_2$ ser\'ia topolog\'ia $\iff A\sqcup B = X \iff A\subseteq B \iff B\subseteq A \iff B = X-A$.
+   $\mc T_2$ ser\'ia topolog\'ia $\iff A\sqcup B = X \iff A\subseteq B \iff B\subseteq A \iff B = X-A$.
 \end{sol}
 \begin{ejer}
-    [3] Demuestra que $\tau = \{0,\bb N\} \cup \{A \subseteq \bb N | A \text{ contenga tan sólo números pares}\}$ determina una topología de $\bb N$. Determina si los siguientes subconjuntos son abiertos, cerrados, las dos cosas o ninguna de las dos:
+    [3] Demuestra que $\mc T = \{0,\bb N\} \cup \{A \subseteq \bb N | A \text{ contenga tan sólo números pares}\}$ determina una topología de $\bb N$. Determina si los siguientes subconjuntos son abiertos, cerrados, las dos cosas o ninguna de las dos:
     $$ A_1 = \{90,210,521 -1\}\qquad  A_2 = \{\text{números primos}\} \qquad  A_3 = \{\text{números impares}\}$$
 \end{ejer}
 \begin{sol}
     \begin{enumerate}[a)] \item
         \begin{itemize}
-        \item $\emptyset , \bb N \in \tau$
-        \item $A_1, \ldots, A_n \in \tau \Rightarrow A_1\cap \cdots \cap A_n \overset{?}{\in} \tau$. Como $A_1, \ldots, A_n$ s\'olo contienen pares, si $a\in A_1\cap \cdots \cap A_n \Rightarrow a \in A_1, \ldots, A_n \Rightarrow a$ es par $\Rightarrow A_1 \cap \cdots \cap A_n \in \tau (\text{\'o } \emptyset)$.
-        \item Si $\{A_i\} \in \tau \Rightarrow \bigcap_{i \in I} A_i \overset{?}{\in} \tau$. $A_i$ s\'olo tiene pares, si $m \in \bigcup_i A_i \Rightarrow \exists \, i_o \in I \, / \, m \in A_{i_o} \Rightarrow m $ es par. 
+        \item $\emptyset , \bb N \in \mc T$
+        \item $A_1, \ldots, A_n \in \mc T \Rightarrow A_1\cap \cdots \cap A_n \overset{?}{\in} \mc T$. Como $A_1, \ldots, A_n$ s\'olo contienen pares, si $a\in A_1\cap \cdots \cap A_n \Rightarrow a \in A_1, \ldots, A_n \Rightarrow a$ es par $\Rightarrow A_1 \cap \cdots \cap A_n \in \mc T (\text{\'o } \emptyset)$.
+        \item Si $\{A_i\} \in \mc T \Rightarrow \bigcap_{i \in I} A_i \overset{?}{\in} \mc T$. $A_i$ s\'olo tiene pares, si $m \in \bigcup_i A_i \Rightarrow \exists \, i_o \in I \, / \, m \in A_{i_o} \Rightarrow m $ es par. 
         \end{itemize}
         \item Tambi\'en es topolog\'ia por cerrados
-        $$\mc C_{\tau} = \{\emptyset, \bb N\} \cup \{B \subseteq \bb N \, | \, B \text{ contiene a todos los n\'umeros impares (y posiblemente pares)}\}$$
-        \item $A_1 = \{90,210,521 -1\}\in \tau $ pues son todos pares. No es cerrado pues no contiene a todos los impares.
+        $$\mc C_{\mc T} = \{\emptyset, \bb N\} \cup \{B \subseteq \bb N \, | \, B \text{ contiene a todos los n\'umeros impares (y posiblemente pares)}\}$$
+        \item $A_1 = \{90,210,521 -1\}\in \mc T $ pues son todos pares. No es cerrado pues no contiene a todos los impares.
         \item $A_2 = \{\text{números primos}\}$ no es abierto (no contiene solo pares) ni es cerrado (no contiene a todos los impares).
         \item $A_3 = \{\text{números impares}\}$ no es abierto `` \quad '' y s\'i es cerrado (contiene todos los impares).
-        \item No existen abiertos-cerrados (i.e. $\tau \cap \mc C_{\tau} =\emptyset$). S\'i existen no abiertos-no cerrados, por ejemplo $\{1\}$.
+        \item No existen abiertos-cerrados (i.e. $\mc T \cap \mc C_{\mc T} =\emptyset$). S\'i existen no abiertos-no cerrados, por ejemplo $\{1\}$.
         \item $A_1^{\circ} = A_1 \quad \overline{A_1} = A_1 \cup \{\text{n\'umeros impares}\} = A_1 \cup A_3$ \\
         $A_2^{\circ} = \{\text{pares}\} \cup \{\text{primos}\} = \{2\} \quad \overline{A_2} = A_2 \cup \{\text{impares}\} = A_2 \cup A_3 = A_3 \cup \{2\}$\\ 
         $A_3 ^{\circ}= \emptyset \quad \overline{A_3} = A_3$
     \end{enumerate}
 \end{sol}
 \begin{ejer}
-    [6] \textbf{Topología del punto incluido.} Sea $X$ un conjunto y $a \in X$ un punto. Estudia si la familia de subconjuntos $\tau_a$ formada por el vacío y los subconjuntos $U \subset X$ tales que $a \in U$ define una topología por abiertos de $X$.
+    [6] \textbf{Topología del punto incluido.} Sea $X$ un conjunto y $a \in X$ un punto. Estudia si la familia de subconjuntos $\mc T_a$ formada por el vacío y los subconjuntos $U \subset X$ tales que $a \in U$ define una topología por abiertos de $X$.
 \end{ejer}
 \begin{ejer}
-    [9] Sea $\tau$ la familia de subconjuntos de $\bb R$ consistente en $\bb R, \emptyset$ y los intervalos abiertos no acotados $A_q = (q, +\infty)$ donde $q\in \bb Q$. Demuestra que $\tau$ no es una tonología por abiertos de $\bb R$. 
+    [9] Sea $\mc T$ la familia de subconjuntos de $\bb R$ consistente en $\bb R, \emptyset$ y los intervalos abiertos no acotados $A_q = (q, +\infty)$ donde $q\in \bb Q$. Demuestra que $\mc T$ no es una tonología por abiertos de $\bb R$. 
 \end{ejer}
 \section{Seminario 2}
 \begin{ejer}
@@ -108,31 +108,31 @@
 
     Se concluye pues que la familia $\mathcal{B}$ cumple ambas condiciones y, por lo tanto, \textbf{sí es una base de abiertos} para una topología sobre $\mathbb{Z}$ (topología de la recta digital o de Khalimsky).
 \end{sol}\begin{ejer}
-    [28] Sean $\mathcal{B}_1$ y $\mathcal{B}_2$ dos bases de abiertos de $X$, que generan las topologías $\tau_1 = \langle \mathcal{B}_1 \rangle$ y $\tau_2 = \langle \mathcal{B}_2 \rangle$, respectivamente. Demuestra que $\tau_1$ es más fina que $\tau_2$ ($\tau_2 \subseteq \tau_1$) si y solo si para cada $x \in X$ y para cada $B_2 \in \mathcal{B}_2$ con $x \in B_2$, existe un básico $B_1 \in \mathcal{B}_1$ tal que $x \in B_1 \subseteq B_2$.
+    [28] Sean $\mathcal{B}_1$ y $\mathcal{B}_2$ dos bases de abiertos de $X$, que generan las topologías $\mc T_1 = \langle \mathcal{B}_1 \rangle$ y $\mc T_2 = \langle \mathcal{B}_2 \rangle$, respectivamente. Demuestra que $\mc T_1$ es más fina que $\mc T_2$ ($\mc T_2 \subseteq \mc T_1$) si y solo si para cada $x \in X$ y para cada $B_2 \in \mathcal{B}_2$ con $x \in B_2$, existe un básico $B_1 \in \mathcal{B}_1$ tal que $x \in B_1 \subseteq B_2$.
 \end{ejer}
 
 \begin{sol}
     Queremos demostrar la equivalencia lógica:
     \[
-        \tau_2 \subseteq \tau_1 \iff \left( \forall x \in X, \, \forall B_2 \in \mathcal{B}_2 \text{ con } x \in B_2, \, \exists B_1 \in \mathcal{B}_1 \text{ tal que } x \in B_1 \subseteq B_2 \right)
+        \mc T_2 \subseteq \mc T_1 \iff \left( \forall x \in X, \, \forall B_2 \in \mathcal{B}_2 \text{ con } x \in B_2, \, \exists B_1 \in \mathcal{B}_1 \text{ tal que } x \in B_1 \subseteq B_2 \right)
     \]
-    $\Rightarrow)$ Supongamos que $\tau_1$ es más fina que $\tau_2$, es decir, $\tau_2 \subseteq \tau_1$.
+    $\Rightarrow)$ Supongamos que $\mc T_1$ es más fina que $\mc T_2$, es decir, $\mc T_2 \subseteq \mc T_1$.
     
     Sea $B_2 \in \mathcal{B}_2$ cualquier elemento básico de la segunda base y sea $x \in B_2$.
     \begin{itemize}
-        \item Dado que $\mathcal{B}_2 \subseteq \tau_2$, se tiene que $B_2 \in \tau_2$.
-        \item Por hipótesis de inclusión de topologías ($\tau_2 \subseteq \tau_1$), se deduce que $B_2 \in \tau_1$.
-        \item Como $B_2$ es un conjunto abierto en la topología $\tau_1$ y $\mathcal{B}_1$ es una base de $\tau_1$, por definición de base de abiertos, para todo punto $x \in B_2$ existe un básico $B_1 \in \mathcal{B}_1$ tal que:
+        \item Dado que $\mathcal{B}_2 \subseteq \mc T_2$, se tiene que $B_2 \in \mc T_2$.
+        \item Por hipótesis de inclusión de topologías ($\mc T_2 \subseteq \mc T_1$), se deduce que $B_2 \in \mc T_1$.
+        \item Como $B_2$ es un conjunto abierto en la topología $\mc T_1$ y $\mathcal{B}_1$ es una base de $\mc T_1$, por definición de base de abiertos, para todo punto $x \in B_2$ existe un básico $B_1 \in \mathcal{B}_1$ tal que:
         \[
             x \in B_1 \subseteq B_2
         \]
     \end{itemize}
     Esto prueba la implicación hacia la derecha.
-    $\Leftarrow)$ Supongamos ahora que se cumple la condición local: para todo $x \in X$ y todo $B_2 \in \mathcal{B}_2$ con $x \in B_2$, existe $B_1 \in \mathcal{B}_1$ tal que $x \in B_1 \subseteq B_2$. Queremos probar que $\tau_2 \subseteq \tau_1$.
+    $\Leftarrow)$ Supongamos ahora que se cumple la condición local: para todo $x \in X$ y todo $B_2 \in \mathcal{B}_2$ con $x \in B_2$, existe $B_1 \in \mathcal{B}_1$ tal que $x \in B_1 \subseteq B_2$. Queremos probar que $\mc T_2 \subseteq \mc T_1$.
 
-    Sea $U \in \tau_2$ un abierto arbitrario.
+    Sea $U \in \mc T_2$ un abierto arbitrario.
     \begin{itemize}
-        \item Como $\mathcal{B}_2$ es base de $\tau_2$, el abierto $U$ se puede expresar como unión de elementos de $\mathcal{B}_2$, o equivalentemente, para cada $x \in U$ existe $B_{2, x} \in \mathcal{B}_2$ tal que $x \in B_{2, x} \subseteq U$.
+        \item Como $\mathcal{B}_2$ es base de $\mc T_2$, el abierto $U$ se puede expresar como unión de elementos de $\mathcal{B}_2$, o equivalentemente, para cada $x \in U$ existe $B_{2, x} \in \mathcal{B}_2$ tal que $x \in B_{2, x} \subseteq U$.
         \item Aplicando la hipótesis a cada punto $x \in U$ y su básico $B_{2, x} \in \mathcal{B}_2$, existe un elemento básico $B_{1, x} \in \mathcal{B}_1$ tal que:
         \[
             x \in B_{1, x} \subseteq B_{2, x} \subseteq U
@@ -142,10 +142,10 @@
         \[
             U = \bigcup_{x \in U} B_{1, x}
         \]
-        Como cada $B_{1, x} \in \mathcal{B}_1 \subseteq \tau_1$ y la unión arbitraria de abiertos de $\tau_1$ es abierta en $\tau_1$, concluimos que $U \in \tau_1$.
+        Como cada $B_{1, x} \in \mathcal{B}_1 \subseteq \mc T_1$ y la unión arbitraria de abiertos de $\mc T_1$ es abierta en $\mc T_1$, concluimos que $U \in \mc T_1$.
     \end{itemize}
 
-    Por tanto, todo abierto $U \in \tau_2$ pertenece a $\tau_1$, demostrando que $\tau_2 \subseteq \tau_1$ ($\tau_1$ es más fina que $\tau_2$).
+    Por tanto, todo abierto $U \in \mc T_2$ pertenece a $\mc T_1$, demostrando que $\mc T_2 \subseteq \mc T_1$ ($\mc T_1$ es más fina que $\mc T_2$).
 \end{sol}
 \begin{ejer}
     [38 d) e) f)] \,
@@ -448,7 +448,7 @@ $\delta(A) = A$.
 
 \section{Seminario 4}
 \begin{ejer}[66]
-En $(\mathbb{R}, \tau_{\{0\}} = \text{topología del } 0\text{-incluido})$:
+En $(\mathbb{R}, \mc T_{\{0\}} = \text{topología del } 0\text{-incluido})$:
 \[
     \lim_{n \to \infty} \left(1 + \frac{1}{n}\right) \ne 1. \text{}
 \]
@@ -486,7 +486,7 @@ $\{0, 1, 0, 1, \ldots\} \implies \forall U \text{ abierto con } 1 \in U \implies
 \bigskip
 
 \begin{ejer}[67]
-En $(\mathbb{R}, \tau_{\text{cof}})$:
+En $(\mathbb{R}, \mc T_{\text{cof}})$:
 
 $\{x_n = n\}_{n \in \mathbb{N}} = \mathbb{N} \subset \mathbb{R}$. ¿Tiene límite?
 
@@ -645,7 +645,7 @@ En ambos casos llegamos a una contradicción, por lo que $U \cap A$ debe ser inf
 \begin{sol}
     Caracterizamos primero los conjuntos cerrados de $(\mathbb{R}, \mathcal{T}_{\rightarrow})$, los cuales corresponden a los complementarios de los abiertos:
     \[
-        \mathcal{C}_{\tau} = \{(-\infty, a] : a \in \mathbb{R}\} \cup \{\emptyset, \mathbb{R}\}
+        \mathcal{C}_{\mc T} = \{(-\infty, a] : a \in \mathbb{R}\} \cup \{\emptyset, \mathbb{R}\}
     \]
 
     \noindent \textbf{1. Es un espacio $T_0$:}
@@ -680,7 +680,7 @@ En ambos casos llegamos a una contradicción, por lo que $U \cap A$ debe ser inf
     Por tanto, los únicos pares de cerrados disjuntos en $(\mathbb{R}, \mathcal{T}_{\rightarrow})$ involucran al conjunto vacío $\emptyset$. Dado que el conjunto vacío está contenido en el abierto $\emptyset$, el cual es disjunto con cualquier otro abierto, la condición de normalidad se satisface de forma trivial.
 \end{sol}
 \begin{ejer}
-    [88] Sea $X$ un conjunto y $\tau_{cf}$ la topología cofinita. Demuestra que $f: (X, \tau_{cf}) \longrightarrow (X, \tau_{cf})$ es continua si y sólo si para todo $x \in X$ se cumple $f^{-1}(x)$ es finito.
+    [88] Sea $X$ un conjunto y $\mc T_{cf}$ la topología cofinita. Demuestra que $f: (X, \mc T_{cf}) \longrightarrow (X, \mc T_{cf})$ es continua si y sólo si para todo $x \in X$ se cumple $f^{-1}(x)$ es finito.
 \end{ejer}
 \begin{sol}
     Como se ha demostrado en teor\'ia, $f$ es continua si y solo si $f^{-1}(C)$ es cerrado $\forall \, C \subset X$ cerrado. Los cerrados son m\'as c\'omodos de trabajar en la topolog\'ia cofinita, pues son finitos, as\'i que as\'i lo haremos. 
@@ -747,7 +747,7 @@ En ambos casos llegamos a una contradicción, por lo que $U \cap A$ debe ser inf
     \[
         \overline{A} \subset f^{-1}(\overline{f(A)})
     \]
-    Aplicando la función $f$ a ambos lados y usando la propiedad de que $f(f^{-1}(C)) \subset C$, obtenemos:
+    Aplicando $f$ a ambos lados y usando la propiedad de que $f(f^{-1}(C)) \subset C$, obtenemos:
     \[
         f(\overline{A}) \subset f\left(f^{-1}(\overline{f(A)})\right) \subset \overline{f(A)}
     \]
@@ -780,7 +780,7 @@ En ambos casos llegamos a una contradicción, por lo que $U \cap A$ debe ser inf
     
     Por definición de clausura, $\overline{A}$ es un conjunto cerrado en $X$. Dado que $f$ es cerrada, la imagen de cualquier cerrado es cerrada en $Y$, por lo que $f(\overline{A})$ es un conjunto cerrado en $Y$.
     
-    Además, como $A \subset \overline{A}$, aplicando la función tenemos que $f(A) \subset f(\overline{A})$.
+    Además, como $A \subset \overline{A}$, aplicando $f$ tenemos que $f(A) \subset f(\overline{A})$.
     
     Por definición, la clausura $\overline{f(A)}$ es la intersección de todos los conjuntos cerrados que contienen a $f(A)$ (es decir, el menor cerrado que contiene a $f(A)$). Como $f(\overline{A})$ es uno de esos conjuntos cerrados que contienen a $f(A)$, se deduce inmediatamente que:
     \[

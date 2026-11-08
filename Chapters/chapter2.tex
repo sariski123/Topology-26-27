@@ -239,7 +239,7 @@ $i_A$ es continua porque $i_A^*(\mc T_X) = \mc T_X\vert{}_A$.
 \end{propis}
 \begin{dem}\, 
     \begin{enumerate}
-        \item Sea $W\subset Z$ un abierto,veamos que $(g\circ f)^{-1}(W) \subset X$ es abierto. 
+        \item Sea $W\subset Z$ un abierto, veamos que $(g\circ f)^{-1}(W) \subset X$ es abierto. 
         
         Como $(g\circ f)^{-1}(W) = f^{-1}(g^{-1}(W))$ y $g$ es continua, $g^{-1}(W) \subset Y$ es abierto, de forma que como $f$ tambi\'en es continua y $V = g^{-1}(W) \subset Y$ es abierto, $f^{-1}(V) = f^{-1}(g^{-1}(W))$ es abierto en $X$, como quer\'iamos demostrar. 
         
@@ -318,7 +318,7 @@ Sea $(Y, \mc T_Y)$ un espacio topol\'ogico, $X$ un conjunto y $f:X \longrightarr
     Es la topolog\'ia menos fina que en $X$ que hace a la aplicaci\'on de conjuntos $f: X\longrightarrow Y$ continua
     $$f^*(\mc T_Y) \equiv \mc T_f = \{U \subset X : \text{ existe } V \text{ abierto en } Y \text{ tal que } f^*(V) = f^{-1}(V) = U\}$$
 \end{defi}\begin{ejem}
-    $X, \mc T_X$ espacio topol\'ogico y $A \subset X$ un subconjunto, para $i_A: A \hookrightarrow X$ se tiene que 
+    Sea $(X, \mc T_X)$ espacio topol\'ogico y $A \subset X$ un subconjunto, para $i_A: A \hookrightarrow X$ se tiene que 
     $$\mc T_{i_A} = i_A^*(\mc T_X) = \mc T_X\vert{}_A$$
 \end{ejem}
 
@@ -775,10 +775,10 @@ Si $(X,d)$ es espacio m\'etrico, entonces toda isometr\'ia $f$ es inyectiva, pue
 \begin{ejem}
     $(\bb R, d)\supset \bb N$ no es acotado. $(\bb R, \overline{d}) \supset \bb N$ s\'i es acotado.
 \end{ejem}
-\begin{ejem}
-    Si $A \subset (X,d)$ espacio m\'etrico se puede definir la distancia de un punto $x \in X$ a un conjunto $A$ como
+\begin{defi}
+    Si $A \subset (X,d)$ espacio m\'etrico se define la distancia de un punto $x \in X$ a un conjunto $A$ como
     $$\bt d_A : X \rar & \bb R \\[-5mm] x \rarmaps & d_A(x) &[-11mm] \coloneqq  \inf \{d(x, a) :  a \in A \} \et$$
-\end{ejem}
+\end{defi}
 \section{Topolog\'ia asociada a una m\'etrica}
 Sea $(X, d)$ un espacio pseudom\'etrico
 \begin{defi}
@@ -1046,7 +1046,7 @@ Sea $(X,\mc T_d)$ con $d$ pseudom\'etrica.
 \begin{propi}
     $d(x,y)=0 \iff \overline{\{x\}} = \overline{\{y\}} \iff \begin{cases}
         x\in \overline{\{y\}} \\ \text{ y } \\ y \in \overline{\{y\}}
-    \end{cases} \iff B_d(x,\varepsilon) \ni \forall \varepsilon >0, d(x,y) < \varepsilon$ \textcolor{red}{Terminar}. 
+    \end{cases} \iff B_d(x,\varepsilon) \ni y \forall \varepsilon >0, d(x,y) < \varepsilon$ \textcolor{red}{Terminar}. 
 \end{propi}
 \begin{ejer}[123]
     La siguientes condiciones son equivalentes:
@@ -1061,46 +1061,24 @@ Sea $(X,\mc T_d)$ con $d$ pseudom\'etrica.
 
     3) $\iff$ 2) Si $x\neq y$, $d(x,y) = \varepsilon >0$, entonces $B_d(x, \nicefrac{\varepsilon}{2}) \cap B_d(y, \nicefrac{\varepsilon}{2}) = \emptyset$.
 \end{dem}
-
-\begin{ejer}[126,122] \,
 Varios de los conceptos topol\'ogicos en un espacio metrizable se pueden decir con sucesiones.
-\begin{enumerate}[1)]
-    \item Dado $A\subset X$, $\overline{A} = \{x\in X: \text{ existe una sucesi\'on } \{x_n\} \subset A \text{ tal que } \{x_n\} \to x \}$. 
-    \item Por ejemplo, $f: X \longrightarrow (Y, \mc T)$ es continua $\iff$ para toda sucesi\'on $\{x_n\}$ de $X$ con $\{x_n\} \to x \in X$ se verifica que $\{f(x_n)\} \to f(x)$. 
-\end{enumerate}
+\begin{ejer}
+[122] $f: X \longrightarrow (Y, \mc T)$ es continua $\iff$ para toda sucesi\'on $\{x_n\}$ de $X$ con $\{x_n\} \to x \in X$ se verifica que $\{f(x_n)\} \to f(x)$. 
 \end{ejer}
-\begin{dem}\, 
-    \begin{enumerate}[1)]
-       \item \begin{itemize}
-        \item[$\boxed{\supseteq}$] Se verifica en general. Si $\{x_n\} \to x \Rightarrow x\in \overline{\{x_n\}}_{n \in \bb N} \subset \overline{A}$.
-        \item[$\boxed{\subseteq}$] $x\in \overline{A}$. Para cada $n\in \bb N$, $B_d(x,\nicefrac{1}{n}) \cap A \neq \emptyset$. Sea $x\in B_d(x,\nicefrac{1}{n}) \cap A $, $\{x_n\} \subset A$ y se comprueba que $\{x_n\} \to x$ por como se comportan las bolas $B_d(x\nicefrac{1}{n})$. 
-        \end{itemize}
-        \item \begin{itemize}
+\begin{sol}
+    \begin{itemize}
         \item[$\Rightarrow)$] Se verifica en general, para todo espacio topol\'ogico.
         \item[$\Leftarrow)$] Sea $C \subset Y$ cerrado, veamos que $f^{-1}(C) \subset X$ es cerrado. $f^{-1}(C)$ es cerrado $\iff f^{-1}(C) = \overline{f^{-1}(C)} \iff \forall \, x\in \overline{f^{-1}(C)} \Rightarrow x\in f^{-1}(C)$. Si $x\in \overline{f^{-1}(C)} $ entonces $\exists \{x_n \} \subset f^{-1}(C)$ tal que $\{x_n\} \to x$ por 1). Por las hip\'otesis, $\{f(x_n)\} \to f(x)$. Pero $\{f(x_n)\} \subset C$ por lo que $f(x) \in \overline{C} = C \Rightarrow x \in f^{-1}(C)$. 
         \end{itemize}
-    \end{enumerate}
-\end{dem}
+\end{sol}
 \begin{obs}
-    Si $(X,\mc T_d)$ e $(Y, \mc T_{d'})$, entonces $f:X \longrightarrow Y$ es continua $\iff$ para cada $x\in X$ y $\varepsilon >0$ existe un $\delta(x, \varepsilon) \in \bb R^+$ tal que para todo $x' \in X$ con $d(x,x') < \delta$ entonces $d'(f(x),f(x'))< \varepsilon$. 
+    Si $(X,\mc T_d)$ e $(Y, \mc T_{d'})$, entonces $f:X \longrightarrow Y$ es continua $\iff$ para cada $x\in X$ y $\varepsilon >0$ existe un $\delta(x, \varepsilon) \in \bb R^+$ tal que para todo $x' \in X$ con $d(x,x') < \delta \Rightarrow d'(f(x),f(x'))< \varepsilon \iff B_d(x, \delta) \subset f^{-1} (B_{d'}(f(x), \varepsilon))$. 
     (Se fija $x$ para hacerlo por entornos)
-
-    Esta definici\'on viene porque 
-    $$B_d(x, \delta) \subset f^{-1} (B_{d'}(f(x), \varepsilon))$$
 \end{obs}
 \begin{defi}
 $f: X \longrightarrow Y$ es \textbf{uniformemente continua} si es continua y $\delta(x, \varepsilon) = \delta(\varepsilon) \, \forall \, x\in X$, si y solo si, $\forall \varepsilon >0$ existe $\delta(\varepsilon)>0$ tal que $\forall \, x, x'\in X$ con $d(x,x')< \delta$ entonces $d'(f(x),f(x'))< \varepsilon$.  
 \end{defi}
-\begin{prop}    
-Sea $A \subset (X, \mc T_d)$, $d_A(x) = d(A,x) = \inf\{d(x,a): a\in A\}$. Se tiene que 
-$$\overline{A} = \{x\in X : d(x,A) = d_A(x) = 0\}$$
-\end{prop}
-\begin{dem}
-    \begin{itemize}
-        \item[$\boxed{\supseteq}$] Sea $x\in \{\dots\}$, $d(x,A)=0$, por ser el \'infimo de las distancias, esto es que $\forall \, \varepsilon >0$ existe $a_{\varepsilon} \in A$ tal que $d(x,a_{\varepsilon})< \varepsilon \Rightarrow a_{\varepsilon} \in B_d(x, \varepsilon) \cap A \neq \emptyset \Rightarrow x\in \overline{A}$. 
-        \item[$\boxed{\subseteq}$] \textcolor{red}{Ejercicio}
-        \end{itemize}
-\end{dem}
+
 
 Sea $(X,\mc T_d)$ metrizable
 \begin{prop}
@@ -1113,22 +1091,40 @@ Sea $(X,\mc T_d)$ metrizable
     $$f^{-1}(B_{d_1}(d(x,y), \varepsilon)) \supset B_{d}(y, \nicefrac{\varepsilon}{2}) \times B_{d}(x, \nicefrac{\varepsilon}{2}) \ni (x,y), (x',y')$$
     por ser los abiertos b\'asicos productos de bolas, y as\'i $|d(x,y) - d(x',y')|< \varepsilon$.
 \end{dem}
-
-Sea $A\subset (X, \mc T_d )$
-\begin{ejer}[126.c)]
-$d_A: X \longrightarrow \bb R$ es uniformemente continua. 
+\begin{ejer}
+    $\{x_n\} \to x \iff \displaystyle \lim_{n\to \infty} d(x,x_n)=0$
 \end{ejer}
-\begin{dem}
-    Sea $\varepsilon >0$, buscamos $\delta > 0$ tal que si $d(x,y)< \delta \Rightarrow |d(x,H) - d(y, H)| < \varepsilon$. Podemos tomar $\varepsilon = \delta$ por ser $|d(x,A) - d(y,A)| \leq d(x,y)$, o equivalentemente,
-    $$ \begin{cases}
-        d(x,A) - d(y,A) \leq d(x,y)  \\ d(y,A) -  d(x,A)  \leq d(x,y) 
-    \end{cases}$$
+\begin{ejer}
+    [126] Sea $A\subseteq X$ un subconjunto de un espacio m\'etrico $(X,d)$. Probar:
+    \begin{enumerate}[a)]
+        \item $x \in \overline{A} \iff $ existe una sucesi\'on $\{x_n\}_{n\in \bb N} \subseteq A$ tal que $\lim_{n\to \infty} d(x,x_n)=0$
+        \item $\overline{A} = \{x\in X: \text{ existe una sucesi\'on } \{x_n\} \subset A \text{ tal que } \{x_n\} \to x \}$. 
+        \item $\overline{A} = \{x\in X : d(x,A) = 0\}$ sabiendo que $d_A(x) = d(A,x) = \inf\{d(x,a): a\in A\}$
+        \item La aplicaci\'on $d_A : X \to \bb R$ definida por $d_A(x) = d(x,A)$ es una aplicaci\'on (uniformemente) continua.
+    \end{enumerate}
+\end{ejer}
+\begin{sol} \,
+    \begin{enumerate}[a)]
+        \item \textcolor{red}{Equivalencia con b)}
+        \item \begin{itemize}
+        \item[$\boxed{\supseteq}$] Se verifica en general. Si $\{x_n\} \to x \Rightarrow x\in \overline{\{x_n\}}_{n \in \bb N} \subset \overline{A}$.
+        \item[$\boxed{\subseteq}$] $x\in \overline{A}$. Para cada $n\in \bb N$, $B_d(x,\nicefrac{1}{n}) \cap A \neq \emptyset$. Sea $x\in B_d(x,\nicefrac{1}{n}) \cap A $, $\{x_n\} \subset A$ y se comprueba que $\{x_n\} \to x$ por como se comportan las bolas $B_d(x,\nicefrac{1}{n})$. 
+        \end{itemize}
+        \item \begin{itemize}
+        \item[$\boxed{\supseteq}$] Sea $x\in \{\dots\}$, $d(x,A)=0$, por ser el \'infimo de las distancias, esto es que $\forall \, \varepsilon >0$ existe $a_{\varepsilon} \in A$ tal que $d(x,a_{\varepsilon})< \varepsilon \Rightarrow a_{\varepsilon} \in B_d(x, \varepsilon) \cap A \neq \emptyset \Rightarrow x\in \overline{A}$. 
+        \item[$\boxed{\subseteq}$] \textcolor{red}{Ejercicio}
+        \end{itemize}
+        Sea $\varepsilon >0$, buscamos $\delta > 0$ tal que si $d(x,y)< \delta \Rightarrow |d(x,H) - d(y, H)| < \varepsilon$. Podemos tomar $\varepsilon = \delta$ por ser $|d(x,A) - d(y,A)| \leq d(x,y)$, o equivalentemente,
+        $$ \begin{cases}
+            d(x,A) - d(y,A) \leq d(x,y)  \\ d(y,A) -  d(x,A)  \leq d(x,y) 
+        \end{cases}$$
     y por la simetr\'ia de $d$ basta con demostrar una. 
 
     Sea $\varepsilon> 0$, como $d(x,A) = \inf\{ d(x,a) : a\in A\}$ existe $a_{\varepsilon}$ tal que $d(x, a_{\varepsilon}) \leq d(x, A) + \varepsilon$,
     $$d(y,a_{\varepsilon}) \leq d(x,y) + d(x, a_{\varepsilon}) \leq d(x,y) + d(x,a_{\varepsilon}) + \varepsilon $$
     $$ \Rightarrow d(y,A) - d(x,A) \leq d(x,y) +\varepsilon$$
-\end{dem}
+    \end{enumerate}
+\end{sol}
 \begin{ejer}
     Si $(X, \mc T_d)$ es metrizable entonces $X$ es normal (completamente normal). 
 \end{ejer}
