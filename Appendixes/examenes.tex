@@ -158,7 +158,7 @@
 % ==============================================================================
 \section{30 de enero de 2024}
 
-\subsection{Teoría}
+\subsection*{TEORÍA}
 
 \begin{enumerate}
     \item Sea $(X, d)$ un espacio métrico.
@@ -173,7 +173,7 @@
     \hfill \textbf{(3 puntos)}
 \end{enumerate}
 
-\subsection{Problemas}
+\subsection*{PROBLEMAS}
 
 \begin{enumerate}
     \item Sea $X$ un espacio topológico separado y $U \subset X$ un abierto no vacío.
@@ -198,7 +198,7 @@
 % ==============================================================================
 \section{11 de enero de 2024}
 
-\subsection{Teoría}
+\subsection*{TEORÍA}
 
 \begin{enumerate}
     \item Sea $(X, \mathcal{T})$ un espacio topológico siendo $\mathcal{T}$ su topología por abiertos. Definir los entornos de un punto de $X$. Enunciar y demostrar las condiciones necesarias y suficientes para que unas familias de subconjuntos $\{\mathcal{E}'(x) \subset \mathcal{P}(X)\}_{x \in X}$ sean las familias de entornos de una topología en $X$. Demostrar que esta topología es única.
@@ -211,7 +211,7 @@
     \hfill \textbf{(1 punto)}
 \end{enumerate}
 
-\subsection{Problemas}
+\subsection*{PROBLEMAS}
 
 \begin{enumerate}
     \item Sea $X$ un espacio topológico y $R$ la relación de equivalencia definida por
@@ -264,4 +264,186 @@
         \item Probar que la aplicación $f : ((1, 2), \mathcal{T}_d) \to (X, \mathcal{T})$ dada por $f(x) = x - 1$ es continua.
     \end{enumerate}
     \hfill \textbf{(4 puntos)}
+\end{enumerate}
+
+% ==============================================================================
+\section{10 de enero de 2023}
+% ==============================================================================
+
+\subsection*{TEORÍA}
+\begin{enumerate}
+    \item Definir espacio topológico separado. Probar que $X$ es separado si y sólo si la diagonal de $X \times X$ es un cerrado. \hfill (3 puntos)
+    \item Sea $(X, d)$ un espacio métrico. Definir la completación $\widehat{X}$ de $X$ y probar que $\widehat{X}$ es un espacio métrico completo (probándose los resultados previos que se requieran). \hfill (5 puntos)
+    \item Sea $n > 0$. Probar que el espacio proyectivo real $\mathbb{P}^n(\mathbb{R})$ es compacto. \hfill (2 puntos)
+\end{enumerate}
+
+\subsection*{PROBLEMAS}
+\begin{enumerate}
+    \item Sea $f: X \to Y$ una aplicación entre dos espacios topológicos. Probar que:
+    \begin{enumerate}[label=(\alph*)]
+        \item $f$ es continua si y sólo si $f^{-1}(A^\circ) \subseteq (f^{-1}(A))^\circ$ para todo $A \subseteq Y$. \hfill (1 punto)
+        \item $f$ es cerrada si y sólo si $\overline{f(A)} \subseteq f(\overline{A})$ para todo $A \subseteq X$. \hfill (1 punto)
+        \item Si $X$ es compacto y $Y$ es separado ($T_2$), entonces $f$ es un homeomorfismo si y sólo si $f$ es continua y biyectiva. \hfill (1 punto)
+        \item Si $X$ y $Y$ tienen la topología cofinita, entonces $f$ es un homeomorfismo si y sólo si $f$ es biyectiva. \hfill (1 punto)
+    \end{enumerate}
+    
+    \item Sea $(\mathbb{R}, \mathcal{T}_{\inf})$ donde $\mathcal{T}_{\inf}$ es la topología generada por la base de abiertos 
+    \[
+    \mathcal{B} = \{[a, b) \mid a, b \in \mathbb{R}, a < b\}.
+    \]
+    \begin{enumerate}[label=(\alph*)]
+        \item Decidir (de manera justificada) si $(\mathbb{R}, \mathcal{T}_{\inf})$ es conexo o no. Calcula sus componentes conexas. ¿Es totalmente desconexo? \hfill (3 puntos)
+        \item Estudiar la compacidad y compacidad local de $(\mathbb{R}, \mathcal{T}_{\inf})$. \hfill (2 puntos)
+        \item Sea $\mathcal{T}_u$ la topología usual de $\mathbb{R}$. ¿Es cierto que las únicas aplicaciones $f: (\mathbb{R}, \mathcal{T}_u) \to (\mathbb{R}, \mathcal{T}_{\inf})$ continuas son las constantes? \hfill (1 punto)
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+
+% ==============================================================================
+\section{30 de enero de 2023}
+% ==============================================================================
+
+\subsection*{TEORÍA}
+\begin{enumerate}
+    \item Definir el grupo fundamental de un espacio topológico $X$ en un punto $p$. Definir cuándo dos espacios topológicos $X, Y$, con puntos prefijados $x_0 \in X, y_0 \in Y$, son homótopos. Demostrar que si $(X, x_0)$ y $(Y, y_0)$ son homótopos, entonces sus grupos fundamentales son isomorfos. \hfill (10 puntos)
+    \item Definir espacio topológico compacto. Dados dos espacios topológicos $X, Y$, probar que $X \times Y$ es compacto si y sólo si $X$ y $Y$ son compactos. \hfill (10 puntos)
+\end{enumerate}
+
+\subsection*{PROBLEMAS}
+\begin{enumerate}
+    \item Sea $(X, \mathcal{T})$ un espacio topológico y $A \subseteq X$. Probar que $A^\circ \neq \emptyset$ si y sólo si $A \cap D \neq \emptyset$ para todo conjunto denso $D \subseteq X$. \hfill (10 puntos)
+    \item Sea $\mathbb{R}$ con la topología usual y sean $\mathbb{Q}$ y $\mathbb{N}$ con las topologías inducidas.
+    \begin{enumerate}[label=(\alph*)]
+        \item ¿Es cierto que las únicas aplicaciones $f: \mathbb{R} \to \mathbb{Q}$ continuas son las constantes? \hfill (5 puntos)
+        \item Sea $\mathbb{N}$ con la topología inducida por la usual de $\mathbb{R}$. Decidir si la aplicación $f: \mathbb{Q} \to \mathbb{N}$ definida por $f(m/n) = n$, siendo $m/n$ irreducible, es continua o no. \hfill (5 puntos)
+    \end{enumerate}
+    \item Sean $(X, \mathcal{T})$ un espacio topológico, $\{x_n\}_{n \in \mathbb{N}}$ una sucesión en $X$ y $x \in X$ un límite de dicha sucesión. Probar que $K = \{x_n\}_{n \in \mathbb{N}} \cup \{x\}$ es compacto. \hfill (10 puntos)
+\end{enumerate}
+
+\newpage
+
+% ==============================================================================
+\section{8 de noviembre de 2022}
+% ==============================================================================
+
+\subsection*{TEORÍA (Verdadero o Falso)}
+\textit{Contestar verdadero o falso. Cada pregunta acertada vale 1 punto. Cada pregunta mal contestada resta 1 punto. Cada pregunta sin contestar vale 0 puntos.}
+
+\begin{enumerate}
+    \item Sea $X$ un espacio topológico finito. Si $X$ es $T_1$, entonces $X$ tiene la topología discreta.
+    \item Sean $\mathcal{B}$ y $\mathcal{B}'$ bases para las topologías $\mathcal{T}$ y $\mathcal{T}'$, respectivamente, sobre $X$. Si $\mathcal{T}'$ es más fina que $\mathcal{T}$, entonces para cada $x \in X$ y cada $B \in \mathcal{B}$ con $x \in B$, existe algún $B' \in \mathcal{B}'$ tal que $x \in B' \subseteq B$.
+    \item Sea $X$ un espacio topológico y $A \subseteq X$ un subconjunto. Si $A$ no tiene puntos aislados, entonces su cierre, $\overline{A}$, tampoco.
+    \item Sean $X$ e $Y$ dos espacios topológicos y $X \times Y$ el espacio topológico producto. Todo cerrado de $X \times Y$ es intersección de cerrados de la forma $A \times B$, con $A$ cerrado de $X$ y $B$ cerrado de $Y$.
+    \item Sea $f: X \to Y$ una aplicación continua y epiyectiva entre espacios topológicos. Si la topología de $X$ es la topología inicial de $f$, entonces $Y$ tiene la topología final de $f$.
+    \item Sea $X$ un espacio topológico, con una topología $\mathcal{T}$. Sea $d$ una distancia en $X$ y sea $\mathcal{T}_d$ la topología asociada a dicha distancia. Si para todo $x \in X$ y todo $r > 0$ la bola $B(x,r)$ es un abierto de $\mathcal{T}$, entonces $\mathcal{T} = \mathcal{T}_d$.
+    \item Sea $X$ un espacio topológico y sea $l: [0, 1] \to X$ un lazo con origen y final en $p \in X$. Si $l$ es homótopo al lazo constante $p$, entonces $l$ y $l^{-1}$ son homótopos.
+    \item Sea $Y$ un espacio topológico y $y \in Y$ un punto denso. Para toda aplicación $f: X \to Y$ continua su gráfica $\Gamma_f = \{(x, f(x)) \mid x \in X\}$ es un cerrado de $X \times Y$.
+    \item Sea $f: X \to Y$ una aplicación continua. Si $X$ es conexo e $Y$ es discreto, entonces $f$ es constante.
+    \item Sean $\mathbb{N}$ y $\mathbb{Q}$, con la topología inducida por la usual de $\mathbb{R}$, entonces no existen aplicaciones biyectivas $\mathbb{Q} \to \mathbb{N}$ continuas.
+\end{enumerate}
+
+\subsection*{PROBLEMAS}
+\begin{enumerate}
+    \item En $\mathbb{R}$ se considera el subconjunto $A = [0, 2) \cup (2, 4) \cup \{6\}$ con la topología $\mathcal{T}_A$ inducida por la topología usual de $\mathbb{R}$.
+    \begin{enumerate}[label=(\alph*)]
+        \item Decidir si $\{6\}$ es abierto y si es cerrado en $(A, \mathcal{T}_A)$.
+        \item Decidir si $(2, 4)$ es abierto y si es cerrado en $(A, \mathcal{T}_A)$.
+        \item Calcular los puntos de adherencia de $[0, 2)$ en $(A, \mathcal{T}_A)$.
+        \item Decidir si $[0, 1]$ es un entorno de $\{0\}$ en $(A, \mathcal{T}_A)$.
+    \end{enumerate}
+    \item Sea $f: X \to Y$ una aplicación biyectiva. Probar que $f$ es un homeomorfismo si y sólo si la topología de $Y$ es la topología final de la aplicación $f$.
+\end{enumerate}
+
+\newpage
+
+% ==============================================================================
+\section{2 de febrero de 2022}
+% ==============================================================================
+
+\subsection*{PROBLEMAS}
+\begin{enumerate}
+    \item Sean $\mathcal{T}$ la topología en $\mathbb{R} \setminus \{0\}$ inducida por la topología usual de $\mathbb{R}$, $\mathcal{T}_{\inf}$ la topología del límite inferior (o de Sorgenfrey) en $\mathbb{R}$ y $f: (\mathbb{R} \setminus \{0\}, \mathcal{T}) \to (\mathbb{R}, \mathcal{T}_{\inf})$ la aplicación definida por $f(x) = 1/x$.
+    \begin{enumerate}[label=(\alph*)]
+        \item ¿Es $f$ continua? \hfill (8 puntos)
+        \item Sea $\beta = \{f^{-1}([a, b)) \text{ con } a < b \text{ números reales}\}$. ¿Es $\beta$ una base para una topología en $\mathbb{R} \setminus \{0\}$? Si $\mathcal{T}_\beta$ es la topología definida por $\beta$ y $g: (\mathbb{R} \setminus \{0\}, \mathcal{T}_\beta) \to (\mathbb{R}, \mathcal{T}_{\inf})$ la aplicación definida por $g(x) = \frac{1}{x}$, deducir que sobre $\text{Im}\,g$ coinciden la topología final de $g$ y la inducida por $\mathcal{T}_{\inf}$. \hfill (8 puntos)
+        \item Calcular el cierre y el interior de $A = \{1/n \mid n \in \mathbb{N}\} \subset (\mathbb{R}, \mathcal{T}_{\inf})$. (Indicación: $\mathbb{R}$ es arquimediano, esto es, para todo $z \in \mathbb{R}^+$ existe $n \in \mathbb{N}$ tal que $0 < 1/n < z$). \hfill (8 puntos)
+        \item ¿Es $(\mathbb{R} \setminus \{0\}, \mathcal{T}_\beta)$ conexo? Calcular sus componentes conexas. \hfill (8 puntos)
+    \end{enumerate}
+    
+    \item Sea $X$ un espacio topológico compacto e $Y$ un espacio topológico $T_2$.
+    \begin{enumerate}[label=(\alph*)]
+        \item Probar que para toda aplicación continua y epiyectiva $f: X \to Y$ la topología final de $f$ coincide con la de $Y$. \hfill (8 puntos)
+        \item Si $\{K_n\}_{n \in \mathbb{N}}$ es una familia decreciente de subconjuntos compactos de $Y$ (es decir, $K_{i+1} \subseteq K_i$, para todo $i \in \mathbb{N}$), probar que $\displaystyle \bigcap_{n \in \mathbb{N}} K_n \neq \emptyset$. \hfill (8 puntos)
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+
+% ==============================================================================
+\section{13 de enero de 2022}
+% ==============================================================================
+
+\subsection*{TEORÍA}
+\begin{enumerate}
+    \item Definir espacio compacto y espacio compacto por sucesiones. Si $X$ es un espacio métrico, probar que $X$ es compacto si y sólo si es compacto por sucesiones (pruébense los resultados previos que se requieran). \hfill (14 puntos)
+    \item Definir sucesión de Cauchy en un espacio métrico. Definir espacio métrico completo. Dado un espacio métrico $X$, construir su completación y probar que éste es un espacio métrico y completo (pruébense los resultados previos que se requieran). \hfill (14 puntos)
+\end{enumerate}
+
+\subsection*{PROBLEMAS}
+\begin{enumerate}
+    \item Sea $X$ un conjunto, con infinitos elementos, dotado de la topología cofinita 
+    \[
+    \mathcal{T}_{CF} = \{\emptyset\} \cup \{U \subseteq X \mid X \setminus U \text{ tiene un número finito de elementos}\}.
+    \]
+    \begin{enumerate}[label=(\alph*)]
+        \item Sea $Y \subseteq X$ un subconjunto de $X$ y $y \in Y$. Probar que $Y$ es un entorno de $y$ si y sólo si $X \setminus Y$ tiene un número finito de elementos. \hfill (3 puntos)
+        \item Probar que una aplicación $f: (X, \mathcal{T}_{CF}) \to (X, \mathcal{T}_{CF})$ es un homeomorfismo si y sólo si es biyectiva. \hfill (6 puntos)
+        \item ¿Es $(X, \mathcal{T}_{CF})$ compacto? ¿Y localmente compacto? Justificar las respuestas. \hfill (6 puntos)
+    \end{enumerate}
+
+    \item Sea $(X, \tau)$ un espacio topológico compacto.
+    \begin{enumerate}[label=(\alph*)]
+        \item ¿Pueden existir subconjuntos $Y \subseteq X$, con infinitos elementos, tal que $\tau_Y$ sea la topología discreta en $Y$? Justificar la respuesta. \hfill (6 puntos)
+        \item ¿Pueden existir cerrados $C \subseteq X$, con infinitos elementos, tales que $\tau_C$ sea la topología discreta en $C$? Justificar las respuesta. \hfill (6 puntos)
+    \end{enumerate}
+
+    \item Sea $(X, \tau)$ un espacio topológico. Probar que las siguientes afirmaciones son equivalentes:
+    \begin{enumerate}[label=(\alph*)]
+        \item $X$ es irreducible.
+        \item Todo abierto $U \subseteq X$ no vacío es denso.
+        \item Todo abierto $U \subseteq X$ no vacío es conexo.
+        \item Todo abierto $U \subseteq X$ no vacío es irreducible.
+    \end{enumerate} \hfill (15 puntos)
+\end{enumerate}
+
+\newpage
+
+% ==============================================================================
+\section{10 de noviembre de 2021}
+% ==============================================================================
+
+\subsection*{TEORÍA}
+\begin{enumerate}
+    \item Sea $f: X \to Y$ una aplicación continua y densa (el cierre de la imagen de $f$ es $Y$). Probar que si $X$ es conexo, entonces $Y$ es conexo. Deducir que si $S$ es un subconjunto conexo de un espacio topológico $X$, entonces el cierre de $S$ es conexo.
+    \item 
+    \begin{enumerate}[label=(\alph*)]
+        \item Definir la topología inicial de una aplicación. Definir la topología final de una aplicación.
+        \item Sea $f: X \to Y$ una aplicación entre espacios topológicos. Probar que si la topología de $X$ es la inicial de $f$, entonces $g: Z \to X$ es continua si y sólo si $f \circ g: Z \to Y$ lo es. Probar que si la topología de $Y$ es la final de $f$, entonces $g: Y \to Z$ es continua si y sólo si $g \circ f: X \to Z$ lo es.
+    \end{enumerate}
+\end{enumerate}
+
+\subsection*{PROBLEMAS}
+\begin{enumerate} % Inicia en el problema 3
+    \item En el conjunto $\mathbb{N} = \{0, 1, 2, \dots\}$ de los números naturales se considera la siguiente familia de subconjuntos:
+    \[
+    \mathcal{T} = \{\emptyset, \mathbb{N}\} \cup \{\{0, 1, \dots, n\} \mid n \in \mathbb{N}\}.
+    \]
+    \begin{enumerate}[label=(\alph*)]
+        \item Probar que $\mathcal{T}$ es una topología (por abiertos) en $\mathbb{N}$.
+        \item Calcula el cierre e interior de $\{0, 1, 2, 3, 7, 10\}$.
+        \item Calcula la frontera de $\{4, 13, 23, 37\}$.
+        \item Sea $A = \{x_1, \dots, x_r\}$ un conjunto finito de números naturales. Calcular sus puntos de acumulación y puntos aislados.
+        \item Sean $f, g: (\mathbb{N}, \mathcal{T}) \to (\mathbb{R}, T_{\inf})$ dos aplicaciones continuas, siendo $T_{\inf}$ la topología del límite inferior (o de Sorgenfrey). Si $f(0) = g(0)$, ¿es cierto que $f = g$? En caso negativo dar un contraejemplo.
+    \end{enumerate}
 \end{enumerate}

@@ -147,18 +147,17 @@ Ahora vemos que $SC_{(0,2)} \simeq \mathbb{R}$. Tomamos la aplicación que consi
 
 La recta que une cualquier punto $(x_0, y_0)$ de la circunferencia con $(0, 2)$ es:
 \[r \equiv y - 2 = \frac{y_0 - 2}{x_0} x.\]
-
 Queremos cortar con la recta $s \equiv y = 0$. Luego el punto resultante es $\left(x = \frac{-2x_0}{y_0 - 2}, 0\right)$.
 
 Es decir, definimos la aplicación:
-$$\bt SC_{(0,2)} = (a,b) \rar{\sim} & \mathbb{R} \\ (x_0, y_0) \rarmaps & \frac{-2x_0}{y_0 - 2} &[-10mm] \text{continua} \\ \left( \pm \frac{2}{\sqrt{4 + z_0^2}}, \frac{2z_0^2}{4 + z_0^2} + 2 \right) & \arrow[mapsto]{l} z_0 & \text{continua} \et$$
+$$\bt SC_{(0,2)} = (a,b) \rar{\sim} & \mathbb{R} \\[-5mm] (x_0, y_0) \rarmaps & \frac{-2x_0}{y_0 - 2} &[-10mm] \text{continua} \\[-5mm] \left( \pm \frac{2}{\sqrt{4 + z_0^2}}, \frac{2z_0^2}{4 + z_0^2} + 2 \right) & \arrow[mapsto]{l} z_0 & \text{continua} \et$$
 Por tanto, $(a, b) \simeq \mathbb{R}$ homeomorfo.
 \end{ejem}
 \begin{ejer}
 Demostrar que $\mathcal{C}_{(0,0)} \setminus \{N\} \simeq \mathbb{R} \simeq SC_{(0,0)}$. Siendo $N$ el punto $(0, a)$ tal que $a$ es el máximo o el mínimo valor que toma el eje vertical en la esfera/circunferencia.
 
 La ecuación de la circunferencia es $x^2 + y^2 = b$.
-$$\bt \mathcal{C}_{(0,0)} \setminus \{N\} \rar{\sim} & \mathbb{R} \\ (x_0, y_0) \rarmaps & \dots \et$$
+$$\bt \mathcal{C}_{(0,0)} \setminus \{N\} \rar{\sim} & \mathbb{R} \\[-5mm] (x_0, y_0) \rarmaps & \dots \et$$
 \begin{center}
 \begin{tikzpicture}[scale=1.6, >=stealth]
     % Radio de la circunferencia
@@ -218,7 +217,7 @@ $$\bt \mathcal{C}_{(0,0)} \setminus \{N\} \rar{\sim} & \mathbb{R} \\ (x_0, y_0) 
 
 \begin{ejer}
 Sea $X$ un espacio topológico. $A \subseteq X$ es subespacio topológico $\iff (A, \mc T_X\vert{}_A)$.
-$$\bt (A, \mc T_X\vert{}_A) \rar[hook]{i_A} & (X, \mc T_X) \\ a \rarmaps & a & [-12mm] \text{continua} \et$$
+$$\bt (A, \mc T_X\vert{}_A) \rar[hook]{i_A} & (X, \mc T_X) \\[-5mm] a \rarmaps & a & [-12mm] \text{continua} \et$$
 $i_A$ es continua porque $i_A^*(\mc T_X) = \mc T_X\vert{}_A$.
 \end{ejer}
 \noindent \textbf{Nota}.  Para definir aplicaciones, primero mira una aplicación entre conjuntos y luego comprueba si es continua.
@@ -227,18 +226,18 @@ $i_A$ es continua porque $i_A^*(\mc T_X) = \mc T_X\vert{}_A$.
 \begin{enumerate}
     \item Si $X, Y, Z$ son espacios topol\'ogicos y $f: X \longrightarrow Y$, $g:Y \longrightarrow Z$ son aplicaciones continuas, entonces $g \circ f : X \longrightarrow Z$ es continua.
     \item Si $f: X \longrightarrow Y$ es continua y $A \subset X$ es subespacio topol\'ogico, entonces 
-    $$\bt f\vert{}_A : A \rar & Y  \\ a \rarmaps & f\vert{}_A(x) \coloneqq f(x) \et$$
+    $$\bt f\vert{}_A : A \rar & Y  \\[-5mm] a \rarmaps & f\vert{}_A(x) \coloneqq f(x) \et$$
     es continua.
     \item Si $f: X \longrightarrow Y$ es continua y $B\subset Y$ subespacio topol\'ogico con $\Im \, f\subset B$, entonces 
-    $$\bt f^B: X \rar & B \\ x \rarmaps & f(x) \et$$
+    $$\bt f^B: X \rar & B \\[-5mm] x \rarmaps & f(x) \et$$
     es continua.
     \item Sea $f: X\longrightarrow Z$ aplicaci\'on continua con $Z \subset Y$ subespacio topol\'ogico, entonces 
-    $$\bt f^Y: X \rar & Y \\ x \rarmaps & f(x) \et$$
+    $$\bt f^Y: X \rar & Y \\[-5mm] x \rarmaps & f(x) \et$$
     es continua.
-    \item Si $\{U_i\}_{i \in I}$ es un recubrimiento por abiertos de $X$ ($X = \bigcup U_i$), y sea $f: X \longrightarrow Y$ una aplicaci\'on de conjuntos tal que $f\vert{}_{U_i} : U_i \longrightarrow Y$ es continua para todo $i\in I$ (equivalentemente diremos que la continuidad de una aplicaci\'on es un concepto local). 
+    \item Si $\{U_i\}_{i \in I}$ es un recubrimiento por abiertos de $X$ ($X = \bigcup U_i$), y sea $f: X \longrightarrow Y$ una aplicaci\'on de conjuntos tal que $f\vert{}_{U_i} : U_i \longrightarrow Y$ es continua para todo $i\in I$, entonces $f$ es continua (equivalentemente diremos que la continuidad de una aplicaci\'on es un concepto local). 
 \end{enumerate}
 \end{propis}
-\begin{dem}\,gracias a que  
+\begin{dem}\, 
     \begin{enumerate}
         \item Sea $W\subset Z$ un abierto,veamos que $(g\circ f)^{-1}(W) \subset X$ es abierto. 
         
@@ -251,7 +250,7 @@ $i_A$ es continua porque $i_A^*(\mc T_X) = \mc T_X\vert{}_A$.
         \item Sea $W \subset B$ un abierto de $B$, por lo que por ser la topolog\'ia inducida en $Y$, existe $U\subset Y$ abierto de $Y$ tal que $V \cap B = W$. Entonces $f^{-1}(V) \subset X$ es abierto por ser $f$ continua, pero $f^{-1}(V)  = f^{-1}(V \cap \Im f) = f^{-1}(V \cap B) = f^{-1}(W)=(f^B)^{-1}(W)$ poque $\Im f\subset B$.  
         \item Similar a 3.
         \item Sea $V\subset Y$ abierto y veamos que $f^{-1}(V)$ es abierto. $f^{-1}(V) \subset X$ luego
-        $$f^{-1}(V) = f^{-1}(V) \cap X = f^{-1}(V) \cap \left( \bigcup_{i \in I} U_i \right) = \bigcup_{i\in I} \left(f^{-1}(V) \cap U \right) = \bigcup_{i \in I} f\vert{}_{U_i}^{-1}(V)$$
+        $$f^{-1}(V) = f^{-1}(V) \cap X = f^{-1}(V) \cap \left( \bigcup_{i \in I} U_i \right) = \bigcup_{i\in I} \left(f^{-1}(V) \cap U_i \right) = \bigcup_{i \in I} f\vert{}_{U_i}^{-1}(V)$$
         por ser $f\vert{}_{U_i} ^{-1}(V)$ abierto en $U_i$ (que es abierto), son abiertos en $X$ $\forall \, i$, la uni\'on arbitraria de abiertos es abierto y por tanto $f^{-1}(V)$ es abierto como quer\'iamos demostrar. 
     \end{enumerate}
 \end{dem}
@@ -262,10 +261,10 @@ $i_A$ es continua porque $i_A^*(\mc T_X) = \mc T_X\vert{}_A$.
 \end{defi}
 Sea $f: X\longrightarrow Y$ aplicaci\'on continua
 \begin{propis}
-[NO] Si $V \subset Y$ es abierto $\Rightarrow$ $f^{-1}(V)$ es abierto en $X$. Su rec\'iproco es falso, si $V\subset Y$ es un subconjunto tal que $f^{-1}(V) \subset X$ es abierto $\not\Rightarrow V \subset Y$ sea abierto. Por $\text{Id}: (X, \mc T_{dis}) \longrightarrow (X, \mc T_{triv})$ que es continua se demuestra. 
+[negativas] Si $V \subset Y$ es abierto $\Rightarrow$ $f^{-1}(V)$ es abierto en $X$. Su rec\'iproco es falso, si $V\subset Y$ es un subconjunto tal que $f^{-1}(V) \subset X$ es abierto $\not\Rightarrow V \subset Y$ sea abierto. Por $\text{Id}: (X, \mc T_{dis}) \longrightarrow (X, \mc T_{triv})$ que es continua se demuestra. 
 
 Sea $U\subset X$ abierto $\not\Rightarrow f(U)$ es abierto en $Y$. 
-$$\bt \bb R \rar{f} & \bb R \\ x \rarmaps & x^2 \\ (-2,2) \rarmaps & \left[0,4\right) \et$$
+$$\bt \bb R \rar{f} & \bb R \\[-5mm] x \rarmaps & x^2 \\[-5mm] (-2,2) \rarmaps & \left[0,4\right) \et$$
 de forma que la imagen de un abierto $(-2,2)$ no es abierto $[0,4)$
 \end{propis}
 \begin{defi}
@@ -343,7 +342,7 @@ Sean $\{(X_i, \mc T_{Y_i})\}_{i \in I}$ espacios topol\'ogicos, $X$ un conjunto 
     $$\mc B_{\{f_i\}} = \{f_{i_1}^{-1}(V_{i_1}) \cap \cdots \cap f_{i_r}^{-1}(V_{i_r}) \text{ con } i_1, \ldots, i_r \in I, \, V_{i_j} \subset Y_{i_j}\text{ abierto para cada } j \in \{i_1, \ldots, i_r\}\}$$
 
     La topolog\'ia 
-    $$\mc T_{\{F_i\}} \equiv \left\{ \text{topolog\'ia generada por } \mc B^{\{f_i\}} \right\} = \left\{\bigcup_{\underset{i_1, \ldots, i_r \in I}{\, \forall \, r \in \bb N}} f^{-1}_{i_1}(V_{i_1}) \cap \cdots \cap f^{-1}_{i_r}(V_{i_r})\right\}$$
+    $$\mc T_{\{F_i\}} \equiv \left\{ \text{topolog\'ia generada por } \mc B^{\{f_i\}} \right\} = \left\{\bigcup_{\underset{i_1, \ldots, i_r \in I}{r \in \bb N}} f^{-1}_{i_1}(V_{i_1}) \cap \cdots \cap f^{-1}_{i_r}(V_{i_r})\right\}$$
     es la uni\'on arbitraria de intersecciones finitas de antiim\'agenes de abiertos, que ahora s\'i podemos asegurar que sea una toolog\'ia. 
 \end{obs}
 
@@ -499,7 +498,7 @@ En general, para productos infinitos se verifica que $\mc T_\pi \subsetneq \mc T
      que no es abierto, por lo que $c$ no es continua.
 \end{custom}
 \begin{ejer}
-    Sea $X_i$ espacios topol\'ogicos y $f:X\longrightarrow Y$ aplicaci\'on continua e inyectiva. $f$ es inmersi\'on topol\'ogica si y solo si $\mc T_X = \mc T_f =$ topolog\'ia inicial de $f$. 
+    Sean $X_i$ espacios topol\'ogicos y $f:X\longrightarrow Y$ aplicaci\'on continua e inyectiva. $f$ es inmersi\'on topol\'ogica si y solo si $\mc T_X = \mc T_f =$ topolog\'ia inicial de $f$. 
     
     (Falta comprobar que $f^{-1}$ sea continua sobre $\Im f$. Por ser $f$ continua, $\mc T_f \subset \mc T_X$, hay que comprobar la inclusi\'on contraria). 
 \end{ejer}
@@ -507,7 +506,7 @@ En general, para productos infinitos se verifica que $\mc T_\pi \subsetneq \mc T
     Sea $X$ espacio topol\'ogico y $f,g$ funciones continuas en $X$. Definimos
     $$\bt X \rar{f+g} & \bb R \\[-5mm] x \rarmaps & (f+g)(x) = f(x) + g(x) \et$$
     y si $f,g$ son continuas, entonces $f+g$ es continua. Podemos ver que 
-    $$\bt X \rar{(f,g)} & \b R \times \bb R \rar{s} & \bb R \\[-5mm]
+    $$\bt X \rar{(f,g)} & \bb R \times \bb R \rar{s} & \bb R \\[-5mm]
     x \rarmaps & (f(x),g(x)) \rarmaps & f(x)+g(x)
     \et$$
     de forma que $(f,g)$ es continua si y solo si las composiciones con $\pi_i$ lo son
@@ -972,7 +971,7 @@ Si $y \in U$, entonces para $n \le N$ se tiene $\overline{d}(x_n, y_n) < \dfrac{
 
 Para $n > N$, se tiene $\dfrac{\overline{d}(x_n, y_n)}{n} \le \dfrac{1}{n} < \dfrac{1}{N} < \varepsilon$. 
 
-Por consiguiente, $D(x,y) = \sup_{n \ge 1} \left\{ \frac{\overline{d}(x_n, y_n)}{n} \right\} < \varepsilon \implies y \in B_D(x, \varepsilon)$, lo que demuestra que $U \subseteq B_D(x, \varepsilon)$.
+Por consiguiente, $D(x,y) = \sup_{n \ge 1} \left\{ \frac{\overline{d}(x_n, y_n)}{n} \right\} < \varepsilon \Rightarrow y \in B_D(x, \varepsilon)$, lo que demuestra que $U \subseteq B_D(x, \varepsilon)$.
 
 \item[$\boxed{\subseteq}$] Basta probarlo para la subbase de $\mathcal{T}_\pi$, dada por los subconjuntos del tipo:
 \[
