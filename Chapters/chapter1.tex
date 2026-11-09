@@ -1,4 +1,4 @@
-\setcounter{chapter}{-1}
+\setcounter{chapter}{-1} \justifying
 \chapter{Conceptos sobre teor\'ia de conjuntos}
 \section{Conjuntos y pertenencia}
 
@@ -470,7 +470,7 @@ Por tanto, \(\mathcal{B}\) es base de una topología en \(\mathbb{R}\), denotada
     (a, b) = \bigcup_{n=1}^\infty \left[a + \frac{1}{n}, b\right) \in \mc T_{\text{Sorg}} \text{},
 \]
 mientras que \([a, b) \notin \mc T_d\).
-
+\end{ejer}
 Sabemos que $\mc T_d=<\mc B>$, siendo $\mc B=\{(a,b), \, / \,  a,b \in \bb R\}$. Si demostramos que $\mc B \subset \mc T_{Sorg}\Rightarrow <\mc B>=\mc T_d \subseteq \mc T_{Sorg}$ (\textbf{Observaci\'on:} La diferencia entre $\mc B$ y $<\mc B>$ es que en $<\mc B>$ est\'an las uniones arbitrarias). 
 
 Sea $(a,b)\in \mc T_d$ veamos si $(a,b)\in \mc T_{Sorg} \iff \forall \, x\in (a,b) \, \exists \, B_x\subset \mc B_{Sorg}\, / \, x\in B_x \subset(a,b)$. Queremos encontrar un intervalo de la forma $[\,\,)$ que contenga a $x$ y est\'e contenido en $(a,b)$. 
@@ -480,7 +480,6 @@ Sea $x\in (a,b) \Rightarrow x\neq b \Rightarrow b-x = \varepsilon'>0, \, \vareps
 Por tanto, $[a,b) \in \mc T_{Sorg}$ pero $[a,b)\nin \mc T_d$.
 
 Para la otra inclusi\'on basta ver que no se cumple si encontramos un elementos de $\mc T_{Sorg}$ que no est\'a en $\mc T_d$ (trivial). 
-\end{ejer}
 \begin{ejer}
 Si $\mc B$ es base de una topolog\'ia en $X$, entonces $<\mc B>$ es la menor topolog\'ia de $X$ que contiene a $\mc B$.
 \end{ejer}
@@ -509,10 +508,10 @@ En cambio, $(a,b]$ no es abierto para $\mc T_{Sorg}$ pues $(a,b]^c = \underbrace
 \underline{Conclusi\'on}: $(a,b]$ no son abiertos ni cerrados.
 \end{ejer}
 \begin{ejer}
-    Sea $\mc T \subset \mc T'$ dos topolog\'ias en $X$, entonces todo abierto por $\mc T$ es abierto por $\mc T'$. Demostrar que si $C \subset X$ es cerrado por $\mc T$, entonces es cerrado por $\mc T'$. 
+    Sean $\mc T \subset \mc T'$ dos topolog\'ias en $X$, entonces todo abierto por $\mc T$ es abierto por $\mc T'$. Demostrar que si $C \subset X$ es cerrado por $\mc T$, entonces es cerrado por $\mc T'$. 
 \end{ejer}
 \begin{sol}
-En 1 l\'inea. OJO: $\mc P(X) - \mc T \neq \mc C_{\mc T}$
+Si $C$ cerrado por $\mc T$, $C^c = U= X-C$ abierto por $\mc T$, como $\mc T \subset \mc T'$, $U \in \mc T \subset \mc T' \Rightarrow U = C^c \in \mc T'$ por lo que su complementario $C$ es cerrado en $\mc T'$.  OJO: $\mc P(X) - \mc T \neq \mc C_{\mc T}$
 \end{sol}
 \section{Topología por cerrados}
 
@@ -668,7 +667,7 @@ Se cumple que $Y \subseteq \overline{Y}$.
 \end{defi}
 \begin{prop}
 \[
-    \overline{Y} = \{x \in X \mid \text{ para todo abierto } U_x \text{ se verifica que } U_x \cap Y \ne \emptyset\}.
+    \overline{Y} = \{x \in X \mid \text{ para todo abierto } U_x \ni x \text{ se verifica que } U_x \cap Y \ne \emptyset\}.
 \]
 \end{prop}
 \begin{dem}
@@ -1083,12 +1082,10 @@ Diremos que una sucesión es \textbf{constante} si existe \(n_0 \in \mathbb{N}\)
         \item \((\mathbb{R}, \mc T_d)\):\quad \(\{\frac{1}{n}\}_{n \in \mathbb{N}} \xrightarrow[n \to \infty]{} 0\).
         
         \item \((\mathbb{R}, \mc T_{\text{Sorg}} = \langle \{ [a, b) : a, b \in \mathbb{R} \} \rangle)\):
-        \[
-            \left\{\frac{1}{n}\right\}_{n \in \mathbb{N}} \xrightarrow[n \to \infty]{} 0
-        \]
-        \[
-            \left\{-\frac{1}{n}\right\}_{n \in \mathbb{N}} \longrightarrow y \in \mathbb{R}, \quad y \in [a,b), \quad a \le y < b
-        \]
+        \begin{align*}            
+            \left\{\frac{1}{n}\right\}_{n \in \mathbb{N}} & \xrightarrow[n \to \infty]{} 0  \\
+            \left\{-\frac{1}{n}\right\}_{n \in \mathbb{N}} & \longrightarrow y \in \mathbb{R} , \quad y \in [a,b), \quad a \le y < b
+                \end{align*}
         \begin{itemize}
             \item Si \(y \ge 0 \Rightarrow [y, b) \cap \{-\frac{1}{n}\}_{n \in \mathbb{N}} = \emptyset\).
             
@@ -1154,7 +1151,7 @@ Sea $X$ un espacio topol\'ogico.
         \item Un espacio topol\'ogico $X$ es \textbf{$T_0$} (o \textbf{de Kolmogorov}) si para cualesquiera puntos distintos $x\neq x' \in X$ existe un abierto $U_x$ con $x\in U_x$ y $x'\nin U_x$ \underline{o} existe un abierto $U_{x'}$ con $x'\in U_{x'}$ y $x\nin U_{x'}$.
         \item Un espacio topol\'ogico $X$ es \textbf{$T_1$} (o \textbf{de Fréchet}) si para cualesquiera puntos distintos $x\neq x' \in X$ existe un abierto $U_x$ con $x\in U_x$ y $x'\nin U_x$ \underline{y} existe un abierto $U_{x'}$ con $x'\in U_{x'}$ y $x\nin U_{x'}$. 
         \item Un espacio topol\'ogico $X$ es \textbf{$T_2$} (o \textbf{separado} o \textbf{de Hausdorff}) si para cualesquiera puntos distintos $x\neq x' \in X$ existe un abierto $U_x$ con $x\in U_x$ y existe un abierto $U_{x'}$ con $x'\in U_{x'}$ tal que $U_x\cap U_{x'} = \emptyset$. 
-        \item Un espacio topol\'ogico $X$ es \textbf{regular} si para cualequier punto $x \in X$ y cualquier cerrado $C\subset X$ con $x\nin C$ existen abiertos $U_x$ y $U_C$ con $x\in U_x$ y $C\subset U_C$ tal que $U_x\cap U_{C} = \emptyset$.
+        \item Un espacio topol\'ogico $X$ es \textbf{regular} si para cualquier punto $x \in X$ y cualquier cerrado $C\subset X$ con $x\nin C$ existen abiertos $U_x$ y $U_C$ con $x\in U_x$ y $C\subset U_C$ tal que $U_x\cap U_{C} = \emptyset$.
         \item Un espacio topol\'ogico $X$ es \textbf{$T_3$} si es regular y $T_1$ (los puntos son cerrados). 
         \item Un espacio topol\'ogico $X$ es \textbf{normal} si para cualesquiera cerrados $C$ y $C'$ con $C\cap C'=\emptyset$ existen abiertos con $C \subset U_C, \, C'\subset U_{C'}$ tal que $U_C \cap U_{C'}=\emptyset$. 
         \item Un espacio topol\'ogico $X$ es \textbf{$T_4$} si es normal y $T_1$.  
@@ -1173,17 +1170,17 @@ $\Rightarrow) $ Es trivial que $\overline{\{x\}}\neq \overline{\{x'\}} \Rightarr
 
 Veamos que $x\neq x' \Rightarrow \overline{\{x\}} \neq \overline{\{x'\}}$. Sean $x\neq x'$, como el espacio es $T_0$ 
 $$\begin{cases}
-\text{existe } U_x \ni x \text{ con } x' \nin U_x \\  \qquad \text{\'o} \\  \text{existe } U_{x'} \text{ con } x \nin U_{x'} 
+\text{existe } U_x \ni x \text{ con } x' \nin U_x \\[-2mm]  \qquad \text{\'o} \\[-2mm]  \text{existe } U_{x'} \text{ con } x \nin U_{x'} 
 \end{cases}\Rightarrow \begin{cases}
-U_{x} \cap \overline{\{x'\}} = \emptyset  \\ \qquad  \text{\'o} \\  U_{x'} \cap \overline{\{x\}} = \emptyset 
+U_{x} \cap \{x'\} = \emptyset  \\[-2mm] \qquad  \text{\'o} \\[-2mm]  U_{x'} \cap \{x\} = \emptyset 
 \end{cases} \Rightarrow \begin{cases}
-x \nin \overline{\{x'\}} \ni x'  \\ \qquad  \text{\'o} \\  x' \nin \overline{\{x\}} \ni x
+x \nin \overline{\{x'\}} \ni x'  \\[-2mm] \qquad  \text{\'o} \\[-2mm]  x' \nin \overline{\{x\}} \ni x
 \end{cases} \Rightarrow \overline{\{x\}} \neq  \overline{\{x'\}}$$
 $\Leftarrow) $ Sea $x\neq x'\in X$, como $\overline{\{x\}} \neq \overline{\{x'\}}$ por hip\'otesis, 
 $$\Rightarrow \begin{cases}
-    x\nin \overline{\{x'\}} \\ \qquad  \text{ \'o } \\ x' \nin \overline{\{x\}} 
+    x\nin \overline{\{x'\}} \\[-2mm] \qquad  \text{ \'o } \\[-2mm] x' \nin \overline{\{x\}} 
 \end{cases} \Rightarrow \begin{cases}
-    \exists \, U_x \text{ con } U_x \cap \{x'\} =\emptyset \iff x'\nin U_x \\ 
+    \exists \, U_x \text{ con } U_x \cap \{x'\} =\emptyset \iff x'\nin U_x \\[-2mm] 
     \qquad \text{ \'o} \\
     \exists \, U_{x'} \text{ con } U_{x'} \cap \{x\} =\emptyset \iff x \nin U_{x'}
 \end{cases}$$
