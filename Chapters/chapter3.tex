@@ -1,0 +1,130 @@
+% ==============================================================================
+\chapter{Espacios conexos}
+% ==============================================================================
+\section{Espacios conexos y separaciones}
+
+Sea $X$ un espacio topológico.
+
+\begin{defi}
+Una \textbf{separación} de $X$ es una pareja $(A, B)$ tal que $A, B \subseteq X$ son abiertos (o cerrados) no vacíos verificando que $X = A \cup B$ y $A \cap B = \emptyset$. Es decir, $A$ y $B$ son complementarios.
+\end{defi}
+
+\begin{ejem}
+$(\emptyset, X)$ es una separación de $X$, denominada la \textbf{separación trivial}.
+\end{ejem}
+
+\begin{defi}
+Un espacio topológico $X$ es \textbf{conexo} si no admite separaciones no triviales. Es decir, si $X = A \cup B$ con $(A, B)$ una separación, entonces $A = X$ y $B = \emptyset$ (o viceversa).
+\end{defi}
+
+\begin{defi}
+Un \textbf{subespacio topológico $Y \subseteq X$} es \textbf{conexo} si lo es como espacio topológico con la topología heredada $(Y, \mathcal{T}_X|_Y)$.
+\end{defi}
+
+\begin{obs}
+Sean $Y \subseteq Z \subseteq X$ subespacios, $Y \subseteq Z$ es subespacio conexo $\Rightarrow Y \subseteq X$ es subespacio conexo. La noción de conjunto conexo es \textbf{absoluta}, no depende del espacio ambiente (aunque la topología sí depende del ambiente, la conexi\'on se preserva: $\mathcal{T}_Z|_Y = \mathcal{T}_X|_Y$).
+\end{obs}
+
+\begin{prop}
+Sea $Y \subseteq X$ un subespacio. Si $Y = A \cup B$ con $A \cap B = \emptyset$ siendo $A, B$ abiertos (o cerrados) en $Y$, entonces existen $U, V \subseteq X$ abiertos (o cerrados) en $X$ tales que:
+\[
+A = U \cap Y, \quad B = V \cap Y \quad (\text{o bien } A = \overline{A}^X \cap Y, \, B = \overline{B}^X \cap Y)
+\]
+De forma que $Y \subseteq U \cup V$ y $(U \cap V) \cap Y = \emptyset = (U \cap Y) \cap (V \cap Y)$.
+
+Si se verifica que $Y \subseteq U$ o $Y \subseteq V \implies Y \subseteq U \cap Y$ o $Y \subseteq V \cap Y \implies A = Y$ o $B = Y$, haciendo que uno de los dos conjuntos sea el total y el otro el vacío.
+\end{prop}
+
+\begin{ejem}[No Conexidad de $\mathbb{Q}$]
+En $(\mathbb{R}, \mathcal{T}_d)$, consideremos el subespacio $\mathbb{Q} \subset \mathbb{R}$. Sea $c \in \mathbb{I} = \mathbb{R} \setminus \mathbb{Q}$ un número irracional. Los conjuntos:
+\[
+((-\infty, c) \cap \mathbb{Q}) = A \neq \emptyset, \quad ((c, \infty) \cap \mathbb{Q}) = B \neq \emptyset
+\]
+definen una separación no trivial de $\mathbb{Q}$, puesto que $\mathbb{Q} = A \cup B$ y $A \cap B = \emptyset$, concluyendo que \textbf{$\mathbb{Q}$ no es conexo}.
+\end{ejem}
+
+\begin{obs}
+$\mathbb{R}$ sí es conexo (se probará a continuación). Un espacio conexo puede contener subespacios conexos y no conexos (por ejemplo, $[0, 1] \subset (\mathbb{R}, \mathcal{T}_d)$ es conexo, mientras que $[0, 1] \cup [2, 3] \subset \mathbb{R}$ no es conexo). Idem para espacios no conexos.
+\end{obs}
+
+% ==============================================================================
+\section{Conexi\'on en $\bb R$}
+% ==============================================================================
+
+\begin{prop}
+El intervalo $[0, 1] \subset \mathbb{R}$ es conexo (con la topología heredada de la usual $\mathcal{T}_d$).
+\end{prop}
+
+\begin{dem}
+Para demostrarlo, supongamos que $[0, 1]$ admite una separación no trivial. Es decir, existen $U, V \subseteq \mathbb{R}$ abiertos en $\mathbb{R}$ tales que:
+\[
+[0, 1] \subseteq U \cup V, \quad U \cap V \cap [0, 1] = \emptyset, \quad U \cap [0, 1] \neq \emptyset, \quad V \cap [0, 1] \neq \emptyset.
+\]
+Supongamos sin pérdida de generalidad que $0 \in U$ (luego $0 \notin V$). Como $U$ es abierto en $\mathbb{R}$, existe $\varepsilon > 0$ tal que $[0, \varepsilon) \subseteq U$.
+
+Consideremos el conjunto:
+\[
+T = \{ x \in [0, 1] : [0, x] \subseteq U \} \neq \emptyset.
+\]
+$T$ es un conjunto de números reales no vacío (pues $0 \in T$) totalmente ordenado y acotado superiormente por $1$. Por el axioma del supremo en $\mathbb{R}$, existe $r = \sup T \in [0, 1]$. Estudiemos la pertenencia de $r$:
+
+\begin{itemize}
+    \item Si $r \in U$: Como $U$ es abierto en $\mathbb{R}$, existe $\varepsilon' > 0$ tal que $[r, r + \varepsilon') \subseteq U$. Como $r = \sup T$, existe algún $x \in T$ cercano a $r$, lo que implica $[0, r + \varepsilon') \subseteq U$, de donde $r + \varepsilon' \in T$, contradiciendo que $r = \sup T$.
+    \item Si $r \in V$: Como $V$ es abierto en $\mathbb{R}$, existe $\varepsilon'' > 0$ tal que $(r - \varepsilon'', r] \subseteq V$. De nuevo por ser $r = \sup T$, existiría un elemento $x \in T$ tal que $x > r - \varepsilon''$, lo que implicaría que $[0, x] \subseteq U$, resultando en una intersección no vacía de $U$ y $V$ en $[0, 1]$, lo cual es una contradicción.
+    \item Si $r=1\Rightarrow r\in U$.
+\end{itemize}
+
+Por lo tanto, $[0,1]\subset U$ o $[0,1] \subset V$ la separación no trivial no puede existir, de modo que $[0, 1]$ es conexo.
+\end{dem}
+
+\begin{prop}
+Todos los intervalos de la forma $[a, b]$, $(a, b)$ y $[a, b)$ son conexos en $\mathbb{R}$.
+\end{prop}
+
+\begin{dem}
+Se sabe que $[0, 1] \simeq [a, b]$ son homeomorfos mediante una aplicación lineal. Dado que la conexi\'on es una propiedad topológica conservada por homeomorfismos, el intervalo $[a, b]$ es conexo.
+
+Para intervalos generales $Y = [a, b]$, $(a, b)$ o $[a, b)$, si suponemos que $Y \subseteq U \cup V$ es una separación no trivial con $U \cap V \cap Y = \emptyset$, basta tomar un subintervalo cerrado $[c, d] \subset Y$. Como $[c, d]$ es conexo, debe cumplirse $[c, d] \subseteq U$ o $[c, d] \subseteq V$ de manera excluyente, obteniéndose por extensión que $Y$ es conexo.
+\end{dem}
+
+\begin{teo}
+La recta real $\mathbb{R}$ es conexa.
+\end{teo}
+
+\begin{dem}
+Se ha demostrado previamente que $(0, 1) \simeq \mathbb{R}$ son homeomorfos. Al ser $(0, 1)$ un intervalo conexo y preservarse la conexi\'on por homeomorfismos, concluimos que $\mathbb{R}$ es un espacio conexo.
+\end{dem}
+
+\begin{defi}
+Un subconjunto $I \subseteq \mathbb{R}$ es un \textbf{intervalo} si para todo $c, d \in I$ con $c < d$, se satisface que $[c, d] \subseteq I$.
+\end{defi}
+
+\begin{prop}
+Los únicos subespacios conexos de $\mathbb{R}$ son los intervalos.
+\end{prop}
+
+\begin{dem}
+Falta demostrar que los intervalos son los \emph{únicos} subespacios conexos de $\mathbb{R}$.
+
+Sea $Y \subseteq \mathbb{R}$ un subespacio conexo. Vamos a probar que $Y$ debe ser un intervalo. Sean $c, d \in Y$ con $c < d$. Queremos ver que $[c, d] \subseteq Y$.
+
+Supongamos por reducción al absurdo que no es un intervalo. Entonces existe algún punto $z \in \mathbb{R}$ tal que $c < z < d$ con $z \notin Y$. 
+
+Consideremos los conjuntos abiertos en $\mathbb{R}$:
+\[
+U = (-\infty, z), \quad V = (z, \infty)
+\]
+Notemos que $Y \subseteq U \cup V = (-\infty, z) \cup (z, \infty)$ ya que $z \notin Y$. Además por ser $Y$ conexo
+\[
+c \in U \cap Y \implies U \cap Y \neq \emptyset
+\]
+\[
+d \in V \cap Y \implies V \cap Y \neq \emptyset
+\]
+\[
+(U \cap Y) \cap (V \cap Y) = (U \cap V) \cap Y = \emptyset \cap Y = \emptyset
+\]
+Por lo tanto, $(U \cap Y, V \cap Y)$ constituye una separación no trivial del subespacio $Y$, lo cual contradice la hipótesis de que $Y$ es conexo.
+
+Concluimos que $Y$ debe ser un intervalo.
+\end{dem}
