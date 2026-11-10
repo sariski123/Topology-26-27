@@ -816,7 +816,7 @@ Esto da lugar a la siguiente definici\'on
 Esta asignaci\'on no es inyectiva, pues distintas pseudom\'etricas pueden generar la misma topolog\'ia.
 
 \begin{ejem}
-    Por ejemplo, consideremos $(X,d)$ espaccio m\'etrico cualquiera y $\overline{d}$ la m\'etrica acotada, generan la misma topolog\'ia. Como espacios m\'etricos son distintos, $(X, d)$ y $(X, \overline{d})$ pero como espacios topol\'ogicos $(X, \mc T_d) = (X, \mc T_{\overline{d}})$.
+    Por ejemplo, consideremos $(X,d)$ espacio m\'etrico cualquiera y $\overline{d}$ la m\'etrica acotada, generan la misma topolog\'ia. Como espacios m\'etricos son distintos, $(X, d)$ y $(X, \overline{d})$ pero como espacios topol\'ogicos $(X, \mc T_d) = (X, \mc T_{\overline{d}})$.
 
     Como con $\{B_d(x,\varepsilon)\}_{0< \varepsilon < 1}$ es base de entornos de $\mc T_d$ y $\{B_{\overline{d}}(x,\varepsilon)\}_{0< \varepsilon < 1}$ es base de entornos de $\mc T_{\overline{d}}$, se verifica que $\{B_d(x,\varepsilon)\}_{0< \varepsilon < 1} = \{B_{\overline{d}} (x,\varepsilon) \}_{0< \varepsilon < 1}$. Esto es porque los entornos son algo local.
 \end{ejem}
@@ -896,7 +896,7 @@ B_{d_{\text{máx}}}\left(x, \frac{\varepsilon}{n}\right) \subseteq B_{d_{\text{s
 \end{dem}
 
 % ==============================================================================
-\section{Metrizabilidad de la Topología Producto en $\mathbb{R}^n$}
+\section{Metrizabilidad de la topología producto en $\mathbb{R}^n$}
 % ==============================================================================
 
 Consideremos el espacio topológico producto directo $(\mathbb{R}^n, \mathcal{T}_\pi)$.
@@ -933,12 +933,12 @@ Por ende, $d_{\text{máx}}(x,y) < \varepsilon \implies y \in B_{d_{\text{máx}}}
 \end{dem}
 
 % ==============================================================================
-\section{Metrizabilidad del Espacio de Sucesiones $(\mathbb{R}^\mathbb{N}, \mathcal{T}_\pi)$}
+\section{Metrizabilidad del espacio de sucesiones $(\mathbb{R}^\mathbb{N}, \mathcal{T}_\pi)$}
 % ==============================================================================
 
-\begin{ejer}
+\begin{teo}
 $\mathbb{R}^\mathbb{N} = \prod_{n \in \mathbb{N}} \mathbb{R}$ es el espacio de las sucesiones de números reales. Demostrar que $(\mathbb{R}^\mathbb{N}, \mathcal{T}_\pi)$ es metrizable.
-\end{ejer}
+\end{teo}
 
 \begin{dem}
 Consideremos la función $D: \mathbb{R}^\mathbb{N} \times \mathbb{R}^\mathbb{N} \longrightarrow \mathbb{R}^+$ definida por:
@@ -1040,14 +1040,18 @@ Regular + $2AN$ $\Rightarrow$ Normal.
     Gracias a esto se puede incluir cualquier $X$ m\'etrico en el cubo de Hilbert $[0,1]^{\bb N} = \prod_{n=1}^{\infty} [0,1]$, que es un espacio m\'etrico.
 \end{obs}
 
-\section{Propiedades topol\'ogicas de los espacios topol\'ogicos metrizables} \footnote{Ejercicios 4}
+\section{Propiedades de los espacios metrizables} \footnote{Ejercicios 4}
 Sea $(X,\mc T_d)$ con $d$ pseudom\'etrica.
 
-\begin{propi}
-    $d(x,y)=0 \iff \overline{\{x\}} = \overline{\{y\}} \iff \begin{cases}
-        x\in \overline{\{y\}} \\[-3mm] \text{ y } \\[-3mm] y \in \overline{\{y\}}
-    \end{cases} \iff B_d(x,\varepsilon) \ni y \forall \varepsilon >0, d(x,y) < \varepsilon$ \textcolor{red}{Terminar}. 
+\begin{propi} $d(x,y) = 0\iff \overline{\{x\}} = \overline{\{y\}}$
 \end{propi}
+\begin{dem} Se tiene la cadena de implicaciones
+    $$d(x,y)=0 \iff \, \forall \,  \varepsilon >0, d(x,y) < \varepsilon  \iff \begin{cases} B_d(x,\varepsilon) \ni y \\[-3mm]  \text{ y } \\[-3mm] B_d(y,\varepsilon) \ni x 
+    \end{cases}  \iff \begin{cases}
+        x\in \overline{\{y\}} \\[-3mm] \text{ y } \\[-3mm] y \in \overline{\{x\}}
+    \end{cases} \iff \overline{\{x\}} = \overline{\{y\}}$$
+    pero esto no es equivalente a que $x=y$, pues $d$ no es m\'etrica. 
+    \end{dem}
 \begin{ejer}[123]
     La siguientes condiciones son equivalentes:
     \begin{enumerate}
