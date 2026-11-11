@@ -1061,7 +1061,9 @@ Sea $(X,\mc T_d)$ con $d$ pseudom\'etrica.
     \end{enumerate}
 \end{ejer}
 \begin{dem}
-    1) $\iff$ 3) $(d(x,y) \iff \overline{\{x\}} = \overline{\{y\}} \overset{T_0}{\iff} x=y) \iff d $ es m\'etrica.
+    1) $\iff$ 3) $\Leftarrow)$ Es general.
+
+    1) $\iff$ 3) $(d(x,y) = 0 \iff \overline{\{x\}} = \overline{\{y\}} \overset{T_0}{\iff} x=y) \iff d $ es m\'etrica.
 
     3) $\iff$ 2) Si $x\neq y$, $d(x,y) = \varepsilon >0$, entonces $B_d(x, \nicefrac{\varepsilon}{2}) \cap B_d(y, \nicefrac{\varepsilon}{2}) = \emptyset$.
 \end{dem}
@@ -1093,7 +1095,7 @@ Sea $(X,\mc T_d)$ metrizable
     $$\bt d: (X\times X, \mc T_{\pi}) \rar & (\bb R, \mc T_{d_1}) \\[-5mm] (x,y) \rarmaps & d(x,y) \et$$
     escogemos $B_{d_1}(d(x,y), \varepsilon) = (d(x,y)- \varepsilon , d(x,y)+ \varepsilon)$, y 
     $$f^{-1}(B_{d_1}(d(x,y), \varepsilon)) \supset B_{d}(y, \nicefrac{\varepsilon}{2}) \times B_{d}(x, \nicefrac{\varepsilon}{2}) \ni (x,y), (x',y')$$
-    por ser los abiertos b\'asicos productos de bolas, y as\'i $|d(x,y) - d(x',y')|< \varepsilon$.
+    por ser los abiertos b\'asicos productos de bolas, y as\'i $|d(x,y) - d(x',y')|< \varepsilon$ usando la desigualdad triangular.
 \end{dem}
 \begin{ejer}
     $\{x_n\} \to x \iff \displaystyle \lim_{n\to \infty} d(x,x_n)=0$

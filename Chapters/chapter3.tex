@@ -1,5 +1,5 @@
 % ==============================================================================
-\chapter{Espacios conexos}
+\chapter{Espacios conexos} \justifying
 % ==============================================================================
 \section{Espacios conexos y separaciones}
 
@@ -128,3 +128,61 @@ Por lo tanto, $(U \cap Y, V \cap Y)$ constituye una separación no trivial del s
 
 Concluimos que $Y$ debe ser un intervalo.
 \end{dem}
+\section{Propiedades}
+\begin{prop}
+    Sea $Y \subset X$ subespacio topol\'ogico conexo y $(A,B)$ separaci\'on de $X$. Entonces $Y \subset A$ \'o $Y \subset B$. Es decir, que si $Y \subset X = A\sqcup B$ ($\sqcup$ como conjuntos), entonces $Y \subset A$ \'o $Y\subset B$
+\end{prop}
+\begin{dem}
+    $Y = (Y\cap A ) \cup (Y \cap B)$ es una separaci\'on $Y$, que es conexo, y $Y\cap A $ es abierto y $Y\cap B$ es abierto, entonces $Y\cap A = Y$ \'o $Y\cap B = Y$, entonces $Y \subset A$ \'o $Y\subset B$.  
+\end{dem}
+\begin{prop}
+    Si $A,B \subset X$ subconjunto con $A \cup B = X$ y $\overline{A}\cap B = \overline{B}\cap A = \emptyset$ entonces $(A,B)$ es separaci\'on de $X$.
+\end{prop}
+\begin{dem}
+    Como $A\subset \overline{A}$ autom\'aticamente $A \cap B = \emptyset$. Veamos que son cerrados. Como $\overline{A} = \bar A \cap X = \bar A \cap (A\cup B) = (\bar A \cap A) \cup (\bar A \cap B) = A \cup \emptyset = A$. De la misma forma con $B$, y como ambos son cerrados, es una separaci\'on.
+\end{dem}
+\begin{cor}
+Si $X$ es conexo, entonces no existen subconjuntos $A,B \subset X$ con $A \cup B = X$ y $\bar A \cap B = \bar B \cap A = \emptyset$.
+\end{cor}
+
+Sea $X$ espacio topol\'ogico y $\{X_i \subset X\}_{i \in I}$ subespacios conexos.
+\begin{ejer}
+    Se verifica que $\bigcup X_i$ es conexo si $\bigcap X_i \neq \emptyset$. $\bigcup X_i$ es conexo si para todo $i, j\in I$ $X_i \cap X_j \neq \emptyset$. La segunda implica la primera. 
+\end{ejer}
+Demostraremos la primera
+\begin{dem}
+    $\bigcup X_i \subset A \cup B$ con $A,B$ abiertos, $A\cap B \cap (\bigcup X_i) = \emptyset$ lo que da lugar a una separaci\'on. Para cada $j\in I$, $X_j \subset \bigcup X_i \bigcup A \cup B$ y como es conexo y tiene separaci\'on, $X_j \subset A$ \'o $X_j \subset B$. 
+
+    Sea $x_o \in \bigcap X_i \neq \emptyset \Rightarrow x_o \in X_i\subset A \cup B \, \forall i$ por tanto $x_o \in A$ \'o $x_o \in B$. Supongamos que $x_o \in A \Rightarrow x_o \nin B$, entonces si para alg\'un $j\in I$, $x_o \in X_j \in B$, como $x_o \in X_i \forall i$, $x_o \in B$, contradicci\'on con $x_o \nin B$, luego $X_j \subset A \forall \, j\in I$ por lo que $\bigcup X_j \subset A$. 
+\end{dem}
+\begin{prop}
+    Sea $Y \subset X$ subespacio conexo. Para todo $Z\subset X$ con $Y\subset Z \subset \overline{Y}$ se verifica que $Z$ es conexo. En particular, si $Y$ es conexo $\Rightarrow \overline{Y}$ es conexo.
+\end{prop}
+\begin{dem}
+    Sea $(A,B)$ una separaci\'on de $Z$, $Z = A\cup B$ y $A\cap B=\emptyset$. Supongamos $A$ y $B$ cerrados de $Z$, y $A = \overline{A} \cap Z$ y $B = \overline{B}\cap Z$. 
+    
+    $Y \subset Z = A\cup B$ y como $Y$ es conexo por la primera proposici\'on, $Y \subset A$ \'o $Y \subset B\Rightarrow \overline{Y} \subset \overline{A}$ \'o $\overline{Y} \subset \overline{B}$. Entonces al cortar con $Z$, $\overline{Y}\cap Z \subset \overline{A} \cap Z$ que es $Z \subset A \Rightarrow Z=A$ \'o de la misma forma $Z=B$.  
+\end{dem}
+\begin{prop}
+    Sean $X,Y$ espacios topol\'ogicos, $f: X \longrightarrow Y$ aplicaci\'on continua. Si $A\subset X$ es subespacio conexo, entonces $f(A) \subset Y$ es un subespacio conexo. 
+
+    En particular, si $X$ es conexo, entonces $\Im f$ es conexo.
+\end{prop}
+\begin{dem}
+    Sea $V_1, V_2 \subset Y$ abiertos con $f(A) \subset V_1 \cup V_2$ y $V_1 \cap V_2 \cap f(A) = \emptyset$. 
+    $$f^{-1}(f(A)) \subset f^{-1}(V_1 \cup V_2) = f^{-1}(V_1) \cup f^{-1}(V_2)$$
+    donde $f^{-1}(V_i)$ son abiertos por ser $f$ continua y adem\'as disjuntos con $f(A)$ por $V_1 \cap V_2 \cap f(A) =\emptyset \Rightarrow f^{-1}(V_1) \cap  f^{-1}(V_2)\cap f^{-1}(f(A)) = \emptyset$ y como $A$ es conexo, 
+    $$A \subset f^{-1}(V_1) \text{ \'o } A \subset f^{-1}(V_2) $$
+    de forma que $f(A)\subset f( f^{-1}(V_1) )\subset V_1$ \'o para $V_2$. Es decir, $f(A)$ es conexo. 
+\end{dem}
+\begin{cor}
+    [Teorema del valor intermedio] Sea $X$ un espacio topol\'ogico conexo, $f:X \longrightarrow \bb R$ funci\'on continua. Si $a,b \in \Im f$, para todo $c\in \bb R$ con $a\leq c \leq b$ ($c\in [a,b]$), existe $x\in X$ tal que $f(x) = c$ ($c\in \Im f$). 
+\end{cor}
+\begin{dem}
+    $f(X) \subset \bb R$ es conexo, y como los conexos de $\bb R$ son los intervalos, $f(X)=I$ intervalo de $\bb R$, $a, b\in I$ entonces $a,b \in \Im f$ entonces si $c\in [a,b] \subset \Im f$. 
+\end{dem}
+\section{Producto directo y uni\'on disjunta}
+\begin{obs}
+    Un subespacio conexo si y solo si los \'unicos abiertos-cerrados que tiene son $X, \emptyset$. Si tenemos un abierto-cerrado no trivial tenemos una separaci\'on pues su complementario tambi\'en es abierto-cerrado. 
+\end{obs}
+$\{X_i\}$ espacios topol\'ogicos, se tiene el espacio topol\'ogico $\bigsqcup X_i$, solo falta ver que $X_i$ son abiertos o cerrados. Lo son porque $\bigsqcup X_i$ tiene la topolog\'ia final de las $\varphi_j$, de forma que $X_j\subset \bigsqcup X_i$ son abiertos y cerrados. Luego $\bigsqcup X_i$ no es conexo aunque $X_j$ lo sean. 
