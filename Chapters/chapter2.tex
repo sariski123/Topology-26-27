@@ -554,7 +554,7 @@ $$g \text{ es continua } \iff  g\circ f_i \text{ son continuas } \forall \, i \i
 \end{dem}
 \section{Uni\'on disjunta}
 Sean $\{X_i\}_{i\in I}$ conjuntos, se define la unión disjunta de conjuntos
-$$\bigsqcup_{i \in I} X_i= \{(i, x_i) \, / \, x_i \in X_i, \, i \in I\}$$
+$$\coprod_{i \in I} X_i= \{(i, x_i) \, / \, x_i \in X_i, \, i \in I\}$$
 que intuitivamente es ``dar un elemento de cada uno de los conjuntos''.
 \begin{ejem}
     $\bb R \sqcup \bb R \ni (1,0) = O_1$ es el 0 de la primera copia de $\bb R$ y $(2,0)=O_2$ es el 0 de la segunda, de forma que todos los elementos est\'an repetidos, y gr\'aficamente son dos rectas que no tienen elementos comunes. 
@@ -573,23 +573,23 @@ que intuitivamente es ``dar un elemento de cada uno de los conjuntos''.
     Aqu\'i la uni\'on disjunta es la suma directa de espacio vectoriales $\displaystyle \bigoplus_{i \in I} E_i \subset \prod_{i \in I} E_i$ est\'a contenido en el producto directo. 
 \end{ejem}
 Para cada $j \in I$, se tiene la inmersi\'on
-$$\bt \varphi_j : X_j \rar[hook] & \bigsqcup X_i \\[-5mm] x_j \rarmaps & (j, x_j) \et$$
+$$\bt \varphi_j : X_j \rar[hook] & \coprod X_i \\[-5mm] x_j \rarmaps & (j, x_j) \et$$
 que es inyectiva.
 
 \section{Topolog\'ia uni\'on disjunta}
 
-Podemos dotar a la uni\'on disjunta de la topolog\'ia final de las inmersiones, es decir, dadas las inmersiones can\'onicas $\big\{ \varphi_j : X_j \hookrightarrow \bigsqcup_{i \in I} X_i \big\}_{j\in I}$ se tiene que $  \left( \underset{i \in I}{\bigsqcup} X_i, \mc T^{\{\varphi_j\}}\right)$ es el espacio topol\'ogico uni\'on disjunta. Tambi\'en se denota $\mc T^{\{\varphi_j\}} = \mc T_{\sqcup} = \mc T^{\sqcup}$ y se le llama topolog\'ia uni\'on disjunta, y es una topolog\'ia final.
+Podemos dotar a la uni\'on disjunta de la topolog\'ia final de las inmersiones, es decir, dadas las inmersiones can\'onicas $\big\{ \varphi_j : X_j \hookrightarrow \coprod_{i \in I} X_i \big\}_{j\in I}$ se tiene que $  \left( \underset{i \in I}{\coprod} X_i, \mc T^{\{\varphi_j\}}\right)$ es el espacio topol\'ogico uni\'on disjunta. Tambi\'en se denota $\mc T^{\{\varphi_j\}} = \mc T_{\sqcup} = \mc T^{\sqcup}$ y se le llama topolog\'ia uni\'on disjunta, y es una topolog\'ia final.
 
-¿Cu\'ando un subconjunto es abierto? Sea $W \subset \big(\bigsqcup X_i, \mc T_{\sqcup}\big)$ es abierto si $\varphi_j^{-1}(W)\subset X_j$ es abierto para cada $j\in I$, pero $$\varphi_j^{-1}(W) = W\cap X_j = \varphi_j^{-1}(W\cap \varphi(X_j))$$
+¿Cu\'ando un subconjunto es abierto? Sea $W \subset \big(\coprod X_i, \mc T_{\sqcup}\big)$ es abierto si $\varphi_j^{-1}(W)\subset X_j$ es abierto para cada $j\in I$, pero $$\varphi_j^{-1}(W) = W\cap X_j = \varphi_j^{-1}(W\cap \varphi(X_j))$$
 pues la inversa de las inmersiones (que son inyectivas) es como cortar.
 
-Sea $(Z, \mc T_Z)$ un espacio topol\'ogico y $\bigsqcup_j X_j \overset{g}{\longrightarrow} Z$,
+Sea $(Z, \mc T_Z)$ un espacio topol\'ogico y $\coprod_j X_j \overset{g}{\longrightarrow} Z$,
 $$ g \text{ es continua }\iff g\circ \varphi_j: X_i \longrightarrow Z \text{ es continua } \forall \, j \in I. $$
 ¡El espacio topológico unión disjunta es con esta topología en concreto!
 \begin{ejem}
     $\{\bb R, \bb R\}$, $W\subset \bb R \sqcup \bb R$ es abierto $\iff$ $W \cap \bb R_1$ y $W\cap \bb R_2$ son abiertos en $\bb R$ ($\bb R_1$ es la primera copia de $\bb R$ y $\bb R_2$ la segunda). Además, $\bb R \sqcup \bb R\supset W = (W\cap \bb R_1) \sqcup (W\cap \bb R_2)$ es la uni\'on disjunta de abiertos.
 \end{ejem}
-Si $U_i \subset X_i$ es abierto, $W=\bigsqcup U_i \subset \left( \underset{i \in I}{\bigsqcup} X_i, \mc T_{\sqcup} \right)$ si $W\cap X_i = U_i$ (es obvio).
+Si $U_i \subset X_i$ es abierto, $W=\coprod U_i \subset \left( \underset{i \in I}{\coprod} X_i, \mc T_{\sqcup} \right)$ si $W\cap X_i = U_i$ (es obvio).
 \section{Topolog\'ia cociente}
 Sea $X$ un conjunto, $R$ una relaci\'on de equivalencia, $\modulo{X}{R} = \{[x]_R, \, x\in X\}$ es el conjunto cociente de $X$, por la relaci\'on $R$, que sabemos que es uni\'on disjunta de sus clases de equivalencia $[x]$. Además, se tiene la aplicación de paso al cociente
 $$\bt \pi: X \rar & \modulo{X}{R} \\[-6mm] x \rarmaps & \left[x\right]_R  \et$$
@@ -821,7 +821,7 @@ Esta asignaci\'on no es inyectiva, pues distintas pseudom\'etricas pueden genera
     Como con $\{B_d(x,\varepsilon)\}_{0< \varepsilon < 1}$ es base de entornos de $\mc T_d$ y $\{B_{\overline{d}}(x,\varepsilon)\}_{0< \varepsilon < 1}$ es base de entornos de $\mc T_{\overline{d}}$, se verifica que $\{B_d(x,\varepsilon)\}_{0< \varepsilon < 1} = \{B_{\overline{d}} (x,\varepsilon) \}_{0< \varepsilon < 1}$. Esto es porque los entornos son algo local.
 \end{ejem}
 \begin{obs}
-    Esto nos dice que al trabajar a nivel de espacios topol\'ogicos, no podemos distinguir entre $(X,d)$ y $(X,\overline{d})$, y podemos escoger la m\'etrica que nos convenga, acotada o no acotada. En cambio, a nivel de espacios m\'etricos, son distintos. No as\'i del rev\'es. 
+    Esto nos dice que al trabajar a nivel de espacios topol\'ogicos, no podemos distinguir entre $(X,d)$ y $(X,\overline{d})$, y podemos escoger la m\'etrica que nos convenga, acotada o no acotada. En cambio, a nivel de espacios m\'etricos, son distintos.
 \end{obs}
 \begin{ejem}
     Cerrado y acotado es compacto en $(\bb R,d)$ pero no en otras m\'etricas.

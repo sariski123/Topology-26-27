@@ -630,7 +630,7 @@ En \(\mathbb{R}\):
 \section{Bases y subbases de una topolog\'ia por cerrados}
 Todas las demostraciones son pasando al complementario.
 
-Sea $(X,\mc C)$ esapcio topolo\'ogico por cerrados. \begin{defi}
+Sea $(X,\mc C)$ esapcio topol\'ogico por cerrados. \begin{defi}
     $\mc B \subset \mc P(X)$ es un \textbf{base por cerrados} (o \textbf{base de $\mc C$}) si para todo cerrado $C$ y para todo $x\nin C$, existe $B \in \mc B$ tal que $x\nin B \supset C \iff X \neq C =\displaystyle \bigcap_{B_i \in \mc B} B_i$, es decir, todo cerrado es intersecci\'on de cerrados de la base. 
 \end{defi}
 \begin{defi} La base $\mc B$ genera una topolog\'ia por abiertos 
@@ -642,7 +642,7 @@ Sea $(X,\mc C)$ esapcio topolo\'ogico por cerrados. \begin{defi}
 Si $X$ es conjunto, $\mc B \subset \mc P(X)$, $\mc B$ es una base por cerrados si y solo si
 \begin{enumerate}
     \item $\forall\, x\in X$, existe $b\in \mc B$ tal que $x\nin B$.
-    \item $\forall \, B_1,B_2 \in \mc B$ y prar todo $X\in B_1\cup B_2$, existe $B_x\in \mc B$ tal que $x \nin B_x \supseteq B_1\cap B_2$.
+    \item $\forall \, B_1,B_2 \in \mc B$ y para todo $x \in B_1\cup B_2$, existe $B_x \in \mc B$ tal que $x \nin B_x \supseteq B_1 \cup B_2$.
 \end{enumerate}
 \end{prop}
 \begin{defi}
@@ -1248,13 +1248,8 @@ $\Rightarrow)$ Sea $x\in X$ veamos que $\{x\}$ es cerrado. Supongamos que no, en
 
 \begin{dem}[Continuación Prop.] \, 
 
-        $\Leftarrow)$ Sean $x \ne x' \in X$. Por hipótesis, existen cerrados $V_x, V_{x'}$ tal que $x \notin V_{x'}, \, x' \notin V_x$.
-        
-        Entonces, existe un abierto $U_x$ tal que $x \in U_x \subseteq V_x$.
-        
-        Sea $U_{x'} = X \setminus V_x$, que es abierto, y $x' \in X \setminus V_x$.
-        
-        Tenemos que $U_x \cap U_{x'} = \emptyset \implies X$ es $T_2$.
+        $\Leftarrow)$ Sean $x \ne x' \in X$. Por hipótesis, existen cerrados $V_x, V_{x'}$ tal que $x \notin V_{x'}, \, x' \notin V_x$. Entonces, existe un abierto $U_x$ tal que $x \in U_x \subseteq V_x$.      
+        Sea $U_{x'} = X \setminus V_x$, que es abierto, y $x' \in X \setminus V_x$. Tenemos que $U_x \cap U_{x'} = \emptyset \implies X$ es $T_2$.
 \end{dem}
 
 \begin{prop}
@@ -1292,16 +1287,11 @@ $\Rightarrow)$ Sea $x\in X$ veamos que $\{x\}$ es cerrado. Supongamos que no, en
     Es decir, los entornos cerrados forman base $\iff X$ es regular.
 \end{prop}
 
-\begin{dem} $\Rightarrow) $ Sea $x \in X$ y $U_x$ abierto.
-        
-        $x \notin X \setminus U_x \coloneqq C$ cerrado. Por ser $X$ regular, existen abiertos $V_x \ni x, \, V_C \supset C$ tales que $V_x \cap V_C = \emptyset$.
-        
+\begin{dem} $\Rightarrow) $ Sea $x \in X$ y $U_x$ abierto. $x \notin X \setminus U_x \coloneqq C$ cerrado. Por ser $X$ regular, existen abiertos $V_x \ni x, \, V_C \supset C$ tales que $V_x \cap V_C = \emptyset$.    
         Esto implica que $V_x \subseteq X \setminus V_C \subseteq X \setminus C = U_x \implies x \in V_x \subseteq \overline{V}_x \subseteq X \setminus V_C \subseteq U_x$.
 
-        $\Leftarrow)$ Sea $x \in X, \, C \subseteq X$ cerrado con $x \notin C \implies x \in X \setminus C \coloneqq U_x$ abierto.
-        
+        $\Leftarrow)$ Sea $x \in X, \, C \subseteq X$ cerrado con $x \notin C \implies x \in X \setminus C \coloneqq U_x$ abierto.     
         Por hipótesis, existe $V_x$ abierto con $x \in V_x \subseteq \overline{V}_x \subseteq U_x$.
-        
         Luego $x \in V_x$ y $X \setminus U_x \subseteq \underbrace{X \setminus \overline{V}_x}_{V_C \text{ abierto}}$, con $C = X \setminus U_x$, y $V_x \cap V_C = \emptyset$ porque $V_x \subseteq \overline{V}_x \implies X \setminus \overline{V}_x = V_C$.
 \end{dem}
 
@@ -2916,7 +2906,7 @@ Si $A \subseteq X$ es un subespacio conexo y $x \in A$, entonces $A \subseteq [x
 \end{lema}
 
 \begin{prop}
-Las componentes conexas de $X$ son los subespacios conexos maximales de $X$. Además, son disjuntas y particionan $X$: $X = \bigsqcup C_i$.
+Las componentes conexas de $X$ son los subespacios conexos maximales de $X$. Además, son disjuntas y particionan $X$: $X = \coprod C_i$.
 \end{prop}
 
 \begin{dem}
