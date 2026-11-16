@@ -1301,8 +1301,22 @@ $\Rightarrow)$ Sea $x\in X$ veamos que $\{x\}$ es cerrado. Supongamos que no, en
     Entonces, entornos cerrados de un cerrado son base de entornos de cerrados.
 \end{prop}
 
-\begin{dem}
-    (\textcolor{red}{Ejercicio}).
+\begin{dem}\,
+    \begin{itemize}
+        \item[$\Rightarrow)$] Sea $C\subset U_C$ y $C'=X-U_C$ es cerrado y $C \cap C'=\emptyset$, entonces $C'=X-U_C \subseteq V_{C'}$ o equivalentemente, $X-V_{C'} \subseteq U_C$.
+        
+        As\'i pues, por ser $X$ normal, existen $V_{C} \supset C, V_{C'}\supset C'$ con $V_C \cap V_{C'} = \emptyset$, luego $V_C \subset X-V_{C'}$ y $V_C \subset \overline{V}_C \subset X-V_{C'}$, por tanto, recopilando
+        $$C \subset V_C \subset \overline{V}_C \subset X-V_{C'} \subset U_C$$ 
+        \item[$\Leftarrow)$] Sean $C_1, C_2\subset X$ cerrados con $C_1\cap C_2 = \emptyset$, $C_1 \subset X-C_2 := U_{C_1}$ abierto. 
+        
+        Por hipo\'otesis, existe $V_{C_1}$ abierto tal que $C_1 \subset V_{C_1} \subset \overline{V}_{C_1} \subset U_{C_1} = X-C_2$, luego definiendo
+        $$\left. \begin{array}{r}
+            V_{C_2} : = X - \overline{V}_{C_1} \text{ abierto} \\ \overline{V}_{C_1} \subset X-C_2 \iff C_2 \subset X-\overline{V}_{C_1} =V_{C_2} \\ V_{C_1} \subset \overline{V}_{C_1} \subset X-C_2
+        \end{array} \right\} \Rightarrow V_{C_1} \cap V_{C_2 } = V_{C_1} \cap (X-\overline{V}_{C_1}) = \emptyset$$
+        se tiene que $V_{C_1}$ y $V_{C_2}$ son dos abiertos disjuntos conteniendo a $C_1$ y $C_2$, que es decir que $X$ es normal.
+    \end{itemize}
+
+    \textbf{Consecuencia sobre entornos:} Si $W$ es un entorno arbitrario de un cerrado $C$, por definición existe un abierto $U_C$ tal que $C \subseteq U_C \subseteq W$. Aplicando la caracterización anterior, existe un abierto $V_C$ con $C \subseteq V_C \subseteq \overline{V}_C \subseteq U_C \subseteq W$. El conjunto $F = \overline{V}_C$ es cerrado y contiene al abierto $V_C$ (que a su vez contiene a $C$), por lo que $F$ es un entorno cerrado de $C$ contenido en $W$. Así, los entornos cerrados forman una base de entornos de $C$.
 \end{dem}
 
 \begin{ejem}

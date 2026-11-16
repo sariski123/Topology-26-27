@@ -185,4 +185,108 @@ Demostraremos la primera
 \begin{obs}
     Un subespacio conexo si y solo si los \'unicos abiertos-cerrados que tiene son $X, \emptyset$. Si tenemos un abierto-cerrado no trivial tenemos una separaci\'on pues su complementario tambi\'en es abierto-cerrado. 
 \end{obs}
-$\{X_i\}$ espacios topol\'ogicos, se tiene el espacio topol\'ogico $\bigsqcup X_i$, solo falta ver que $X_i$ son abiertos o cerrados. Lo son porque $\bigsqcup X_i$ tiene la topolog\'ia final de las $\varphi_j$, de forma que $X_j\subset \bigsqcup X_i$ son abiertos y cerrados. Luego $\bigsqcup X_i$ no es conexo aunque $X_j$ lo sean. 
+
+%===============================================
+% NATALIA 16/11/2026
+%==============================================
+
+Dado $\{X_i\}$ espacios topol\'ogicos, se tiene el espacio topol\'ogico $\bigsqcup X_i$, solo falta ver que $X_i$ son abiertos o cerrados. Lo son porque $\bigsqcup X_i$ tiene la topolog\'ia final de las $\varphi_j$, de forma que $X_j\subset \bigsqcup X_i$ son abiertos y cerrados. Luego $\bigsqcup X_i$ no es conexo aunque $X_j$ lo sean. 
+
+Sea $\{X_i\}_{i \in I}$ una familia de espacios topológicos no vacíos (con $|I| \ge 2$). La unión disjunta $\coprod_{i \in I} X_i$ es disconexa.
+
+\begin{prop}
+    Un espacio topológico $X$ es conexo si y solo si los únicos subconjuntos abiertos y cerrados a la vez son $\emptyset$ y $X$.
+\end{prop}
+
+\begin{dem}[Idea para la unión disjunta]
+    Para cada $j \in I$, la inmersión canónica $\varphi_j : X_j \hookrightarrow \coprod_{i \in I} X_i$ cumple que $X_j$ es abierto y cerrado en $\coprod_{i \in I} X_i$ (con $\emptyset \neq X_j \neq \coprod_{i \in I} X_i$), por lo que el espacio no es conexo.
+\end{dem}
+
+\begin{teo}
+    Sea $\{X_i\}_{i \in I}$ una familia de espacios topológicos no vacíos. Entonces:
+    \[
+        \prod_{i \in I} X_i \text{ es conexo} \iff \text{cada espacio } X_i \text{ es conexo } \forall i \in I \text{.}
+    \]
+\end{teo}
+
+\begin{dem}
+    ($\implies$) Es inmediato, pues para cada $j \in I$ la proyección canónica $\pi_j : \prod_{i \in I} X_i \to X_j$ es continua y sobreyectiva, y la imagen continua de un espacio conexo es conexa.
+
+    \medskip
+
+    ($\Longleftarrow$) Supongamos que $X_i$ es conexo para todo $i \in I$. Distinguimos dos casos:
+
+    \paragraph{Caso 1: $I$ es finito, $I = \{1, \dots, n\}$.} 
+    Lo demostramos por inducción sobre $n$:
+    \begin{itemize}
+        \item \textbf{Para $n = 1$:} $\prod_{i=1}^1 X_i = X_1$, que es conexo por hipótesis.
+        
+        \item \textbf{Para $n = 2$:} Sean $X_1, X_2$ espacios conexos. Fijemos un punto $b_2 \in X_2$ y consideremos el subespacio horizontal $X_1 \times \{b_2\} \subseteq X_1 \times X_2$. La restricción de la primera proyección $\pi_1|_{X_1 \times \{b_2\}} : X_1 \times \{b_2\} \to X_1$ es un homeomorfismo (ejercicio), luego $X_1 \times \{b_2\}$ es conexo por serlo $X_1$.
+        
+        Análogamente, para cada $x_1 \in X_1$, el subespacio vertical $\{x_1\} \times X_2 \subseteq X_1 \times X_2$ es homeomorfo a $X_2$ y, por tanto, es conexo.
+        
+        \begin{center}
+            \begin{tikzpicture}[scale=0.9]
+                % Ejes / Espacio producto X1 x X2
+                \draw[->, thick] (0,0) -- (4.5,0) node[right] {$X_1$};
+                \draw[->, thick] (0,0) -- (0,3.2) node[above] {$X_2$};
+                
+                % Línea horizontal X1 x {b2}
+                \draw[very thick, blue] (0,2.2) -- (4.2,2.2) node[right] {$X_1 \times \{b_2\}$ (conexo)};
+                \node[left] at (0,2.2) {$b_2$};
+                
+                % Línea vertical {x1} x X2
+                \draw[very thick, red] (2.6,0) -- (2.6,3.0) node[right, pos=0.15] {$\{x_1\} \times X_2$};
+                \node[below] at (2.6,0) {$x_1$};
+                
+                % Punto de intersección (x1, b2)
+                \filldraw[black] (2.6,2.2) circle (2pt) node[above left] {$(x_1, b_2)$};
+            \end{tikzpicture}
+        \end{center}
+        
+        Observemos que la intersección de ambos subespacios es no vacía:
+        \[
+            (\{x_1\} \times X_2) \cap (X_1 \times \{b_2\}) = \{(x_1, b_2)\} \neq \emptyset \text{}
+        \]
+        Por tanto, la «cruz» $T_{x_1} = (\{x_1\} \times X_2) \cup (X_1 \times \{b_2\}) \subseteq X_1 \times X_2$ es conexa por ser unión de dos subespacios conexos con intersección no vacía.
+        
+        Consideremos ahora la unión de todas estas cruces al variar $x_1 \in X_1$:
+        \[
+            \bigcup_{x_1 \in X_1} T_{x_1} = X_1 \times X_2 \text{}
+        \]
+        (ya que cualquier par $(x_1, x_2) \in \{x_1\} \times X_2 \subseteq T_{x_1}$). Además, todas las familias $\{T_{x_1}\}_{x_1 \in X_1}$ comparten el segmento horizontal:
+        \[
+            \bigcap_{x_1 \in X_1} T_{x_1} = X_1 \times \{b_2\} \neq \emptyset \text{}
+        \]
+        En consecuencia, $X_1 \times X_2 = \bigcup_{x_1 \in X_1} T_{x_1}$ es conexo al ser unión de subespacios conexos con intersección total no vacía.
+
+        \item \textbf{Paso inductivo ($n-1 \implies n$):} Supongamos como hipótesis de inducción que $\prod_{i=1}^{n-1} X_i$ es conexo. Como $\prod_{i=1}^n X_i$ es homeomorfo a $\left(\prod_{i=1}^{n-1} X_i\right) \times X_n$, aplicamos el caso $n = 2$ para concluir que $\prod_{i=1}^n X_i$ es conexo.
+    \end{itemize}
+
+    \paragraph{Caso 2: $I$ es un conjunto de índices cualquiera.}
+    Fijemos un punto $b = (b_i)_{i \in I} \in \prod_{i \in I} X_i$. Para cada subconjunto finito $M = \{i_1, \dots, i_r\} \subseteq I$, definimos el subespacio:
+    \[
+        T_M = \left\{ (x_i)_{i \in I} \in \prod_{i \in I} X_i \;\middle|\; x_i = b_i \text{ si } i \notin M \right\} \text{}
+    \]
+    Observemos que $T_M$ es homeomorfo al producto finito $X_{i_1} \times \dots \times X_{i_r}$ (mediante la proyección sobre las coordenadas de $M$, ya que el resto están fijas en $b_i$). Por el \textbf{Caso 1}, $T_M$ es conexo para todo $M \subseteq I$ finito.
+
+    Además, para todo $M \subseteq I$ finito se tiene que $b \in T_M$, luego:
+    \[
+        \bigcap_{\substack{M \subseteq I \\ M \text{ finito}}} T_M \ni b \implies \bigcap_{\substack{M \subseteq I \\ M \text{ finito}}} T_M \neq \emptyset \text{}
+    \]
+    Por tanto, el subespacio $Y = \bigcup_{\substack{M \subseteq I \\ M \text{ finito}}} T_M \subseteq \prod_{i \in I} X_i$ es conexo por ser unión de conexos con intersección no vacía.
+
+    Probemos finalmente que $Y$ es denso en $\prod_{i \in I} X_i$ ($\overline{Y} = \prod_{i \in I} X_i$):
+    \begin{quote}
+        Sea $x = (x_i)_{i \in I} \in \prod_{i \in I} X_i$ y sea $U$ un abierto básico de la topología producto tal que $x \in U$. Por definición de la base producto, existe un subconjunto finito $M_U = \{i_1, \dots, i_m\} \subseteq I$ y abiertos $U_{i_j} \subseteq X_{i_j}$ tales que:
+        \[
+            \displaystyle U = U_{i_1} \times \dots \times U_{i_m} \times \prod_{i \notin M_U} X_i \text{}
+        \]
+        Definimos el punto $z = (z_i)_{i \in I} \in \prod_{i \in I} X_i$ mediante:
+        \[
+            z_i = \begin{cases} x_i & \text{si } i \in M_U, \\ b_i & \text{si } i \notin M_U. \end{cases} \text{}
+        \]
+        Por construcción, $z \in T_{M_U} \subseteq Y$. Por otro lado, para cada $j \in \{1, \dots, m\}$ se cumple $z_{i_j} = x_{i_j} \in U_{i_j}$, de modo que $z \in U$. Así, $z \in U \cap Y \neq \emptyset$ para todo abierto básico $U$ que contiene a $x$, lo que demuestra que $x \in \overline{Y}$.
+    \end{quote}
+    Como $Y$ es conexo y $\overline{Y} = \prod_{i \in I} X_i$, concluimos que $\prod_{i \in I} X_i$ es conexo (pues el cierre de un subespacio conexo es conexo).
+\end{dem}

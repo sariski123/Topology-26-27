@@ -3,7 +3,7 @@
 % ==============================================================================
 % 14 DE ENERO DE 2026
 % ==============================================================================
-\section{14 de enero de 2026}
+\section{14 de enero de 2026} \justifying
 
 \subsection*{TEOR\'IA}
 
@@ -69,6 +69,78 @@
         \item Sea $\mathcal{T}$ otra topología en $X$. Demostrar que la topología $\mathcal{T}_d$ es menos fina que la topología $\mathcal{T}$ si y solo si la aplicación distancia $d : (X, \mathcal{T}) \times (X, \mathcal{T}) \to \mathbb{R}$ es continua.
         \hfill \textbf{(2 puntos)}
     \end{enumerate}
+    \begin{sol}
+        \begin{enumerate}
+    \item[\textbf{a)}] \textbf{Continuidad de $d : (X, \mathcal{T}_d) \times (X, \mathcal{T}_d) \to \mathbb{R}$.}
+    
+    \begin{dem}Sea $W \subseteq \mathbb{R}$ un abierto cualquiera con la topología usual $\mathcal{T}_u$. Queremos demostrar que $d^{-1}(W)$ es abierto en $(X, \mathcal{T}_d) \times (X, \mathcal{T}_d)$.
+    
+    Si $d^{-1}(W) = \emptyset$, entonces es trivialmente abierto. Supongamos que $d^{-1}(W) \neq \emptyset$ y tomemos un punto arbitrario $(x_0, y_0) \in d^{-1}(W)$. Entonces $d(x_0, y_0) \in W$ y, al ser $W$ abierto en $\mathbb{R}$, existe $\varepsilon > 0$ tal que:
+    \[
+        (d(x_0, y_0) - \varepsilon, \, d(x_0, y_0) + \varepsilon) \subseteq W
+    \]
+    Consideremos el abierto básico de la topología producto $\mathcal{T}_d \times \mathcal{T}_d$:
+    \[
+        U_{(x_0, y_0)} = B_d(x_0, \nicefrac{\varepsilon}{2}) \times B_d(y_0, \nicefrac{\varepsilon}{2})
+    \]
+    Claramente $(x_0, y_0) \in U_{(x_0, y_0)}$. Además, si $(x, y) \in U_{(x_0, y_0)}$, entonces $d(x, x_0) < \nicefrac{\varepsilon}{2}$ y $d(y, y_0) < \nicefrac{\varepsilon}{2}$. Aplicando dos veces la desigualdad triangular (y la simetría de $d$):
+    \begin{align*}
+        d(x, y) &\le d(x, x_0) + d(x_0, y_0) + d(y_0, y) < d(x_0, y_0) + \varepsilon \\
+        d(x_0, y_0) &\le d(x_0, x) + d(x, y) + d(y, y_0) < d(x, y) + \varepsilon
+    \end{align*}
+    De ambas desigualdades se deduce que $|d(x, y) - d(x_0, y_0)| < \varepsilon$, es decir:
+    \[
+        d(x, y) \in (d(x_0, y_0) - \varepsilon, \, d(x_0, y_0) + \varepsilon) \subseteq W \implies (x, y) \in d^{-1}(W)
+    \]
+    Por tanto, $(x_0, y_0) \in U_{(x_0, y_0)} \subseteq d^{-1}(W)$. Como esto ocurre para todo $(x_0, y_0) \in d^{-1}(W)$, podemos expresar:
+    \[
+        d^{-1}(W) = \bigcup_{(x_0, y_0) \in d^{-1}(W)} U_{(x_0, y_0)}
+    \]
+    que es unión de abiertos básicos de $\mathcal{T}_d \times \mathcal{T}_d$, luego $d^{-1}(W)$ es abierto y $d$ es continua.
+    \end{dem}
+
+    \item[\textbf{b)}] \textbf{Coincidencia de $\mathcal{T}_d$ con la topología inicial $\mathcal{T}_{ini}$ de $\{d_x\}_{x \in X}$.}
+    
+    \begin{dem}
+        Sea $\mathcal{T}_{ini}$ la topología inicial en $X$ inducida por la familia $\{d_x : X \to (\mathbb{R}, \mathcal{T}_u)\}_{x \in X}$. Probamos la doble inclusión:
+
+        \begin{itemize}
+            \item[($\mathcal{T}_{ini} \subseteq \mathcal{T}_d$)] Por definición, $\mathcal{T}_{ini}$ es la topología menos fina en $X$ que hace continuas a todas las aplicaciones $d_x$. Bastará ver que para cada $x \in X$, la aplicación $d_x : (X, \mathcal{T}_d) \to \mathbb{R}$ es continua.
+            
+            Observemos que para cada $x \in X$ fijo, podemos escribir $d_x = d \circ i_x$, donde $i_x : (X, \mathcal{T}_d) \to (X, \mathcal{T}_d) \times (X, \mathcal{T}_d)$ viene dada por $i_x(x') = (x, x')$. La aplicación $i_x$ es continua porque sus componentes son la aplicación constante $x' \mapsto x$ y la identidad $x' \mapsto x'$, ambas continuas respecto de $\mathcal{T}_d$. Como $d$ también es continua por el apartado \textbf{a)}, la composición $d_x = d \circ i_x$ es continua en $(X, \mathcal{T}_d)$. En consecuencia, $\mathcal{T}_{ini} \subseteq \mathcal{T}_d$.
+
+            \item[($\mathcal{T}_d \subseteq \mathcal{T}_{ini}$)] Sea $U \in \mathcal{T}_d$ y sea $x \in U$. Por definición de $\mathcal{T}_d$, existe $r > 0$ tal que $B_d(x, r) \subseteq U$. 
+            
+            Consideremos el intervalo abierto $V = (-r, r) \in \mathcal{T}_u$. Por definición de $\mathcal{T}_{ini}$, la antiimagen $d_x^{-1}(V)$ pertenece a $\mathcal{T}_{ini}$. Calculamos explícitamente este conjunto:
+            \[
+                d_x^{-1}((-r, r)) = \{x' \in X \mid d_x(x') \in (-r, r)\} = \{x' \in X \mid d(x, x') < r\} = B_d(x, r)
+            \]
+            (donde hemos usado que $d(x, x') \ge 0$). Por tanto, $B_d(x, r) \in \mathcal{T}_{ini}$ y se cumple $x \in B_d(x, r) \subseteq U$. Como esto ocurre para todo $x \in U$, $U$ es unión de abiertos de $\mathcal{T}_{ini}$, luego $U \in \mathcal{T}_{ini}$.
+        \end{itemize}
+        Concluimos que $\mathcal{T}_d = \mathcal{T}_{ini}$.
+    \end{dem}
+
+    \item[\textbf{c)}] \textbf{$\mathcal{T}_d \subseteq \mathcal{T} \iff d : (X, \mathcal{T}) \times (X, \mathcal{T}) \to \mathbb{R}$ es continua.}
+    
+    \begin{dem} \,
+        \begin{itemize}
+            \item[$(\implies$)] Supongamos que $\mathcal{T}_d \subseteq \mathcal{T}$. Entonces la aplicación identidad $\mathrm{id}_X : (X, \mathcal{T}) \to (X, \mathcal{T}_d)$ es continua. En consecuencia, la aplicación producto:
+            \[
+                \mathrm{id}_X \times \mathrm{id}_X : (X, \mathcal{T}) \times (X, \mathcal{T}) \to (X, \mathcal{T}_d) \times (X, \mathcal{T}_d), \quad (x, y) \mapsto (x, y)
+            \]
+            es continua (pues sus composiciones con las proyecciones $\pi_1, \pi_2$ son $\mathrm{id}_X \circ \pi_1$ e $\mathrm{id}_X \circ \pi_2$, que son continuas). Por el apartado \textbf{a)}, $d : (X, \mathcal{T}_d) \times (X, \mathcal{T}_d) \to \mathbb{R}$ es continua. Componiendo ambas aplicaciones continuas, obtenemos que:
+            \[
+                d = d \circ (\mathrm{id}_X \times \mathrm{id}_X) : (X, \mathcal{T}) \times (X, \mathcal{T}) \to \mathbb{R}
+            \]
+            es continua.
+
+            \item[($\Longleftarrow$)] Recíprocamente, supongamos que $d : (X, \mathcal{T}) \times (X, \mathcal{T}) \to \mathbb{R}$ es continua. Repitiendo exactamente el argumento de composición del apartado \textbf{b)}, para cada $x \in X$ la aplicación $i_x : (X, \mathcal{T}) \to (X, \mathcal{T}) \times (X, \mathcal{T})$, $i_x(x') = (x, x')$, es continua, por lo que $d_x = d \circ i_x : (X, \mathcal{T}) \to \mathbb{R}$ es continua para todo $x \in X$.
+            
+            Como $\mathcal{T}_{ini}$ es la topología menos fina en $X$ que hace continuas a todas las aplicaciones $\{d_x\}_{x \in X}$, se deduce que $\mathcal{T}_{ini} \subseteq \mathcal{T}$. Finalmente, dado que por el apartado \textbf{b)} sabemos que $\mathcal{T}_d = \mathcal{T}_{ini}$, concluimos que $\mathcal{T}_d \subseteq \mathcal{T}$.
+        \end{itemize}
+    \end{dem}
+\end{enumerate}
+    \end{sol}
 \end{enumerate}
 
 \newpage

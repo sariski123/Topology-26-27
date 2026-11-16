@@ -160,9 +160,9 @@
 
     Probamos la doble inclusión:
 
-    * ($\supseteq$) Como $A \subseteq A \cup B$, tomando cierres se cumple que $\overline{A} \subseteq \overline{A \cup B}$. Análogamente, como $B \subseteq A \cup B$, tenemos $\overline{B} \subseteq \overline{A \cup B}$. Por tanto, $\overline{A} \cup \overline{B} \subseteq \overline{A \cup B}$.
+    ($\supseteq$) Como $A \subseteq A \cup B$, tomando cierres se cumple que $\overline{A} \subseteq \overline{A \cup B}$. Análogamente, como $B \subseteq A \cup B$, tenemos $\overline{B} \subseteq \overline{A \cup B}$. Por tanto, $\overline{A} \cup \overline{B} \subseteq \overline{A \cup B}$.
 
-    * ($\subseteq$) Como $\overline{A}$ y $\overline{B}$ son conjuntos cerrados en $X$, la unión finita de cerrados $\overline{A} \cup \overline{B}$ es un cerrado en $X$.
+    ($\subseteq$) Como $\overline{A}$ y $\overline{B}$ son conjuntos cerrados en $X$, la unión finita de cerrados $\overline{A} \cup \overline{B}$ es un cerrado en $X$.
     
       Por otra parte, $A \subseteq \overline{A}$ y $B \subseteq \overline{B}$, luego $A \cup B \subseteq \overline{A} \cup \overline{B}$.
     
@@ -229,11 +229,11 @@
 
         \textit{Contraejemplo para la estricta inclusión:}
         En $\mathbb{R}$ con la topología usual $\mathcal{T}_d$, consideremos la familia de abiertos $A_n = (-\frac{1}{n}, \frac{1}{n})$ para cada $n \in \mathbb{N}^+$.
-        * Como cada $A_n$ es un abierto, $A_n^\circ = A_n$. Por tanto:
+        Como cada $A_n$ es un abierto, $A_n^\circ = A_n$. Por tanto:
           \[
               \bigcap_{n \in \mathbb{N}^+} A_n^\circ = \bigcap_{n \in \mathbb{N}^+} \left(-\frac{1}{n}, \frac{1}{n}\right) = \{0\}
           \]
-        * Sin embargo, la intersección previa de los conjuntos es $\bigcap_{n \in \mathbb{N}^+} A_n = \{0\}$, cuyo interior es:
+        Sin embargo, la intersección previa de los conjuntos es $\bigcap_{n \in \mathbb{N}^+} A_n = \{0\}$, cuyo interior es:
           \[
               \left(\bigcap_{n \in \mathbb{N}^+} A_n\right)^\circ = \{0\}^\circ = \emptyset
           \]
@@ -265,11 +265,13 @@
     
     Un punto $x \in \mathbb{N}$ es de acumulación de $A$ ($x \in A'$) si para todo abierto $U_x$ que contiene a $x$ se cumple que $(U_x - \{x\}) \cap A \neq \emptyset$.
     
-    * El abierto propio más pequeño que contiene a $x$ es $U_x = \{1, 2, \dots, x\}$.
-    * Por tanto, $x \in A' \iff (\{1, 2, \dots, x\} - \{x\}) \cap A \neq \emptyset \iff \{1, 2, \dots, x-1\} \cap A \neq \emptyset$.
-    * El elemento mínimo de $A$ es $4$. 
-      * Si $x \leq 4$, la sección previa $\{1, \dots, x-1\}$ no contiene a ningún elemento de $A$, luego no interseca a $A$.
-      * Si $x \geq 5$, la sección previa $\{1, \dots, x-1\}$ contiene al $4 \in A$, luego la intersección es no vacía.
+    El abierto propio más pequeño que contiene a $x$ es $U_x = \{1, 2, \dots, x\}$.
+    Por tanto, $x \in A' \iff (\{1, 2, \dots, x\} - \{x\}) \cap A \neq \emptyset \iff \{1, 2, \dots, x-1\} \cap A \neq \emptyset$.
+    El elemento mínimo de $A$ es $4$. 
+      
+    Si $x \leq 4$, la sección previa $\{1, \dots, x-1\}$ no contiene a ningún elemento de $A$, luego no interseca a $A$.
+    
+    Si $x \geq 5$, la sección previa $\{1, \dots, x-1\}$ contiene al $4 \in A$, luego la intersección es no vacía.
     
     Por consiguiente, el conjunto de puntos de acumulación es:
     \[
@@ -291,24 +293,27 @@
 
     \begin{enumerate}[label=\arabic*)]
         \item \textbf{Para $A = \{4, 13, 23, 37\}$:}
-        * \textbf{Interior $A^\circ$:} Como todos los abiertos propios no vacíos contienen obligatoriamente al $1 \notin A$, ningún abierto no vacío puede estar contenido en $A$. Por tanto:
+        
+        \textbf{Interior $A^\circ$:} Como todos los abiertos propios no vacíos contienen obligatoriamente al $1 \notin A$, ningún abierto no vacío puede estar contenido en $A$. Por tanto:
           \[ A^\circ = \emptyset \]
-        * \textbf{Cierre $\overline{A}$:} $\overline{A} = A \cup A' = \{4, 13, 23, 37\} \cup \{5, 6, 7, \dots\} = \{4, 5, 6, 7, \dots\}$.
+        \textbf{Cierre $\overline{A}$:} $\overline{A} = A \cup A' = \{4, 13, 23, 37\} \cup \{5, 6, 7, \dots\} = \{4, 5, 6, 7, \dots\}$.
 
         \medskip
 
         \item \textbf{Para $B = \{7, 24, 85\}$:}
-        * \textbf{Interior $B^\circ$:} Análogamente, como $1 \notin B$, no existe ningún abierto no vacío contenido en $B$. Por tanto:
+        
+        \textbf{Interior $B^\circ$:} Análogamente, como $1 \notin B$, no existe ningún abierto no vacío contenido en $B$. Por tanto:
           \[ B^\circ = \emptyset \]
-        * \textbf{Cierre $\overline{B}$:} El elemento mínimo de $B$ es $7$, por lo que $B' = \{8, 9, 10, \dots\}$. Luego:
+        \textbf{Cierre $\overline{B}$:} El elemento mínimo de $B$ es $7$, por lo que $B' = \{8, 9, 10, \dots\}$. Luego:
           \[ \overline{B} = B \cup B' = \{7, 8, 9, 10, \dots\} \]
 
         \medskip
 
         \item \textbf{Para $C = \{3, 6, 9, 12, \dots\} = 3\mathbb{N}$:}
-        * \textbf{Interior $C^\circ$:} De nuevo, como $1 \notin C$, ningún abierto no vacío está contenido en $C$. Por tanto:
+        
+        \textbf{Interior $C^\circ$:} De nuevo, como $1 \notin C$, ningún abierto no vacío está contenido en $C$. Por tanto:
           \[ C^\circ = \emptyset \]
-        * \textbf{Cierre $\overline{C}$:} El elemento mínimo de $C$ es $3$, luego $C' = \{4, 5, 6, \dots\}$. Por tanto:
+        \textbf{Cierre $\overline{C}$:} El elemento mínimo de $C$ es $3$, luego $C' = \{4, 5, 6, \dots\}$. Por tanto:
           \[ \overline{C} = C \cup C' = \{3, 4, 5, 6, \dots\} \]
     \end{enumerate}
 \end{sol}
@@ -473,11 +478,8 @@ $\{x_n\}_{n \in \mathbb{N}}$, $x_n$ todos distintos entre sí $\implies$ No tien
 \[
     V \cap \{x_n\} = \begin{cases} \emptyset \\ a \end{cases} \text{}
 \]
-
-\hrulefill
-
-\medskip
-$\{0, 1, 0, 1, \ldots\} \implies \forall U \text{ abierto con } 1 \in U \implies 0 \in U$
+ 
+Considerando la sucesión $\{0, 1, 0, 1, \ldots\} \implies \forall U \text{ abierto con } 1 \in U \implies 0 \in U$
 \[
     U \cap \{0, 1, 0, 1, \ldots\} = \{0, 1, 0, 1, \ldots\} \implies \text{Hay límite } (1) \text{}.
 \]
@@ -486,13 +488,8 @@ $\{0, 1, 0, 1, \ldots\} \implies \forall U \text{ abierto con } 1 \in U \implies
 \bigskip
 
 \begin{ejer}[67]
-En $(\mathbb{R}, \mc T_{\text{cof}})$:
-
-$\{x_n = n\}_{n \in \mathbb{N}} = \mathbb{N} \subset \mathbb{R}$. ¿Tiene límite?
-
-Encontrar una sucesión no convergente.
+En $(\mathbb{R}, \mc T_{\text{cof}})$, ¿tiene límite la sucesión $\{x_n = n\}_{n \in \mathbb{N}} = \mathbb{N} \subset \mathbb{R}$? ¿y la sucesión $y_n = \frac{1}{n}$? Encontrar una sucesión no convergente.
 \end{ejer}
-
 \begin{sol}
 Sea $a \in \mathbb{R}$.
 \[
@@ -665,8 +662,8 @@ En ambos casos llegamos a una contradicción, por lo que $U \cap A$ debe ser inf
     Para probar que no es regular, basta encontrar un punto $x \in \mathbb{R}$ y un cerrado $C$ tales que $x \notin C$ y no puedan separarse por abiertos disjuntos.
     
     Consideremos el cerrado $C = (-\infty, 0]$ y el punto $x = 1 \notin C$. 
-    * Todo abierto $U$ que contiene a $x = 1$ es de la forma $U = (a, \infty)$ con $a < 1$.
-    * El único abierto de $\mathcal{T}_{\rightarrow}$ que contiene a todo el cerrado $C = (-\infty, 0]$ es el espacio total $\mathbb{R}$ (ya que ningún intervalo de la forma $(b, \infty)$ puede contener a $(-\infty, 0]$).
+    Todo abierto $U$ que contiene a $x = 1$ es de la forma $U = (a, \infty)$ con $a < 1$.
+    El único abierto de $\mathcal{T}_{\rightarrow}$ que contiene a todo el cerrado $C = (-\infty, 0]$ es el espacio total $\mathbb{R}$ (ya que ningún intervalo de la forma $(b, \infty)$ puede contener a $(-\infty, 0]$).
     
     Por lo tanto, si $V$ es un abierto tal que $C \subset V$, entonces $V = \mathbb{R}$. Se sigue que $U \cap V = U \cap \mathbb{R} = U \neq \emptyset$, por lo que no existen abiertos disjuntos que separen a $x$ y a $C$. Luego el espacio no es regular.
 
@@ -931,8 +928,8 @@ En ambos casos llegamos a una contradicción, por lo que $U \cap A$ debe ser inf
         
         Queremos probar que $\mathcal{T}_Y = \mathcal{T}^f$.
         \begin{itemize}
-            \item $(\subseteq)$ Sea $V \in \mathcal{T}_Y$. Por definición de la topología inicial, su antiimagen $f^{-1}(V)$ pertenece a $\mathcal{T}_f = \mathcal{T}_X$. Dado que $f^{-1}(V) \in \mathcal{T}_X$, por definición de la topología final se cumple que $V \in \mathcal{T}^f$.
-            \item $(\supseteq)$ Sea $V \in \mathcal{T}^f$. Por definición de la topología final, su antiimagen $U = f^{-1}(V)$ pertenece a $\mathcal{T}_X$. Como $\mathcal{T}_X = \mathcal{T}_f$, existe un abierto $W \in \mathcal{T}_Y$ tal que $f^{-1}(V) = f^{-1}(W)$. Aplicando la imagen directa y usando la biyectividad de $f$:
+            \item[$(\subseteq)$] Sea $V \in \mathcal{T}_Y$. Por definición de la topología inicial, su antiimagen $f^{-1}(V)$ pertenece a $\mathcal{T}_f = \mathcal{T}_X$. Dado que $f^{-1}(V) \in \mathcal{T}_X$, por definición de la topología final se cumple que $V \in \mathcal{T}^f$.
+            \item[$(\supseteq)$] Sea $V \in \mathcal{T}^f$. Por definición de la topología final, su antiimagen $U = f^{-1}(V)$ pertenece a $\mathcal{T}_X$. Como $\mathcal{T}_X = \mathcal{T}_f$, existe un abierto $W \in \mathcal{T}_Y$ tal que $f^{-1}(V) = f^{-1}(W)$. Aplicando la imagen directa y usando la biyectividad de $f$:
             \[
                 V = f(f^{-1}(V)) = f(f^{-1}(W)) = W.
             \]
@@ -945,6 +942,25 @@ En ambos casos llegamos a una contradicción, por lo que $U \cap A$ debe ser inf
 \begin{ejer}
     [98] Sea $X$ un espacio topológico. Demostrar que $X$ es $T_2$ si y solo si la diagonal $\Delta_X := \{(x,x): x \in X\} \subset X\times X$ es un cerrado. Deducir que $X$ es $T_2$ si y solo si el morfismo diagonal $\delta_X: X \longrightarrow X \times X$ definido por $\delta(x) = (x, x)$ es una inmersión cerrada.
 \end{ejer}
+\begin{sol}
+    \begin{itemize}
+        \item[$\Rightarrow)$] $X$ es $T_2$ luego existen para todo $x,x' \in X$ existen abiertos $U_x, U_{x'}$ disjuntos conteninedo a uno y no al otro. 
+
+    Como $\Delta^c = \{(x,y ):x\neq y \}$, $x\in U$ e $y\in V$ disjuntos, luego $(x,y) \in U\times V$ abierto y $(U\times V) \cap V = \emptyset$ (si $(z,z) \in (U\times V)\cap \Delta$ entonces $z\in U$ y $z \in V$!!) por lo que $(x,y) \in U\times V \subseteq \Delta^c$, es decir, es entorno todos sus puntos, luego abierto y por tanto $\Delta$ cerrado.
+    
+    \item[$\Leftarrow)$] $\Delta$ cerrado $\Rightarrow \Delta^c$ abierto. Sea $(x,y) \in \Delta^c = X \times X - \Delta$, entonces $\exists \, U\times V \in \mc B_{\pi} \subset \mc T_{\pi}$ de forma que $(x,y) \in U\times V \subseteq \Delta^c$ de forma que $x\in U$, $y\in V$ y $U \cap V = \emptyset$ pues en caso contrario $z\in U$ y $z\in V$, luego $(z,z) \in U\times V$ y $(z,z) \in \Delta !!$. Concluimos as\'i que $X$ es $T_2$. 
+    \end{itemize}    
+
+    Veamos que $\delta_X$ es una inmersi\'on cerrada. Observemos en primer lugar que $\delta_X$ es siempre una inmersión topológica, cualquiera que sea el espacio $X$. En efecto, su imagen es $\delta_X(X) = \Delta$ y la aplicación biyectiva inducida $\tilde{\delta}_X : X \to \Delta$, $\tilde{\delta}_X(x) = (x,x)$, verifica:
+    \begin{itemize}
+        \item $\tilde{\delta}_X$ es continua, pues $\pi_1 \circ \delta_X = \mathrm{id}_X$ y $\pi_2 \circ \delta_X = \mathrm{id}_X$ son continuas.
+        \item Su inversa $\tilde{\delta}_X^{-1} : \Delta \to X$, dada por $\tilde{\delta}_X^{-1}(x,x) = x$, es continua por coincidir con la restricción $\pi_1|_{\Delta}$ de la primera proyección.
+    \end{itemize}
+    Por tanto, $\delta_X$ es una inmersión. Dado que una inmersión es cerrada si y solo si su imagen es un subconjunto cerrado en el espacio de llegada, y utilizando la caracterización anterior:
+    \[
+        X \text{ es } T_2 \iff \Delta = \delta_X(X) \text{ es cerrado en } X \times X \iff \delta_X \text{ es una inmersión cerrada.}
+    \]
+\end{sol}
 \begin{ejer}
     [99] Probar que una aplicación $f : X \to Y$ es continua si y solo si la aplicación gráfica $\Gamma_f : X \to X \times Y$ dada por $\Gamma_f(x) = (x, f(x))$ es continua. Deducir que si $f$ es continua, la aplicación $\Gamma_f$ es una inmersión. Además, si $Y$ es separado, entonces la aplicación $\Gamma_f$ es una inmersión cerrada (usar el 98).
 \end{ejer}
