@@ -290,3 +290,93 @@ Sea $\{X_i\}_{i \in I}$ una familia de espacios topológicos no vacíos (con $|I
     \end{quote}
     Como $Y$ es conexo y $\overline{Y} = \prod_{i \in I} X_i$, concluimos que $\prod_{i \in I} X_i$ es conexo (pues el cierre de un subespacio conexo es conexo).
 \end{dem}
+
+
+%====================================================
+%17/11/2026
+%====================================================
+
+\section{Componentes conexas}
+
+Sea $X$ espacio topol\'ogico
+\begin{defi}
+    Sea $R$ la relaci\'on de equivalencia dada por 
+    \begin{center}
+        $xRy$ si existe un subespacio conexo $A\subset X$ tal que $x,y\in A$ 
+    \end{center}
+\end{defi}
+\begin{prop}
+    Efectivamente, es relaci\'on de equivalencia.
+\end{prop}
+\begin{dem}
+    Reflexiva: $xRx$ pues $x\in \{x\}$ y es conexo.
+    
+    Sim\'etrica: Si $xRy \Rightarrow yRx$, si $x,y\in A$, $x, y\in A$
+
+    Transitiva: Si $xRy$ e $yRz \Rightarrow xRz$. Ambas implican que $x,y \in A$ conexo, $y,z \in B$ conexo, luego $x,z\in A\cup B$ y es conexo pues $y\in A\cap B \neq \emptyset$. 
+\end{dem}
+\begin{defi}
+    Las \textbf{componentes conexas} de $X$ son las clases de equivalencia de la relaci\'on $R$ anterior. 
+\end{defi}
+\begin{obs}
+    Como las clases de equivalencia son disjuntas, las componentes conexas son disjuntas dos a dos. Adem\'as, su uni\'on es $X$ (pues todo elemento est\'a en alguna clase).
+    
+    Es decir, si $\{C_i\}_{i \in I}$ son las componentes conexas $\Rightarrow X = \coprod_{i \in I} C_i$. 
+    
+   \textit{Observaci\'on importante:} esta uni\'on es de conjuntos, NO de espacios topol\'ogicos. Esto es porque $C_j \hookrightarrow \coprod C_i$ es abierto-cerrado, pero $C_j \hookrightarrow X$ es cerrado, no podemos asegurar que sea abierto (lo veremos m\'as adelante). Si $I$ es finito s\'i es igualdad de espacios topol\'ogicos.
+\end{obs}
+\begin{prop}
+Las componentes conexas son los mayores subespacios conexos de $X$. Es decir, si $C$ conexo y si $C \subset A$ con $A$ conexo, entonces $C=A$.
+\end{prop}
+\begin{dem}
+    Sea $C$ componente conexa de $X\Rightarrow C=[x]=C_x$ con $x\in X$. Si $C \subset A$ conexo, se verifica que para todo $y\in A$, $x,y\in A \Rightarrow xRy \Rightarrow y\in [x] = C \Rightarrow C=A$. Falta demostrar que $C$ es conexo (suponer que no lo es, separarlo, habr\'a puntos relacionados en cada separaci\'on pero tienen que estar en el mismo conexo...). 
+\end{dem}
+\begin{cor}
+    Las componentes conexas son cerradas
+\end{cor}
+\begin{dem}
+    Sea $C$ componente conexa $\Rightarrow C$ es conexo $\Rightarrow \overline{C}$ es conexo y $C \subset \overline{C}$ luego tenemos un conexo que contiene a $C$ y por la proposici\'on anterior, $C = \overline{C}$. 
+\end{dem}
+\begin{custom}
+[Proposici\'on] Para cada $x\in X$ existe una \'unica componente conexa de $X$ que contiene a $x$, y la denotamos por $C_x$. Por ser $x\in[x] = C_x$ disjuntas.
+
+Si $y \in C_x = [x] \Rightarrow C_x=C_y$ por $C_y=[y]=[x]=C_x$. 
+
+Si $A\subset X$ es un subespacio conexo de $X$, entonces $A$ est\'a contenido en una \'unica componente conexa. 
+
+$\forall\, x,y\in A \Rightarrow xRy \Rightarrow[x] = [y] = C_x \supset A$.
+\end{custom}
+
+Para estudiar $f:X \longrightarrow Y$ se puede reducir a ver sus componentes conexas
+$$\bt \coprod C_i = X \rar{f} & Y \\[5mm] \arrow[hook]{u} C_i \arrow[swap]{ru}{f|_{C_i}} \et$$
+entonces si $X$ no es conexo se separa en sus componentes, y as\'i se puede suponer siempre que $X$ es conexo. 
+\begin{defi}
+    Un espacio topol\'ogico $X$ es totalmente inconexo o disconexo si sus componentes conexas son los puntos. 
+\end{defi}
+
+Si $X$ es conexo, su \'unica componente conexa es $C_x= X \quad \forall \, x\in X$. Es decir, si $X$ es conexo las componentes conexas no aportan nada.
+
+\begin{ejems}
+\begin{enumerate}
+    \item $(X, \mc T_{dis})$ es totalmente inconexo, pues si $y,y' \in Y\subset X$, entonces $Y = \{y\} \cup (Y-\{y\})$ es una separaci\'on no trivial luego $Y$ no es conexo. Como es general, los mayores subespacios conexos son los puntos, y as\'i el espacio es totalmente inconexo. 
+    \item $(X, \mc T_A)$ $U$ es abierto si y solo si $A \subset U$ \'o $U=\emptyset$. Sea $Y \subset X$, 
+    \begin{enumerate}
+        \item Si $Y \cap A = \emptyset \iff Y$ es cerrado.
+        
+        Supongamos $Y$ conexo. Sean $y\neq y' \in Y$, $Y = \{y\} \cup (Y-\{y\})$ es cerrado en $X$ (luego en $Y$) $\cup$ cerrado en $X$ (luego en $Y$), y entonces tenemos una separaci\'on no trivial en $Y$, contradiciendo que $Y$ es conexo, al suponer que $y\neq y'$ luego $Y=\{y\}$. Los \'unicos conexos que no cortan a $A$ son los puntos.
+        \item Si $Y\cap A \neq \emptyset$
+        
+        Sea $y\in Y\cap A$. Sean $V_1,V_2$ separaci\'on de $Y$, entonces existe $(U_1,U_2)$ abiertos de $X$ con $U_i \cap Y = V_i$, y por ser abiertos, 
+        $$\begin{cases} A\subset U_1 \\[-3mm] \text{y} \\[-3mm] A\subset U_2  \end{cases} 
+        \Rightarrow 
+        \begin{cases}
+            A\cap Y \subset U_1 \cap Y=V_1 \\[-3mm] \text{y} \\[-3mm] A\cap Y \subset U_2 \cap Y = V_2
+        \end{cases}$$ de forma que $A\cap Y\subset V_1 \cap V_2$,  llegando a contradicci\'on con que $V_1$ y $V_2$ es separci\'on. Esto implica que $Y$ es conexo. 
+
+        Adem\'as $X$ es conexo porque $A\subset X \equiv A\cap X \neq \emptyset$. 
+    \end{enumerate} 
+\end{enumerate}
+\end{ejems}
+\begin{ejer}
+    $(X, \mc T^A)$ es igual que la de $\mc T_A$, basta estudiarlo por cerrados.  
+\end{ejer}
