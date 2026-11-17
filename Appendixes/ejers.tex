@@ -946,14 +946,14 @@ En ambos casos llegamos a una contradicción, por lo que $U \cap A$ debe ser inf
     \begin{itemize}
         \item[$\Rightarrow)$] $X$ es $T_2$ luego existen para todo $x,x' \in X$ existen abiertos $U_x, U_{x'}$ disjuntos conteninedo a uno y no al otro. 
 
-    Como $\Delta^c = \{(x,y ):x\neq y \}$, $x\in U$ e $y\in V$ disjuntos, luego $(x,y) \in U\times V$ abierto y $(U\times V) \cap V = \emptyset$ (si $(z,z) \in (U\times V)\cap \Delta$ entonces $z\in U$ y $z \in V$!!) por lo que $(x,y) \in U\times V \subseteq \Delta^c$, es decir, es entorno todos sus puntos, luego abierto y por tanto $\Delta$ cerrado.
+    Como $\Delta^c = \{(x,y ):x\neq y \}$, $x\in U$ e $y\in V$ disjuntos, luego $(x,y) \in U\times V$ abierto y $(U\times V) \cap \Delta = \emptyset$ (si $(z,z) \in (U\times V)\cap \Delta$ entonces $z\in U$ y $z \in V$!!) por lo que $(x,y) \in U\times V \subseteq \Delta^c$, es decir, es entorno todos sus puntos, luego abierto y por tanto $\Delta$ cerrado.
     
     \item[$\Leftarrow)$] $\Delta$ cerrado $\Rightarrow \Delta^c$ abierto. Sea $(x,y) \in \Delta^c = X \times X - \Delta$, entonces $\exists \, U\times V \in \mc B_{\pi} \subset \mc T_{\pi}$ de forma que $(x,y) \in U\times V \subseteq \Delta^c$ de forma que $x\in U$, $y\in V$ y $U \cap V = \emptyset$ pues en caso contrario $z\in U$ y $z\in V$, luego $(z,z) \in U\times V$ y $(z,z) \in \Delta !!$. Concluimos as\'i que $X$ es $T_2$. 
     \end{itemize}    
 
     Veamos que $\delta_X$ es una inmersi\'on cerrada. Observemos en primer lugar que $\delta_X$ es siempre una inmersión topológica, cualquiera que sea el espacio $X$. En efecto, su imagen es $\delta_X(X) = \Delta$ y la aplicación biyectiva inducida $\tilde{\delta}_X : X \to \Delta$, $\tilde{\delta}_X(x) = (x,x)$, verifica:
     \begin{itemize}
-        \item $\tilde{\delta}_X$ es continua, pues $\pi_1 \circ \delta_X = \mathrm{id}_X$ y $\pi_2 \circ \delta_X = \mathrm{id}_X$ son continuas.
+        \item $\tilde{\delta}_X$ es continua, pues $\pi_1 \circ \delta_X = \mathrm{Id}_X$ y $\pi_2 \circ \delta_X = \mathrm{Id}_X$ son continuas.
         \item Su inversa $\tilde{\delta}_X^{-1} : \Delta \to X$, dada por $\tilde{\delta}_X^{-1}(x,x) = x$, es continua por coincidir con la restricción $\pi_1|_{\Delta}$ de la primera proyección.
     \end{itemize}
     Por tanto, $\delta_X$ es una inmersión. Dado que una inmersión es cerrada si y solo si su imagen es un subconjunto cerrado en el espacio de llegada, y utilizando la caracterización anterior:
@@ -967,7 +967,55 @@ En ambos casos llegamos a una contradicción, por lo que $U \cap A$ debe ser inf
 \begin{sol}
     Consideramos $\pi_X, \pi_Y$ las proyecciones, $\Gamma_f$ es continua $\iff$ $\Gamma_f \circ \pi_X = \Id$ y $\Gamma_f \circ \pi_Y = f$ son continuas, por la propiedad universal. $\Id$ es continua, y por tanto $\Gamma_f$ es continua $\iff \, f$ es continua.
     
-    $\Gamma_f$ continua e inyectiva es inmersi\'on $\iff \, X $ tiene la topolog\'ia inical. TERMINAR.  
+    $\Gamma_f$ continua e inyectiva es inmersi\'on $\iff \, X $ tiene la topolog\'ia inical.  
+
+    \textbf{1. Equivalencia de la continuidad:}
+Sean $\pi_X: X \times Y \to X$ y $\pi_Y: X \times Y \to Y$ las proyecciones canónicas del espacio producto. Por la propiedad universal de la topología producto, la aplicación $\Gamma_f: X \to X \times Y$ es continua si y solo si sus composiciones con ambas proyecciones son continuas:
+\[
+    \pi_X \circ \Gamma_f = \operatorname{Id}_X \qquad \text{y} \qquad \pi_Y \circ \Gamma_f = f.
+\]
+Como la aplicación identidad $\operatorname{Id}_X: X \to X$ es siempre continua, la continuidad de $\Gamma_f$ equivale únicamente a la continuidad de $\pi_Y \circ \Gamma_f = f$.
+
+\vspace{0.3cm}
+\noindent\textbf{2. $\Gamma_f$ es una inmersión si $f$ es continua:}
+Recordemos que $\Gamma_f: X \to X \times Y$ es una inmersión topológica si es continua, inyectiva y la topología de $X$ ($\mathcal{T}_X$) coincide con la topología inicial de $\Gamma_f$ ($\mathcal{T}_{\Gamma_f}$), es decir, si $\Gamma_f: X \to \Gamma_f(X)$ es un homeomorfismo sobre su imagen dotada de la topología inducida.
+\begin{itemize}
+    \item \textbf{Continuidad:} Garantizada por el apartado anterior al ser $f$ continua.
+    \item \textbf{Inyectividad:} Si $\Gamma_f(x_1) = \Gamma_f(x_2)$, entonces $(x_1, f(x_1)) = (x_2, f(x_2))$, de donde se sigue inmediatamente igualando la primera coordenada que $x_1 = x_2$.
+    \item \textbf{Coincidencia de topologías ($\mathcal{T}_X = \mathcal{T}_{\Gamma_f}$):} 
+    \begin{itemize}
+        \item La inclusión $\mathcal{T}_{\Gamma_f} \subseteq \mathcal{T}_X$ se cumple automáticamente al ser $\Gamma_f$ continua (ya que la topología inicial es la menos fina que hace continua a $\Gamma_f$).
+        \item Para la inclusión $\mathcal{T}_X \subseteq \mathcal{T}_{\Gamma_f}$, sea $U \in \mathcal{T}_X$ un abierto cualquiera de $X$. El subconjunto $U \times Y \subseteq X \times Y$ es un abierto básico de la topología producto (al ser $U$ abierto en $X$ e $Y$ abierto en $Y$). Calculamos su antiimagen por $\Gamma_f$:
+        \[
+            \Gamma_f^{-1}(U \times Y) = \{x \in X \mid (x, f(x)) \in U \times Y\} = \{x \in X \mid x \in U \text{ y } f(x) \in Y\} = U.
+        \]
+        Por definición de topología inicial, $U = \Gamma_f^{-1}(U \times Y) \in \mathcal{T}_{\Gamma_f}$.
+    \end{itemize}
+\end{itemize}
+Por tanto, $\Gamma_f$ es una inmersión.
+
+\vspace{0.3cm}
+\noindent\textbf{3. $\Gamma_f$ es una inmersión cerrada si $Y$ es separado ($T_2$):}
+Para demostrar que la inmersión $\Gamma_f$ es una aplicación cerrada (envía cerrados de $X$ en cerrados de $X \times Y$), basta probar que su imagen completa $\Gamma_f(X)$ es un subconjunto cerrado en $X \times Y$. Definimos para ello la aplicación:
+\begin{align*}
+    \Phi: X \times Y &\longrightarrow Y \times Y \\
+    (x, y) &\longmapsto (f(x), y)
+\end{align*}
+\begin{itemize}
+    \item \textbf{Continuidad de $\Phi$:} Por la propiedad universal de la topología producto, $\Phi$ es continua si y solo si sus composiciones con las proyecciones canónicas $\pi_1, \pi_2: Y \times Y \to Y$ son continuas:
+    \[
+        (\pi_1 \circ \Phi)(x, y) = f(x) = (f \circ \pi_X)(x, y) \qquad \text{y} \qquad (\pi_2 \circ \Phi)(x, y) = y = \pi_Y(x, y).
+    \]
+    Ambas son continuas por ser composición de aplicaciones continuas ($f$ y $\pi_X$) o la propia proyección $\pi_Y$. Luego $\Phi$ es continua.
+    \item \textbf{Uso de la separación de $Y$:} Dado que $Y$ es separado ($T_2$), por el ejercicio 98 su diagonal $\Delta_Y = \{(y, y) \mid y \in Y\}$ es un subconjunto cerrado de $Y \times Y$.
+    \item \textbf{Identificación de la gráfica:} Un par $(x, y) \in X \times Y$ pertenece a la gráfica $\Gamma_f(X)$ si y solo si $y = f(x)$, lo que equivale a que $(f(x), y) \in \Delta_Y$:
+    \[
+        \Gamma_f(X) = \{(x, y) \in X \times Y \mid f(x) = y\} = \{(x, y) \in X \times Y \mid \Phi(x, y) \in \Delta_Y\} = \Phi^{-1}(\Delta_Y).
+    \]
+\end{itemize}
+Al ser $\Phi$ continua y $\Delta_Y$ cerrado en $Y \times Y$, su antiimagen $\Gamma_f(X) = \Phi^{-1}(\Delta_Y)$ es un cerrado de $X \times Y$.
+
+Finalmente, sea $C \subseteq X$ un cerrado cualquiera. Como $\Gamma_f: X \to \Gamma_f(X)$ es un homeomorfismo, $\Gamma_f(C)$ es cerrado en $\Gamma_f(X)$ con la topología inducida. Como además $\Gamma_f(X)$ es cerrado en $X \times Y$, se concluye que $\Gamma_f(C)$ es cerrado en $X \times Y$. Así, $\Gamma_f$ es una inmersión cerrada.
 \end{sol}
 \begin{ejer}
     [100] Sea $Y$ un espacio topológico $T_2$ y $f : X \to Y$, $g : X \to Y$ dos aplicaciones continuas. Prueba que:
@@ -977,12 +1025,42 @@ En ambos casos llegamos a una contradicción, por lo que $U \cap A$ debe ser inf
         \item Sea $f : \mathbb{R} \to \mathbb{R}$ continua de modo que $f(q) = 0$ para todo $q \in \mathbb{Q}$. Demuestra que $f(x) = 0$ para todo $x \in \mathbb{R}$.
     \end{enumerate}
 \end{ejer}
+\begin{sol}
+    \textbf{1.} Consideremos la aplicación producto diagonal (o aplicación par) definida por:
+\begin{align*}
+    h: X &\longrightarrow Y \times Y \\
+    x &\longmapsto (f(x), g(x))
+\end{align*}
+\begin{itemize}
+    \item \textbf{Continuidad de $h$:} Por la propiedad universal de la topología producto, $h$ es continua si y solo si sus composiciones con las proyecciones canónicas $\pi_1, \pi_2: Y \times Y \to Y$ son continuas. Como $\pi_1 \circ h = f$ y $\pi_2 \circ h = g$, y ambas son continuas por hipótesis, concluimos que $h$ es continua.
+    \item \textbf{Uso de la hipótesis $T_2$:} Sabemos que un espacio topológico $Y$ es $T_2$ (Hausdorff) si y solo si su diagonal $\Delta_Y = \{(y, y) \mid y \in Y\}$ es un subconjunto cerrado en el espacio producto $Y \times Y$.
+    \item \textbf{Antiimagen de un cerrado:} Un punto $x \in X$ cumple $f(x) = g(x)$ si y solo si el par $(f(x), g(x))$ pertenece a la diagonal $\Delta_Y$. Por tanto:
+    \[
+        C = \{x \in X \mid f(x) = g(x)\} = \{x \in X \mid h(x) \in \Delta_Y\} = h^{-1}(\Delta_Y).
+    \]
+\end{itemize}
+Dado que $h$ es continua y $\Delta_Y$ es cerrado en $Y \times Y$, la antiimagen $h^{-1}(\Delta_Y) = C$ es un cerrado de $X$.
 
+\vspace{0.3cm}
+\noindent\textbf{2.} Sea $D \subseteq X$ un subespacio denso en $X$, es decir, $\overline{D} = X$, tal que $f(x) = g(x)$ para todo $x \in D$.
+\begin{enumerate}
+    \item Por definición del conjunto $C = \{x \in X \mid f(x) = g(x)\}$, la hipótesis implica que $D \subseteq C$.
+    \item Por el apartado anterior, sabemos que $C$ es un subconjunto cerrado de $X$.
+    \item Como el cierre $\overline{D}$ es el menor cerrado de $X$ que contiene a $D$, se cumple necesariamente que $\overline{D} \subseteq C$.
+    \item Usando que $D$ es denso ($\overline{D} = X$), obtenemos:
+    \[
+        X = \overline{D} \subseteq C \subseteq X \implies C = X.
+    \]
+\end{enumerate}
+En consecuencia, $f(x) = g(x)$ para todo $x \in X$, es decir, $f = g$.
 
-
-
-
-
-
-
-\section{Espacios m\'etricos}
+\vspace{0.3cm}
+\noindent\textbf{3.} Consideremos los espacios $X = \mathbb{R}$ e $Y = \mathbb{R}$ dotados de la topología usual $\mathcal{T}_d$:
+\begin{itemize}
+    \item $(\mathbb{R}, \mathcal{T}_d)$ es un espacio métrico y, por tanto, es $T_2$ (Hausdorff).
+    \item Además de la aplicación continua $f: \mathbb{R} \to \mathbb{R}$, definimos la aplicación constante $g: \mathbb{R} \to \mathbb{R}$ dada por $g(x) = 0$ para todo $x \in \mathbb{R}$, la cual es continua.
+    \item El conjunto de los números racionales $\mathbb{Q}$ es denso en $\mathbb{R}$ ($\overline{\mathbb{Q}} = \mathbb{R}$).
+    \item Por hipótesis, $f(q) = 0 = g(q)$ para todo $q \in \mathbb{Q}$.
+\end{itemize}
+Aplicando directamente el resultado del apartado 2, concluimos que $f = g$, es decir, $f(x) = 0$ para todo $x \in \mathbb{R}$.
+\end{sol}

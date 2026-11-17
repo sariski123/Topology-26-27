@@ -29,6 +29,75 @@
         \item Si $f$ es epiyectiva, entonces la topología $\mathcal{T}_{d'}$ coincide con la topología final de la aplicación $f : (X, \mathcal{T}_d) \to X'$. ¿Es cierto el enunciado anterior si $f$ no es epiyectiva?
         \hfill \textbf{(1 punto)}
     \end{enumerate}
+    \begin{enumerate}
+    \item[\textbf{a)}] \textbf{La topología $\mathcal{T}_d$ coincide con la topología inicial $\mathcal{T}_{ini}$ de $f : X \to (X', \mathcal{T}_{d'})$.}
+    
+    \begin{dem}
+        Por definición, la topología inicial $\mathcal{T}_{ini}$ en $X$ respecto a la única aplicación $f : X \to (X', \mathcal{T}_{d'})$ viene dada explícitamente por:
+        \[
+            \mathcal{T}_{ini} = \{ f^{-1}(V) \mid V \in \mathcal{T}_{d'} \}
+        \]
+        Probamos la igualdad $\mathcal{T}_d = \mathcal{T}_{ini}$ comprobando la doble inclusión:
+
+        \begin{itemize}
+            \item ($\mathcal{T}_{ini} \subseteq \mathcal{T}_d$): Como $f$ es una isometría, verifica que $d'(f(x), f(y)) = d(x, y)$ para todo $x, y \in X$. En particular, $f : (X, \mathcal{T}_d) \to (X', \mathcal{T}_{d'})$ es continua (dado $\varepsilon > 0$, basta tomar $\delta = \varepsilon$). Por tanto, para todo $V \in \mathcal{T}_{d'}$, se cumple $f^{-1}(V) \in \mathcal{T}_d$, lo que prueba $\mathcal{T}_{ini} \subseteq \mathcal{T}_d$.
+
+            \item ($\mathcal{T}_d \subseteq \mathcal{T}_{ini}$): Sea $U \in \mathcal{T}_d$ un abierto cualquiera y tomemos un punto $x \in U$. Por definición de $\mathcal{T}_d$, existe un radio $r > 0$ tal que $B_d(x, r) \subseteq U$. 
+            
+            Consideremos ahora la bola abierta $V = B_{d'}(f(x), r) \in \mathcal{T}_{d'}$ en el espacio de llegada. Calculamos su antiimagen por $f$ utilizando que $f$ es isometría:
+            \begin{align*}
+                f^{-1}\big(B_{d'}(f(x), r)\big) &= \{ y \in X \mid f(y) \in B_{d'}(f(x), r) \} \\
+                &= \{ y \in X \mid d'(f(x), f(y)) < r \} \\
+                &= \{ y \in X \mid d(x, y) < r \} = B_d(x, r)
+            \end{align*}
+            Como $V \in \mathcal{T}_{d'}$, su antiimagen $B_d(x, r) = f^{-1}(V)$ pertenece a $\mathcal{T}_{ini}$. Así, para todo $x \in U$ hemos encontrado un abierto $B_d(x, r) \in \mathcal{T}_{ini}$ tal que $x \in B_d(x, r) \subseteq U$, luego $U \in \mathcal{T}_{ini}$.
+        \end{itemize}
+        Concluimos que $\mathcal{T}_d = \mathcal{T}_{ini}$.
+    \end{dem}
+
+    \item[\textbf{b)}] \textbf{Si $f$ es epiyectiva, $\mathcal{T}_{d'}$ coincide con la topología final $\mathcal{T}_{fin}$ de $f : (X, \mathcal{T}_d) \to X'$. ¿Qué ocurre si no es epiyectiva?}
+    
+    \begin{dem}
+        Por definición, la topología final $\mathcal{T}_{fin}$ en $X'$ inducida por $f : (X, \mathcal{T}_d) \to X'$ es:
+        \[
+            \mathcal{T}_{fin} = \{ V \subseteq X' \mid f^{-1}(V) \in \mathcal{T}_d \}
+        \]
+        Supongamos que $f$ es epiyectiva (sobreyectiva) y demostremos la doble inclusión:
+
+        \begin{itemize}
+            \item ($\mathcal{T}_{d'} \subseteq \mathcal{T}_{fin}$): Como $f : (X, \mathcal{T}_d) \to (X', \mathcal{T}_{d'})$ es continua, para todo $V \in \mathcal{T}_{d'}$ se tiene $f^{-1}(V) \in \mathcal{T}_d$, luego $V \in \mathcal{T}_{fin}$. (Esta inclusión se cumple siempre, sea $f$ epiyectiva o no).
+
+            \item ($\mathcal{T}_{fin} \subseteq \mathcal{T}_{d'}$): Sea $V \in \mathcal{T}_{fin}$, es decir, $f^{-1}(V) \in \mathcal{T}_d$. Queremos ver que $V \in \mathcal{T}_{d'}$. Si $V = \emptyset$, es trivialmente abierto en $\mathcal{T}_{d'}$. Si $V \neq \emptyset$, tomemos un punto arbitrario $x' \in V$.
+            
+            Al ser $f$ epiyectiva, existe al menos un punto $x \in X$ tal que $f(x) = x'$. Entonces $x \in f^{-1}(V)$, y como $f^{-1}(V)$ es abierto en $\mathcal{T}_d$, existe $r > 0$ tal que:
+            \[
+                B_d(x, r) \subseteq f^{-1}(V)
+            \]
+            Afirmamos que $B_{d'}(x', r) \subseteq V$. En efecto, sea $y' \in B_{d'}(x', r)$, es decir, $d'(x', y') < r$. De nuevo por la epiyectividad de $f$, existe $y \in X$ tal que $f(y) = y'$. Usando que $f$ es isometría:
+            \[
+                d(x, y) = d'(f(x), f(y)) = d'(x', y') < r \implies y \in B_d(x, r) \subseteq f^{-1}(V)
+            \]
+            Por tanto, $y' = f(y) \in V$. Esto prueba que $x' \in B_{d'}(x', r) \subseteq V$ para todo $x' \in V$, luego $V \in \mathcal{T}_{d'}$.
+        \end{itemize}
+        En consecuencia, $\mathcal{T}_{d'} = \mathcal{T}_{fin}$.
+
+        \medskip
+
+        \textbf{¿Es cierto si $f$ no es epiyectiva?} \textbf{No, en general es falso.}
+        
+        \textit{Contraejemplo:} Consideremos $X = \{0\}$ y $X' = \{0, 1\}$, ambos dotados de la distancia usual $d(x,y) = d'(x,y) = |x - y|$, y sea la inclusión $f : X \to X'$ definida por $f(0) = 0$.
+        \begin{itemize}
+            \item $f$ es una isometría (pues $d'(f(0), f(0)) = 0 = d(0,0)$), pero no es epiyectiva ($1 \notin f(X)$).
+            \item La topología inducida por $d'$ en $X'$ es la discreta: $\mathcal{T}_{d'} = \{\emptyset, \{0\}, \{1\}, \{0, 1\}\}$.
+            \item Sin embargo, en la topología final $\mathcal{T}_{fin}$, el subconjunto $V = \{1\} \subseteq X'$ verifica $f^{-1}(\{1\}) = \emptyset \in \mathcal{T}_d$, por lo que $\{1\} \in \mathcal{T}_{fin}$, mientras que $f^{-1}(\{0\}) = \{0\} \in \mathcal{T}_d$, por lo que $\mathcal{T}_{fin} = \{\emptyset, \{0\}, \{1\}, \{0,1\}\}$ coincide aquí por ser $\{0\}$ abierto.
+        \end{itemize}
+        \textit{Contraejemplo general en $\mathbb{R}$:} Tomemos $X = \{0\}$ y $X' = \mathbb{R}$ con la distancia euclídea usual $d(x,y) = d'(x,y) = |x-y|$, y la isometría no epiyectiva $f : \{0\} \to \mathbb{R}$ dada por $f(0) = 0$.
+        \begin{itemize}
+            \item En $\mathcal{T}_{d'}$ (topología usual de $\mathbb{R}$), el conjunto unitario $\{0\}$ \textbf{no} es abierto.
+            \item En la topología final $\mathcal{T}_{fin}$ en $\mathbb{R}$, el conjunto $V = \{0\}$ tiene por antiimagen $f^{-1}(\{0\}) = \{0\} = X \in \mathcal{T}_d$, por lo que $\{0\} \in \mathcal{T}_{fin}$. Así, $\mathcal{T}_{d'} \subsetneq \mathcal{T}_{fin}$ y no coinciden.
+        \end{itemize}
+    \end{dem}
+\end{enumerate}
 
     \item Sean $X, Y$ espacios topológicos conexos y $Z$ otro espacio topológico. Sea $f : X \times Y \to Z$ una aplicación de conjuntos, tal que para cada $x_0 \in X$ y para cada $y_0 \in Y$, las aplicaciones
     \[

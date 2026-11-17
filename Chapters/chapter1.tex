@@ -376,7 +376,7 @@ Equivalentemente, \(\mathcal{B} \subseteq \mc T\) es base si todo abierto \(U \i
     U = \bigcup_{x \in U} B_x, \quad B_x \in \mathcal{B} \text{}.
 \]
 
-Si $\mc B$ es base de la topolog\'ia $\mc T$, escribimos $\mc T = <\mc B>$ y a los abiertos de $\mc B$ se les llama \textbf{abiertos básicos}.
+Si $\mc B$ es base de la topolog\'ia $\mc T$, escribimos $\mc T = \langle \mc B \rangle$ y a los abiertos de $\mc B$ se les llama \textbf{abiertos básicos}.
 \end{defi}
 
 \begin{center}
@@ -414,7 +414,7 @@ Un subconjunto \(\mathcal{B} \subseteq \mathcal{P}(X)\) es base de una topologí
     \item[\textbf{1)}] Para todo \(x \in X\), existe \(B_x \in \mathcal{B}\) tal que \(x \in B_x\) (es decir, \(\bigcup_{B \in \mathcal{B}} B = X\)).
     \item[\textbf{2)}] Dados \(B_1, B_2 \in \mathcal{B}\), para cada \(x \in B_1 \cap B_2\) existe \(B_x' \in \mathcal{B}\) tal que \(x \in B_x' \subseteq B_1 \cap B_2\).
 \end{enumerate}
-Dicha topología \(\mc T\) es única y es $\mc T = <\mc B>$.
+Dicha topología \(\mc T\) es única y es $\mc T = \langle \mc B \rangle$.
 \end{teo}
 
 \begin{dem} \, 
@@ -471,7 +471,7 @@ Por tanto, \(\mathcal{B}\) es base de una topología en \(\mathbb{R}\), denotada
 \]
 mientras que \([a, b) \notin \mc T_d\).
 \end{ejer}
-Sabemos que $\mc T_d=<\mc B>$, siendo $\mc B=\{(a,b), \, / \,  a,b \in \bb R\}$. Si demostramos que $\mc B \subset \mc T_{Sorg}\Rightarrow <\mc B>=\mc T_d \subseteq \mc T_{Sorg}$ (\textbf{Observaci\'on:} La diferencia entre $\mc B$ y $<\mc B>$ es que en $<\mc B>$ est\'an las uniones arbitrarias). 
+Sabemos que $\mc T_d=\langle \mc B \rangle$, siendo $\mc B=\{(a,b), \, / \,  a,b \in \bb R\}$. Si demostramos que $\mc B \subset \mc T_{Sorg}\Rightarrow \langle \mc B \rangle=\mc T_d \subseteq \mc T_{Sorg}$ (\textbf{Observaci\'on:} La diferencia entre $\mc B$ y $\langle \mc B \rangle$ es que en $\langle \mc B \rangle$ est\'an las uniones arbitrarias). 
 
 Sea $(a,b)\in \mc T_d$ veamos si $(a,b)\in \mc T_{Sorg} \iff \forall \, x\in (a,b) \, \exists \, B_x\subset \mc B_{Sorg}\, / \, x\in B_x \subset(a,b)$. Queremos encontrar un intervalo de la forma $[\,\,)$ que contenga a $x$ y est\'e contenido en $(a,b)$. 
 
@@ -481,7 +481,7 @@ Por tanto, $[a,b) \in \mc T_{Sorg}$ pero $[a,b)\nin \mc T_d$.
 
 Para la otra inclusi\'on basta ver que no se cumple si encontramos un elementos de $\mc T_{Sorg}$ que no est\'a en $\mc T_d$ (trivial). 
 \begin{ejer}
-Si $\mc B$ es base de una topolog\'ia en $X$, entonces $<\mc B>$ es la menor topolog\'ia de $X$ que contiene a $\mc B$.
+Si $\mc B$ es base de una topolog\'ia en $X$, entonces $\langle \mc B \rangle$ es la menor topolog\'ia de $X$ que contiene a $\mc B$.
 \end{ejer}
 \begin{ejer}
 Ya sabemos que $\mc T_d\subset \mc T_{Sorg}$ y que $[a,b)\in \mc T_{Sorg}$. ¿$(-\infty,a), (-\infty,a], (b,\infty), [b,\infty)$ son abiertos, cerrados o ambos por la $\mc T_{Sorg}$? 
@@ -607,34 +607,34 @@ Equivalentemente, todo cerrado \(C \in \mathcal{C}\) es intersección de element
 \section{Subbases de una topología}
 
 \begin{defi}
-Un subconjunto \(S\mc B \subseteq \mathcal{P}(X)\) es una \textbf{subbase} de una topología en \(X\) si cubre a \(X\): para todo \(x \in X\) existe \(S \in S\mathcal{B}\) tal que \(x \in S\) (\(X = \bigcup_{S \in S\mathcal{B}} S\)).
+Un subconjunto \(\mc S \mc B\subseteq \mathcal{P}(X)\) es una \textbf{subbase} de una topología en \(X\) si cubre a \(X\): para todo \(x \in X\) existe \(S \in \mc S \mc B\) tal que \(x \in S\) (\(X = \bigcup_{S \in \mc S \mc B} S\)).
 \end{defi}
 
-La base generada por \(S\mathcal{B}\) es la familia de todas las intersecciones finitas:
+La base generada por \(\mc S \mc B\) es la familia de todas las intersecciones finitas:
 \[
-    S\mc B \subset \mathcal{B}_{S\mathcal{B}} = \{B\subset X \, / \, B=S_1 \cap \ldots \cap S_n \mid S_j \in S\mathcal{B}, \; n \in \mathbb{N}\} \text{},
+    \mc \mc S \mc B\subset \mathcal{B}_{\mc S \mc B} = \{B\subset X \, / \, B=S_1 \cap \ldots \cap S_n \mid S_j \in \mc S \mc B, \; n \in \mathbb{N}\} \text{},
 \]
-base de una topolog\'ia y la topología generada por \(S\mathcal{B}\) es:
+base de una topolog\'ia y la topología generada por \(\mc S \mc B\) es:
 \[
-    \mc T_{S\mathcal{B}}  = \mc T_{\mc B_{S\mc B}} = <\mc B_{S\mc B}> = \left\{\bigcup_{j \in J} (V_{j, 1} \cap \ldots \cap V_{j, n_j}) \;\middle|\; V_{j, r} \in \mathcal{S}\right\} \cup \{\emptyset\} \text{}.
-\] es decir, las uniones arbitrarias de intersecciones finitas de elementos de $S\mc B$. 
+    \mc T_{\mc S \mc B}  = \mc T_{\mc B_{\mc S \mc B}} = \langle \mc B_{\mc S \mc B}\rangle = \left\{\bigcup_{j \in J} (V_{j, 1} \cap \ldots \cap V_{j, n_j}) \;\middle|\; V_{j, r} \in \mathcal{S}\right\} \cup \{\emptyset\} \text{}.
+\] es decir, las uniones arbitrarias de intersecciones finitas de elementos de $\mc S \mc B$. 
 
 \begin{ejem}
 En \(\mathbb{R}\):
 \begin{itemize}
-    \item \(S\mathcal{B} \coloneqq \{(-\infty, b), (a, \infty) \mid a, b \in \mathbb{R}\}\) es subbase de la topología usual \(\mc T_d\): para cada \(x \in \mathbb{R}\), \(x \in (x - 1, \infty) \in \mathcal{S}\). Además, \((a, b) = (-\infty, b) \cap (a, \infty) \in \mathcal{B}_{S\mathcal{B}}\), lo que genera la base de intervalos usual y demuestra que \(\mc T_{S\mathcal{B}} = \mc T_d\).
-    \item \(S\mathcal{B}' \coloneqq \{(-\infty, b], [a, \infty) \mid a, b \in \mathbb{R}\}\) es subbase de la topología discreta \(\mc T_{\text{discreta}}\), ya que considerando $x \in \bb R$ buscamos un abierto de la subbase que lo contenga \(\{x\} = (-\infty, x] \cap [x, \infty) \in \mathcal{B}_{S\mathcal{B}'}\), haciendo que todos los conjuntos unitarios sean abiertos, lo que demuestra que $<S\mc B'>= \mc T_{disc}$. Pues $Y = \displaystyle \bigcup_{y\in Y} \{y\}$ cada subconjunto es uni\'on de sus puntos.
+    \item \(\mc S \mc B\coloneqq \{(-\infty, b), (a, \infty) \mid a, b \in \mathbb{R}\}\) es subbase de la topología usual \(\mc T_d\): para cada \(x \in \mathbb{R}\), \(x \in (x - 1, \infty) \in \mathcal{S}\). Además, \((a, b) = (-\infty, b) \cap (a, \infty) \in \mathcal{B}_{\mc S \mc B}\), lo que genera la base de intervalos usual y demuestra que \(\mc T_{\mc S \mc B} = \mc T_d\).
+    \item \(\mc S \mc B' \coloneqq \{(-\infty, b], [a, \infty) \mid a, b \in \mathbb{R}\}\) es subbase de la topología discreta \(\mc T_{\text{discreta}}\), ya que considerando $x \in \bb R$ buscamos un abierto de la subbase que lo contenga \(\{x\} = (-\infty, x] \cap [x, \infty) \in \mathcal{B}_{\mc S \mc B'}\), haciendo que todos los conjuntos unitarios sean abiertos, lo que demuestra que $\langle \mc S\mc B' \rangle= \mc T_{disc}$. Pues $Y = \displaystyle \bigcup_{y\in Y} \{y\}$ cada subconjunto es uni\'on de sus puntos.
 \end{itemize}
 \end{ejem}
 
 \section{Bases y subbases de una topolog\'ia por cerrados}
 Todas las demostraciones son pasando al complementario.
 
-Sea $(X,\mc C)$ esapcio topol\'ogico por cerrados. \begin{defi}
+Sea $(X,\mc C)$ espacio topol\'ogico por cerrados. \begin{defi}
     $\mc B \subset \mc P(X)$ es un \textbf{base por cerrados} (o \textbf{base de $\mc C$}) si para todo cerrado $C$ y para todo $x\nin C$, existe $B \in \mc B$ tal que $x\nin B \supset C \iff X \neq C =\displaystyle \bigcap_{B_i \in \mc B} B_i$, es decir, todo cerrado es intersecci\'on de cerrados de la base. 
 \end{defi}
 \begin{defi} La base $\mc B$ genera una topolog\'ia por abiertos 
-    $$\mc C_{\mc B} = <\mc B> = \{C \subset X \, / \, \forall x \nin C, \text{ existe } B_x \in \mc B \, / \, x \nin B_x \supset C\}  =\left\{\bigcap_{B_i \in \mc B} B_i \right\}\cup \{X\}$$
+    $$\mc C_{\mc B} = \langle \mc B \rangle= \{C \subset X \, / \, \forall x \nin C, \text{ existe } B_x \in \mc B \, / \, x \nin B_x \supset C\}  =\left\{\bigcap_{B_i \in \mc B} B_i \right\}\cup \{X\}$$
     Los cerrados de una base de $\mc C$ se llaman \textbf{cerrados básicos}, y son los complementarios de los abiertos b\'asicos.
 
 \end{defi}
@@ -646,10 +646,10 @@ Si $X$ es conjunto, $\mc B \subset \mc P(X)$, $\mc B$ es una base por cerrados s
 \end{enumerate}
 \end{prop}
 \begin{defi}
-    Una \textbf{subbase por cerrados} $S\mc B$ es un subconjunto $S\mc B\subset \mc P(X)$ que verifica 
+    Una \textbf{subbase por cerrados} $\mc S \mc B$ es un subconjunto $\mc S \mc B\subset \mc P(X)$ que verifica 
     \begin{enumerate}
-        \item $\forall \, x\in X$, existe $S\in S\mc B$ tal que $x\nin S$. $\mc B_{S\mc B}$
-        \item $<\mc B_{S\mc B}> = \mc T_{S\mc B}$ con $\mc B_{S\mc B} \coloneqq \{S_1\cup \cdots \cup S_n \, / \,S_i\in S\mc B \}$, es decir, son uniones finitas de intersecciones arbitrarias. 
+        \item $\forall \, x\in X$, existe $S\in \mc S \mc B$ tal que $x\nin S$. $\mc B_{\mc S \mc B}$
+        \item $\langle \mc B_{\mc S \mc B} \rangle = \mc T_{\mc S \mc B}$ con $\mc B_{\mc S \mc B} \coloneqq \{S_1\cup \cdots \cup S_n \, / \,S_i\in \mc S \mc B\}$, es decir, son uniones finitas de intersecciones arbitrarias. 
     \end{enumerate}
 \end{defi}
 \section{Elementos de un espacio topol\'ogico}
@@ -659,7 +659,7 @@ Sea $X$ un espacio topol\'ogico y sea $Y\subseteq X$ un subconjunto
     Siempre existe $\emptyset$ lo verifica y es abierto en $X$. Adem\'as, si $V \subseteq X$ es abierto, $V\subset Y \Rightarrow V \subseteq Y^{\circ}$.
 \end{defi}
 \begin{defi}
-El \textbf{cierre} (o \textbf{clausura} o \textbf{adherencia}) de un subconjunto $Y \subseteq X$ es el menor cerrado de $X$ que contiene a $Y$:
+El \textbf{cierre} (o \textbf{clausura} o \textbf{adherencia}) de un subconjunto $Y \subseteq X$ es el menor cerrado de $X$ que contiene a $Y$
 \[
     \overline{Y} \coloneqq \bigcap_{\substack{Y \subseteq C \\ C \in \mathcal{C}_\mc T}} C.
 \]
@@ -678,7 +678,7 @@ Se cumple que $Y \subseteq \overline{Y}$.
 \end{dem}
 \begin{defi}
     Sea $Y\subset X$, se llaman \textbf{puntos de acumulación} al subconjunto:
-    $$Y' = \{x\in X \mid \text{para todo abierto } U_x \text{ con } x\in U_x, \, U_x \cap Y \neq \emptyset, \{x\}\}$$
+    $$Y' = \{x\in X \mid \text{para todo abierto } U_x \text{ con } x\in U_x, \, U_x \cap Y - \{x\} \neq \emptyset \}$$
 
 \end{defi}
 \begin{obs}
@@ -699,7 +699,7 @@ Se cumple que $Y \subseteq \overline{Y}$.
     Se define el \textbf{exterior} de $Y$ como 
     $$Ext(Y)=(X-Y)^{\circ}$$
 \end{defi}
-\begin{propis}
+\begin{propis} \,
 \begin{enumerate}
     \item $\overline{Y} = Y \cup Y' = Y^a \sqcup Y'$
     \begin{dem}
@@ -1035,9 +1035,9 @@ Si \(\{\mathcal{B}(x)\}_{x \in X}\) es base de entornos de \((X, \mc T)\), se ve
     \[
         \exists U \text{ abierto con } x \in U \subseteq V \Rightarrow x \in \overline{U} \subseteq \overline{V} \Rightarrow \text{No todo entorno tendrá un entorno cerrado.}
     \]
-    \begin{quote}
-        \small Debe verificarse que el espacio sea localmente compacto y \(T_2\).
-    \end{quote}
+    \begin{obs}
+        Debe verificarse que el espacio sea localmente compacto y \(T_2\).
+    \end{obs}
 \end{ejem}
 
 \begin{obs}
@@ -1089,7 +1089,7 @@ Diremos que una sucesión es \textbf{constante} si existe \(n_0 \in \mathbb{N}\)
         \begin{itemize}
             \item Si \(y \ge 0 \Rightarrow [y, b) \cap \{-\frac{1}{n}\}_{n \in \mathbb{N}} = \emptyset\).
             
-            \item Si \(y < 0 \Rightarrow y \in [a,b)\). Sea \(b < 0 \Rightarrow y \in [a, b) \Rightarrow \exists n_0 \in \mathbb{N}\) tal que $0 > -\frac{1}{n_0} > b$.
+            \item Si \(y < 0 \Rightarrow y \in [a,b)\). Sea \(b < 0 \Rightarrow y \in [a, b) \Rightarrow \exists \, n_0 \in \mathbb{N}\) tal que $0 > -\frac{1}{n_0} > b$.
             
             \begin{center}
             \begin{tikzpicture}[scale=1]
@@ -1157,11 +1157,11 @@ Sea $X$ un espacio topol\'ogico.
         \item Un espacio topol\'ogico $X$ es \textbf{$T_4$} si es normal y $T_1$.  
     \end{itemize}
 \end{defi}
-\begin{obs}
+\begin{ejer}
     $T_4  \Rightarrow T_3 \Rightarrow T_2 \Rightarrow T_1 \Rightarrow T_0$.
 
     Regular $\Rightarrow T_2 \, \iff \{x\}$ es cerrado para todo $x\in X$. 
-\end{obs}
+\end{ejer}
 \begin{prop}
     Un espacio topol\'ogico $X$ es $T_0$ $\iff$ se verifica que para cualesquiera puntos $x,x' \in X$, $x\neq x' \iff \overline{\{x\}} \neq \overline{\{x'\}} $. 
 \end{prop}
