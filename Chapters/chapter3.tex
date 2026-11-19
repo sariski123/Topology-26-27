@@ -359,9 +359,9 @@ Si $X$ es conexo, su \'unica componente conexa es $C_x= X \quad \forall \, x\in 
 \begin{ejems}
 \begin{enumerate}
     \item $(X, \mc T_{dis})$ es totalmente inconexo, pues si $y,y' \in Y\subset X$, entonces $Y = \{y\} \cup (Y-\{y\})$ es una separaci\'on no trivial luego $Y$ no es conexo. Como es general, los mayores subespacios conexos son los puntos, y as\'i el espacio es totalmente inconexo. 
-    \item $(X, \mc T_A)$ $U$ es abierto si y solo si $A \subset U$ \'o $U=\emptyset$. Sea $Y \subset X$, 
+    \item $(X, \mc T_A)$. $U$ es abierto si y solo si $A \subset U$ \'o $U=\emptyset$. Sea $Y \subset X$, 
     \begin{enumerate}
-        \item Si $Y \cap A = \emptyset \iff Y$ es cerrado.
+        \item $Y \cap A = \emptyset \iff Y$ es cerrado.
         
         Supongamos $Y$ conexo. Sean $y\neq y' \in Y$, $Y = \{y\} \cup (Y-\{y\})$ es cerrado en $X$ (luego en $Y$) $\cup$ cerrado en $X$ (luego en $Y$), y entonces tenemos una separaci\'on no trivial en $Y$, contradiciendo que $Y$ es conexo, al suponer que $y\neq y'$ luego $Y=\{y\}$. Los \'unicos conexos que no cortan a $A$ son los puntos.
         \item Si $Y\cap A \neq \emptyset$
@@ -374,9 +374,153 @@ Si $X$ es conexo, su \'unica componente conexa es $C_x= X \quad \forall \, x\in 
         \end{cases}$$ de forma que $A\cap Y\subset V_1 \cap V_2$,  llegando a contradicci\'on con que $V_1$ y $V_2$ es separci\'on. Esto implica que $Y$ es conexo. 
 
         Adem\'as $X$ es conexo porque $A\subset X \equiv A\cap X \neq \emptyset$. 
-    \end{enumerate} 
-\end{enumerate}
-\end{ejems}
+    \end{enumerate}
 \begin{ejer}
     $(X, \mc T^A)$ es igual que la de $\mc T_A$, basta estudiarlo por cerrados.  
 \end{ejer}
+
+    \item $(X, \mc T_{\mathrm{dis}})$ totalmente inconexo.
+    \item $(X, \mc T_A)$ \qquad $(X, \mc T^A)$.
+    \item $(X, \mc T_{\mathrm{cof}})$, $Y \subset X$:
+    \begin{itemize}
+        \item \textbf{$Y$ finito:} $Y = \{y_1, \dots, y_r\} = \{y_1\} \cup \{y_2, \dots, y_r\}$ (separación no trivial). Si $r > 1$, $Y$ es conexo si $Y$ tiene un solo punto.
+        \item \textbf{$Y$ infinito:} $Y = \overbrace{(C_1 \cap Y)}^{\text{finito}} \cup \overbrace{(C_2 \cap Y)}^{\text{finito}}$, donde $C_i \subset X$ son cerrados finitos. Si formara una separación, $\Rightarrow$ $Y$ no admite separación no trivial $\Rightarrow$ $Y$ conexo.
+    \end{itemize}
+
+\paragraph{¿$(X, \mc T_{\mathrm{cof}})$ es conexo?}
+\begin{itemize}
+    \item Si $X$ es finito, es totalmente inconexo.
+    \item Si $X$ es infinito $\Rightarrow$ $X$ es conexo.
+\end{itemize}
+    \item $(\mathbb{R}, \mc T_{\mathrm{kol}})$, donde $\mc T_{\mathrm{kol}} = \{(a, \infty) \mid a \in \mathbb{R}\} \cup \{\emptyset, \mathbb{R}\}$.
+
+    Sean $U, V \subset \mathbb{R}$ abiertos; entonces $U \cap V \in \{U, V\}$ (si son no vacíos y están anidados).
+
+    Si $Y \subset \mathbb{R}$ (no vacío) admite una descomposición $Y = (U \cap Y) \cup (V \cap Y)$ con $\emptyset = (U \cap Y) \cap (V \cap Y) = (U \cap V) \cap Y$, como $U \cap V$ es uno de ellos:
+    \[
+        \Rightarrow \begin{cases} U = \emptyset \text{ y } V \text{ total} \\ V = \emptyset \text{ y } U \text{ total} \end{cases}
+        \Rightarrow Y \text{ no admite separaciones no triviales} \Rightarrow Y \text{ conexo.}
+    \]
+    (\emph{«Cualquier subespacio de $(\mathbb{R}, \mc T_{\mathrm{kol}})$ es conexo»}.)
+    \item $(\mathbb{R}, \mc T_{\mathrm{sorg}})$, donde $\mc T_{\mathrm{sorg}} = \langle [a,b) \rangle$. Los conjuntos $(-\infty, a)$ y $[a, +\infty) = \bigcup_{b > a} [a,b)$ son abiertos en $\mc T_{\mathrm{sorg}}$.
+    \[
+        \mathbb{R} = (-\infty, a) \cup [a, +\infty) \implies \mathbb{R} \text{ no es conexo con } \mc T_{\mathrm{sorg}}.
+    \]
+    Dado $Y \subset \mathbb{R}$ con $a \in Y$, se tiene $Y \subset [a, +\infty)$. Si $Y$ posee otro punto $a' \in Y$ distinto de $a$, con $a < a'$, entonces:
+    \[
+        Y = \big([a, a') \cap Y\big) \cup \big([a', +\infty) \cap Y\big)
+    \]
+    es una separación no trivial (con $a \in [a, a') \cap Y$ y $a' \in [a', +\infty) \cap Y$ abiertos relativos no vacíos), luego $Y$ no es conexo. Por tanto, los únicos subconjuntos conexos son los puntos (y el vacío), y $(\mathbb{R}, \mc T_{\mathrm{sorg}})$ es totalmente inconexo.
+
+    \item $(\mathbb{R}, \mc T_d) \supset \mathbb{Q}$. ¿Es $\mathbb{Q}$ conexo?
+    Para cualquier irracional $\alpha \in \mathbb{I}$ ($\alpha \notin \mathbb{Q}$):
+    \[
+        \mathbb{Q} = \big((-\infty, \alpha) \cap \mathbb{Q}\big) \cup \big((\alpha, +\infty) \cap \mathbb{Q}\big)
+    \]
+    es una separación no trivial, luego $\mathbb{Q}$ no es conexo. Además, para cualquier $Y \subset \mathbb{Q}$ con $y, y' \in Y$ y $y < y'$, existe $\alpha \in \mathbb{I}$ tal que $y < \alpha < y'$, y
+    \[
+        Y = \big((-\infty, \alpha) \cap Y\big) \cup \big((\alpha, +\infty) \cap Y\big)
+    \]
+    es una separación no trivial (con $y$ en el primer conjunto y $y'$ en el segundo), luego $Y$ no es conexo. En consecuencia, $\mathbb{Q}$ es totalmente inconexo.
+\end{enumerate}
+\end{ejems}
+\begin{cor}[de los resultados previos de conexos]
+Si $f \colon X \to Y$ es continua y $X$ es conexo, entonces la gráfica de $f$, $\Gamma_f \subset X \times Y$, es un subespacio conexo.
+\end{cor}
+
+\begin{dem}
+Consideramos la aplicación $\gamma_f \colon X \to X \times Y$ definida por $\gamma_f(x) = (x, f(x))$, cuya imagen es $\operatorname{Im} \gamma_f = \Gamma_f$ (notación: $\gamma_f \leftrightarrow \Gamma_f = (1 \times f)$). Esta aplicación es continua pues al componer con las dos proyecciones es continua (propiedad universal de la topología inicial). Como $X$ es conexo, su imagen continua $(1 \times f)(X) = \Gamma_f$ es conexa.
+\end{dem}
+
+\section{Espacios arcoconexos o conexos por caminos}
+
+Sea $X$ un espacio topológico y $x, x' \in X$.
+
+\begin{defi}
+Un \textbf{camino} en $X$ que une $x$ con $x'$ es una aplicación continua $f \colon [0,1] \to X$ (o sobre cualquier intervalo $[a,b]$) con $f(0) = x$ y $f(1) = x'$. $\operatorname{Im} f \subset X$ es la traza/imagen del camino (i.e., el camino es la aplicación o su imagen).
+\end{defi}
+
+\begin{defi}
+Dado un camino $f \colon [0,1] \to X$, se define el \textbf{camino opuesto} $(-f) \colon [0,1] \to X$ por $(-f)(t) = f(1-t)$ («recorrer el camino en sentido contrario»).
+\end{defi}
+
+\begin{propi}
+Si tenemos dos caminos $f$ (que une $x$ con $x'$) y $g$ (que une $x'$ con $x''$), entonces existe el \textbf{camino unión o camino suma} $(f \cup g) \colon [0,2] \to X$ (por comodidad, o reparametrizado en $[0,1]$) definido por:
+\[
+(f \cup g)(t) = \begin{cases}
+f(t) & \text{si } 0 \le t \le 1, \\
+g(t-1) & \text{si } 1 \le t \le 2.
+\end{cases}
+\]
+Se cumple $(f \cup g)(0) = f(0) = x$ y $(f \cup g)(2) = g(1) = x''$, por lo que $(f \cup g)$ une $x$ con $x''$. Además, $f \cup g$ es continua pues $f(1) = g(0)$ (el único punto crítico es $t = 1$).
+\end{propi}
+\begin{defi}
+Un \textbf{lazo} en el punto $x$ es un camino con origen y final en el punto $x$, es decir, $f(0) = f(1) = x$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \draw[thick, ->] (0,0) .. controls (-1.2, 1.0) and (-0.6, 1.8) .. (0, 1.8)
+        .. controls (0.6, 1.8) and (1.2, 1.0) .. (0.05, 0.05);
+    \filldraw[black] (0,0) circle (2pt) node[below] {$x$};
+\end{tikzpicture}
+\end{center}
+\end{defi}
+
+\begin{ejem}
+En $\mathbb{R}^2 \setminus \{(0,0)\}$, un lazo rodeando el origen no se puede encoger «tirando» de él sin salir del espacio (no da tiempo a ver homotopías ni grupo fundamental).
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    % Ejes punteados
+    \draw[dashed, gray] (-1.8,0) -- (1.8,0);
+    \draw[dashed, gray] (0,-1.8) -- (0,1.8);
+    % Agujero en el origen
+    \draw[thick, fill=white] (0,0) circle (2.5pt);
+    % Lazo alrededor del origen
+    \draw[thick, blue!80!black, ->] (0.2, -1.2) .. controls (1.3, -1.1) and (1.4, 1.1) .. (0, 1.2)
+        .. controls (-1.3, 1.2) and (-1.3, -1.0) .. (0.15, -1.2);
+    \filldraw[black] (0.2, -1.2) circle (2pt) node[below right] {$x$};
+\end{tikzpicture}
+\end{center}
+\end{ejem}
+
+\begin{defi}
+Un espacio topológico $X$ es \textbf{arcoconexo} (o conexo por caminos) si para cualesquiera dos puntos $x, x' \in X$ existe un camino en $X$ que los une.
+\end{defi}
+
+\begin{ejems} \,
+\begin{itemize}
+    \item \textbf{$(\mathbb{R}^2, \mc T_d)$ es arcoconexo:} dados $x, x' \in \mathbb{R}^2$, el segmento $f(t) = x + t(x' - x)$ ($t \in [0,1]$) es un camino continuo que une $x$ con $x'$.
+
+    \begin{center}
+    \begin{tikzpicture}[scale=0.85]
+        \draw[thick, blue!80!black] (0,0) .. controls (1.2, 0.4) and (2.2, 0.8) .. (3.2, 1.3);
+        \filldraw[black] (0,0) circle (2pt) node[below left] {$x$};
+        \filldraw[black] (3.2,1.3) circle (2pt) node[above right] {$x'$};
+    \end{tikzpicture}
+    \end{center}
+
+    \item \textbf{$\mathbb{R}^2 \setminus \text{eje } x$ (con la usual) no es arcoconexo:} no todo par de puntos se puede unir con un camino (por ejemplo, un punto en el semiplano superior y otro en el semiplano inferior no pueden conectarse sin cruzar el eje $x$).
+
+    \begin{center}
+    \begin{tikzpicture}[scale=0.85]
+        \draw[dashed, gray] (-1.8,0) -- (1.8,0) node[right, black, font=\footnotesize] {eje $x$};
+        \draw[thick] (0,-1.8) -- (0,1.8);
+        \filldraw[blue!80!black] (0.5, 0.9) circle (2pt);
+        \filldraw[blue!80!black] (0.5, -0.9) circle (2pt);
+    \end{tikzpicture}
+    \end{center}
+
+    \item \textbf{Las bolas $B_d(x, \varepsilon) \subset \mathbb{R}^2$ (con la usual) son arcoconexas:} por convexidad/estrellamiento, cualesquiera dos puntos $x', x''$ de la bola se unen mediante el segmento en su interior.
+
+    \begin{center}
+    \begin{tikzpicture}[scale=0.85]
+        \draw[thick, fill=blue!8] (0,0) circle (1.3cm);
+        \filldraw[black] (0, 0.4) circle (1.8pt) node[above] {$x$};
+        \filldraw[blue!80!black] (-0.5, -0.3) circle (2pt) node[below left] {$x'$};
+        \filldraw[blue!80!black] (0.6, -0.2) circle (2pt) node[below right] {$x''$};
+        \draw[thick, blue!80!black] (-0.5, -0.3) -- (0.6, -0.2);
+    \end{tikzpicture}
+    \end{center}
+\end{itemize}
+\end{ejems}
