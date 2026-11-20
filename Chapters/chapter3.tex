@@ -323,7 +323,7 @@ Sea $X$ espacio topol\'ogico
     
     Es decir, si $\{C_i\}_{i \in I}$ son las componentes conexas $\Rightarrow X = \coprod_{i \in I} C_i$. 
     
-   \textit{Observaci\'on importante:} esta uni\'on es de conjuntos, NO de espacios topol\'ogicos. Esto es porque $C_j \hookrightarrow \coprod C_i$ es abierto-cerrado, pero $C_j \hookrightarrow X$ es cerrado, no podemos asegurar que sea abierto (lo veremos m\'as adelante). Si $I$ es finito s\'i es igualdad de espacios topol\'ogicos.
+   \noindent \textit{Observaci\'on importante:} esta uni\'on es de conjuntos, NO de espacios topol\'ogicos. Esto es porque $C_j \hookrightarrow \coprod C_i$ es abierto-cerrado, pero $C_j \hookrightarrow X$ es cerrado, no podemos asegurar que sea abierto (lo veremos m\'as adelante). Si $I$ es finito s\'i es igualdad de espacios topol\'ogicos.
 \end{obs}
 \begin{prop}
 Las componentes conexas son los mayores subespacios conexos de $X$. Es decir, si $C$ conexo y si $C \subset A$ con $A$ conexo, entonces $C=A$.
@@ -524,3 +524,106 @@ Un espacio topológico $X$ es \textbf{arcoconexo} (o conexo por caminos) si para
     \end{center}
 \end{itemize}
 \end{ejems}
+\begin{prop}
+    Si $X$ es arcoconexo $\Rightarrow X$ es conexo.
+\end{prop}
+\begin{dem}
+    Veamos que no hay separaci\'on en $X$. Por reducci\'on al absurdo, supongamos que existe dicha separaci\'on. Sea $(U_1,U_2)$ separaci\'on no trivial de $X$, lo que implica que $X = U_1\cup U_2$, como $U_1,U_2 \neq \emptyset$, sean $x_i\in U_i$ con $i=1,2$. Por ser el espacio arcoconexo, existe un camino que los une, sea este $f_{x_1x_2}$, y es
+    $$\bt f_{x_1x_2} : [0,1] \rar & X  \et$$
+    aplicai\'on continua, y como $[0,1]$ es conexo, la imagen $\Im f_{x_1x_2} (\subset X)$ es conexo (pues $f_{x_1x_2}$ es continua), y como $X = U_1 \cup U_2$, entonces $\Im f_{x_1x_2} \subset U_1$ \'o $\Im f_{x_1x_2} \subset U_2$, pero $x_2 \in \Im f_{x_1x_2}\subset U_1$ \'o $x_1 \in \Im f_{x_1x_2}\subset U_2$, es decir, en cualquiera de los casos $U_1 \cap U_2 \neq \emptyset$ contradicci\'on con que exist\'ia una separaci\'on.
+\end{dem}
+\begin{cor}
+    $\bb R^n$ con $B_d(x, \varepsilon)$ es arcoconexo, por lo que es conexo.
+    
+    $\bb R^n-\{pto\}$ es arcoconexo, luego es conexo, si $n >1$. 
+\end{cor}
+\begin{cor}
+    No conexo $\Rightarrow$ No arcoconexo.
+\end{cor}
+\begin{obs}
+    El rec\'iproco es falso. Veamos dos contraejemplos.
+    \begin{enumerate}
+        \item \textbf{El seno del top\'ologo.}
+        Sea $f: (0,\infty) \longrightarrow [-1,1]$ con $f(x) = \sin(\nicefrac{1}{x})$ es continua. $(0,\infty)$ es conexo (y arcoconexo), igual que para conexos, la gr\'afica de un arcoconexo es arcoconexo (m\'as adelante), luego $\Gamma_f \subset (0,\infty) \times [-1,1]$ es arcoconexo y conexo. 
+        \begin{center}
+\begin{tikzpicture}[scale=1.1]
+    \draw[->] (-0.5,0) -- (4.5,0) node[right] {$x$};
+    \draw[->] (0,-1.5) -- (0,1.8) node[above] {$y$};
+    \draw[very thick,red] (0,-1) -- (0,1) node[below left] {$\{0\} \times [-1, 1]$};
+    \draw[domain=0.04:4,samples=400,variable=\x,blue,thick] 
+        plot ({\x}, {sin((1/\x)*180/pi)});
+    \node[blue] at (3,1) {$y = \sin(1/x)$};
+\end{tikzpicture}
+\end{center}
+        Como si un espacio es separado ([-1,1]) la gr\'afica es una imersi\'on cerrado, su imagen es un cerrado y por tanto es un cerrado en $[-1,1]$. En cambio, si pensamos $\Gamma_f \subset \bb R^2$ no es cerrado pues $\{0\}\times [-1,1]$ son puntos adherentes, por lo que $\Gamma_f \cup \{0\}\times [-1,1] = \overline{\Gamma_f}$.
+
+        Si a\~nadimos $Y = \Gamma_f \cup\{(0,0)\}$, $\Gamma_f \subset Y \subset \overline{\Gamma_f } \subset \bb R^2$, por lo tanto, $Y$ es conexo porque est\'a entre $\Gamma_f$ y su cierre. Es conexo por ser un subespacio de un conexo, pero NO es arcoconexo, pues no existe camino (continuo) que una $(0,0)$ con $\Gamma_f$. $\overline{\Gamma_f }$ no es arcoconexo a pesar de que $\Gamma_f $ s\'i lo es. Recordemos que esto no pasaba con conexos.  
+
+        Tenemos as\'i un contraejemplo de espacio conexo no arcoconexo. 
+        
+        \item \textbf{El peine del top\'ologo}. En $\mathbb{R}^2$, consideremos el conjunto
+\[
+    P = ([0, 1] \times \{0\}) \cup \left(\bigcup_{n=1}^\infty \left\{\frac{1}{n}\right\} \times [0, 1]\right).
+\]
+que gr\'aficamente es
+\begin{center}
+\begin{tikzpicture}[scale=3]
+    \draw[thick] (0,0) -- (1,0);
+    \foreach \n in {1, 2, 3, 4, 5, 6, 7, 8, 9, 10} {
+        \draw[thick,blue] ({1/\n}, 0) -- ({1/\n}, 1);
+    }
+    \draw[thick,dotted] (0.02, 0.5) -- (0.08, 0.5);
+    \draw[thick,red] (0,0) -- (0,1);
+    \filldraw[red] (0,1) circle (1pt) node[above] {$(0, 1)$};
+    \node at (1,-0.1) [below] {$1$};
+    \node at (0.5,-0.1) [below] {$\frac{1}{2}$};
+    \node at (0.333,-0.1) [below] {$\frac{1}{3}$};
+    \node at (0.25,-0.1) [below] {$\frac{1}{4}$};
+    \node at (0,-0.1) [below] {$0$};
+\end{tikzpicture}
+\end{center}
+
+$P$ es arcoconexo, pues al coger dos puntos, como el eje $x$ est\'a en $P$, se pueden unir por un camino, se baja por la p\'ua, se mueve en el eje, y se sube por la otra p\'ua. 
+
+$\overline{P} = P \cup (\{0\}\times [0,1])$ es arcoconexo y conexo pues esa otra p\'ua se sigue pudiendo unir con el resto (no como en el seno). 
+
+En cambio, $Y = P \cup \{(0, 1)\}$ es conexo (pues $P \subset Y \subset \overline{P}$), pero \textbf{no es arcoconexo}, ya que el punto $(0, 1)$ no puede unirse por camino a ningún otro punto de $Y$ (no hay p\'ua para bajar).
+
+    \end{enumerate}
+\end{obs}
+\begin{prop}
+    Si $f: X \longrightarrow Y$ es continua y $X$ arcoconexo, entocnes $\Im f$ es arcoconexo. En particular, $\Gamma_f = \Im(1\times f) \subset X\times Y$ es un subespacio arcoconexo.
+\end{prop}
+\begin{dem}
+    Sean $y,y'\in \Im f$, veamos si existe un camino que los une. $y,y' \in \Im f \Rightarrow \exists\, x,x'\in X$ con $f(x)=y, \, f(x')=y'$, y como $X$ es arcoconexo, existe $f_{xx'}: [0,1] \longrightarrow X$ que une $x$ y $x'$. Entonces componemos
+    $$\bt \left[0,1\right] \rar{f_{xx'}} \arrow[swap]{rd}{f\circ f_{xx'}} &[5mm] X \arrow{d}{f} \\[5mm] & Y \et$$ 
+    de forma que $f\circ f_{xx'}$ es continua por ser composici\'on de aplicaciones contiuas y verificando
+    $$(f\circ f_{xx'})(0) = y \qquad \qquad (f\circ f_{xx'})(1) = y'$$
+    es decir, tenemos un camino que $y$ con $y'$, por lo que es arcoconexo. Se suele llamar imagen del camino $f_{xx'}$ a $f\circ f_{xx'}$. 
+\end{dem}
+\section{Componentes arcoconexas}
+\begin{defi}
+Dados $x,x'\in X$, se define la relación $R_A$ de forma que $xR_Ax'$ si existe un camino $f_{xx'}$ que une $x$ con $x'$.
+\end{defi}
+\begin{obs}
+    $X$ es arcoconexo si $[x]=[x'] \, \forall \, x, x'\in X$
+\end{obs}
+\begin{prop}
+    La relación $R_A$ es de equivalencia.
+\end{prop}
+\begin{dem}
+    \begin{itemize}
+        \item Reflexiva. Se usa el camino constante
+        $$\bt \left[0,1\right] \rar & X \\[-5mm] 0 \rarmaps & x \\[-5mm] 1 \rarmaps & x \\[-5mm] t \rarmaps & x  \et$$
+        \item Sim\'etrica. Si $xR_Ax' \Rightarrow x'R_Ax$, existe el camino $f_{xx'}$, y se cumple la propiedad por el camino inverso $-f_{xx'}$.
+        \item Transitiva. Si $xR_Ax'$ y $xR_Ax''$ entonces existen los camino $f_{xx'}$ y $f_{xx''}$, por lo que el camino uni\'on $f_{xx'} \cup f_{xx''}$ de forma que une $x$ con $x''$ concluyendo as\'i que $xR_Ax''$,
+    \end{itemize}
+\end{dem}
+\begin{defi}
+    Las \textbf{componentes arcoconexas} de $X$ son las clases de equivalencia de la relaci\'o $R_A$. 
+\end{defi}
+\begin{obs}
+    $X = \coprod_{i \in I} Q_i$ donde $Q_i$ son las componentes conexas. Si $x\in Q_i \Rightarrow Q_i=Q_x$. Las componentes arcoconexas son los mayores subespacios topol\'ogicos de $X$ que son arcoconexos (\textcolor{red}{Ejercicio, igual que en conexos}). 
+
+    No podemos asegurar que las componentes arcoconexas sean cerradas (como s\'i hac\'iamos en conexos). Tampoco son abiertas. $Y = \Gamma_f \cup\{(0,0)\}$ tiene por componentes arcoconexas cada parte de la uni\'on, $\Gamma_f$ no es cerrada ni abierta pero $\{(0,0)\}$ s\'i es cerrado. 
+\end{obs}
