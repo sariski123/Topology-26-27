@@ -982,6 +982,88 @@ al probar la inclusión para elementos subbásicos, queda probada para toda la t
 \end{dem}
 
 
+\begin{tikzpicture}[
+    scale=1.0,
+    font=\small,
+    >=stealth,
+    caja/.style={draw=blue!70!black, fill=blue!8, rounded corners=2pt, thick},
+    sucesion/.style={draw=red!75!black, thick},
+    punto/.style={fill=red!75!black, circle, inner sep=1.5pt},
+    puntox/.style={fill=blue!70!black, circle, inner sep=1.8pt}
+]
+
+% --- Ejes / Líneas verticales de coordenadas ---
+\foreach \x/\label in {0/1, 1.8/2, 3.6/3, 6.2/N, 8.2/N+1, 10/N+2, 11.8/N+3} {
+    \draw[gray!50, dashed] (\x, -2.2) -- (\x, 2.2);
+    \node[above] at (\x, 2.3) {$n = \label$};
+}
+
+% --- Puntos suspensivos entre 3 y N, y después de N+3 ---
+\node at (4.9, 2.5) {$\cdots$};
+\node at (4.9, 0) {$\cdots$};
+\node at (12.8, 2.5) {$\cdots$};
+\node at (12.8, 0) {$\cdots$};
+
+% --- Muro / Frontera en N ---
+\draw[orange!85!black, ultra thick, dashed] (7.2, -2.5) -- (7.2, 2.8);
+\node[orange!85!black, fill=white, font=\footnotesize\bfseries] at (7.2, 2.8) {Frontera $N$ ($\frac{1}{N} < \varepsilon$)};
+
+% --- Cajas de control en Zona 1 (n <= N) ---
+\foreach \x/\idx in {0/1, 1.8/2, 3.6/3, 6.2/N} {
+    \draw[caja] (\x-0.35, -0.7) rectangle (\x+0.35, 0.7);
+    \node[blue!70!black, font=\tiny, below] at (\x, -0.75) {$B_{\bar{d}}(x_{\idx}, \frac{\varepsilon}{N})$};
+}
+
+% --- Rectas completas R en Zona 2 (n > N) ---
+\foreach \x in {8.2, 10, 11.8} {
+    \draw[teal!70!black, very thick] (\x, -1.9) -- (\x, 1.9);
+    \node[teal!70!black, font=\footnotesize, below] at (\x, -1.95) {$\mathbb{R}$};
+}
+
+% --- Sucesión central x (línea horizontal azul en y=0) ---
+\draw[blue!70!black, thick] (-0.3, 0) -- (4.3, 0);
+\draw[blue!70!black, thick] (5.5, 0) -- (12.2, 0);
+\foreach \x/\idx in {0/1, 1.8/2, 3.6/3, 6.2/N, 8.2/N+1, 10/N+2, 11.8/N+3} {
+    \node[puntox] at (\x, 0) {};
+    \node[blue!70!black, font=\scriptsize, above right] at (\x, 0) {$x_{\idx}$};
+}
+
+% --- Sucesión y \in U (línea roja) ---
+\coordinate (y1) at (0, 0.35);
+\coordinate (y2) at (1.8, -0.4);
+\coordinate (y3) at (3.6, 0.25);
+\coordinate (yN) at (6.2, -0.3);
+\coordinate (yN1) at (8.2, 1.5);
+\coordinate (yN2) at (10, -1.6);
+\coordinate (yN3) at (11.8, 1.2);
+
+\draw[sucesion] (y1) -- (y2) -- (y3) -- (4.3, 0.1);
+\draw[sucesion] (5.5, -0.15) -- (yN) -- (yN1) -- (yN2) -- (yN3);
+
+\foreach \pt/\idx in {y1/1, y2/2, y3/3, yN/N, yN1/N+1, yN2/N+2, yN3/N+3} {
+    \node[punto] at (\pt) {};
+}
+\node[red!75!black, font=\scriptsize, above left] at (y1) {$y_1$};
+\node[red!75!black, font=\scriptsize, above left] at (yN1) {$y_{N+1}$};
+
+% --- Llaves inferiores explicativas ---
+\draw[decorate, decoration={brace, amplitude=6pt, mirror}, thick, blue!70!black]
+    (-0.4, -2.6) -- (7.0, -2.6)
+    node[midway, below=8pt, align=center, font=\footnotesize] {
+        \textbf{ZONA 1 ($n \le N$): Controlada por $U$}\\
+        $\frac{\bar{d}(x_n, y_n)}{n} \le \bar{d}(x_n, y_n) < \frac{\varepsilon}{N} < \varepsilon$
+    };
+
+\draw[decorate, decoration={brace, amplitude=6pt, mirror}, thick, teal!70!black]
+    (7.4, -2.6) -- (12.2, -2.6)
+    node[midway, below=8pt, align=center, font=\footnotesize] {
+        \textbf{ZONA 2 ($n > N$): Libre (todo $\mathbb{R}$)}\\
+        $\frac{\bar{d}(x_n, y_n)}{n} \le \frac{1}{n} < \frac{1}{N} < \varepsilon$
+    };
+
+\end{tikzpicture}
+
+
 \section{Definiciones en espacios topol\'ogicos}
 Sea $X$ un espacio topol\'ogico
 \begin{defi}

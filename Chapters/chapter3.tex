@@ -210,7 +210,7 @@ Sea $\{X_i\}_{i \in I}$ una familia de espacios topológicos no vacíos (con $|I
 \end{teo}
 
 \begin{dem}
-    ($\implies$) Es inmediato, pues para cada $j \in I$ la proyección canónica $\pi_j : \prod_{i \in I} X_i \to X_j$ es continua y sobreyectiva, y la imagen continua de un espacio conexo es conexa.
+    ($\implies$) Es inmediato, pues para cada $j \in I$ la proyección canónica $\pi_j : \prod_{i \in I} X_i \to X_j$ es continua y epiyectiva, y la imagen continua de un espacio conexo es conexa.
 
     \medskip
 
@@ -309,11 +309,11 @@ Sea $X$ espacio topol\'ogico
     Efectivamente, es relaci\'on de equivalencia.
 \end{prop}
 \begin{dem}
-    Reflexiva: $xRx$ pues $x\in \{x\}$ y es conexo.
-    
-    Sim\'etrica: Si $xRy \Rightarrow yRx$, si $x,y\in A$, $x, y\in A$
-
-    Transitiva: Si $xRy$ e $yRz \Rightarrow xRz$. Ambas implican que $x,y \in A$ conexo, $y,z \in B$ conexo, luego $x,z\in A\cup B$ y es conexo pues $y\in A\cap B \neq \emptyset$. 
+    \begin{itemize}
+        \item Reflexiva: $xRx$ pues $x\in \{x\}$ y es conexo.
+        \item Sim\'etrica: Si $xRy \Rightarrow yRx$, pues si $x,y\in A$, $x, y\in A$
+        \item Transitiva: Si $xRy$ e $yRz \Rightarrow xRz$. Ambas implican que $x,y \in A$ conexo, $y,z \in B$ conexo, luego $x,z\in A\cup B$ y es conexo pues $y\in A\cap B \neq \emptyset$. 
+    \end{itemize}
 \end{dem}
 \begin{defi}
     Las \textbf{componentes conexas} de $X$ son las clases de equivalencia de la relaci\'on $R$ anterior. 
@@ -351,12 +351,12 @@ Para estudiar $f:X \longrightarrow Y$ se puede reducir a ver sus componentes con
 $$\bt \coprod C_i = X \rar{f} & Y \\[5mm] \arrow[hook]{u} C_i \arrow[swap]{ru}{f|_{C_i}} \et$$
 entonces si $X$ no es conexo se separa en sus componentes, y as\'i se puede suponer siempre que $X$ es conexo. 
 \begin{defi}
-    Un espacio topol\'ogico $X$ es totalmente inconexo o disconexo si sus componentes conexas son los puntos. 
+    Un espacio topol\'ogico $X$ es \textbf{totalmente inconexo} o \textbf{disconexo} si sus componentes conexas son los puntos. 
 \end{defi}
 
 Si $X$ es conexo, su \'unica componente conexa es $C_x= X \quad \forall \, x\in X$. Es decir, si $X$ es conexo las componentes conexas no aportan nada.
 
-\begin{ejems}
+\begin{ejems} \,
 \begin{enumerate}
     \item $(X, \mc T_{dis})$ es totalmente inconexo, pues si $y,y' \in Y\subset X$, entonces $Y = \{y\} \cup (Y-\{y\})$ es una separaci\'on no trivial luego $Y$ no es conexo. Como es general, los mayores subespacios conexos son los puntos, y as\'i el espacio es totalmente inconexo. 
     \item $(X, \mc T_A)$. $U$ es abierto si y solo si $A \subset U$ \'o $U=\emptyset$. Sea $Y \subset X$, 
@@ -367,10 +367,10 @@ Si $X$ es conexo, su \'unica componente conexa es $C_x= X \quad \forall \, x\in 
         \item Si $Y\cap A \neq \emptyset$
         
         Sea $y\in Y\cap A$. Sean $V_1,V_2$ separaci\'on de $Y$, entonces existe $(U_1,U_2)$ abiertos de $X$ con $U_i \cap Y = V_i$, y por ser abiertos, 
-        $$\begin{cases} A\subset U_1 \\[-3mm] \text{y} \\[-3mm] A\subset U_2  \end{cases} 
+        $$\begin{cases} A\subset U_1 \\[-3mm] \quad \text{y} \\[-3mm] A\subset U_2  \end{cases} 
         \Rightarrow 
         \begin{cases}
-            A\cap Y \subset U_1 \cap Y=V_1 \\[-3mm] \text{y} \\[-3mm] A\cap Y \subset U_2 \cap Y = V_2
+            A\cap Y \subset U_1 \cap Y=V_1 \\[-3mm]  \quad \text{y} \\[-3mm] A\cap Y \subset U_2 \cap Y = V_2
         \end{cases}$$ de forma que $A\cap Y\subset V_1 \cap V_2$,  llegando a contradicci\'on con que $V_1$ y $V_2$ es separci\'on. Esto implica que $Y$ es conexo. 
 
         Adem\'as $X$ es conexo porque $A\subset X \equiv A\cap X \neq \emptyset$. 
@@ -541,7 +541,7 @@ Un espacio topológico $X$ es \textbf{arcoconexo} (o conexo por caminos) si para
     No conexo $\Rightarrow$ No arcoconexo.
 \end{cor}
 \begin{obs}
-    El rec\'iproco es falso. Veamos dos contraejemplos.
+    El rec\'iproco de la proposici\'on es falso. Veamos dos contraejemplos.
     \begin{enumerate}
         \item \textbf{El seno del top\'ologo.}
         Sea $f: (0,\infty) \longrightarrow [-1,1]$ con $f(x) = \sin(\nicefrac{1}{x})$ es continua. $(0,\infty)$ es conexo (y arcoconexo), igual que para conexos, la gr\'afica de un arcoconexo es arcoconexo (m\'as adelante), luego $\Gamma_f \subset (0,\infty) \times [-1,1]$ es arcoconexo y conexo. 
@@ -592,7 +592,7 @@ En cambio, $Y = P \cup \{(0, 1)\}$ es conexo (pues $P \subset Y \subset \overlin
     \end{enumerate}
 \end{obs}
 \begin{prop}
-    Si $f: X \longrightarrow Y$ es continua y $X$ arcoconexo, entocnes $\Im f$ es arcoconexo. En particular, $\Gamma_f = \Im(1\times f) \subset X\times Y$ es un subespacio arcoconexo.
+    Si $f: X \longrightarrow Y$ es continua y $X$ arcoconexo, entonces $\Im f$ es arcoconexo. En particular, $\Gamma_f = \Im(1\times f) \subset X\times Y$ es un subespacio arcoconexo.
 \end{prop}
 \begin{dem}
     Sean $y,y'\in \Im f$, veamos si existe un camino que los une. $y,y' \in \Im f \Rightarrow \exists\, x,x'\in X$ con $f(x)=y, \, f(x')=y'$, y como $X$ es arcoconexo, existe $f_{xx'}: [0,1] \longrightarrow X$ que une $x$ y $x'$. Entonces componemos
@@ -620,7 +620,7 @@ Dados $x,x'\in X$, se define la relación $R_A$ de forma que $xR_Ax'$ si existe 
     \end{itemize}
 \end{dem}
 \begin{defi}
-    Las \textbf{componentes arcoconexas} de $X$ son las clases de equivalencia de la relaci\'o $R_A$. 
+    Las \textbf{componentes arcoconexas} de $X$ son las clases de equivalencia de la relaci\'on $R_A$. 
 \end{defi}
 \begin{obs}
     $X = \coprod_{i \in I} Q_i$ donde $Q_i$ son las componentes conexas. Si $x\in Q_i \Rightarrow Q_i=Q_x$. Las componentes arcoconexas son los mayores subespacios topol\'ogicos de $X$ que son arcoconexos (\textcolor{red}{Ejercicio, igual que en conexos}). 
