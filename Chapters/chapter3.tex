@@ -147,11 +147,16 @@ Si $X$ es conexo, entonces no existen subconjuntos $A,B \subset X$ con $A \cup B
 
 Sea $X$ espacio topol\'ogico y $\{X_i \subset X\}_{i \in I}$ subespacios conexos.
 \begin{ejer}
-    Se verifica que $\bigcup X_i$ es conexo si $\bigcap X_i \neq \emptyset$. $\bigcup X_i$ es conexo si para todo $i, j\in I$ $X_i \cap X_j \neq \emptyset$. La segunda implica la primera. 
+    Se verifica que
+    \begin{enumerate}
+        \item $\bigcup X_i$ es conexo si $\bigcap X_i \neq \emptyset$. 
+        \item $\bigcup X_i$ es conexo si para todo $i, j\in I$ $X_i \cap X_j \neq \emptyset$.
+    \end{enumerate} (2. $\Rightarrow$ 1.)
 \end{ejer}
-Demostraremos la primera
-\begin{dem}
-    $\bigcup X_i \subset A \cup B$ con $A,B$ abiertos, $A\cap B \cap (\bigcup X_i) = \emptyset$ lo que da lugar a una separaci\'on. Para cada $j\in I$, $X_j \subset \bigcup X_i \bigcup A \cup B$ y como es conexo y tiene separaci\'on, $X_j \subset A$ \'o $X_j \subset B$. 
+
+\begin{dem} Demostraremos 1.
+
+    $\bigcup X_i \subset A \cup B$ con $A,B$ abiertos, $A\cap B \cap (\bigcup X_i) = \emptyset$ lo que da lugar a una separaci\'on. Para cada $j\in I$, $X_j \subset \bigcup X_i \subset A \cup B$ y como es conexo y tiene separaci\'on, $X_j \subset A$ \'o $X_j \subset B$. 
 
     Sea $x_o \in \bigcap X_i \neq \emptyset \Rightarrow x_o \in X_i\subset A \cup B \, \forall i$ por tanto $x_o \in A$ \'o $x_o \in B$. Supongamos que $x_o \in A \Rightarrow x_o \nin B$, entonces si para alg\'un $j\in I$, $x_o \in X_j \in B$, como $x_o \in X_i \forall i$, $x_o \in B$, contradicci\'on con $x_o \nin B$, luego $X_j \subset A \forall \, j\in I$ por lo que $\bigcup X_j \subset A$. 
 \end{dem}
@@ -183,7 +188,7 @@ Demostraremos la primera
 \end{dem}
 \section{Producto directo y uni\'on disjunta}
 \begin{obs}
-    Un subespacio conexo si y solo si los \'unicos abiertos-cerrados que tiene son $X, \emptyset$. Si tenemos un abierto-cerrado no trivial tenemos una separaci\'on pues su complementario tambi\'en es abierto-cerrado. 
+    Un subespacio es conexo si y solo si los \'unicos abiertos-cerrados que tiene son $X, \emptyset$. Si tenemos un abierto-cerrado no trivial tenemos una separaci\'on pues su complementario tambi\'en es abierto-cerrado. 
 \end{obs}
 
 %===============================================
