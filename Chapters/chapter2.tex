@@ -526,7 +526,7 @@ Sea $(X, \mc T_X)$ espacio topol\'ogico, $Y$ un conjunto y $f: X \longrightarrow
 \begin{ejer}
     Comprobar que $(f^*)^{-1}(\mc T_X)$ es topolog\'ia si $\mc T_X$ lo es.
 \end{ejer}
-\subsection{Caso general}
+
 Sean $\{(X_i,\mc T_i)\}_{i \in I}$ espacios topol\'ogicos, $Y$ un conjunto, $\{f_i: X_i \longrightarrow Y\}_{i \in I}$
 \begin{defi}
     La \textbf{topolog\'ia final} de las aplicaciones $\{f_i : X_i \longrightarrow Y\}_{i \in I}$ en $Y$ es la topolog\'ia m\'as fina en $Y$ que hace a todas las aplicaciones $\{f_i\}_{i \in I}$ continuas. (Cualquier topolog\'ia en $Y$ que haga a las $f_i$ continuas est\'a contenida en $\mc T^{\{f_i\}}$). 
@@ -552,7 +552,7 @@ $$g \text{ es continua } \iff  g\circ f_i \text{ son continuas } \forall \, i \i
     $$f_i^{-1}(g^{-1}(W)) = (g\circ f_i)^{-1}(W)$$
     y $g\circ f_i$ es continua por hip\'otesis $\forall \, i \in I$, por lo que $g^{-1}(W)$ es un abierto. 
 \end{dem}
-\section{Uni\'on disjunta}
+\section{Topolog\'ia  uni\'on disjunta}
 Sean $\{X_i\}_{i\in I}$ conjuntos, se define la unión disjunta de conjuntos
 $$\coprod_{i \in I} X_i= \{(i, x_i) \, / \, x_i \in X_i, \, i \in I\}$$
 que intuitivamente es ``dar un elemento de cada uno de los conjuntos''.
@@ -576,13 +576,12 @@ Para cada $j \in I$, se tiene la inmersi\'on
 $$\bt \varphi_j : X_j \rar[hook] & \coprod X_i \\[-5mm] x_j \rarmaps & (j, x_j) \et$$
 que es inyectiva.
 
-\section{Topolog\'ia uni\'on disjunta}
-
-Podemos dotar a la uni\'on disjunta de la topolog\'ia final de las inmersiones, es decir, dadas las inmersiones can\'onicas $\big\{ \varphi_j : X_j \hookrightarrow \coprod_{i \in I} X_i \big\}_{j\in I}$ se tiene que $  \left( \underset{i \in I}{\coprod} X_i, \mc T^{\{\varphi_j\}}\right)$ es el espacio topol\'ogico uni\'on disjunta. Tambi\'en se denota $\mc T^{\{\varphi_j\}} = \mc T_{\sqcup} = \mc T^{\sqcup}$ y se le llama topolog\'ia uni\'on disjunta, y es una topolog\'ia final.
+\begin{defi}
+Podemos dotar a la uni\'on disjunta de la topolog\'ia final de las inmersiones, es decir, dadas las inmersiones can\'onicas $\big\{ \varphi_j : X_j \hookrightarrow \coprod_{i \in I} X_i \big\}_{j\in I}$ se tiene que $  \left( \underset{i \in I}{\coprod} X_i, \mc T^{\{\varphi_j\}}\right)$ es el espacio topol\'ogico uni\'on disjunta. Tambi\'en se denota $\mc T^{\{\varphi_j\}} = \mc T_{\sqcup} = \mc T^{\sqcup}$ y se le llama \textbf{topolog\'ia uni\'on disjunta}, y es una topolog\'ia final.
 
 ¿Cu\'ando un subconjunto es abierto? Sea $W \subset \big(\coprod X_i, \mc T_{\sqcup}\big)$ es abierto si $\varphi_j^{-1}(W)\subset X_j$ es abierto para cada $j\in I$, pero $$\varphi_j^{-1}(W) = W\cap X_j = \varphi_j^{-1}(W\cap \varphi(X_j))$$
 pues la inversa de las inmersiones (que son inyectivas) es como cortar.
-
+\end{defi}
 Sea $(Z, \mc T_Z)$ un espacio topol\'ogico y $\coprod_j X_j \overset{g}{\longrightarrow} Z$,
 $$ g \text{ es continua }\iff g\circ \varphi_j: X_i \longrightarrow Z \text{ es continua } \forall \, j \in I. $$
 ¡El espacio topológico unión disjunta es con esta topología en concreto!
@@ -610,8 +609,6 @@ Otra manera de ponerlo es $[A]_R = \pi^{-1}(\pi(A)) \supseteq A$.
     Un conjunto es saturado $\iff A = [A]_R$.
 \end{prop}
 
-\subsection{Espacio topológico cociente}
-
 Sea $R$ una relación de equivalencia en $X$, $X \xrightarrow{\pi} \modulo{X}{R} \quad \text{como conjuntos}$
 \begin{defi}
 La \textbf{topología cociente} en $\modulo{X}{R}$ es la topología final de la aplicación $\pi$ de paso al cociente, denotada por $\mathcal{T}_{{X}/{R}}$ y
@@ -637,7 +634,7 @@ Dado que $\pi^{-1}(\pi(U)) = U$ (por ser todo abierto saturado) y $U$ es abierto
 \end{obs}
 
 
-\begin{ejem} $X = \mathbb{R}_1 \sqcup \mathbb{R}_2$ esp. topológico (unión disjunta de dos rectas).
+\begin{ejem} Consideremos $X = \mathbb{R}_1 \sqcup \mathbb{R}_2$, es un espacio topológico (unión disjunta de dos rectas).
 
 \begin{center}
 \begin{tikzpicture}[scale=1.1]
@@ -980,82 +977,86 @@ Por consiguiente, $D(x,y) = \sup_{n \ge 1} \left\{ \frac{\overline{d}(x_n, y_n)}
 al probar la inclusión para elementos subbásicos, queda probada para toda la topología $\mathcal{T}_\pi \subseteq \mathcal{T}_D$. 
 \end{itemize}
 \end{dem}
-
-
 \begin{tikzpicture}[
     scale=1.0,
     font=\small,
-    >=stealth,
+    >=Stealth,
     caja/.style={draw=blue!70!black, fill=blue!8, rounded corners=2pt, thick},
     sucesion/.style={draw=red!75!black, thick},
-    punto/.style={fill=red!75!black, circle, inner sep=1.5pt},
-    puntox/.style={fill=blue!70!black, circle, inner sep=1.8pt}
+    punto/.style={fill=red!75!black, circle, inner sep=1.6pt},
+    puntox/.style={fill=blue!70!black, circle, inner sep=1.9pt},
+    etiqueta/.style={inner sep=1.2pt}
 ]
 
 % --- Ejes / Líneas verticales de coordenadas ---
-\foreach \x/\label in {0/1, 1.8/2, 3.6/3, 6.2/N, 8.2/N+1, 10/N+2, 11.8/N+3} {
-    \draw[gray!50, dashed] (\x, -2.2) -- (\x, 2.2);
-    \node[above] at (\x, 2.3) {$n = \label$};
+\foreach \x/\etq in {0/1, 1.9/2, 3.8/3, 6.3/N, 8.6/N+1, 10.6/N+2, 12.6/N+3} {
+    \draw[gray!45, dashed] (\x, -2.2) -- (\x, 2.2);
+    \node[above, etiqueta] at (\x, 2.3) {$n = \etq$};
 }
 
 % --- Puntos suspensivos entre 3 y N, y después de N+3 ---
-\node at (4.9, 2.5) {$\cdots$};
-\node at (4.9, 0) {$\cdots$};
-\node at (12.8, 2.5) {$\cdots$};
-\node at (12.8, 0) {$\cdots$};
+\node[etiqueta] at (5.05, 2.45) {$\cdots$};
+\node[etiqueta] at (5.05, 0) {$\cdots$};
+\node[etiqueta] at (13.6, 2.45) {$\cdots$};
+\node[etiqueta] at (13.6, 0) {$\cdots$};
 
-% --- Muro / Frontera en N ---
-\draw[orange!85!black, ultra thick, dashed] (7.2, -2.5) -- (7.2, 2.8);
-\node[orange!85!black, fill=white, font=\footnotesize\bfseries] at (7.2, 2.8) {Frontera $N$ ($\frac{1}{N} < \varepsilon$)};
+% --- Muro / Frontera en N (separado de n=N y n=N+1) ---
+\draw[orange!85!black, ultra thick, dashed] (7.45, -2.5) -- (7.45, 2.95);
+\node[orange!85!black, fill=white, draw=orange!60!black, rounded corners=2pt, inner sep=2.5pt, font=\footnotesize\bfseries] at (7.45, 3.15) {Frontera $N$ ($\frac{1}{N} < \varepsilon$)};
 
-% --- Cajas de control en Zona 1 (n <= N) ---
-\foreach \x/\idx in {0/1, 1.8/2, 3.6/3, 6.2/N} {
-    \draw[caja] (\x-0.35, -0.7) rectangle (\x+0.35, 0.7);
-    \node[blue!70!black, font=\tiny, below] at (\x, -0.75) {$B_{\bar{d}}(x_{\idx}, \frac{\varepsilon}{N})$};
+% --- Cajas de control en Zona 1 (n <= N) con etiquetas de bolas limpias ---
+\foreach \x/\idx in {0/1, 1.9/2, 3.8/3, 6.3/N} {
+    \draw[caja] (\x-0.45, -0.75) rectangle (\x+0.45, 0.75);
+    \node[blue!70!black, etiqueta, font=\scriptsize, below] at (\x, -0.82) {$B_{\bar{d}}\!\left(x_{\idx}, \frac{\varepsilon}{N}\right)$};
 }
 
 % --- Rectas completas R en Zona 2 (n > N) ---
-\foreach \x in {8.2, 10, 11.8} {
+\foreach \x in {8.6, 10.6, 12.6} {
     \draw[teal!70!black, very thick] (\x, -1.9) -- (\x, 1.9);
-    \node[teal!70!black, font=\footnotesize, below] at (\x, -1.95) {$\mathbb{R}$};
+    \node[teal!70!black, etiqueta, font=\footnotesize, below] at (\x, -1.98) {$\mathbb{R}$};
 }
 
 % --- Sucesión central x (línea horizontal azul en y=0) ---
-\draw[blue!70!black, thick] (-0.3, 0) -- (4.3, 0);
-\draw[blue!70!black, thick] (5.5, 0) -- (12.2, 0);
-\foreach \x/\idx in {0/1, 1.8/2, 3.6/3, 6.2/N, 8.2/N+1, 10/N+2, 11.8/N+3} {
+\draw[blue!70!black, thick] (-0.5, 0) -- (4.5, 0);
+\draw[blue!70!black, thick] (5.6, 0) -- (13.1, 0);
+\foreach \x/\idx in {0/1, 1.9/2, 3.8/3, 6.3/N, 8.6/N+1, 10.6/N+2, 12.6/N+3} {
     \node[puntox] at (\x, 0) {};
-    \node[blue!70!black, font=\scriptsize, above right] at (\x, 0) {$x_{\idx}$};
+    \node[blue!70!black, etiqueta, font=\scriptsize, above right=1.5pt] at (\x, 0) {$x_{\idx}$};
 }
 
 % --- Sucesión y \in U (línea roja) ---
-\coordinate (y1) at (0, 0.35);
-\coordinate (y2) at (1.8, -0.4);
-\coordinate (y3) at (3.6, 0.25);
-\coordinate (yN) at (6.2, -0.3);
-\coordinate (yN1) at (8.2, 1.5);
-\coordinate (yN2) at (10, -1.6);
-\coordinate (yN3) at (11.8, 1.2);
+\coordinate (y1) at (0, 0.42);
+\coordinate (y2) at (1.9, -0.45);
+\coordinate (y3) at (3.8, 0.35);
+\coordinate (yN) at (6.3, -0.35);
+\coordinate (yN1) at (8.6, 1.5);
+\coordinate (yN2) at (10.6, -1.55);
+\coordinate (yN3) at (12.6, 1.25);
 
-\draw[sucesion] (y1) -- (y2) -- (y3) -- (4.3, 0.1);
-\draw[sucesion] (5.5, -0.15) -- (yN) -- (yN1) -- (yN2) -- (yN3);
+\draw[sucesion] (y1) -- (y2) -- (y3) -- (4.5, 0.15);
+\draw[sucesion] (5.6, -0.15) -- (yN) -- (yN1) -- (yN2) -- (yN3);
 
-\foreach \pt/\idx in {y1/1, y2/2, y3/3, yN/N, yN1/N+1, yN2/N+2, yN3/N+3} {
+\foreach \pt in {y1, y2, y3, yN, yN1, yN2, yN3} {
     \node[punto] at (\pt) {};
 }
-\node[red!75!black, font=\scriptsize, above left] at (y1) {$y_1$};
-\node[red!75!black, font=\scriptsize, above left] at (yN1) {$y_{N+1}$};
+\node[red!75!black, etiqueta, font=\scriptsize, above left=2pt] at (y1) {$y_1$};
+\node[red!75!black, etiqueta, font=\scriptsize, above left=2pt] at (y2) {$y_2$};
+\node[red!75!black, etiqueta, font=\scriptsize, above left=2pt] at (y3) {$y_3$};
+\node[red!75!black, etiqueta, font=\scriptsize, above left=2pt] at (yN) {$y_N$};
+\node[red!75!black, etiqueta, font=\scriptsize, above left=2pt] at (yN1) {$y_{N+1}$};
+\node[red!75!black, etiqueta, font=\scriptsize, below right=2pt] at (yN2) {$y_{N+2}$};
+\node[red!75!black, etiqueta, font=\scriptsize, above left=2pt] at (yN3) {$y_{N+3}$};
 
 % --- Llaves inferiores explicativas ---
 \draw[decorate, decoration={brace, amplitude=6pt, mirror}, thick, blue!70!black]
-    (-0.4, -2.6) -- (7.0, -2.6)
+    (-0.5, -2.75) -- (7.25, -2.75)
     node[midway, below=8pt, align=center, font=\footnotesize] {
         \textbf{ZONA 1 ($n \le N$): Controlada por $U$}\\
         $\frac{\bar{d}(x_n, y_n)}{n} \le \bar{d}(x_n, y_n) < \frac{\varepsilon}{N} < \varepsilon$
     };
 
 \draw[decorate, decoration={brace, amplitude=6pt, mirror}, thick, teal!70!black]
-    (7.4, -2.6) -- (12.2, -2.6)
+    (7.65, -2.75) -- (13.1, -2.75)
     node[midway, below=8pt, align=center, font=\footnotesize] {
         \textbf{ZONA 2 ($n > N$): Libre (todo $\mathbb{R}$)}\\
         $\frac{\bar{d}(x_n, y_n)}{n} \le \frac{1}{n} < \frac{1}{N} < \varepsilon$
@@ -1064,7 +1065,7 @@ al probar la inclusión para elementos subbásicos, queda probada para toda la t
 \end{tikzpicture}
 
 
-\section{Definiciones en espacios topol\'ogicos}
+\section{Axiomas de numerabilidad}
 Sea $X$ un espacio topol\'ogico
 \begin{defi}
    Se dice que $X$ es \textbf{primero numerable} o $1AN$ si cada punto $x \in X$ tiene una base numerable de entornos $\{U_n\}_{n \in \mathbb{N}}$. Adem\'as se pueden considerar entornos abiertos.
