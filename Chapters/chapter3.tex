@@ -197,15 +197,16 @@ Sea $X$ espacio topol\'ogico y $\{X_i \subset X\}_{i \in I}$ subespacios conexos
 
 Dado $\{X_i\}$ espacios topol\'ogicos, se tiene el espacio topol\'ogico $\bigsqcup X_i$, solo falta ver que $X_i$ son abiertos o cerrados. Lo son porque $\bigsqcup X_i$ tiene la topolog\'ia final de las $\varphi_j$, de forma que $X_j\subset \bigsqcup X_i$ son abiertos y cerrados. Luego $\bigsqcup X_i$ no es conexo aunque $X_j$ lo sean. 
 
+\begin{prop}
 Sea $\{X_i\}_{i \in I}$ una familia de espacios topológicos no vacíos (con $|I| \ge 2$). La unión disjunta $\coprod_{i \in I} X_i$ es disconexa.
+\end{prop}
+\begin{dem}[Idea para la unión disjunta]
+    Para cada $j \in I$, la inmersión canónica $\varphi_j : X_j \hookrightarrow \coprod_{i \in I} X_i$ cumple que $X_j$ es abierto y cerrado en $\coprod_{i \in I} X_i$ (con $\emptyset \neq X_j \neq \coprod_{i \in I} X_i$), por lo que el espacio no es conexo.
+\end{dem}
 
 \begin{prop}
     Un espacio topológico $X$ es conexo si y solo si los únicos subconjuntos abiertos y cerrados a la vez son $\emptyset$ y $X$.
 \end{prop}
-
-\begin{dem}[Idea para la unión disjunta]
-    Para cada $j \in I$, la inmersión canónica $\varphi_j : X_j \hookrightarrow \coprod_{i \in I} X_i$ cumple que $X_j$ es abierto y cerrado en $\coprod_{i \in I} X_i$ (con $\emptyset \neq X_j \neq \coprod_{i \in I} X_i$), por lo que el espacio no es conexo.
-\end{dem}
 
 \begin{teo}
     Sea $\{X_i\}_{i \in I}$ una familia de espacios topológicos no vacíos. Entonces:
@@ -279,7 +280,7 @@ Sea $\{X_i\}_{i \in I}$ una familia de espacios topológicos no vacíos (con $|I
     \[
         \bigcap_{\substack{M \subseteq I \\ M \text{ finito}}} T_M \ni b \implies \bigcap_{\substack{M \subseteq I \\ M \text{ finito}}} T_M \neq \emptyset \text{}
     \]
-    Por tanto, el subespacio $Y = \bigcup_{\substack{M \subseteq I \\ M \text{ finito}}} T_M \subseteq \prod_{i \in I} X_i$ es conexo por ser unión de conexos con intersección no vacía.
+    Por tanto, el subespacio $ \displaystyle Y = \bigcup_{\substack{M \subseteq I \\ M \text{ finito}}} T_M \subseteq \prod_{i \in I} X_i$ es conexo por ser unión de conexos con intersección no vacía.
 
     Probemos finalmente que $Y$ es denso en $\prod_{i \in I} X_i$ ($\overline{Y} = \prod_{i \in I} X_i$):
     \begin{quote}
@@ -313,7 +314,7 @@ Sea $X$ espacio topol\'ogico
 \begin{prop}
     Efectivamente, es relaci\'on de equivalencia.
 \end{prop}
-\begin{dem}
+\begin{dem} \,
     \begin{itemize}
         \item Reflexiva: $xRx$ pues $x\in \{x\}$ y es conexo.
         \item Sim\'etrica: Si $xRy \Rightarrow yRx$, pues si $x,y\in A$, $x, y\in A$
@@ -328,7 +329,7 @@ Sea $X$ espacio topol\'ogico
     
     Es decir, si $\{C_i\}_{i \in I}$ son las componentes conexas $\Rightarrow X = \coprod_{i \in I} C_i$. 
     
-   \noindent \textit{Observaci\'on importante:} esta uni\'on es de conjuntos, NO de espacios topol\'ogicos. Esto es porque $C_j \hookrightarrow \coprod C_i$ es abierto-cerrado, pero $C_j \hookrightarrow X$ es cerrado, no podemos asegurar que sea abierto (lo veremos m\'as adelante). Si $I$ es finito s\'i es igualdad de espacios topol\'ogicos.
+   \noindent \textit{Observaci\'on importante.} Esta uni\'on es de conjuntos, NO de espacios topol\'ogicos. Esto es porque $C_j \hookrightarrow \coprod C_i$ es abierto-cerrado, pero $C_j \hookrightarrow X$ es cerrado, no podemos asegurar que sea abierto (lo veremos m\'as adelante). Si $I$ es finito s\'i es igualdad de espacios topol\'ogicos.
 \end{obs}
 \begin{prop}
 Las componentes conexas son los mayores subespacios conexos de $X$. Es decir, si $C$ conexo y si $C \subset A$ con $A$ conexo, entonces $C=A$.
