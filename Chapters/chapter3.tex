@@ -630,3 +630,104 @@ Dados $x,x'\in X$, se define la relación $R_A$ de forma que $xR_Ax'$ si existe 
 
     No podemos asegurar que las componentes arcoconexas sean cerradas (como s\'i hac\'iamos en conexos). Tampoco son abiertas. $Y = \Gamma_f \cup\{(0,0)\}$ tiene por componentes arcoconexas cada parte de la uni\'on, $\Gamma_f$ no es cerrada ni abierta pero $\{(0,0)\}$ s\'i es cerrado. 
 \end{obs}
+
+\section{Localmente conexos y localmente arcoconexos}
+
+\begin{defi}
+Un espacio topológico $X$ es \textbf{localmente conexo} (respectivamente \textbf{localmente arcoconexo}) si cada punto tiene una base de entornos abiertos conexos (resp. arcoconexos). Es decir, para todo $x \in X$ y para todo entorno $V$ de $x$, existe un abierto $U$ conexo (resp. arcoconexo) tal que $x \in U \subset V$ ($V$ abierto con $x \in V$, es lo mismo).
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    % Abierto V exterior
+    \draw[thick, gray!70!black] (0,0) .. controls (1.2, 1.3) and (2.8, 0.9) .. (3.2, 0)
+        .. controls (3.5, -0.9) and (1.8, -1.4) .. (0.4, -0.9)
+        .. controls (-0.6, -0.5) and (-0.5, -0.3) .. (0,0);
+    \node[right, font=\footnotesize, align=left] at (3.4, 0.2) {$V$ abierto cualquiera\\(o entorno)};
+    % Abierto U interior conexo
+    \draw[thick, blue!70!black, fill=blue!10] (1.4, 0) ellipse (0.95cm and 0.65cm);
+    \node[blue!70!black, font=\scriptsize] at (1.4, -0.35) {$U$ conexo};
+    % Punto x
+    \filldraw[black] (1.35, 0.1) circle (1.8pt) node[above right, font=\scriptsize] {$x$};
+\end{tikzpicture}
+\end{center}
+
+Alrededor del punto (localmente) el espacio es conexo (resp. arcoconexo): no sabemos lo que ocurre en todo el espacio, pero sí alrededor del punto.
+
+Si $X$ es localmente arcoconexo $\implies$ $X$ es localmente conexo (pues todo espacio arcoconexo es conexo).
+\end{defi}
+
+\begin{ejems}
+\begin{itemize}
+    \item Las bolas abiertas $B_d(x, \varepsilon) \subset \mathbb{R}^n$ son localmente arcoconexas (y por tanto localmente conexas): para todo $y \in B_d(x, \varepsilon)$, existe $\delta > 0$ tal que $\underbrace{B_d(y, \delta)}_{\text{arcoconexa}} \subset B_d(x, \varepsilon)$.
+    \item $(\mathbb{R}^n,\mc T_d)$ es localmente arcoconexo $\implies$ localmente conexo (las bolas forman base de entornos). En resumen, $\mathbb{R}^n$ es conexo, arcoconexo, localmente conexo y localmente arcoconexo.
+\end{itemize}
+\end{ejems}
+
+\begin{teo}
+$X$ es localmente conexo (resp. localmente arcoconexo) $\iff$ las componentes conexas (resp. arcoconexas) de cada abierto de $X$ son abiertas (en el abierto o en el ambiente, es lo mismo).
+
+En particular, las componentes conexas (resp. arcoconexas) de $X$ son abiertas si $X$ es localmente conexo (resp. localmente arcoconexo). (El recíproco no es cierto).
+\[
+    \text{Si } X \text{ es localmente arcoconexo} \implies
+    \begin{cases}
+        \text{comp. arcoconexas abiertas} \\
+        \text{(resp. localmente conexas)}
+    \end{cases}
+    \implies \text{resp. comp. conexas abiertas.}
+\]
+\end{teo}
+\begin{dem}
+Lo hacemos para localmente conexos (análogo para localmente arcoconexos).
+
+\begin{itemize}
+    \item[$(\Rightarrow)$] Suponemos que $X$ es localmente conexo. Sea $U$ un abierto de $X$ y $A$ una componente conexa de $U$. Queremos ver que $A$ es abierto $\iff$ para cada $x \in A$, existe $V_x$ abierto tal que $x \in V_x \subset A$.
+    
+    Sea $x \in A \subset U$; como $x \in U$ abierto, por ser $X$ localmente conexo, existe un abierto conexo $V_x$ con $x \in V_x \subset U$. Por ser $A$ la componente conexa de $U$ que contiene a $x$ (y $V_x$ conexo), se tiene $x \in V_x \subset A$.
+
+    \item[$(\Leftarrow)$] Tenemos que probar que $X$ es localmente conexo, es decir, para cada $x \in X$ y cada abierto $U \subset X$ con $x \in U$, existe un abierto conexo $V_x$ con $x \in V_x \subset U$.
+    
+    Como $x \in U$, tomando $C_x$ la componente conexa de $U$ que contiene a $x$, tenemos $x \in C_x \subset U$. Por hipótesis, las componentes conexas de $U$ son abiertas, luego basta tomar $V_x = C_x$, que es abierto y conexo.
+\end{itemize}
+\end{dem}
+\begin{prop}
+Si $X$ es localmente conexo (resp. localmente arcoconexo), entonces cualquier abierto $U \subset X$ es localmente conexo (resp. localmente arcoconexo).
+\end{prop}
+
+\begin{dem}
+Sea $U \subset X$ abierto. Dado $x \in U$ y $V$ abierto (de $U$, y por tanto de $X$) con $x \in V \subset U$, hay que probar que existe $W$ abierto conexo con $x \in W \subset V \subset U$ (para ver que $U$ es localmente conexo).
+
+Como $V$ es abierto en $U$ y $U$ es abierto en $X$, $V$ es abierto en $X$ (con $x\in V$). Al ser $X$ localmente conexo, existe un abierto conexo $W$ de $X$ con $x \in W \subset V \subset U$, de donde se sigue que $U$ es localmente conexo.
+\end{dem}
+
+\begin{cor}
+Si $X$ es localmente conexo (resp. localmente arcoconexo), entonces las componentes conexas (resp. arcoconexas) de $X$ son abiertas y cerradas.
+\end{cor}
+
+\begin{dem} \,
+\begin{enumerate}
+    \item \textbf{Localmente conexo:} Las componentes conexas son cerradas siempre, y son abiertas por el teorema anterior.
+    \item \textbf{Localmente arcoconexo:} Por el teorema anterior, las componentes arcoconexas son abiertas. Como particionan el espacio,
+    \[
+        X = \bigsqcup_{i \in I} Q_i = Q_j \sqcup \Big(\bigsqcup_{i \neq j} Q_i\Big),
+    \]
+    donde $\bigsqcup_{i \neq j} Q_i$ es abierto (unión de abiertos), luego su complementario $Q_j$ es cerrado. Así, $Q_j$ es abierto y cerrado para todo $j \in I$.
+\end{enumerate}
+\end{dem}
+
+\begin{teo}
+Si $X$ es conexo y localmente arcoconexo, entonces $X$ es arcoconexo.
+\end{teo}
+
+\begin{dem}
+Sea $Q$ una componente arcoconexa de $X$ (que será no vacía por definición). Por ser $X$ localmente arcoconexo (y el corolario anterior), $Q$ es un subconjunto abierto y cerrado (no vacío) de $X$. Como $X$ es conexo, necesariamente $Q = X$, luego $X$ es arcoconexo$\implies Q = X \implies X$ arcoconexo (usando que $X$ es conexo y $Q \neq \emptyset$).
+\end{dem}
+
+\begin{cor}
+Si $X$ es localmente arcoconexo, entonces las componentes conexas y las componentes arcoconexas son las mismas.
+\end{cor}
+
+\begin{dem}
+Sea $C_x$ la componente conexa de $x \in X$ y $Q_x$ la componente arcoconexa de $x \in X$. Sabemos que $Q_x \subset C_x$; basta demostrar la otra inclusión.
+
+Como $C_x$ es componente conexa, es conexa. Además, $X$ es localmente arcoconexo $\implies X$ es localmente conexo $\implies C_x \subset X$ es abierta (con $X$ localmente arcoconexo). Como $C_x$ es conexa y localmente arcoconexa, por el teorema anterior $C_x$ es arcoconexa. Pero $Q_x \subset C_x$ es componente arcoconexa (es decir, el mayor subespacio arcoconexo que contiene a $x$), por lo que $C_x \subset Q_x$, y en consecuencia $C_x = Q_x$.
+\end{dem}
