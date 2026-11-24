@@ -139,10 +139,10 @@ Concluimos que $Y$ debe ser un intervalo.
     Si $A,B \subset X$ subconjunto con $A \cup B = X$ y $\overline{A}\cap B = \overline{B}\cap A = \emptyset$ entonces $(A,B)$ es separaci\'on de $X$.
 \end{prop}
 \begin{dem}
-    Como $A\subset \overline{A}$ autom\'aticamente $A \cap B = \emptyset$. Veamos que son cerrados. Como $\overline{A} = \bar A \cap X = \bar A \cap (A\cup B) = (\bar A \cap A) \cup (\bar A \cap B) = A \cup \emptyset = A$. De la misma forma con $B$, y como ambos son cerrados, es una separaci\'on.
+    Como $A\subset \overline{A}$ autom\'aticamente $A \cap B = \emptyset$. Veamos que son cerrados. Como $\overline{A} = \overline A \cap X = \overline A \cap (A\cup B) = (\overline A \cap A) \cup (\overline A \cap B) = A \cup \emptyset = A$. De la misma forma con $B$, y como ambos son cerrados, es una separaci\'on.
 \end{dem}
 \begin{cor}
-Si $X$ es conexo, entonces no existen subconjuntos $A,B \subset X$ con $A \cup B = X$ y $\bar A \cap B = \bar B \cap A = \emptyset$.
+Si $X$ es conexo, entonces no existen subconjuntos $A,B \subset X$ con $A \cup B = X$ y $\overline A \cap B = \overline B \cap A = \emptyset$.
 \end{cor}
 
 Sea $X$ espacio topol\'ogico y $\{X_i \subset X\}_{i \in I}$ subespacios conexos.
@@ -151,7 +151,7 @@ Sea $X$ espacio topol\'ogico y $\{X_i \subset X\}_{i \in I}$ subespacios conexos
     \begin{enumerate}
         \item $\bigcup X_i$ es conexo si $\bigcap X_i \neq \emptyset$. 
         \item $\bigcup X_i$ es conexo si para todo $i, j\in I$ $X_i \cap X_j \neq \emptyset$.
-    \end{enumerate} (2. $\Rightarrow$ 1.)
+    \end{enumerate} En particular, 2. $\Rightarrow$ 1.
 \end{ejer}
 
 \begin{dem} Demostraremos 1.
@@ -345,17 +345,19 @@ Las componentes conexas son los mayores subespacios conexos de $X$. Es decir, si
 \end{dem}
 \begin{custom}
 [Proposici\'on] Para cada $x\in X$ existe una \'unica componente conexa de $X$ que contiene a $x$, y la denotamos por $C_x$. Por ser $x\in[x] = C_x$ disjuntas.
-
+\end{custom}
+\begin{dem}
+    
 Si $y \in C_x = [x] \Rightarrow C_x=C_y$ por $C_y=[y]=[x]=C_x$. 
 
 Si $A\subset X$ es un subespacio conexo de $X$, entonces $A$ est\'a contenido en una \'unica componente conexa. 
 
 $\forall\, x,y\in A \Rightarrow xRy \Rightarrow[x] = [y] = C_x \supset A$.
-\end{custom}
-
-Para estudiar $f:X \longrightarrow Y$ se puede reducir a ver sus componentes conexas
+\end{dem}
+\begin{obs} Para estudiar $f:X \longrightarrow Y$ se puede reducir a ver sus componentes conexas
 $$\bt \coprod C_i = X \rar{f} & Y \\[5mm] \arrow[hook]{u} C_i \arrow[swap]{ru}{f|_{C_i}} \et$$
 entonces si $X$ no es conexo se separa en sus componentes, y as\'i se puede suponer siempre que $X$ es conexo. 
+\end{obs}
 \begin{defi}
     Un espacio topol\'ogico $X$ es \textbf{totalmente inconexo} o \textbf{disconexo} si sus componentes conexas son los puntos. 
 \end{defi}
@@ -798,12 +800,14 @@ Como $C_x$ es componente conexa, es conexa. Además, $X$ es localmente arcoconex
     llegando a contradicci\'on por suponer que $X \neq C_i, i=1,2$.
 \end{dem}
 \begin{propi}
-    Si $Y \subset X$ es un subespacio irreducible, entonces $\overline{Y} \subset X$ es irreducible. Supongamos que $\overline{Y} = C_1\cup C_2$, $C_i \subset \overline{Y}$ cerrados, como $\overline{Y}$ es cerrado, $C_i$ son cerrados de $X$. Como $Y \subset \overline{Y}$, entonces
+    Si $Y \subset X$ es un subespacio irreducible, entonces $\overline{Y} \subset X$ es irreducible.
+\end{propi} 
+    \begin{dem}
+    Supongamos que $\overline{Y} = C_1\cup C_2$, $C_i \subset \overline{Y}$ cerrados, como $\overline{Y}$ es cerrado, $C_i$ son cerrados de $X$. Como $Y \subset \overline{Y}$, entonces
     $$Y = (C_1\cap Y) \cup (C_2 \cap Y) \Rightarrow Y = \begin{cases}
         C_1\cap Y \\[-3mm] \text{ \'o } \\[-3mm] C_2\cap Y 
     \end{cases} \iff \begin{cases} Y_1 \subset C_1 \\[-3mm] \text{ \'o } \\[-3mm] Y \subset C_2 \end{cases}\Rightarrow \begin{cases}  \overline{Y} \subset C_1\\[-3mm] \text{ \'o } \\[-3mm]  \overline{Y} \subset C_2 \end{cases} \Rightarrow  \begin{cases} \overline{Y} = C_1 \\[-3mm] \text{ \'o } \\[-3mm]  \overline{Y} =C_2\end{cases}$$
-
-\end{propi}
+    \end{dem}
 \begin{ejer}
     Sea $Y\subset X$ subespacio topol\'ogico, $Y$ es irreducible $\iff$ $Y\subset C_1 \cup C_2$ con $C_i \subset X$ cerrados entonces $Y\subset C_1$ \'o $Y \subset C_2$. 
 \end{ejer}
