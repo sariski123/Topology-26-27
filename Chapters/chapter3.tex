@@ -731,3 +731,87 @@ Sea $C_x$ la componente conexa de $x \in X$ y $Q_x$ la componente arcoconexa de 
 
 Como $C_x$ es componente conexa, es conexa. Además, $X$ es localmente arcoconexo $\implies X$ es localmente conexo $\implies C_x \subset X$ es abierta (con $X$ localmente arcoconexo). Como $C_x$ es conexa y localmente arcoconexa, por el teorema anterior $C_x$ es arcoconexa. Pero $Q_x \subset C_x$ es componente arcoconexa (es decir, el mayor subespacio arcoconexo que contiene a $x$), por lo que $C_x \subset Q_x$, y en consecuencia $C_x = Q_x$.
 \end{dem}
+\begin{custom}
+    [Contraejemplos] Definimos
+    \begin{enumerate}[1)]
+        \item Conexo
+        \item Arcoconexo
+        \item Localmente conexo
+        \item Localmente arcoconexo
+    \end{enumerate}
+    Hemos visto que 2) $\Rightarrow$ 1) y por la misma raz\'on 4) $\Rightarrow$ 3). 
+
+    Adem\'as, 1) y 4) $\Rightarrow$ 2). 
+
+    El resto son falsas.
+    
+    1) $\not\Rightarrow$ 2) con los contraejemplos del seno y el peine.
+
+    3)$\not\Rightarrow$ 1) y 4)$\not\Rightarrow$ 2) tienen el mismo contraejemplo. 
+    
+    Consideramos en $(\bb R, \, \mc T_d)$ el subconjunto $Y = (-1,0) \cup (0,1)$. No es conexo y por tanto no es arcoconexo. Sin embargo es localmente conexo y localmente arcoconexo. $(-1,0)$ conexo y arcoconexo, igual para $(0,1)$. Es decir, localmente verifica ambas. Sus componentes conexas/arcoconexas son $(-1,0), (0,1)$. 
+
+    Veamos ahora que 1) $\not\Rightarrow$ 3) y 2) $\not\Rightarrow$ 4) Consideremos el peine cerrado $\overline{P} = (\{0\}\times [0,1]) \cup P$, es conexo y arcoconexo, pero no localmente. 
+    
+    Fij\'andonos en $(0,1) \in \overline{P}$, si fuera localmente conexo/arcoconexo, debe existir un abierto conexo/arcoconexo entre medias. Consideramos una bola $B_d((0,1),\varepsilon) \cap \overline{P}$ es un entorno de $(0,1)$ en $\overline{P}$, corta al peine en los trozos de las p\'uas superiores, y esta intersecci\'on es uni\'on disjunta de bolas que recubren a cada p\'ua, de forma que no es conexo, y tampoco arcoconexo (por consecuencia o por ver que no hay forma de unir las p\'uas). Esto para un $\varepsilon$ suficientemente peque\~no. Si $\varepsilon$ es muy grande podr\'ia incluir a todo el peine.  
+
+    3) $\not\Rightarrow$ 4) similar a 1) $\not\Rightarrow$ 2).
+\end{custom}
+
+\chapter{Espacios irreducibles}
+\begin{defi}
+    Se dice que un espacio topol\'ogico $X$ es irreducible si $X$ es uni\'on de dos cerrados, uno de ellos es el total. Es decir, que no puedo poner $X$ como uni\'on de dos cerrados no triviales. Es decir,
+    $$\text{ Si } X = C_1 \cup C_2 \Rightarrow X=C_1 \text{ \'o } X =C_2$$
+\end{defi}
+\begin{obs}
+    Irreducible $\Rightarrow$ Conexo. 
+\end{obs}
+\begin{ejem}
+    Dos rectas que se corta es conexo pero no irreducible. Dos rectas paralelas no son conexas ni irreducibles. 
+    
+    \, 
+
+    \missingfigure{HACER DIBUJO}
+\end{ejem}
+\begin{teo}
+    Las siguientes condiciones son equivalentes:
+    \begin{enumerate}[1)]
+        \item $X$ es irreducible.
+        \item Cualquier pareja de abiertos no vac\'ios de $X$ siempre se cortan.
+        \item Todo abierto no vac\'io de $X$ es denso.
+    \end{enumerate}
+\end{teo}
+\begin{cor}
+    En particular, los espacios irreducibles nunca son $T_2$ (ni sucesivas condiciones), pues no podemos encontrar abiertos disjuntos.
+\end{cor}
+\begin{dem}
+    1) $\Rightarrow$ 2) Sean $U_1, U_2 \subset X$ abiertos no vac\'ios. Supongamos que $U_1 \cap U_2 = \emptyset$
+    $$X = (X-U_1)\cup (X-U_2) $$
+    pero si $X$ es irreducible, alguno de $(X-U_1)$ o $(X-U_2)$ debe ser el total $X$ pero como $U_1,U_2$ son no vac\'ios, llegamos a una contradicci\'on al suponer que son disjuntos.
+
+    2) $\Rightarrow$ 3) Sea $U\subset X$ abierto no vac\'io, sea $x\in X$ y $U_x$ abierto con $x\in U_x$, por 2), $U_x \cap U \neq \emptyset \Rightarrow x\in \overline{U} \Rightarrow \overline{U} = X$  
+
+    3) $\Rightarrow$ 1) Supongamos que $X$ no es irreducible $\Rightarrow X = C_1 \cup C_2$ con $X =\neq C_i, i =1,2$. Pasando al complementario, 
+    $$\begin{cases}
+        \emptyset \neq X- C_1 \ni x (\text{por ser no vac\'io})\\ \emptyset \neq X- C_1 =U_2 \text{ es denso}
+    \end{cases} \Rightarrow x\in \overline{U_2} \Rightarrow X-C_1 \cap X-C_2 \neq \emptyset \Rightarrow C_1 \cup C_2 \neq X $$
+    llegando a contradicci\'on por suponer que $X \neq C_i, i=1,2$.
+\end{dem}
+\begin{propi}
+    Si $Y \subset X$ es un subespacio irreducible, entonces $\overline{Y} \subset X$ es irreducible. Supongamos que $\overline{Y} = C_1\cup C_2$, $C_i \subset \overline{Y}$ cerrados, como $\overline{Y}$ es cerrado, $C_i$ son cerrados de $X$. Como $Y \subset \overline{Y}$, entonces
+    $$Y = (C_1\cap Y) \cup (C_2 \cap Y) \Rightarrow Y = \begin{cases}
+        C_1\cap Y \\[-3mm] \text{ \'o } \\[-3mm] C_2\cap Y 
+    \end{cases} \iff Y_1 \subset C_1 \text{ \'o } Y \subset C_2 \Rightarrow \overline{Y} \subset C_1 \text{ \'o }  \overline{Y} \subset C_2 \Rightarrow  \overline{Y} = C_1 \text{ \'o }  \overline{Y} =C_2$$
+
+\end{propi}
+\begin{ejer}
+    Sea $Y\subset X$ subespacio topol\'ogico, $Y$ es irreducible $\iff$ $Y\subset C_1 \cup C_2$ con $C_i \subset X$ cerrados entonces $Y\subset C_1$ \'o $Y \subset C_2$. 
+\end{ejer}
+\section{Componentes irreducibles}
+Si $X$ no es irreducible se definen las 
+\begin{defi}
+    Las componentes irreducibles de $X$ son los mayores subespacios de $X$ irreducibles. 
+\end{defi}
+\begin{obs}
+    Existen por el Lema de Zorn. En un poset tal que toda cadena ascendente tiene supremo, entonces existen elementos maximales. Se consideran $\{\text{subespacios irreducibles de} X\} \neq \emptyset$, no vaci\'o pues dado $x\in X$, $\{x\}\in \{\text{subespacios irreducibles de} X\}$. Dada una cadena $Y_1 \subset Y_2 \subset \cdots \subset Y_n \subset \cdots$, entonces $\bigcup_{i=1}^{\infty} Y_i$ es el supremo de la cadena. As\'i, $X = \bigcup_{i\in I} E_i$ con $E_i$ componentes irreducibles. 
+\end{obs}
