@@ -758,16 +758,16 @@ Como $C_x$ es componente conexa, es conexa. Además, $X$ es localmente arcoconex
     3) $\not\Rightarrow$ 4) similar a 1) $\not\Rightarrow$ 2).
 \end{custom}
 
-\chapter{Espacios irreducibles}
+\section{Espacios irreducibles}
 \begin{defi}
-    Se dice que un espacio topol\'ogico $X$ es irreducible si $X$ es uni\'on de dos cerrados, uno de ellos es el total. Es decir, que no puedo poner $X$ como uni\'on de dos cerrados no triviales. Es decir,
+    Se dice que un espacio topol\'ogico $X$ es \textbf{irreducible} si $X$ es uni\'on de dos cerrados, uno de ellos es el total. Es decir, que no puedo poner $X$ como uni\'on de dos cerrados no triviales. Es decir,
     $$\text{ Si } X = C_1 \cup C_2 \Rightarrow X=C_1 \text{ \'o } X =C_2$$
 \end{defi}
 \begin{obs}
     Irreducible $\Rightarrow$ Conexo. 
 \end{obs}
 \begin{ejem}
-    Dos rectas que se corta es conexo pero no irreducible. Dos rectas paralelas no son conexas ni irreducibles. 
+    Dos rectas que se cortans es conexo pero no irreducible. Dos rectas paralelas no son conexas ni irreducibles. 
     
     \, 
 
@@ -793,15 +793,15 @@ Como $C_x$ es componente conexa, es conexa. Además, $X$ es localmente arcoconex
 
     3) $\Rightarrow$ 1) Supongamos que $X$ no es irreducible $\Rightarrow X = C_1 \cup C_2$ con $X =\neq C_i, i =1,2$. Pasando al complementario, 
     $$\begin{cases}
-        \emptyset \neq X- C_1 \ni x (\text{por ser no vac\'io})\\ \emptyset \neq X- C_1 =U_2 \text{ es denso}
-    \end{cases} \Rightarrow x\in \overline{U_2} \Rightarrow X-C_1 \cap X-C_2 \neq \emptyset \Rightarrow C_1 \cup C_2 \neq X $$
+        \emptyset \neq X- C_1 \ni x \, (\text{por ser no vac\'io})\\ \emptyset \neq X- C_1 =U_2 \text{ es denso}
+    \end{cases} \Rightarrow x\in \overline{U_2} \Rightarrow (X-C_1) \cap (X-C_2) \neq \emptyset \Rightarrow C_1 \cup C_2 \neq X $$
     llegando a contradicci\'on por suponer que $X \neq C_i, i=1,2$.
 \end{dem}
 \begin{propi}
     Si $Y \subset X$ es un subespacio irreducible, entonces $\overline{Y} \subset X$ es irreducible. Supongamos que $\overline{Y} = C_1\cup C_2$, $C_i \subset \overline{Y}$ cerrados, como $\overline{Y}$ es cerrado, $C_i$ son cerrados de $X$. Como $Y \subset \overline{Y}$, entonces
     $$Y = (C_1\cap Y) \cup (C_2 \cap Y) \Rightarrow Y = \begin{cases}
         C_1\cap Y \\[-3mm] \text{ \'o } \\[-3mm] C_2\cap Y 
-    \end{cases} \iff Y_1 \subset C_1 \text{ \'o } Y \subset C_2 \Rightarrow \overline{Y} \subset C_1 \text{ \'o }  \overline{Y} \subset C_2 \Rightarrow  \overline{Y} = C_1 \text{ \'o }  \overline{Y} =C_2$$
+    \end{cases} \iff \begin{cases} Y_1 \subset C_1 \\[-3mm] \text{ \'o } \\[-3mm] Y \subset C_2 \end{cases}\Rightarrow \begin{cases}  \overline{Y} \subset C_1\\[-3mm] \text{ \'o } \\[-3mm]  \overline{Y} \subset C_2 \end{cases} \Rightarrow  \begin{cases} \overline{Y} = C_1 \\[-3mm] \text{ \'o } \\[-3mm]  \overline{Y} =C_2\end{cases}$$
 
 \end{propi}
 \begin{ejer}
@@ -813,5 +813,5 @@ Si $X$ no es irreducible se definen las
     Las componentes irreducibles de $X$ son los mayores subespacios de $X$ irreducibles. 
 \end{defi}
 \begin{obs}
-    Existen por el Lema de Zorn. En un poset tal que toda cadena ascendente tiene supremo, entonces existen elementos maximales. Se consideran $\{\text{subespacios irreducibles de} X\} \neq \emptyset$, no vaci\'o pues dado $x\in X$, $\{x\}\in \{\text{subespacios irreducibles de} X\}$. Dada una cadena $Y_1 \subset Y_2 \subset \cdots \subset Y_n \subset \cdots$, entonces $\bigcup_{i=1}^{\infty} Y_i$ es el supremo de la cadena. As\'i, $X = \bigcup_{i\in I} E_i$ con $E_i$ componentes irreducibles. 
+    Existen por el Lema de Zorn. En un poset tal que toda cadena ascendente tiene supremo, entonces existen elementos maximales. Se consideran $\{\text{subespacios irreducibles de } X\} \neq \emptyset$, no vaci\'o pues dado $x\in X$, $\{x\}\in \{\text{subespacios irreducibles de } X\}$. Dada una cadena $Y_1 \subset Y_2 \subset \cdots \subset Y_n \subset \cdots$, entonces $\bigcup_{i=1}^{\infty} Y_i$ es el supremo de la cadena. As\'i, $X = \bigcup_{i\in I} E_i$ con $E_i$ componentes irreducibles. 
 \end{obs}
