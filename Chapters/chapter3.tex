@@ -767,13 +767,26 @@ Como $C_x$ es componente conexa, es conexa. Además, $X$ es localmente arcoconex
 \end{defi}
 \begin{obs}
     Irreducible $\Rightarrow$ Conexo. 
-\end{obs}
-\begin{ejem}
-    Dos rectas que se cortans es conexo pero no irreducible. Dos rectas paralelas no son conexas ni irreducibles. 
-    
-    \, 
+\end{obs}\begin{ejem}
+Dos rectas que se cortan son conexas pero no irreducibles. Dos rectas paralelas no son conexas ni irreducibles.
+\begin{center}
+\begin{tikzpicture}[scale=0.9, >=Stealth]
+    % --- Caso 1: Dos rectas que se cortan (conexo, no irreducible) ---
+    \begin{scope}[shift={(0,0)}]
+        \draw[thick, blue!75!black] (-1.5, -1.2) -- (1.5, 1.2);
+        \draw[thick, red!75!black] (-1.5, 1.2) -- (1.5, -1.2);
+        \filldraw[black] (0, 0) circle (2pt);
+        \node[below, font=\footnotesize\bfseries] at (0, -1.45) {Se cortan: conexo, no irreducible};
+    \end{scope}
 
-    \missingfigure{HACER DIBUJO}
+    % --- Caso 2: Dos rectas paralelas (ni conexo ni irreducible) ---
+    \begin{scope}[shift={(7,0)}]
+        \draw[thick, blue!75!black] (-1.5, 0.7) -- (1.5, 0.7);
+        \draw[thick, red!75!black] (-1.5, -0.7) -- (1.5, -0.7);
+        \node[below, font=\footnotesize\bfseries] at (0, -1.45) {Paralelas: ni conexo ni irreducible};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
 \end{ejem}
 \begin{teo}
     Las siguientes condiciones son equivalentes:
