@@ -1,0 +1,901 @@
+\chapter{Enunciados ejercicios}
+\section*{Capítulo I. Espacios topológicos}
+
+\begin{ejer}[1]
+Dado $X = \{a,b,c,d,e\}$ se consideran las siguientes familias de subconjuntos de $X$:
+\begin{align*}
+    \mathcal{T}_1 &= \{X, \emptyset, \{a\}, \{c,d\}, \{a,c,d\}, \{a,b,c,d\}\}, \\
+    \mathcal{T}_2 &= \{X, \emptyset, \{a\}, \{d,e\}, \{a,c,d\}, \{b,c,d,e\}\}, \\
+    \mathcal{T}_3 &= \{X, \emptyset, \{a\}, \{c,d\}, \{a,c,d\}, \{b,c,d\}\}.
+\end{align*}
+Determina cuáles de las $\mathcal{T}_i$ forman una topología por abiertos del conjunto $X$. Determinar los cerrados para las $\mathcal{T}_i$ que sean topologías.
+\end{ejer}
+
+\begin{ejer}[2]
+Sea $X$ un conjunto y $A$ y $B$ subconjuntos no triviales. Determina bajo qué condiciones las familias
+\[
+    \mathcal{T}_1 = \{\emptyset, A, X\} \qquad \text{y} \qquad \mathcal{T}_2 = \{\emptyset, A, B, X\}
+\]
+forman una topología.
+\end{ejer}
+
+\begin{ejer}[3]
+Demuestra que $\mathcal{T} = \{\emptyset, \mathbb{N}\} \cup \{A \subset \mathbb{N} \mid A \text{ contenga tan sólo números pares}\}$ determina una topología de $\mathbb{N}$. Determina si los siguientes subconjuntos son abiertos, cerrados, las dos cosas o ninguna de las dos:
+\[
+    A_1 = \{90, 2^{10}, 5^{21}-1\}, \qquad A_2 = \{\text{números primos}\} \qquad \text{y} \qquad A_3 = \{\text{números impares}\}.
+\]
+\end{ejer}
+
+\begin{ejer}[4]
+Sea $\mathcal{T}$ la familia de subconjuntos de $\mathbb{N}$ dada por $\mathbb{N}$, $\emptyset$ y los subconjuntos de la forma $E_n = \{n, n+1, n+2, \dots\}$. Probar que esta familia es una topología de $\mathbb{N}$.
+\end{ejer}
+
+\begin{ejer}[5]
+En $\mathbb{Z}_+$ consideramos la familia de subconjuntos $U \subseteq \mathbb{Z}_+$ que satisfacen la siguiente propiedad: si $n \in U$, entonces cada divisor de $n$ también pertenece a $U$. Probar que dicha familia de subconjuntos es una topología en $\mathbb{Z}_+$, que no es la discreta.
+\end{ejer}
+
+\begin{ejer}[6]
+\textbf{Topología del punto incluido.} Sea $X$ un conjunto y $a \in X$ un punto. Estudia si la familia de subconjuntos $\mathcal{T}_a$ formada por el vacío y los subconjuntos $U \subseteq X$ tales que $a \in U$ define una topología por abiertos de $X$.
+\end{ejer}
+
+\begin{ejer}[7]
+\textbf{Topología del punto excluido.} Sea $X$ un conjunto y $a \in X$ un punto. Estudia si la familia de subconjuntos $\mathcal{T}_{a^c}$ formada por $X$ y los subconjuntos $U \subseteq X$ tales que $a \notin U$ define una topología por abiertos de $X$.
+\end{ejer}
+
+\begin{ejer}[8]
+Sea $X$ el intervalo cerrado $[-1,1]$ de $\mathbb{R}$ y $\mathcal{T} = \{U \subset X : 0 \notin U\} \cup \{U \subseteq X : (-1,1) \subseteq U\}$. Probar que $(X, \mathcal{T})$ es un espacio topológico.
+\end{ejer}
+
+\begin{ejer}[9]
+Sea $\mathcal{T}$ la familia de subconjuntos de $\mathbb{R}$ consistente en $\mathbb{R}$, $\emptyset$ y los intervalos abiertos no acotados $A_q = (q, \infty)$ donde $q \in \mathbb{Q}$. Demuestra que $\mathcal{T}$ no es una topología por abiertos de $\mathbb{R}$.
+\end{ejer}
+
+\begin{ejer}[10]
+Sea $(X, \mathcal{T})$ un espacio topológico. Entonces $\mathcal{T}$ es la topología discreta si y sólo si para cada $x \in X$ el subconjunto que define $\{x\}$ es abierto.
+\end{ejer}
+
+\begin{ejer}[11]
+Demuestra que la familia de subconjuntos de $\mathbb{R}$ dada por $\mathcal{T} = \{(-n, n) \mid n \in \mathbb{N}\} \cup \{\emptyset, \mathbb{R}\}$ define una topología por abiertos. ¿Cuál es el mayor abierto contenido en $[-2, 3)$? ¿Quiénes son los cerrados? ¿Cuál es el mínimo cerrado que contiene a los subconjuntos $(0,1)$, $\{3\}$, $\{1,4\}$ y $[-2,3)$?
+\end{ejer}
+
+\begin{ejer}[12]
+Repetir el ejercicio 11 para las familias:
+\begin{enumerate}
+    \item[a)] $B = \{\emptyset, \mathbb{R}, (0, \infty), (0, n) \text{ con } n \in \mathbb{N}\}$.
+    \item[b)] $C = \{\emptyset, \mathbb{R}, [-n, n] \text{ con } n \in \mathbb{N}\}$.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[13]
+Sea $X$ un espacio topológico y $A$ un subconjunto de $X$. Demuestra que $A$ es abierto si y sólo si para cada $x \in A$ existe un abierto $U_x$ que contiene a $x$ y $U_x \subseteq A$.
+\end{ejer}
+
+\begin{ejer}[14]
+Sea $X$ un conjunto infinito, $a \in X$ un elemento fijo y $\mathcal{T} = \mathcal{T}_{CF} \cup \{U \subset X : a \notin U\}$, siendo $\mathcal{T}_{CF}$ la topología cofinita en $X$.
+\begin{enumerate}
+    \item[a)] Probar que $(X, \mathcal{T})$ es un espacio topológico.
+    \item[b)] Estudiar en $(X, \mathcal{T})$ el interior, cierre y la frontera de un subconjunto cualquiera de $X$.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[15]
+Sobre $\mathbb{R}^2$ demuestra que la siguiente familia de subconjuntos es una familia de cerrados:
+\[
+    \{\emptyset, \mathbb{R}^2\} \cup \{A \subseteq \mathbb{R}^2 \mid A \text{ es la unión de un número finito de puntos y/o rectas}\}.
+\]
+\end{ejer}
+
+\begin{ejer}[16]
+Sea $X$ un conjunto y $\{\mathcal{T}_i\}_{i \in I}$ una familia de topologías en $X$. Demostrar que la intersección de topologías $\bigcap_i \mathcal{T}_i$ es una topología en $X$.
+\end{ejer}
+
+\begin{ejer}[17]
+Demuestra que si $\mathcal{B}$ es una base para una topología sobre $X$, entonces la topología generada por $\mathcal{B}$ es igual a la intersección de todas las topologías sobre $X$ que contienen a $\mathcal{B}$. Prueba lo mismo si $\mathcal{B}$ es una subbase.
+\end{ejer}
+
+\begin{ejer}[18]
+\textbf{Topología usual de $\mathbb{R}$.} Sobre $\mathbb{R}$ considera la familia $\mathcal{B} = \{(a,b) \mid a,b \in \mathbb{R}, \, a < b\}$. Demuestra que $\mathcal{B}$ es una base de abiertos. Demostrar que todo intervalo abierto es unión infinita de intervalos cerrados y que todo intervalo cerrado es intersección infinita de intervalos abiertos. Estudia si los siguientes conjuntos son abiertos, cerrados o ninguna de las dos cosas:
+\[
+    [0, \infty), \qquad (1,2) \qquad \text{y} \qquad (-2,2) \setminus \{1\}.
+\]
+\end{ejer}
+
+\begin{ejer}[19]
+En $\mathbb{R}$ con la topología usual, probar que:
+\begin{enumerate}
+    \item[a)] El intervalo $[a,b]$ es un entorno de $c \in \mathbb{R}$ si y sólo si $a < c < b$.
+    \item[b)] Los intervalos $(a,b)$ son abiertos (y no son cerrados).
+    \item[c)] Los intervalos $[a,b]$ son cerrados (y no son abiertos).
+    \item[d)] Los intervalos $(a, +\infty)$ y $(-\infty, b)$ son abiertos (y no son cerrados).
+    \item[e)] Los intervalos $[a, +\infty)$ y $(-\infty, b]$ son cerrados (y no son abiertos).
+    \item[f)] Los intervalos $[a,b)$ y $(b,c]$ no son abiertos (y no son cerrados).
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[20]
+Probar que la intersección infinita de abiertos de $\mathbb{R}$ (con la topología usual) no es, en general, un abierto.
+\end{ejer}
+
+\begin{ejer}[21]
+En $\mathbb{R}^n$ con la topología usual, las bolas $B(x, \varepsilon) = \{y \in \mathbb{R}^n : \|x - y\| < \varepsilon\}$ son abiertos mientras que los discos $D(x, \varepsilon) = \{y \in \mathbb{R}^n : \|x - y\| \le \varepsilon\}$ no son abiertos sino cerrados.
+\end{ejer}
+
+\begin{ejer}[22]
+\textbf{Topología del límite inferior o de Sorgenfrey.} En $\mathbb{R}$ considera los subconjuntos $\mathcal{B} = \{[a,b) \mid a,b \in \mathbb{R}, \, a < b\}$. Demuestra que $\mathcal{B}$ es una base de abiertos.
+\end{ejer}
+
+\begin{ejer}[23]
+Determina si las siguientes familias son base de abiertos:
+\begin{enumerate}
+    \item[a)] En $\mathbb{Z}$, $\mathcal{B} = \{A_{2n+1} = \{2n+1\}\}_{n \in \mathbb{Z}} \cup \{A_{2n} = \{2n-1, 2n, 2n+1\}\}_{n \in \mathbb{Z}}$.
+    \item[b)] En $\mathbb{R}$, $\mathcal{B} = \{[a,b] \mid a,b \in \mathbb{R}, \, a < b\}$.
+    \item[c)] En $\mathbb{R}$, $\mathcal{B} = \{(n, n+1)\}_{n \in \mathbb{Z}}$.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[24]
+Para cada $(x,y) \in \mathbb{R}^2$ considera el subconjunto $A_{(x,y)} = \{(z,t) \in \mathbb{R}^2 \mid z \ge x, \, t \ge y\}$. Demuestra que $\mathcal{B} = \{A_{(x,y)} \mid (x,y) \in \mathbb{R}^2\}$ es una base de abiertos. ¿Son abiertos los conjuntos $\mathbb{R} \times (0,3)$, $U = \{(x,y) \in \mathbb{R}^2 \mid 2x + y > 0, \, x + 2y > 0\}$ y $V = \{(x,y) \in \mathbb{R}^2 \mid 2x + y > 0, \, x + 2y < 0\}$?
+\end{ejer}
+
+\begin{ejer}[25]
+Probar que la familia $\mathcal{T} = \{\mathbb{R}^2, \emptyset\} \cup \{O_k\}_{k \in \mathbb{R}}$, siendo $O_k = \{(x,y) \in \mathbb{R}^2 : x > y + k\}$, es una topología en $\mathbb{R}^2$. Dados $A = \{(-x, x) : x \in \mathbb{R}\}$ y $M = \{(0,0)\}$, calcular el cierre de $A$ y el de $M$.
+\end{ejer}
+
+\begin{ejer}[26]
+Sea $(X, \mathcal{T})$ un espacio topológico, donde $\mathcal{T} \subseteq \mathcal{P}(X)$ es la familia de abiertos. Sea $\mathcal{B}$ una base por abiertos de $X$. Prueba que la topología generada por $\mathcal{B}$ coincide con $\mathcal{T}$ si y sólo si se cumplen las dos condiciones siguientes:
+\begin{enumerate}
+    \item[a)] Los elementos $U \in \mathcal{B}$ son abiertos de la topología $\mathcal{T}$.
+    \item[b)] Si $A \in \mathcal{T}$ entonces $A = \bigcup_{i \in I} U_i$ para ciertos $U_i \in \mathcal{B}$.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[27]
+Sean $\mathcal{T}_1$ y $\mathcal{T}_2$ dos topologías en $X$. Probar que $\mathcal{T}_1$ es más fina que $\mathcal{T}_2$ si y sólo si todo cerrado de $\mathcal{T}_2$ es cerrado de $\mathcal{T}_1$.
+\end{ejer}
+
+\begin{ejer}[28]
+Sean $\mathcal{B}_1$ y $\mathcal{B}_2$ dos bases de abiertos de $X$, que generan las topologías $\mathcal{T}_1$ y $\mathcal{T}_2$ respectivamente. Demuestra que $\mathcal{T}_1$ es más fina que $\mathcal{T}_2$ si y sólo si para cada $x \in X$ y para cada $B_2 \in \mathcal{B}_2$ tal que $x \in B_2$ existe un básico $B_1 \in \mathcal{B}_1$ tal que $x \in B_1 \subset B_2$.
+\end{ejer}
+
+\begin{ejer}[29]
+Considera la familia de subconjuntos de $\mathbb{R}$ dada por:
+\[
+    \mathcal{S} = \{(a, +\infty) \mid a \in \mathbb{R}\} \cup \{(-\infty, a) \mid a \in \mathbb{R}\}.
+\]
+Demuestra que $\mathcal{S}$ es una subbase y que genera la topología usual de $\mathbb{R}$.
+\end{ejer}
+
+\begin{ejer}[30]
+Demuestra que la familia $\mathcal{S} = \{[n, n+1] \mid n \in \mathbb{Z}\}$ es una subbase de $\mathbb{R}$. Determina si son abiertos o cerrados los subconjuntos:
+\[
+    U_1 = (0,1), \qquad U_2 = [0, +\infty), \qquad U_3 = \{\pm 1\} \qquad \text{y} \qquad U_4 = \{\pm\sqrt{2}\}.
+\]
+\end{ejer}
+
+\begin{ejer}[31]
+Compara las siguientes topologías sobre $\mathbb{R}$: $\mathcal{T} = \{(-n, n)\}_{n \in \mathbb{N}} \cup \{\emptyset, \mathbb{R}\}$, la topología cofinita, la topología del punto incluido para $a = 1$, para $a = 0$ y la topología usual.
+\end{ejer}
+
+\begin{ejer}[32]
+Considera en $\mathbb{R}$ su topología usual y el subconjunto $X = [-1,1] \cup \{2\}$. Determina si los siguientes subconjuntos de $X$ son abiertos con la topología inducida:
+\[
+    \left(\frac{1}{2}, 1\right), \quad [-1, 0) \cup \{2\}, \quad \left[-1, -\frac{1}{2}\right) \cup \left(\frac{1}{2}, 1\right], \quad \left(-1, -\frac{1}{2}\right] \cup \left[\frac{1}{2}, 1\right), \quad \{0, 2\}, \quad \{2\}.
+\]
+\end{ejer}
+
+\begin{ejer}[33]
+Considera en $\mathbb{R}^2$ la topología del ejercicio 24. En el subconjunto $X = \mathbb{R} \times \{0\}$ considera la topología inducida. Determina si son abiertos o cerrados los subconjuntos:
+\[
+    (1,2) \times \{0\}, \qquad [1,2] \times \{0\} \qquad \text{y} \qquad [0, +\infty) \times \{0\}.
+\]
+\end{ejer}
+
+\begin{ejer}[34]
+Sea $X$ el intervalo abierto $(0,1) \subset \mathbb{R}$ y $\mathcal{T} = \{U_n \subset X : U_n = (0, 1 - \frac{1}{n})\}_{n=2,3,\dots} \cup \{\emptyset, X\}$. Probar que $(X, \mathcal{T})$ es un espacio topológico.
+\end{ejer}
+
+\begin{ejer}[35]
+Sea $X = \mathbb{R}^n$ y $S \subseteq \mathbb{R}[x_1, \dots, x_n]$; se define $V(S) := \{z \in \mathbb{R}^n : f(z) = 0 \text{ para todo } f \in S\}$. Probar que $\mathcal{T}_Z = \{\mathbb{R}^n - V(S) : S \subseteq \mathbb{R}[x_1, \dots, x_n]\}$ es una topología en $\mathbb{R}^n$, llamada \textbf{Topología de Zariski}. Probar que una base de abiertos de la topología de Zariski está formada por los complementarios de los ceros de polinomios, es decir, por abiertos del tipo $U_f = \mathbb{R}^n - V(f) = \{z \in \mathbb{R}^n : f(z) \neq 0\}$.
+\end{ejer}
+
+\begin{ejer}[36]
+Sea $X$ un conjunto y $P$ una partición de $X$. Probar que $P$ es base de una topología $\mathcal{T}(P)$ en $X$. Si $P = \{\{x\}\}_{x \in X}$ entonces $\mathcal{T}(P)$ es la topología discreta en $X$. Si $P = \{X\}$ entonces $\mathcal{T}(P)$ es la topología trivial.
+\end{ejer}
+
+\begin{ejer}[37]
+Dado $(X, \mathcal{T})$ un espacio topológico, considera en $Y \subset X$ la topología inducida $\mathcal{T}_Y$. Demuestra que:
+\begin{enumerate}
+    \item[a)] $A \subset Y$ es cerrado en $\mathcal{T}_Y$ si y sólo si existe $C \subset X$ cerrado en $\mathcal{T}$ tal que $A = C \cap Y$. Probar que en este caso, como cerrado $C$ se puede tomar el cierre de $A$ en $X$.
+    \item[b)] Si $\mathcal{B}$ es una base de $\mathcal{T}$, entonces $\mathcal{B}_Y = \{B \cap Y \mid B \in \mathcal{B}\}$ es una base de $\mathcal{T}_Y$.
+\end{enumerate}
+\end{ejer}
+
+\section*{Capítulo II. Elementos de un espacio topológico}
+
+\begin{ejer}[38]
+Demuestra las siguientes propiedades:
+\begin{enumerate}
+    \item[a)] Si $A_1 \subset A_2$ entonces $A_1^\circ \subset A_2^\circ$ y $\overline{A_1} \subset \overline{A_2}$.
+    \item[b)] $(A_1 \cap A_2)^\circ = A_1^\circ \cap A_2^\circ$.
+    \item[c)] $A_1^\circ \cup A_2^\circ \subset (A_1 \cup A_2)^\circ$. Encuentra un ejemplo en el que no se dé la igualdad.
+    \item[d)] $\overline{A \cup B} = \overline{A} \cup \overline{B}$.
+    \item[e)] $\overline{A \cap B} \subset \overline{A} \cap \overline{B}$. Encuentra un ejemplo en el que no se dé la igualdad.
+    \item[f)] En el caso no finito: $\bigcup_j \overline{A_j} \subseteq \overline{\bigcup_j A_j}$ y $\left(\bigcap_j A_j\right)^\circ \subseteq \bigcap_j A_j^\circ$. Encuentra un ejemplo en el que no se dé la igualdad.
+    \item[g)] $X - A^\circ = \overline{X - A}$.
+    \item[h)] $X - \overline{A} = (X - A)^\circ$.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[39]
+En $\mathbb{R}$ se considera la familia de subconjuntos $\mathcal{B} = \{[a,b) \mid a,b \in \mathbb{R}, \, a < b\}$.
+\begin{enumerate}
+    \item[a)] Demuestra que $\mathcal{B}$ es base de una topología en $\mathbb{R}$.
+    \item[b)] Sean $\mathcal{T}_{\mathrm{inf}}$ la topología en $\mathbb{R}$ generada por la base del apartado anterior (llamada topología del límite inferior o de Sorgenfrey) y $\mathcal{T}_u$ la topología usual en $\mathbb{R}$, es decir, la generada por la base $\mathcal{B}_u = \{(a,b) \mid a,b \in \mathbb{R}, \, a < b\}$. Analiza si $\mathcal{T}_u$ y $\mathcal{T}_{\mathrm{inf}}$ son comparables.
+    \item[c)] Calcula en $(\mathbb{R}, \mathcal{T}_{\mathrm{inf}})$ el interior y el cierre de los siguientes subconjuntos:
+    \[
+        [1,2), \quad (-\infty, 0), \quad (-\infty, 0], \quad (1, +\infty), \quad (0, 3] \quad \text{y} \quad \left\{\frac{1}{q} \mid q \in \mathbb{Z}, \, q \neq 0\right\}.
+    \]
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[40]
+Sea $\mathcal{T}$ la topología de $\mathbb{N}$ formada por $\mathcal{T} = \{\emptyset, \mathbb{N}\} \cup \{\{1, \dots, n\} \mid n \in \mathbb{N}\}$.
+\begin{enumerate}
+    \item[a)] Encuentra los abiertos que contienen al punto $6$.
+    \item[b)] Encuentra los puntos de acumulación de $A = \{4, 13, 23, 37\}$.
+    \item[c)] Determina los subconjuntos cerrados.
+    \item[d)] Calcula el interior y el cierre de $A$, $\{7, 24, 85\}$ y $\{3, 6, 9, 12, \dots\}$.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[41]
+Sea $\mathcal{T}$ la familia de subconjuntos de $\mathbb{R}$ consistente en $\mathcal{T} = \{\emptyset, \mathbb{R}\} \cup \{(a, +\infty) \mid a \in \mathbb{R}\}$. Probar que $\mathcal{T}$ es una topología. Determina:
+\begin{enumerate}
+    \item[a)] Los cerrados.
+    \item[b)] El cierre, el interior y la frontera de: $[3,7)$, $[7, \infty)$, $\{2\} \cup [6, \infty)$, $\{7, 24, 47, 85\}$ y $\{3p \mid p \in \mathbb{Z}\}$.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[42]
+Considera en $\mathbb{R}$ la topología cofinita $\mathcal{T}_{CF}$ que tiene por cerrados no triviales los conjuntos finitos. Calcula el interior, el cierre y la frontera de:
+\[
+    A_1 = \{1, \sqrt{2}, \sqrt{3}\}, \qquad A_2 = (1, +\infty), \qquad A_3 = \mathbb{Z} \qquad \text{y} \qquad A_4 = \mathbb{R} \setminus \{7, 15\}.
+\]
+\end{ejer}
+
+\begin{ejer}[43]
+Sea $(X, \mathcal{T})$ un espacio topológico tal que si $x \neq y$ existe un entorno de $x$ que no contiene a $y$, o bien un entorno de $y$ que no contiene a $x$, es decir, $(X, \mathcal{T})$ es un espacio topológico $T_0$. Si en $X$ la intersección arbitraria de abiertos es un abierto, probar:
+\begin{enumerate}
+    \item[a)] La relación $x \le y$ si $x \in \overline{\{y\}}$ es una relación de orden en $X$.
+    \item[b)] Si denotamos $U_x = \{y \in X : x \le y\}$, probar que $U_x$ es el menor abierto que contiene a $x$ y que $\beta = \{U_x : x \in X\}$ es una base de la topología de $X$. De hecho es la mínima, esto es, si $\mathcal{B}$ es otra base para $X$, entonces $\beta \subseteq \mathcal{B}$.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[44]
+\textbf{Puntos aislados.} Dado $A \subset X$ se dice que $x \in A$ es un punto aislado de $A$ si $\{x\}$ es un abierto de $A$ con la topología inducida en $A$ como subconjunto de $X$. Se denota por $A^a$ el conjunto de puntos aislados de $A$. Prueba las siguientes igualdades:
+\begin{enumerate}
+    \item[a)] $A' \cap A^a = \emptyset$, siendo $A'$ el conjunto de puntos de acumulación de $A$.
+    \item[b)] $\overline{A} = A' \cup A^a$.
+    \item[c)] $(\overline{A})^a \subset A^a$, y deduce que si $A$ no tiene puntos aislados, su cierre tampoco.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[45]
+Sea $(X, \mathcal{T})$ un espacio topológico, y considera en $Y \subset X$ la topología inducida de $X$, $(Y, \mathcal{T}_Y)$. Dado $A \subset Y$, denota por $A^\circ$, $\overline{A}$ y $\delta(A)$ el interior, el cierre y la frontera de $A$, respectivamente, en $(X, \mathcal{T})$. Demuestra que $A^\circ \cap Y$ está incluido en el interior de $A$ en $(Y, \mathcal{T}_Y)$, el cierre de $A$ en $(Y, \mathcal{T}_Y)$ es $\overline{A} \cap Y$, y que la frontera de $A$ en $(Y, \mathcal{T}_Y)$ está incluida en $\delta(A) \cap Y$.
+\end{ejer}
+
+\begin{ejer}[46]
+En un espacio topológico $(X, \mathcal{T})$, dado un subconjunto $A \subset X$ se cumple:
+\begin{enumerate}
+    \item[a)] $\delta(A) \cap A^\circ = \emptyset$.
+    \item[b)] $A$ es abierto $\Leftrightarrow \delta(A) \cap A = \emptyset$.
+    \item[c)] $A$ es cerrado $\Leftrightarrow \delta(A) \subset A$.
+    \item[d)] $A$ es abierto y cerrado $\Leftrightarrow \delta(A) = \emptyset$.
+    \item[e)] $\delta(A) = \overline{A} - A^\circ$.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[47]
+Prueba que un espacio topológico $X$ es discreto si y sólo si $\delta(Y)$ es vacía para todo subconjunto $Y \subseteq X$. Prueba, por otro lado, que $X$ está dotado de la topología trivial (es decir, sus únicos abiertos son $\emptyset$ y $X$) si y sólo si $\delta(Y) = X$ para todo $Y \neq \emptyset, X$.
+\end{ejer}
+
+\begin{ejer}[48]
+Probar que en un espacio topológico $(X, \mathcal{T})$, para $A \subset X$ se cumple:
+\[
+    (A^\circ)^\circ = A^\circ, \qquad \overline{\overline{A}} = \overline{A} \qquad \text{y} \qquad \delta(\delta A) \subset \delta A.
+\]
+\end{ejer}
+
+\begin{ejer}[49]
+Demuestra las siguientes propiedades:
+\begin{enumerate}
+    \item[a)] $A' = \{x \in \overline{A} : \overline{A} = \overline{A - \{x\}}\}$.
+    \item[b)] Si $\delta(A_1) = A_2$ y $\delta(A_2) = A_1$, entonces $A_1 = A_2$.
+    \item[c)] $(\overline{A})^\circ = A \Leftrightarrow A$ es abierto y $\delta(A) = \delta(\overline{A})$.
+    \item[d)] Si $A$ es un cerrado, entonces $\delta(\overline{A^\circ}) = \delta(A^\circ)$.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[50]
+Se llama borde de $M \subseteq X$ a $b(M) = \delta(M) \cap M$. Demuéstrese:
+\begin{enumerate}
+    \item[a)] $b(M_1 \cap M_2) = (M_1 \cap b(M_2)) \cup (M_2 \cap b(M_1))$.
+    \item[b)] $b(X) = \emptyset$.
+    \item[c)] $b((b(M^c))^c) \subseteq b(M)$.
+    \item[d)] $A$ es abierto de $X$ si y sólo si $b(A) = \emptyset$.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[51]
+\textbf{Exterior de un subconjunto.} En un espacio topológico $(X, \mathcal{T})$, se llama exterior de $A \subset X$ a $\operatorname{ext}(A) = (X \setminus A)^\circ$. Demuestra las siguientes propiedades:
+\begin{enumerate}
+    \item[a)] $\operatorname{ext}(A) = X \setminus \overline{A}$.
+    \item[b)] $\operatorname{ext}(A) \cap \overline{A} = \emptyset$.
+    \item[c)] $\operatorname{ext}(\emptyset) = X$.
+    \item[d)] $\operatorname{ext}(A) \subseteq \operatorname{ext}(A^\circ)$. Dar un ejemplo en el que no sea igualdad.
+    \item[e)] $X = \overline{A} \sqcup \operatorname{ext}(A) = A^\circ \sqcup \delta(A) \sqcup \operatorname{ext}(A)$.
+    \item[f)] $A \in \mathcal{T}$ si y sólo si $A = \operatorname{ext}(X \setminus A)$.
+    \item[g)] $\operatorname{ext}(A \cup B) = \operatorname{ext}(A) \cap \operatorname{ext}(B)$, donde $B \subset X$.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[52]
+Demuestra que todo subconjunto finito $A$ de $\mathbb{R}$ con la topología usual es cerrado. Prueba además que $\delta(A) = A$.
+\end{ejer}
+
+\begin{ejer}[53]
+Considera en $\mathbb{R}$ la topología usual y sea $A \subset \mathbb{R}$ un subconjunto. Prueba:
+\begin{enumerate}
+    \item[a)] Si $U \subset \mathbb{R}$ es un abierto tal que $A \cap U$ es finito, entonces $A' \cap U = \emptyset$.
+    \item[b)] Si $x \in A'$ entonces todo abierto que contiene a $x$ contiene también un número infinito de puntos de $A$.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[54]
+\textbf{Conjuntos localmente cerrados.} Demuéstrese que son equivalentes las siguientes propiedades para $M \subseteq X$:
+\begin{enumerate}
+    \item[a)] $\forall x \in M$, existe $U_x$ entorno suyo tal que $M \cap U_x$ es cerrado en $U_x$ con la topología inducida, esto es, $M \cap U_x = U_x \cap C_U$ para cierto cerrado $C_U$ en $X$.
+    \item[b)] $M$ es intersección de un abierto con un cerrado.
+\end{enumerate}
+Demuéstrese además que si $M$ cumple que $\forall x \in X$, existe $U_x$ entorno suyo tal que $M \cap U_x = U_x \cap C_U$ para cierto $C_U$ cerrado, entonces $M$ no sólo es localmente cerrado sino cerrado.
+\end{ejer}
+
+\begin{ejer}[55]
+En un espacio topológico $(X, \mathcal{T})$, diremos que $D \subset X$ es denso si $\overline{D} = X$. Probar que las siguientes proposiciones son equivalentes:
+\begin{enumerate}
+    \item[a)] $D \subset X$ es denso.
+    \item[b)] Si $D \subset Z$ con $Z$ cerrado en $X$, entonces $Z = X$.
+    \item[c)] Para todo $U \in \mathcal{T}$, $U \neq \emptyset$, se tiene $D \cap U \neq \emptyset$.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[56]
+Prueba que $\mathbb{Q}$ y $\mathbb{R} \setminus \mathbb{Q}$ son densos en $\mathbb{R}$ con la topología usual.
+\end{ejer}
+
+\begin{ejer}[57]
+Si $A$ es un subconjunto denso de un espacio topológico y $U$ es abierto, prueba que $U \subset \overline{A \cap U}$.
+\end{ejer}
+
+\begin{ejer}[58]
+Sea $(X, \mathcal{T})$ un espacio topológico y $A \subset X$. Prueba que $A^\circ \neq \emptyset$ si y sólo si $A$ tiene intersección con todo conjunto denso $D \subset X$.
+\end{ejer}
+
+\begin{ejer}[59]
+Considera en $\mathbb{R}$ la topología por abiertos $\mathcal{T} = \{A \subset \mathbb{R} \mid 0 \notin A\} \cup \{\mathbb{R}\}$. Determina si $(\mathbb{R}, \mathcal{T})$ es $T_2$. Encuentra los subconjuntos densos de $(\mathbb{R}, \mathcal{T})$.
+\end{ejer}
+
+\begin{ejer}[60]
+Un espacio es separable si existe algún subconjunto suyo, denso en él y numerable.
+\begin{enumerate}
+    \item[a)] Probar que $\mathbb{R}$ es separable.
+    \item[b)] Probar que todo subconjunto abierto de un espacio separable es separable.
+    \item[c)] Demuestra que todo espacio topológico que admita una base numerable es separable.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[61]
+En $\mathbb{R}$ considera la topología $\mathcal{T} = \{(-n, n) \subset \mathbb{R}\}_{n \in \mathbb{N}} \cup \{\emptyset, \mathbb{R}\}$. Demuestra que:
+\[
+    \lim_n \frac{1}{n} = 0 \qquad \text{y también} \qquad \lim_n \frac{1}{n} = \frac{1}{2}.
+\]
+\end{ejer}
+
+\begin{ejer}[62]
+Sea $X$ un espacio topológico trivial. Demostrar que toda sucesión de puntos en $X$ converge hacia todo punto de $X$.
+\end{ejer}
+
+\begin{ejer}[63]
+Sea $X$ un espacio topológico discreto. Demuestra que toda sucesión $\{a_n\}_{n \in \mathbb{N}}$ de puntos de $X$ es convergente hacia $a \in X$ si y sólo si existe $\nu \in \mathbb{N}$ tal que $a_n = a$ para todo $n \ge \nu$.
+\end{ejer}
+
+\begin{ejer}[64]
+Sea $X$ un espacio topológico y $x_n$ una sucesión convergente al punto $y \in X$, demostrar que $y$ pertenece al cierre de cualquier subconjunto de $X$ que contenga a la sucesión $x_n$. ¿Es cierto el recíproco?
+\end{ejer}
+
+\begin{ejer}[65]
+En $\mathbb{R}$, considera la topología $\mathcal{T}_{\mathrm{inf}}$ que genera la base de abiertos $\{[a,b) \mid a,b \in \mathbb{R}, \, a < b\}$. Encuentra todos los límites de las sucesiones:
+\[
+    x_n = \frac{1}{n} \qquad \text{e} \qquad y_n = -\frac{1}{n}.
+\]
+\end{ejer}
+
+\begin{ejer}[66]
+En la topología del punto incluido para $a = 0$ en $\mathbb{R}$ (los abiertos no triviales son los subconjuntos que contienen al $0$), demuestra que:
+\[
+    \lim_n \left(1 + \frac{1}{n}\right) \neq 1.
+\]
+¿Tiene límite esta sucesión? Encuentra una sucesión no constante cuyo límite sea $1$.
+\end{ejer}
+
+\begin{ejer}[67]
+En la topología cofinita sobre $\mathbb{R}$, ¿tiene límite la sucesión $x_n = n$? ¿Y la sucesión $y_n = \frac{1}{n}$? Encuentra una sucesión no convergente.
+\end{ejer}
+
+\begin{ejer}[68]
+Demuestra que si una sucesión es convergente a un punto, cualquier subsucesión converge también al mismo punto.
+\end{ejer}
+
+\begin{ejer}[69]
+Probar que en un espacio $T_2$ el límite de una sucesión de puntos, si existe, es único.
+\end{ejer}
+
+\begin{ejer}[70]
+Demuestra que si en un espacio topológico toda sucesión convergente tiene límite único, entonces el espacio es $T_1$.
+\end{ejer}
+
+\begin{ejer}[71]
+Demuestra que la topología del punto incluido es $T_0$ pero no es $T_1$.
+\end{ejer}
+
+\begin{ejer}[72]
+Sea $X$ un conjunto y considera la topología discreta $\mathcal{T}_d$ y la topología cofinita $\mathcal{T}_{cf}$. Determina si $(X, \mathcal{T}_d)$ y $(X, \mathcal{T}_{cf})$ cumplen los axiomas $T_0$, $T_1$ y $T_2$.
+\end{ejer}
+
+\begin{ejer}[73]
+Encuentra un ejemplo de que la condición de regularidad (un punto y un cerrado que no lo contiene se pueden separar mediante abiertos disjuntos) no implica la condición $T_1$.
+\end{ejer}
+
+\begin{ejer}[74]
+Sea $X$ un conjunto y $\mathcal{T}_1$ y $\mathcal{T}_2$ dos topologías con $\mathcal{T}_1 \le \mathcal{T}_2$. Demuestra que si $(X, \mathcal{T}_1)$ es Hausdorff entonces $(X, \mathcal{T}_2)$ también es Hausdorff. ¿Se cumple la implicación contraria?
+\end{ejer}
+
+\begin{ejer}[75]
+Demuestra que $X$ es un espacio topológico $T_0$ si y sólo si para todo $x, y \in X$ se verifica que $x \neq y$ si y sólo si $\overline{\{x\}} \neq \overline{\{y\}}$.
+\end{ejer}
+
+\begin{ejer}[76]
+Demuestra que $X$ es un espacio topológico $T_1$ si y sólo si para todo $x \in X$ se verifica que $\{x\}$ es la intersección de todos los abiertos (o de todos los entornos) que contienen al punto $x$.
+\end{ejer}
+
+\begin{ejer}[77]
+Sea $(X, \mathcal{T})$ un espacio $T_1$ y sea un subconjunto $Y$ de $X$. Demostrar que la intersección de todos los abiertos que contienen a $Y$ es el propio $Y$. Probar que un espacio topológico es $T_1$ si y sólo si todo punto es cerrado.
+\end{ejer}
+
+\begin{ejer}[78]
+Demuestra que $X$ es un espacio topológico $T_2$ si y sólo si para todo $x \in X$ se verifica que $\{x\}$ es la intersección de todos los entornos cerrados que contienen al punto $x$.
+\end{ejer}
+
+\begin{ejer}[79]
+Demuestra que $X$ es un espacio topológico regular si y sólo si para todo $x \in X$ y para todo $U$ entorno de $x$, existe un entorno $V$ de $x$ tal que $x \in V \subset \overline{V} \subset U$.
+\end{ejer}
+
+\begin{ejer}[80]
+Demuestra que $X$ es un espacio topológico normal si y sólo si para todo cerrado $C \subset X$ y para todo $U$ entorno de $C$, existe un entorno $V$ de $C$ tal que $C \subset V \subset \overline{V} \subset U$.
+\end{ejer}
+
+\begin{ejer}[81]
+Sea $X$ un espacio topológico $T_1$ y $A \subset X$ un subconjunto. Demostrar que si $x \in X$ es un punto de acumulación de $A$, entonces todo abierto $U \subset X$ con $x \in U$ corta a $A$ en infinitos puntos.
+\end{ejer}
+
+\begin{ejer}[82]
+Demuestra que si $X$ es un espacio topológico $T_1$ (respectivamente $T_2$) e $Y \subset X$ es un subespacio topológico, entonces $Y$ como espacio topológico es $T_1$ (respectivamente $T_2$).
+\end{ejer}
+
+\begin{ejer}[83]
+Demostrar que $\mathbb{R}$ con la topología de Sorgenfrey es un espacio topológico $T_4$.
+\end{ejer}
+
+\begin{ejer}[84]
+Demostrar que $\mathbb{R}$ con la topología $\mathcal{T}_\rightarrow = \{(a, \infty) : a \in \mathbb{R}\} \cup \{\emptyset, \mathbb{R}\}$ es un espacio topológico $T_0$ y normal pero no es regular ni $T_1$. ¿Es $T_2$?
+\end{ejer}
+
+\section*{Capítulo III. Continuidad. Topología inicial y final}
+
+\begin{ejer}[85]
+En un espacio topológico $X$, demuestra que toda función constante $f \colon X \to \mathbb{R}$ es continua.
+\end{ejer}
+
+\begin{ejer}[86]
+Sea $X$ un conjunto con dos topologías $\mathcal{T}_1$ y $\mathcal{T}_2$. Demuestra que $\mathcal{T}_1 \le \mathcal{T}_2$ si y sólo si la aplicación $\operatorname{id} \colon (X, \mathcal{T}_2) \to (X, \mathcal{T}_1)$ es continua.
+\end{ejer}
+
+\begin{ejer}[87]
+En $\mathbb{R}$ considera la topología $\mathcal{T} = \{\emptyset, \mathbb{R}\} \cup \{(a, +\infty) \mid a \in \mathbb{R}\}$, la topología usual $\mathcal{T}_u$ y las aplicaciones:
+\[
+    f_1(x) = [x] \text{ (parte entera)}, \qquad f_2(x) = |x|, \qquad f_3(x) = \begin{cases} \frac{1}{x} & x \neq 0, \\ k & x = 0. \end{cases}
+\]
+Analiza la continuidad de $f_i$ según se considere $f_i \colon (\mathbb{R}, \mathcal{T}) \to (\mathbb{R}, \mathcal{T})$ o $f_i \colon (\mathbb{R}, \mathcal{T}_u) \to (\mathbb{R}, \mathcal{T})$.
+\end{ejer}
+
+\begin{ejer}[88]
+Sea $X$ un conjunto y $\mathcal{T}_{cf}$ la topología cofinita. Demuestra que $f \colon (X, \mathcal{T}_{cf}) \to (X, \mathcal{T}_{cf})$ es continua si y sólo si para todo $x \in X$ se cumple que $f^{-1}(x)$ es finito.
+\end{ejer}
+
+\begin{ejer}[89]
+Sea $f \colon X \to Y$ una aplicación entre espacios topológicos continua en el punto $x \in X$. Demuestra que si $\{x_n\}_{n \in \mathbb{N}}$ es una sucesión en $X$ que converge a $x$, entonces la sucesión $\{f(x_n)\}_{n \in \mathbb{N}} \subset Y$ converge a $f(x) \in Y$.
+\end{ejer}
+
+\begin{ejer}[90]
+Demuestra que, con la topología usual, $[a,b] \subset \mathbb{R}$ es homeomorfo a $I = [0,1] \subset \mathbb{R}$. Prueba también que el intervalo $(0,1)$ es homeomorfo a $\mathbb{R}$.
+\end{ejer}
+
+\begin{ejer}[91]
+Sea $f \colon X \to Y$ una aplicación entre dos espacios topológicos. Prueba que:
+\begin{enumerate}
+    \item[a)] $f$ es continua si y sólo si $f^{-1}(B^\circ) \subset (f^{-1}(B))^\circ$ para todo $B \subset Y$.
+    \item[b)] $f$ es continua si y sólo si $\overline{f^{-1}(B)} \subset f^{-1}(\overline{B})$ para todo $B \subset Y$.
+    \item[c)] $f$ es continua si y sólo si $f(\overline{A}) \subset \overline{f(A)}$ para todo $A \subset X$.
+    \item[d)] $f$ es abierta si y sólo si $(f^{-1}(B))^\circ \subset f^{-1}(B^\circ)$ para todo $B \subset Y$.
+    \item[e)] $f$ es cerrada si y sólo si $\overline{f(A)} \subset f(\overline{A})$ para todo $A \subset X$.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[92]
+Demuestra que la función $f \colon \mathbb{R} \to \mathbb{R}$ definida por $f(x) = x^2$ no es abierta.
+\end{ejer}
+
+\begin{ejer}[93]
+Sea $f \colon X \to Y$ una aplicación biyectiva. Prueba que las siguientes condiciones son equivalentes:
+\begin{enumerate}
+    \item[a)] $f$ es homeomorfismo.
+    \item[b)] $f$ es continua y abierta.
+    \item[c)] $f$ es continua y cerrada.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[94]
+Si $f \colon X \to Y$ es una aplicación continua y $Z$ es un subespacio denso de $X$, entonces $f(Z)$, en general, no es denso en $Y$.
+\end{ejer}
+
+\begin{ejer}[95]
+Sea $f \colon (X, \mathcal{T}_1) \to (Y, \mathcal{T}_2)$ una aplicación y considera $\mathcal{T}_f \subset \mathcal{P}(X)$ la topología inicial de $f$ y $\mathcal{T}_f^* \subset \mathcal{P}(Y)$ la topología final de $f$. Demuestra que:
+\begin{enumerate}
+    \item[a)] $C_1 \subset X$ es cerrado en $\mathcal{T}_f$ si y sólo si $C_1 = f^{-1}(C_2)$, donde $C_2$ es cerrado en $\mathcal{T}_2$.
+    \item[b)] $C_2 \subset Y$ es cerrado en $\mathcal{T}_f^*$ si y sólo si $f^{-1}(C_2)$ es cerrado en $\mathcal{T}_1$.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[96]
+Sea $f \colon X \to Y$ una aplicación continua entre espacios topológicos, donde $X$ está dotado de la topología inicial de $f$. Si se denota por $Y_0 = \operatorname{Im} f$, demuéstrese que sobre $Y_0$ coinciden la topología final de $f$ y la inducida por $Y$.
+\end{ejer}
+
+\begin{ejer}[97]
+Sea $f \colon X \to Y$ una aplicación biyectiva. Pruébese que las siguientes afirmaciones son equivalentes:
+\begin{enumerate}
+    \item[a)] $f$ es un homeomorfismo.
+    \item[b)] La topología de $Y$ es la topología final de la aplicación $f$.
+    \item[c)] La topología de $X$ es la topología inicial de la aplicación $f$.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[98]
+Sea $X$ un espacio topológico. Demostrar que $X$ es $T_2$ si y sólo si la diagonal $\Delta_X := \{(x,x) : x \in X\} \subset X \times X$ es un cerrado. Deducir que $X$ es $T_2$ si y sólo si el morfismo diagonal $\delta_X \colon X \to X \times X$ definido por $\delta(x) = (x,x)$ es una inmersión cerrada.
+\end{ejer}
+
+\begin{ejer}[99]
+Probar que una aplicación $f \colon X \to Y$ es continua si y sólo si la aplicación gráfica $\Gamma_f \colon X \to X \times Y$ dada por $\Gamma_f(x) = (x, f(x))$ es continua. Deducir que si $f$ es continua, la aplicación $\Gamma_f$ es una inmersión. Además, si $Y$ es separado, entonces la aplicación $\Gamma_f$ es una inmersión cerrada.
+\end{ejer}
+
+\begin{ejer}[100]
+Sea $Y$ un espacio topológico $T_2$ y $f \colon X \to Y$, $g \colon X \to Y$ dos aplicaciones continuas. Prueba que:
+\begin{enumerate}
+    \item[a)] El conjunto de puntos $\{x \in X \mid f(x) = g(x)\}$ es un cerrado de $X$.
+    \item[b)] Si $f$ y $g$ coinciden en un subespacio denso de $X$, entonces $f$ y $g$ son iguales.
+    \item[c)] Sea $f \colon \mathbb{R} \to \mathbb{R}$ continua de modo que $f(q) = 0$ para todo $q \in \mathbb{Q}$. Demuestra que $f(x) = 0$ para todo $x \in \mathbb{R}$.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[101]
+Sea $Y$ un espacio topológico $T_2$. Si existe $f \colon X \to Y$ continua e inyectiva, demuestra que $X$ también es $T_2$.
+\end{ejer}
+
+\begin{ejer}[102]
+Probar que si los espacios topológicos $\{X_i\}_{i \in I}$ son $T_1$ (respectivamente $T_2$), entonces $\prod X_i$ es $T_1$ (respectivamente $T_2$).
+\end{ejer}
+
+\begin{ejer}[103]
+Sea $X$ un espacio topológico y $X/R$ su cociente por una relación de equivalencia $R$. Considera en $X/R$ la topología final de la proyección $\pi \colon X \to X/R$. Prueba que $X/R$ es $T_1$ si y sólo si las clases de equivalencia son cerrados de $X$.
+\end{ejer}
+
+\begin{ejer}[104]
+Sea $X$ un espacio topológico $T_2$ y $R$ una relación de equivalencia en $X$ con $\pi \colon X \to X/R$ el paso al cociente. Demuéstrese que $\pi$ admite una sección continua si y sólo si $X/R$ es $T_2$ y existe un cerrado $C \subseteq X$ tal que $\pi$ restringida a $C$ es un homeomorfismo con $X/R$.
+\end{ejer}
+
+\begin{ejer}[105]
+Sea $X$ un espacio topológico y $R$ una relación de equivalencia en $X$ con $\pi \colon X \to X/R$ el paso al cociente. Probar que $\pi$ es abierta (respectivamente cerrada) si y sólo si para todo abierto de $X$ (respectivamente cerrado), su saturación por la relación $R$ es abierta (respectivamente cerrada).
+\end{ejer}
+
+\begin{ejer}[106]
+Sea $X = [-1,1] \subset \mathbb{R}$ y $R$ la relación de equivalencia cuyas clases de equivalencia son:
+\[
+    [1] = \{1\}, \qquad [-1] = \{-1\} \qquad \text{y} \qquad [x] = \{x, -x\} \text{ si } x \neq 1, -1.
+\]
+Sea $\pi \colon (X, \mathcal{T}_u) \to X/R$ la proyección canónica y $X/R$ el espacio cociente con la topología final de $\pi$. Prueba que $\pi$ es abierta y que $X/R$ es $T_1$ pero no es $T_2$.
+\end{ejer}
+
+\begin{ejer}[107]
+Sea $X$ un espacio topológico y $A \subset X$ un subconjunto. Se define la relación $R_A$ de equivalencia de contracción de $A$ a un punto como $x \, R_A \, y$ si $x, y \in A$ (o $x = y$). Demostrar:
+\begin{enumerate}
+    \item[a)] Si la topología de $X$ es la de la $A$-inclusión, entonces la topología cociente en $X/R_A$ es la topología de la $\pi(a)$-inclusión, con $\pi$ la aplicación de paso al cociente y $a$ un elemento de $A$.
+    \item[b)] Si la topología de $X$ es la de la $A$-exclusión, entonces la topología cociente en $X/R_A$ es la topología de la $\pi(a)$-exclusión, con $a \in A$.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[108]
+Demostrar que las proyecciones $\pi_i \colon \prod_{j \in I} X_j \to X_i$ son abiertas para cada $i \in I$, pero en general no son cerradas.
+\end{ejer}
+
+\begin{ejer}[109]
+Demostrar que las inmersiones $\varphi_i \colon X_i \hookrightarrow \bigsqcup_{j \in I} X_j$ son abiertas y cerradas para cada $i \in I$.
+\end{ejer}
+
+\section*{Capítulo IV. Espacios métricos}
+
+\begin{ejer}[110]
+Considera en $\mathbb{R}^n$ la topología usual dada como espacio métrico con la distancia euclídea. Deduce que para $n = 1$ esta topología es la misma que la topología usual dada por la base de abiertos $\{(a,b) \mid a,b \in \mathbb{R}, \, a < b\}$. Para $n = 2$, determina si los siguientes subespacios son abiertos, cerrados, o ninguna de las dos cosas:
+\begin{itemize}
+    \item La esfera, $S^1 = \{(x,y) \in \mathbb{R}^2 \mid x^2 + y^2 = 1\}$.
+    \item El semiplano $H = \{(x,y) \in \mathbb{R}^2 \mid y > 0\}$.
+    \item $X = ([0,1) \times \mathbb{R}) \cup (\mathbb{R} \times (0,1])$.
+\end{itemize}
+\end{ejer}
+
+\begin{ejer}[111]
+Sea $(X, d)$ un espacio métrico y $A \subseteq X$ un subespacio. Demuestra que $d|_{A \times A}$ es una distancia para la topología de $A$ inducida por $(X, d)$.
+\end{ejer}
+
+\begin{ejer}[112]
+Probar que toda isometría entre espacios métricos es inyectiva.
+\end{ejer}
+
+\begin{ejer}[113]
+Demuestra que si $d \colon X \times X \to \mathbb{R}$ es una distancia, $d'(x,y) = \min\{1, d(x,y)\}$ también lo es. ¿Son equivalentes $d$ y $d'$?
+\end{ejer}
+
+\begin{ejer}[114]
+Demuestra que son equivalentes las distancias en $\mathbb{R}^2$ $d_1$, $d_2$ y $d_\infty$ dadas por:
+\begin{align*}
+    d_1((x_1, x_2), (y_1, y_2)) &= |x_1 - y_1| + |x_2 - y_2|, \\
+    d_2((x_1, x_2), (y_1, y_2)) &= \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2}, \\
+    d_\infty((x_1, x_2), (y_1, y_2)) &= \max\{|x_1 - y_1|, |x_2 - y_2|\}.
+\end{align*}
+\end{ejer}
+
+\begin{ejer}[115]
+Demuestra que $\mathbb{R}$ con la topología usual tiene una base numerable. ¿Y los espacios métricos $\mathbb{R}^n$?
+\end{ejer}
+
+\begin{ejer}[116]
+Sean $(X, d)$ y $(X', d')$ dos espacios métricos. Pruébese que $X \sqcup X'$ es metrizable.
+\end{ejer}
+
+\begin{ejer}[117]
+En el plano $\mathbb{R}^2$ considera la distancia habitual $d$ y sea $d'$ la definida por $d'(x,y) = d(x,y)$ si $O$, $x$ e $y$ están alineados y $d'(x,y) = d(x,O) + d(O,y)$ si no lo están. Prueba que $d'$ es una distancia.
+\end{ejer}
+
+\begin{ejer}[118]
+Sobre un conjunto $X$ se tiene definida la función:
+\[
+    d(x,y) = \begin{cases} 0 & \text{si } x = y, \\ 1 & \text{si } x \neq y. \end{cases}
+\]
+Demuestra que $d$ es una distancia y que la topología inducida como espacio métrico es la topología discreta.
+\end{ejer}
+
+\begin{ejer}[119]
+Dada la distancia euclídea $d$ en $\mathbb{R}^n$, ¿es $d'(x,y) = 3d(x,y)$ una distancia equivalente a $d$?
+\end{ejer}
+
+\begin{ejer}[120]
+Demuéstrese que todo espacio métrico es normal. Más concretamente, todo espacio métrico es completamente normal, es decir, si $A$ y $B$ son dos subconjuntos tales que $\overline{A} \cap B = \emptyset$ y $\overline{B} \cap A = \emptyset$, entonces existen abiertos disjuntos $U$ y $V$ tales que $A \subseteq U$ y $B \subseteq V$.
+\end{ejer}
+
+\begin{ejer}[121]
+Sea $(X, d)$ un espacio métrico y $f \colon \mathbb{R}^+ \to \mathbb{R}$ una aplicación continua tal que $f(x) = 0 \Leftrightarrow x = 0$, $f$ es no decreciente (no necesariamente estrictamente creciente) y $f(x + y) \le f(x) + f(y)$ para todo $x, y \ge 0$. Considera:
+\[
+    d'(x,y) = f(d(x,y)).
+\]
+Prueba que $(X, d')$ es un espacio métrico homeomorfo a $(X, d)$. Concluir que para todo espacio métrico, topológicamente puede suponerse que la distancia valora en $[0,1)$.
+\end{ejer}
+
+\begin{ejer}[122]
+Sea $f \colon X \to Y$ una aplicación entre espacios topológicos continua en el punto $x \in X$. Demuestra que si $\{x_n\}_{n \in \mathbb{N}}$ es una sucesión en $X$ que converge a $x$, entonces la sucesión $\{f(x_n)\}_{n \in \mathbb{N}} \subset Y$ converge a $f(x) \in Y$. Además, el recíproco es cierto si $X$ es un espacio métrico, es decir, si $f \colon (X, d) \to Y$ es tal que para toda sucesión $\{x_n\}_{n \in \mathbb{N}} \subset X$ convergente a $x \in X$ se cumple que la sucesión $\{f(x_n)\}_{n \in \mathbb{N}} \subset Y$ converge a $f(x) \in Y$, entonces $f$ es continua en $x$.
+\end{ejer}
+
+\begin{ejer}[123]
+Sea $(X, d)$ un espacio seudométrico. Demostrar que las siguientes condiciones son equivalentes:
+\begin{enumerate}
+    \item[a)] $X$ es $T_2$.
+    \item[b)] $X$ es $T_0$.
+    \item[c)] $(X, d)$ es métrico.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[124]
+Si $(X, d)$ es métrico, probar que la distancia es una función continua con la topología inducida por $d$.
+\end{ejer}
+
+\begin{ejer}[125]
+Sea $(X, d)$ un espacio métrico y $x_0 \in X$ un punto dado. Para cada $x \in X$ definimos $f_x \colon X \to \mathbb{R}$ por $f_x(y) = d(y,x) - d(y, x_0)$. Probar que $f_x$ es una función continua y acotada en $X$.
+\end{ejer}
+
+\begin{ejer}[126]
+Sea $A \subseteq X$ un subconjunto de un espacio métrico $(X, d)$. Probar:
+\begin{enumerate}
+    \item[a)] $x \in \overline{A} \iff$ existe una sucesión $\{x_n\}_{n \in \mathbb{N}} \subseteq A$ tal que $\lim d(x, x_n) = 0$.
+    \item[b)] $\overline{A} = \{x \in X : d(x, A) = 0\}$.
+    \item[c)] La aplicación $d_A \colon X \to \mathbb{R}$ definida por $d_A(x) = d(x, A)$ es una aplicación continua.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[127]
+Sea $Y$ un subespacio de un espacio métrico $X$. Demostrar que un punto $x \in X$ es punto de acumulación de $Y$ si y sólo si existe una sucesión $\{y_n\}$ no constante de puntos de $Y$ que converge a $x$.
+\end{ejer}
+
+\begin{ejer}[128]
+Sea $X$ un espacio metrizable. Demostrar que una sucesión $\{x_n\}$ converge a $x$ si y sólo si toda subsucesión de $\{x_n\}$ converge a $x$.
+\end{ejer}
+
+\section*{Capítulo V. Espacios conexos}
+
+\begin{ejer}[129]
+Probar que las siguientes condiciones son equivalentes:
+\begin{enumerate}
+    \item[a)] $X$ es conexo, es decir, no existen abiertos disjuntos no vacíos $A$ y $B$ tales que $X = A \cup B$.
+    \item[b)] No existen cerrados no vacíos disjuntos $C$ y $D$ tales que $X = C \cup D$.
+    \item[c)] Los únicos subconjuntos de $X$ que son abiertos y cerrados son $X$ y $\emptyset$.
+    \item[d)] No existen subconjuntos no vacíos $A$ y $B$ tales que $X = A \cup B$ y $(\overline{A} \cap B) \cup (A \cap \overline{B}) = \emptyset$.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[130]
+Prueba que $X$ es conexo si y sólo si todo cerrado no trivial tiene frontera no vacía.
+\end{ejer}
+
+\begin{ejer}[131]
+Prueba que la recta de Sorgenfrey $(\mathbb{R}, \tau_{\mathrm{inf}})$ no es conexa. ¿Y el espacio de Sierpiński, es decir, $S = \{0,1\}$ con $\tau_S = \{\emptyset, \{1\}, S\}$?
+\end{ejer}
+
+\begin{ejer}[132]
+Demuestra las siguientes propiedades sobre subconjuntos de un espacio topológico $X$:
+\begin{enumerate}
+    \item[a)] Sea $Y \subseteq X$ un subespacio conexo. Si $X = A \sqcup B$ con $A, B$ abiertos no vacíos, entonces $Y \subseteq A$ ó $Y \subseteq B$.
+    \item[b)] Si $A$ es conexo y $B$ es tal que $A \subseteq B \subseteq \overline{A}$, entonces $B$ es conexo. En particular, si $A$ es conexo entonces $\overline{A}$ es conexo.
+    \item[c)] Si $A$ y $B$ son conexos y $A \cap B \neq \emptyset \implies A \cup B$ es conexo.
+    \item[d)] Si $A$ y $B$ son conexos y $\overline{A} \cap B \neq \emptyset \implies A \cup B$ es conexo.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[133]
+Sean $\tau$ y $\tau'$ dos topologías en un espacio $X$. Si $\tau \subset \tau'$, ¿qué relación existe entre que $(X, \tau)$ sea conexo y que lo sea $(X, \tau')$?
+\end{ejer}
+
+\begin{ejer}[134]
+Demuestra que $X$ es conexo si y sólo si no existen funciones continuas de $X$ en $\mathbb{R}$ cuya imagen sea un número finito de puntos, excepto las funciones constantes.
+\end{ejer}
+
+\begin{ejer}[135]
+Sean $X$ un espacio topológico y $\{Y_i\}_{i \in I}$ una familia de subconjuntos conexos de $X$. Probar que $\bigcup_{i \in I} Y_i$ es conexo en cualquiera de los siguientes casos:
+\begin{enumerate}
+    \item[a)] Si existe un conexo $Y_k$ de la familia tal que $Y_k \cap Y_i \neq \emptyset$ para todo $i \in I$.
+    \item[b)] Si $\bigcap_{i \in I} Y_i \neq \emptyset$.
+    \item[c)] Si $I = \{1, \dots, n\}$ y $Y_j \cap Y_{j+1} \neq \emptyset$ para todo $j \in \{1, \dots, n-1\}$.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[136]
+En $\mathbb{R}^n$ con su topología usual, demuestra que la esfera $S^{n-1} = \{x \in \mathbb{R}^n : \|x\| = 1\}$ y el disco $B = \{x \in \mathbb{R}^n : \|x\| \le 1\}$ son conexos.
+\end{ejer}
+
+\begin{ejer}[137]
+Probar que los únicos subconjuntos de $\mathbb{R}$ que son conexos son los puntos y los intervalos. Como consecuencia demostrar el Teorema del valor intermedio: Sea $X$ conexo y $f \colon X \to \mathbb{R}$ continua, si $a, b \in f(X)$ y $c \in \mathbb{R}$ tal que $a < c < b$, entonces existe $x \in X$ de manera que $c = f(x)$.
+\end{ejer}
+
+\begin{ejer}[138]
+Sea $\mathbb{R}$ con la topología usual y $\mathbb{Q}$ con la topología inducida, probar que una aplicación $f \colon \mathbb{R} \to \mathbb{Q}$ es continua si y sólo si es constante.
+\end{ejer}
+
+\begin{ejer}[139]
+Probar que toda aplicación continua $f \colon [0,1] \to [0,1]$ tiene un punto fijo, esto es, existe $t \in [0,1]$ tal que $f(t) = t$.
+\end{ejer}
+
+\begin{ejer}[140]
+Llamamos componente conexa de un espacio topológico $X$ a todo subconjunto $K \subset X$ conexo maximal, donde por maximal se entiende que si $K \subset K'$ y $K'$ es conexo, entonces $K = K'$. Prueba las siguientes afirmaciones sobre las componentes conexas de un espacio topológico:
+\begin{enumerate}
+    \item[a)] Cada subespacio conexo $K \subset X$ está contenido en una componente conexa de $X$.
+    \item[b)] ¿Es cierta la afirmación anterior para cualquier subespacio aunque este no sea conexo?
+    \item[c)] Cada componente conexa de $X$ es cerrada.
+    \item[d)] Cada punto de $X$ está contenido en una y sólo una componente conexa. Esto es, la familia de componentes conexas de $X$ forma una partición de $X$.
+    \item[e)] $X$ es conexo si y sólo si tiene una única componente conexa.
+    \item[f)] $X$ es conexo si y sólo si todo par de puntos $x, y \in X$ está contenido en un subconjunto conexo de $X$.
+    \item[g)] Si $X$ es localmente conexo entonces las componentes conexas son abiertas y cerradas.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[141]
+Sea $X$ un espacio topológico cualquiera y $f \colon [0,1] \to X$ una aplicación continua. Deduce que $f(0)$ y $f(1)$ están en la misma componente conexa de $X$.
+\end{ejer}
+
+\begin{ejer}[142]
+Calcula las componentes conexas de $(\mathbb{R}, \mathcal{T}_{\mathrm{inf}})$, donde $\mathcal{T}_{\mathrm{inf}}$ es la topología generada por la base de abiertos $\mathcal{B} = \{[a,b) \mid a,b \in \mathbb{R}, \, a < b\}$.
+\end{ejer}
+
+\begin{ejer}[143]
+Sean $X$ e $Y$ espacios topológicos conexos y $A \subsetneq X$ y $B \subsetneq Y$ subconjuntos propios. Demuestra que $X \times Y - A \times B$ es conexo.
+\end{ejer}
+
+\begin{ejer}[144]
+\begin{enumerate}
+    \item[a)] Probar que $\mathbb{R}^n - \{0\}$ es conexo para todo $n \ge 2$.
+    \item[b)] Probar que $\mathbb{R}$ y $\mathbb{R}^n$ no son homeomorfos si $n \neq 1$.
+    \item[c)] Sea $p \in S^1$, probar que $S^1 - \{p\}$ es conexo, y deducir que $S^1$ no es homeomorfo a $\mathbb{R}$.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[145]
+Sea $X$ un espacio topológico, $R$ una relación de equivalencia en $X$ y $X/R$ el espacio cociente (con la topología final de la proyección canónica $\pi \colon X \to X/R$).
+\begin{enumerate}
+    \item[a)] Si $X$ es conexo, pruébese que $X/R$ es conexo.
+    \item[b)] Si cada clase de equivalencia de $R$ está contenida en una componente conexa de $X$, probar que las componentes conexas de $X/R$ son las imágenes por la proyección canónica de las componentes conexas de $X$.
+    \item[c)] Si $X/R$ y cada clase de equivalencia son conexos, probar que $X$ es conexo.
+    \item[d)] Sea $C_x$ la componente conexa de $x$, para cada $x \in X$. Se considera la relación de equivalencia $R$ cuyas clases de equivalencia son las componentes conexas: $x R y \iff y \in C_x$. Pruébese que $X/R$ es totalmente desconexo (esto es, las únicas componentes conexas son los puntos).
+    \item[e)] Pruébese que toda aplicación $X \to Y$ continua de $X$ a un espacio discreto $Y$ factoriza a través de la relación $R$ antes definida. Véase que ocurre lo mismo para $Y$ quizá no discreto pero sí totalmente desconexo. Conclúyase que toda aplicación continua en $\mathbb{Q}$ factoriza a través de $R$ y que, por tanto, toda aplicación continua de un conexo en $\mathbb{Q}$ es constante.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[146]
+Sea $(X, \mathcal{T})$ un espacio totalmente desconexo. Probar que $(X, \mathcal{T})$ es localmente conexo si y sólo si $\mathcal{T}$ es la topología discreta. En particular, probar que $\mathbb{Q}$ (con la topología inducida por la usual de $\mathbb{R}$) es totalmente desconexo y, por tanto, no es localmente conexo.
+\end{ejer}
+
+\begin{ejer}[147]
+Mostrar que un espacio finito $T_1$ es totalmente desconexo.
+\end{ejer}
+
+\begin{ejer}[148]
+Estudiar la conexión, conexión local y conexión por arcos en $(X, \mathcal{T})$ con $\mathcal{T} = \{U \subseteq X : p \in U\} \cup \{\emptyset\}$.
+\end{ejer}
+
+\begin{ejer}[149]
+Estudiar la conexión, conexión local y conexión por arcos en $(X, \mathcal{T})$ con $\mathcal{T} = \{U \subseteq X : p \notin U\} \cup \{X\}$.
+\end{ejer}
+
+\begin{ejer}[150]
+Si $X$ es infinito, estudiar la conexión y conexión local de $(X, \mathcal{T}_{CF})$.
+\end{ejer}
+
+\begin{ejer}[151]
+Un espacio topológico se dice irreducible si no es unión de dos cerrados distintos del total. Demuestra que un espacio es irreducible si y sólo si dos abiertos no vacíos cualesquiera siempre se cortan. Concluir que si $X$ tiene un punto denso, entonces $X$ es irreducible.
+\end{ejer}
+
+\begin{ejer}[152]
+Sea $X$ un espacio topológico. Pruébese:
+\begin{enumerate}
+    \item[a)] Si $Y$ es un subespacio irreducible de $X$, entonces también $\overline{Y}$ es irreducible.
+    \item[b)] Todo subespacio irreducible está contenido en un subespacio irreducible maximal. Dichos subespacios irreducibles maximales son las componentes irreducibles de $X$.
+    \item[c)] Toda componente irreducible es cerrada.
+\end{enumerate}
+\end{ejer}
+
+\begin{ejer}[153]
+Demuéstrese que si $X$ es un espacio topológico y finito, entonces los únicos cerrados irreducibles son los cierres de puntos.
+\end{ejer}
+
+\begin{ejer}[154]
+Sea $U$ un abierto de un espacio $X$. Demuéstrese:
+\begin{enumerate}
+    \item[a)] Si $A$ es irreducible en $X$, entonces $A \cap U$ es irreducible en $U$.
+    \item[b)] Si $B$ es una componente irreducible de $U$, el cierre de $B$ en $X$, $\overline{B}$, es una componente irreducible de $X$.
+    \item[c)] Si $A$ es una componente irreducible de $X$, entonces $A \cap U$ es una componente irreducible de $U$.
+    \item[d)] Hay una correspondencia biunívoca entre las componentes irreducibles de $U$ y las componentes de $X$ que cortan a $U$.
+\end{enumerate}
+\end{ejer}

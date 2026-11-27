@@ -832,3 +832,98 @@ Si $X$ no es irreducible se definen las
 \begin{obs}
     Existen por el Lema de Zorn. En un poset tal que toda cadena ascendente tiene supremo, entonces existen elementos maximales. Se consideran $\{\text{subespacios irreducibles de } X\} \neq \emptyset$, no vac\'io pues dado $x\in X$, $\{x\}\in \{\text{subespacios irreducibles de } X\}$. Dada una cadena $Y_1 \subset Y_2 \subset \cdots \subset Y_n \subset \cdots$, entonces $\bigcup_{i=1}^{\infty} Y_i$ es el supremo de la cadena. As\'i, $X = \bigcup_{i\in I} E_i$ con $E_i$ componentes irreducibles. 
 \end{obs}
+\section{Ejercicios}\begin{ejer}[139] \textbf{Teorema del punto fijo.} Sea $f \colon [0,1] \to [0,1]$ una aplicación continua. Entonces existe $t \in [0,1]$ tal que $f(t) = t$.
+\end{ejer}
+
+\begin{dem}
+Consideramos la función $g = f - \operatorname{Id}_{[0,1]} \colon [0,1] \to \mathbb{R}$, dada por $g(t) = f(t) - t$. Como $f$ y $\operatorname{Id}_{[0,1]}$ son continuas, $g$ es continua (diferencia de funciones continuas). Además, como $f([0,1]) \subseteq [0,1]$ y $t \in [0,1]$, se tiene que $g([0,1]) \subseteq [-1, 1] \subset \mathbb{R}$.
+
+Dado que $[0,1]$ es conexo y $g$ es continua, su imagen $\operatorname{Im} g = g([0,1]) \subseteq \mathbb{R}$ es un subespacio conexo de $\mathbb{R}$, por lo que es un punto o un intervalo. Distinguimos dos casos:
+\begin{itemize}
+    \item \textbf{Si $\operatorname{Im} g$ es un único punto:} entonces $g(0) = g(1) = 0$, luego $0$ y $1$ son puntos fijos de $f$ (en particular, existe $t \in [0,1]$ con $f(t) = t$).
+    \item \textbf{Si $\operatorname{Im} g = I$ es un intervalo:} evaluando en los extremos tenemos:
+    \[
+        g(0) = f(0) - 0 = f(0) \ge 0 \qquad \text{y} \qquad g(1) = f(1) - 1 \le 0.
+    \]
+    Como $g(1) \le 0 \le g(0)$ y $I$ es un intervalo que contiene a $g(0)$ y $g(1)$, se cumple $[g(1), g(0)] \subseteq I = \operatorname{Im} g$. En particular, $0 \in \operatorname{Im} g$, es decir, existe $t \in [0,1]$ tal que $g(t) = 0$, lo que equivale a $f(t) - t = 0$, es decir, $f(t) = t$.
+\end{itemize}
+\end{dem}
+\begin{ejems}
+\begin{itemize}
+    \item $(\mathbb{R}, \mc T_{\mathrm{sorg}}) = \langle [a,b) : a,b \in \mathbb{R} \rangle$ es totalmente inconexo.
+
+    \item $(\mathbb{R}, \mc T_{\mathrm{kol}})$ con $\mc T_{\mathrm{kol}} = \{(a,\infty) : a \in \mathbb{R}\} \cup \{\emptyset, \mathbb{R}\}$ es \textbf{irreducible} (no hay dos cerrados distintos del total, o dos abiertos siempre se cortan). Sin embargo, \textbf{no es conexo} (dos abiertos siempre se cortan, en particular $(a,\infty) \cap (b,\infty) = (\max\{a,b\}, \infty) \neq \emptyset$). En general, para abiertos $U, V$, se tiene $U \cap V \in \{U, \emptyset, V\}$. Esto implica que $\mathbb{R}$ es irreducible y, dado que cualquier subespacio de un espacio irreducible es irreducible, todo $Y \subset \mathbb{R}$ es irreducible en esta topología.
+\end{itemize}
+\end{ejems}
+
+
+\begin{ejer}[130]
+$X$ es conexo $\iff$ todo cerrado no trivial $C \subset X$ ($C \neq \emptyset, X$) tiene frontera no vacía ($\operatorname{Fr}(C) \neq \emptyset$).
+\end{ejer}
+
+\begin{dem}
+\begin{itemize}
+    \item[$(\Rightarrow)$] Sea $C \subset X$ un cerrado no trivial y supongamos por reducción al absurdo que $\operatorname{Fr}(C) = \emptyset$. Entonces:
+    \[
+        \emptyset = \operatorname{Fr}(C) = \overline{C} \cap \overline{X - C} = C \cap \overline{X - C} \implies \overline{X - C} \subset X - C.
+    \]
+    De aquí se deduce que $X - C$ es cerrado, luego $C$ es abierto. Por tanto, $C$ es abierto y cerrado no trivial (dando la separación $X = C \cup (X - C)$), lo que contradice que $X$ sea conexo.
+
+    \item[$(\Leftarrow)$] Queremos demostrar que $X$ es conexo. Supongamos que existe una separación por cerrados no trivial $X = C_1 \cup C_2$ (con $C_1 \cap C_2 = \emptyset$). Entonces:
+    \[
+        \operatorname{Fr}(C_1) = \overline{C_1} \cap \overline{X - C_1} = C_1 \cap \overline{C_2} = C_1 \cap C_2 = \emptyset,
+    \]
+    lo cual es una contradicción. Por consiguiente, toda separación debe ser trivial y $X$ es conexo.
+\end{itemize}
+\end{dem}
+
+\begin{ejer}[133]
+Sea $X$ un conjunto y sean $\mathcal{T}, \mathcal{T}'$ dos topologías en $X$ con $\mathcal{T} \subseteq \mathcal{T}'$. Si $X$ es conexo con $\mathcal{T}'$, entonces $X$ es conexo con $\mathcal{T}$.
+\end{ejer}
+
+\begin{dem}
+Si $D \subset X$ es abierto y cerrado por $\mathcal{T}$, entonces $D$ es también abierto y cerrado por $\mathcal{T}'$. Por tanto, si $(X, \mathcal{T}')$ no admite separaciones no triviales, $(X, \mathcal{T})$ tampoco puede admitirlas.
+\end{dem}
+
+\begin{ejer}[134]
+$X$ es conexo $\iff$ las únicas funciones continuas $f \colon X \to \mathbb{R}$ que toman un número finito de valores son las funciones constantes.
+\end{ejer}
+
+\begin{dem}
+\begin{itemize}
+    \item[$(\Rightarrow)$] Sea $f \colon X \to \mathbb{R}$ continua. Como $X$ es conexo, $\operatorname{Im} f \subset \mathbb{R}$ es conexo. Dado que los únicos subespacios conexos de $\mathbb{R}$ son los puntos y los intervalos:
+    \[
+        \operatorname{Im} f = \begin{cases}
+            \{\text{pto}\} & \implies f \text{ es constante}, \\
+            \text{intervalo} & \implies \text{toma infinitos valores}.
+        \end{cases}
+    \]
+    Al tomar $f$ un número finito de valores, necesariamente $\operatorname{Im} f$ es un único punto, luego $f$ es constante.
+
+    \item[$(\Leftarrow)$] Supongamos por reducción al absurdo que $X$ no es conexo, y sea $X = U_1 \cup U_2$ una separación no trivial por abiertos. Definimos $f \colon X \to \mathbb{R}$ por:
+    \[
+        f(x) := \begin{cases}
+            1 & \text{si } x \in U_1, \\
+            2 & \text{si } x \in U_2,
+        \end{cases}
+    \]
+    de modo que $\operatorname{Im} f = \{1, 2\}$ (toma un número finito de valores y no es constante). Veamos que $f$ es continua: para cualquier abierto $U \subseteq \mathbb{R}$,
+    \[
+        f^{-1}(U) = \begin{cases}
+            \emptyset & \text{si } 1, 2 \notin U, \\
+            X & \text{si } 1, 2 \in U, \\
+            U_1 & \text{si } 1 \in U, \, 2 \notin U, \\
+            U_2 & \text{si } 2 \in U, \, 1 \notin U.
+        \end{cases}
+    \]
+    Como todos los casos son abiertos en $X$, $f$ es continua, lo que contradice la hipótesis. Luego $X$ es conexo.
+\end{itemize}
+\end{dem}
+
+\begin{ejem}
+Considerando $\mathbb{Q} \subsetneq (\mathbb{R}, \mc T_d)$, toda aplicación continua $f \colon \mathbb{R} \to \mathbb{Q}$ es constante.
+\end{ejem}
+
+\begin{dem}
+Como $\mathbb{R}$ es conexo y $f$ es continua, $\operatorname{Im} f \subset \mathbb{Q}$ es un subespacio conexo de $\mathbb{Q}$. Puesto que los únicos conexos de $\mathbb{Q}$ son los puntos, $\operatorname{Im} f = \{\text{pto}\}$, de donde se concluye que $f$ es constante.
+\end{dem}
