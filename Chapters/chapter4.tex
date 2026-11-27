@@ -1,0 +1,69 @@
+
+\chapter{Espacios compactos}
+Sea $X$ un espacio topol\'ogico
+\begin{defi}
+    Un \textbf{recubrimiento} de $X$ es una familia de abiertos $\{U_i\}_{i \in I}$ tal que $X = \bigcup_{i \in I} U_i$. 
+\end{defi}
+\begin{defi}
+    Un espacio topol\'ogico $X$ es \textbf{compacto} si \underline{para todo} recubrimiento $\{U_i\}_{i \in I}$ existe un subrrecubrimiento finito, es decir, existen $i_1, \ldots, i_r \in I$ tal que $\{U_{i_1}, \ldots, U_{i_r}\}$ recibren $X$
+\end{defi}
+\begin{ejem}
+$\bb R$ no es compacto. $U_n = (-n,n): n\in \bb N\}$ recubrimiento de $\bb R$. Si existen $n_1, \ldots, n_r \in \bb N$ tal que 
+$$\bb R = (-n_1, n_1)\cup \cdots \cup (n_r,n_r) = (-n,n)$$
+con $n = \max\{n_{i_j}\}$ entonces no recubren.
+
+Otro ejemplo es el recubrimiento $\{V_n = (n- 1/|n|, (n+1) + 1/|n| )\}_{n\in \bb Z}$.
+\end{ejem}
+\begin{defi}
+    Un subespacio topol\'ogico $Y \subset X$ es compacto si lo es como espacio topo\'ogico, es decir, si $(Y, \mc T_X|_Y)$ es compacto.
+\end{defi}
+\begin{prop}
+$Y \subset X$ es subespacio compacto $\iff$ para toda familia de abiertos $\{U_i\}_{i \in I}$ de $X$ tal que $Y \subset \bigcup U_i$ existen $\{i_1, \ldots, i_r\}\subset I$ tal que $Y \subset U_{i_r} \cup \cdots U_{i_r}$.
+\end{prop}
+\begin{dem}
+\begin{itemize}
+    \item[$\Rightarrow)$] $Y\subset \bigcup U_i$, entonces $Y= \bigcup (U_i\cap Y)$ y $ U_i\cap Y \in \mc T_X|_Y$, luego por ser $Y$ compacto, y tener un subrrecubrimiento finito, entonces
+    $$Y = \bigcup_{j=1}^r U_{i_j} \cap Y \subset \bigcup_{j=1}^r U_{i_j}$$
+    \item[$\Leftarrow)$] Sean $\{ V_i \}_{i\in I}$ recubrimiento de $Y$ por abiertos de $Y$, entonces existen $\{U_i\}_{i\in I}$ abiertos de $X$ tal que $U_i \cap Y = V_i\, \forall i \in I$. 
+    $$Y = \bigcup V_i = \bigcup (U_i \cap Y) \subset \bigcup U_i$$
+    por lo que existen $i_1, \ldots, i_r$ tal que 
+    $$Y \subset U_{i_1} \cup \cdots \cup U_{i_r} \cap Y = \underbrace{(U_{i_1}\cap Y)}_{V_{i_1}} \cup \cdots \cup \underbrace{(U_{i_r}\cap Y)}_{V_{i_r}}$$
+\end{itemize}
+\end{dem}
+\begin{prop}
+Si $X$ es compacto y $Y\subset X$ es cerrado $\Rightarrow$ $Y$ es compacto (cerrado de compacto es compacto). 
+\end{prop}
+\begin{dem}
+Sean $\{U_i\}_{i\in I}$ abiertos de $X$ con $Y \subset \bigcup U_i$, $X-Y$ es abierto, de forma que 
+$$X = \bigcup U_i \subset (X-C) $$
+es un recubrimiento de $X$ por abiertos de $X$, pero por ser $X$ compacto, existe $\{i_1, \ldots, i_r \} \subset I$ tal que $X = U_{i_1} \cup \cdots \cup U_{i_r} \cup (X-Y)$ por lo que $Y \subset U_{i_1} \cup \cdots \cup U_{i_r}$. 
+\end{dem}
+\begin{prop}
+Sea $X$ espacio topol\'ogico $T_2$ e $Y\subset X$ subespacio compacto. Entoces se verifica que para todo $x\nin Y$ existen abiertos $U_x, U_Y$ de $X$ tal que $x\in U_x, \, Y \subset U_Y$ con $U_x\cap U_Y =\emptyset$. (No es regular pero similar, separa puntos de compactos). 
+\end{prop}
+\begin{dem}
+Sea $x\nin Y$, dado $y\in Y$, claramente $x\neq y$ por ser $X$ separado, entonces existen abiertos $U_x^y, U_y$ tal que $x\in U_x^y$, $y\in U_y$ con $U_x^y \cap U_y =\emptyset$ ($U_x^y$ depende del punto $x$ y del punto $y$). $Y\subset \bigcup_{y\in Y} U_y$ entonces existe $y_1, \ldots, y_r \in Y$ tal que $Y \subset U_{y_1}\cup \cdots \cup U_{y_r} = U_Y$ y $U_x \coloneqq U_x^{y_1} \cup \cdots \cup U_x^{y_r}$ que es abierto por ser intersecci\'on finita. 
+
+Se verifica que $U_x\cap U_Y = \emptyset$. Sea $z\in U_x \cap U_Y$
+$$\Rightarrow \begin{cases}
+    z\in U_x \Rightarrow z \in U_x^{y_j} \forall j=1,\ldots, r \\ z\in U_Y \Rightarrow z \in U_{y_{j_o}} \text{ para alg\'un } j_o \in \{1, \ldots, r\}
+\end{cases}$$
+luego $z\in U_x^{y_{j_o}}\cap U_{y_{j_o}} = \emptyset$, lo cual es una contradicci\'on al suponer que $z \in U_x \cap U_y$
+\end{dem}
+\begin{cor}
+Si $X$ es $T_2$ e $Y\subset X$ es compacto $\Rightarrow Y$ es cerrado. En particular, si $X$ es $T_2$ y compacto, un subespacio $Y\subset X$ es compacto $\iff$ $Y$ es cerrado. 
+\end{cor}
+\begin{dem}
+    $Y$ cerrado $\iff \, X-Y$ es abierto $\iff$ $\forall x\in X-Y$ existe un abierto $U_x$ con $x\in U_x \subset X-Y$. $x\nin Y$, por hip\'otesis $Y$ es compacto, luego existe $U_x, U_y$ con $U_x\cap U_y =\emptyset$ pero $U_x\cap Y \subset U_x\cap U_y$ luego $U_x \subset X-Y$.  
+\end{dem}
+\begin{prop}
+    Si $f: X \longrightarrow Y$ es continua y $X$ es compacto entonces $f(X) = \Im \, f$ es compacto. 
+\end{prop}
+\begin{dem}
+    Sea $f(X)\subset \bigcup V_i$ con $V_i \subset Y$ abiertos. $X = f^{-1}(f(X)) \subset f^{-1}(\bigcup V_i) = \bigcup f^{-1}(V_i)$ y como $f^{-1}(V_i)\subset X$ se verifica que $X=\bigcup f^{-1}(V_i)$, y por ser compacto, recubren, es decir, existen $\{i_1, \ldots, i_r \} \subset I$ tal que 
+    $$x =f^{-1}(V_{i_1}) \cup \cdots \cup f^{-1}(V_{i_r})$$
+    entonces $f(X) = f (\bigcup_{i=1}^r f^{-1}(V_{i_j})) = f(f^{-1}(\bigcup V_{i_j})) \subset \bigcup_{j=1}^r V_{i_j}$ es un subrrecubrimiento finito de $\{V_i\}$.  
+\end{dem}
+\begin{ejer}
+$\bb R^n$ no es compacto $\forall n$. 
+\end{ejer}
